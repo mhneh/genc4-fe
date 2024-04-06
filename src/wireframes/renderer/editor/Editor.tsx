@@ -23,7 +23,6 @@ import {InteractionOverlays} from '../interaction/interaction-overlays.ts';
 import {InteractionService} from '../interaction/interaction-service.ts';
 import {PreviewEvent} from '../common/preview.ts';
 import './Editor.scss';
-import {RelationshipAdorner} from "@app/wireframes/renderer/adorner/relationship/RelationshipAdorner.tsx";
 
 export interface EditorProps {
     // The selected diagram.

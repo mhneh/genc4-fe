@@ -5,7 +5,7 @@
  * Copyright (c) Sebastian Stehle. All rights reserved.
 */
 
-import {configureStore} from '@reduxjs/toolkit';
+import {configureStore, createAction} from '@reduxjs/toolkit';
 import {createBrowserHistory} from 'history';
 import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
 import {
@@ -40,6 +40,11 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 registerShapeRenderers();
 registerComponents();
 
+export const selectSystem =
+    createAction('system/select', (system: string) => {
+        return { payload: {system: system} };
+    });
+
 // Editor
 const editorState = EditorState.create();
 const editorReducer = createClassReducer(editorState, builder => {
@@ -50,6 +55,10 @@ const editorReducer = createClassReducer(editorState, builder => {
     buildItems(builder);
     buildOrdering(builder);
     buildRelationships(builder);
+
+    builder.addCase(selectSystem, (state, action) => {
+        return state.selectSystem(action.payload.system);
+    });
 });
 
 // Undoable

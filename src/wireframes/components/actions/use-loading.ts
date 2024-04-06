@@ -6,15 +6,24 @@
 */
 
 import * as React from 'react';
-import { useEventCallback, useOpenFile } from '@app/core';
-import { useAppDispatch } from '@app/wireframes/redux/store.ts';
-import { texts } from '@app/texts';
-import { getDiagrams, loadDiagramFromFile, newDiagram, saveDiagramToFile, saveDiagramToServer, useStore } from '@app/wireframes/model';
-import { UIAction } from './shared';
+import {useEventCallback, useOpenFile} from '@app/core';
+import {useAppDispatch} from '@app/wireframes/redux/store.ts';
+import {texts} from '@app/texts';
+import {
+    getDiagrams,
+    loadDiagramFromFile,
+    newDiagram,
+    saveDiagramToFile,
+    saveDiagramToServer,
+    useStore
+} from '@app/wireframes/model';
+import {UIAction} from './shared';
+import {genCodeDiagram} from "@app/wireframes/api/api.ts";
 
 export function useLoading() {
     const dispatch = useAppDispatch();
     const diagrams = useStore(getDiagrams);
+    const tokenToWrite = useStore(s => s.loading.tokenToWrite);
 
     const canSave = React.useMemo(() => {
         for (const diagram of diagrams.values) {
@@ -25,9 +34,9 @@ export function useLoading() {
 
         return false;
     }, [diagrams]);
-    
+
     const openHandler = useOpenFile('.json', file => {
-        dispatch(loadDiagramFromFile({ file }));
+        dispatch(loadDiagramFromFile({file}));
     });
 
     const doNew = useEventCallback(() => {
@@ -35,12 +44,20 @@ export function useLoading() {
     });
 
     const doSave = useEventCallback(() => {
-        dispatch(saveDiagramToServer({ navigate: true }));
+        dispatch(saveDiagramToServer({navigate: true}));
     });
 
     const doSaveToFile = useEventCallback(() => {
         dispatch(saveDiagramToFile());
     });
+
+    const triggerGenCode = useEventCallback(async () => {
+        if (!tokenToWrite) {
+            console.log("cc du ma may, khong gen code duoc.");
+            return;
+        }
+        genCodeDiagram(tokenToWrite);
+    })
 
     const newDiagramAction: UIAction = React.useMemo(() => ({
         disabled: false,
@@ -76,5 +93,19 @@ export function useLoading() {
         onAction: openHandler,
     }), [openHandler]);
 
-    return { newDiagram: newDiagramAction, openDiagramAction, saveDiagram, saveDiagramToFile: saveDiagramToFileAction };
+    const genCode: UIAction = React.useMemo(() => ({
+        disabled: false,
+        icon: 'icon-folder-open',
+        label: 'Gen code',
+        tooltip: 'Used to gen code for current workspace.',
+        onAction: triggerGenCode,
+    }), [triggerGenCode])
+
+    return {
+        newDiagram: newDiagramAction,
+        openDiagramAction,
+        saveDiagram,
+        saveDiagramToFile: saveDiagramToFileAction,
+        genCode,
+    };
 }

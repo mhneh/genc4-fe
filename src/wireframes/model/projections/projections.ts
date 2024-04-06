@@ -48,6 +48,7 @@ export const getComponents = (state: AssetsStateInStore) => state.assets.compone
 export const getContextsFilter = (state: AssetsStateInStore) => state.assets.contextsFilter;
 export const getContainersFilter = (state: AssetsStateInStore) => state.assets.containersFilter;
 export const getComponentsFilter = (state: AssetsStateInStore) => state.assets.componentsFilter;
+export const getSystem = (state: EditorStateInStore) => state.editor.present.system;
 
 export const getRelationships = createSelector(
     getDiagrams,

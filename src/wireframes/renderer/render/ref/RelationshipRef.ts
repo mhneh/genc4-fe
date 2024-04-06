@@ -6,20 +6,20 @@
 */
 
 import * as svg from '@svgdotjs/svg.js';
-import { DiagramItem, Renderer } from '@app/wireframes/model';
+import {DiagramItem, Renderer} from '@app/wireframes/model';
 import {Relationship} from "@app/wireframes/model/relationship/relationship.ts";
 
 export class RelationshipRef {
-    private previewShape: DiagramItem | null = null;
-    private currentShape: DiagramItem | null = null;
+    private previewShape: Relationship | null = null;
+    private currentShape: Relationship | null = null;
     private currentIndex = -1;
 
-    public renderedElement: svg.Element | null = null;
+    public renderedElement: svg.Line | null = null;
 
     constructor(
         public readonly doc: svg.Container,
         public readonly renderer: Renderer,
-        public readonly showDebugMarkers: boolean,
+        public readonly form: { source: DiagramItem, target: DiagramItem }
     ) {
     }
 
@@ -36,42 +36,54 @@ export class RelationshipRef {
         return result;
     }
 
-    public setPreview(previewShape: DiagramItem | null) {
-        if (this.previewShape !== previewShape) {
-            const shapeToRender = previewShape || this.currentShape;
+    public setPreview(relationship: Relationship | null) {
+        if (this.previewShape !== relationship) {
+            const shapeToRender = relationship || this.currentShape;
 
             if (!shapeToRender) {
                 return;
             }
 
-            this.renderer.setContext(this.doc);
-            this.renderer.render(shapeToRender, this.renderedElement, { debug: this.showDebugMarkers });
+            this.renderedElement = new svg.Line();
+            const {
+                source,
+                target,
+            } = this.form;
+            this.renderedElement.plot(
+                source.transform.position.x, source.transform.position.y,
+                target.transform.position.x, target.transform.position.y)
+                .stroke({width: 3, color: '#000'});
 
-            this.previewShape = previewShape;
+            this.previewShape = relationship;
         }
     }
 
     public render(relationship: Relationship) {
         const previousElement = this.renderedElement;
 
-        if (this.currentShape === shape && previousElement) {
+        if (this.currentShape === relationship && previousElement) {
             this.doc.add(this.renderedElement!);
             return;
         }
+        this.renderedElement = new svg.Line();
 
-        this.renderer.setContext(this.doc);
-        this.renderedElement = this.renderer.render(shape, previousElement, {
-            debug: this.showDebugMarkers
-        });
+        const {
+            source,
+            target,
+        } = this.form;
+        this.renderedElement.plot(
+            source.transform.position.x, source.transform.position.y,
+            target.transform.position.x, target.transform.position.y)
+            .stroke({width: 3, color: '#000'});
 
         // Always update shape to keep a reference to the actual object, not the old object.
-        (this.renderedElement!.node as any)['shape'] = shape;
+        (this.renderedElement!.node as any)['shape'] = relationship;
 
         // For new elements we might have to add them.
         if (!this.renderedElement!.parent()) {
             this.doc.add(this.renderedElement!);
         }
 
-        this.currentShape = shape;
+        this.currentShape = relationship;
     }
 }

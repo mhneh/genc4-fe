@@ -21,7 +21,6 @@ import {
     Pages,
     PrintView,
     Properties,
-    Recent,
     SettingsMenu,
     UIMenu
 } from '@app/wireframes/components';
@@ -42,6 +41,7 @@ import {OverlayContainer} from './wireframes/contexts/OverlayContext';
 import {Components} from "@app/wireframes/components/assets/components/Components.tsx";
 import {Contexts} from "@app/wireframes/components/assets/contexts/Contexts.tsx";
 import {Containers} from "@app/wireframes/components/assets/containers/Containers.tsx";
+import {SelectSystem} from "@app/wireframes/components/modals/SelectSystem.tsx";
 
 const SidebarTabs: TabsProps['items'] = [
     {
@@ -79,14 +79,15 @@ const SidebarTabs: TabsProps['items'] = [
     //     label: texts.common.outline,
     //     children: <Outline/>,
     // },
-    {
-        key: 'recent',
-        label: texts.common.recent,
-        children: <Recent/>,
-    },
+    // {
+    //     key: 'recent',
+    //     label: texts.common.recent,
+    //     children: <Recent/>,
+    // },
 ];
 
 export const App = () => {
+    const system = useStore(s => s.editor.present.system);
     const dispatch = useAppDispatch();
     const route = useRouteMatch<{ token?: string }>();
     const routeToken = route.params.token || null;
@@ -138,6 +139,10 @@ export const App = () => {
     const doPresent = useEventCallback(() => {
         setPresenting(true);
     });
+
+    if (!system && !routeToken) {
+        return <SelectSystem />
+    }
 
     return (
         <OverlayContainer>

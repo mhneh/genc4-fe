@@ -1,6 +1,7 @@
 import {ActionReducerMapBuilder, createAction} from "@reduxjs/toolkit";
 import {Diagram, EditorState} from "@app/wireframes/model";
 import {Relationship} from "@app/wireframes/model/relationship/relationship.ts";
+import {MathHelper} from "@app/core";
 
 export const addRelationship = createAction('relationship/add',
     (diagramId: string, props: {
@@ -39,12 +40,18 @@ export function buildRelationships(builder: ActionReducerMapBuilder<EditorState>
     return builder
         .addCase(addRelationship, (state, action) => {
             const {
+                id,
+                title,
+                description,
                 diagramId,
                 target,
                 source,
             } = action.payload;
             return state.updateDiagram(diagramId, (diagram: Diagram) => {
                 const newRelationship = {
+                    id: id ? id : MathHelper.nextId(),
+                    title: title ? title : '',
+                    description: description ? description : '',
                     diagramId: diagramId,
                     source: source,
                     target: target

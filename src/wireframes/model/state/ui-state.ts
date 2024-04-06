@@ -37,7 +37,7 @@ export interface UIStateInStore {
 
 export const createInitialUIState: () => UIState = () => {
     return {
-        zoom: 1,
+        zoom: 0.7,
         selectedTab: 'pages',
         showLeftSidebar: true,
         showRightSidebar: true,

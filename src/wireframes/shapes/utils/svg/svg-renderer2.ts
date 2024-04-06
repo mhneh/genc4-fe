@@ -8,10 +8,10 @@
 /* eslint-disable quote-props */
 
 import * as svg from '@svgdotjs/svg.js';
-import { marked } from 'marked';
-import { Rect } from 'react-measure';
-import { escapeHTML, Rect2, sizeInPx, SVGHelper, Types } from '@app/core/utils';
-import { AbstractRenderer2 } from '../abstract-renderer.ts';
+import {marked} from 'marked';
+import {Rect} from 'react-measure';
+import {escapeHTML, Rect2, sizeInPx, SVGHelper, Types, Vec2} from '@app/core/utils';
+import {AbstractRenderer2} from '../abstract-renderer.ts';
 import {RendererColor} from "@app/wireframes/interface/renderer/renderer-color.ts";
 import {RendererElement} from "@app/wireframes/interface/renderer/renderer-element.ts";
 import {RendererOpacity} from "@app/wireframes/interface/renderer/renderer-opacity.ts";
@@ -71,6 +71,15 @@ class Factory implements ShapeFactory {
             p.setBackgroundColor('transparent');
             p.setStrokeWidth(actualStroke);
             p.setTransform(actualBounds);
+        }, properties);
+    }
+
+    public drawLine(source: Vec2, target: Vec2, properties?: ShapePropertiesFunc) {
+        return this.new('path', () => new svg.Path(), p => {
+            p.setStrokeWidth(5);
+            p.setStrokeColor('0x1168bd');
+            p.setBackgroundColor('transparent');
+            p.setPath(SVGHelper.drawLine(source, target));
         }, properties);
     }
 

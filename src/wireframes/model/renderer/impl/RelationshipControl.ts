@@ -25,6 +25,7 @@ import {SVGRenderer2} from '../../../shapes/utils/svg/svg-renderer2.ts';
 import {TextSizeConstraint} from './text-size-contraint.ts';
 import {RenderContext} from "@app/wireframes/interface/renderer/render-context.ts";
 import {ShapePlugin} from "@app/wireframes/interface/shape/shape-plugin.ts";
+import {Relationship} from "@app/wireframes/model/relationship/relationship.ts";
 
 export class DefaultConstraintFactory implements ConstraintFactory {
     public static readonly INSTANCE = new DefaultConstraintFactory();
@@ -74,7 +75,9 @@ export class DefaultConfigurableFactory implements ConfigurableFactory {
     }
 }
 
-const GLOBAL_CONTEXT: Writeable<RenderContext> = {renderer2: SVGRenderer2.INSTANCE} as any;
+const GLOBAL_CONTEXT: Writeable<RenderContext> = {
+    renderer2: SVGRenderer2.INSTANCE
+} as any;
 
 export class RelationshipControl implements Renderer {
     constructor(
@@ -110,11 +113,7 @@ export class RelationshipControl implements Renderer {
         return {renderer, size, appearance, configurables, constraint, type};
     }
 
-    public render(shape: DiagramItem, existing: svg.G | undefined, options?: {
-        debug?: boolean;
-        noOpacity?: boolean;
-        noTransform?: boolean
-    }): any {
+    public render(shape: DiagramItem, existing: svg.G | undefined, options?: { debug?: boolean; noOpacity?: boolean; noTransform?: boolean }): any {
         const localRect = new Rect2(0, 0, shape.transform.size.x, shape.transform.size.y);
 
         // Reuse a global context to make the code easier.
@@ -174,6 +173,68 @@ export class RelationshipControl implements Renderer {
         if (!options?.noOpacity) {
             existing.opacity(shape.opacity);
         }
+
+        SVGRenderer2.INSTANCE.cleanupAll();
+        SVGRenderer2.INSTANCE.setContainer(container);
+
+        return existing;
+    }
+
+    public renderRelationship(
+        relationship: Relationship,
+        existing: svg.G | undefined,
+        form: {source: DiagramItem, target: DiagramItem}
+    ): any {
+        const first = form.source;
+        const second = form.target;
+        const localRect = new Rect2(
+            0, 0,
+            second.transform.position.x, second.transform.position.y);
+
+        // Reuse a global context to make the code easier.
+        GLOBAL_CONTEXT.relationship = relationship;
+        GLOBAL_CONTEXT.rect = localRect;
+        GLOBAL_CONTEXT.form = form;
+
+        const container = SVGRenderer2.INSTANCE.getContainer();
+
+        // Use full color codes here to avoid the conversion in svg.js
+        if (!existing) {
+            existing = new svg.G();
+            existing.add(new svg.Rect().fill('#ffffff').opacity(0.001));
+        }
+
+        // Calculate a special selection rect, that is slightly bigger than the bounds to make selection easier.
+        let selectionRect = GLOBAL_CONTEXT.rect;
+
+        const diffW = Math.max(0, MIN_DIMENSIONS - selectionRect.width);
+        const diffH = Math.max(0, MIN_DIMENSIONS - selectionRect.height);
+
+        if (diffW > 0 || diffH > 0) {
+            selectionRect = selectionRect.inflate(diffW * 0.5, diffH * 0.5);
+        }
+
+        SVGHelper.transformByRect(existing.get(0), selectionRect);
+
+        // The index of the main element that holds the reference.
+        let mainIndex = 1;
+
+        SVGRenderer2.INSTANCE.setContainer(existing, mainIndex);
+
+        this.shapePlugin.render(GLOBAL_CONTEXT);
+
+        const to = second.transform;
+        SVGHelper.transformBy(existing, {
+            x: to.position.x - 0.5 * to.size.x,
+            y: to.position.y - 0.5 * to.size.y,
+            w: to.size.x,
+            h: to.size.y,
+            rx: to.position.x,
+            ry: to.position.y,
+            rotation: to.rotation.degree,
+        });
+
+        existing.opacity(1.0);
 
         SVGRenderer2.INSTANCE.cleanupAll();
         SVGRenderer2.INSTANCE.setContainer(container);

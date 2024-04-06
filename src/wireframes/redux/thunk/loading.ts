@@ -222,10 +222,13 @@ export function rootLoading(undoableReducer: Reducer<UndoableState<EditorState>>
 }
 
 function getSaveState(state: EditorStateInStore) {
-    const initial = Serializer.serializeEditor(state.editor.present);
+    const initial = Serializer.serializeEditor(state.editor.firstState);
+    const present = Serializer.serializeEditor(state.editor.present);
+    console.log(present)
+
     const actions = state.editor.actions.slice(1).filter(handleAction);
 
-    return {initial, actions};
+    return {initial, present, actions};
 }
 
 function handleAction(action: AnyAction) {

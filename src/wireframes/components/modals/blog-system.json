@@ -1,0 +1,897 @@
+{
+    "initial": {
+        "diagrams": [
+            {
+                "id": "1711160142773",
+                "items": [
+                    {
+                        "id": "1711160142806",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Personal Owner",
+                            "DESCRIPTION": "Single user of this blog system",
+                            "TECHNOLOGY": "Person",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 442,
+                            "y": 147,
+                            "w": 250,
+                            "h": 140,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    },
+                    {
+                        "id": "1711160142868",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Blog System",
+                            "DESCRIPTION": "Allows user view, create and manage his created posts.",
+                            "TECHNOLOGY": "Software system",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 252,
+                            "y": 400,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    },
+                    {
+                        "id": "1711160143079",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Email System",
+                            "DESCRIPTION": "The internal Microsoft Exchange e-mail system.",
+                            "TECHNOLOGY": "External",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 617,
+                            "y": 400,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    }
+                ],
+                "rootIds": [
+                    "1711160142806",
+                    "1711160142868",
+                    "1711160143079"
+                ],
+                "title": "System Context",
+                "type": "Contexts"
+            },
+            {
+                "id": "1711160142780",
+                "items": [
+                    {
+                        "id": "1711160143235",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Single-Page Application",
+                            "DESCRIPTION": "Provides all the UIs and functionality of Blog System to user.",
+                            "TECHNOLOGY": "JavaScript and Angular",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 203,
+                            "y": 204,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    },
+                    {
+                        "id": "1711160143256",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Database",
+                            "DESCRIPTION": "Stores user registration information, hashed authentication credentials, access logs, etc.",
+                            "TECHNOLOGY": "Oracle Database Schema",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 371,
+                            "y": 446,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    },
+                    {
+                        "id": "1711160143263",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "API Application",
+                            "DESCRIPTION": "Provides blog system functionality via a JSON/HTTPS API.",
+                            "TECHNOLOGY": "Java and Spring MVC",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 535,
+                            "y": 204,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    }
+                ],
+                "rootIds": [
+                    "1711160143235",
+                    "1711160143256",
+                    "1711160143263"
+                ],
+                "title": "Containers",
+                "type": "Containers"
+            },
+            {
+                "id": "1711160142789",
+                "items": [
+                    {
+                        "id": "1711160143419",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Sign In Controller",
+                            "DESCRIPTION": "Allows users to sign in to the Blog System.",
+                            "TECHNOLOGY": "Spring MVC Rest Controller",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 185,
+                            "y": 321,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    },
+                    {
+                        "id": "1711160143482",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Security Component",
+                            "DESCRIPTION": "Provides functionality related to signing in, changing passwords, etc.",
+                            "TECHNOLOGY": "Spring Bean",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 426,
+                            "y": 112,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    },
+                    {
+                        "id": "1711160145248",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "RegisterController",
+                            "DESCRIPTION": "Component for register new user.",
+                            "TECHNOLOGY": "External System",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 676,
+                            "y": 310,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    },
+                    {
+                        "id": "1711160145266",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Database",
+                            "DESCRIPTION": "Stores user registration information, hashed authentication credentials, access logs, etc.",
+                            "TECHNOLOGY": "Oracle Database Schema",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 426,
+                            "y": 563,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    }
+                ],
+                "rootIds": [
+                    "1711160143419",
+                    "1711160143482",
+                    "1711160145248",
+                    "1711160145266"
+                ],
+                "title": "API Application",
+                "type": "Components"
+            }
+        ],
+        "diagramIds": [
+            "1711160142773",
+            "1711160142780",
+            "1711160142789"
+        ],
+        "id": "faa6f76763298257a6fcc87a",
+        "size": {
+            "x": 1000,
+            "y": 1000
+        }
+    },
+    "present": {
+        "diagrams": [
+            {
+                "id": "1711160142773",
+                "items": [
+                    {
+                        "id": "1711160142806",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Personal Owner",
+                            "DESCRIPTION": "Single user of this blog system",
+                            "TECHNOLOGY": "Person",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 435,
+                            "y": 147,
+                            "w": 250,
+                            "h": 140,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    },
+                    {
+                        "id": "1711160142868",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Blog System",
+                            "DESCRIPTION": "Allows user view, create and manage his created posts.",
+                            "TECHNOLOGY": "Software system",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 435,
+                            "y": 386,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    },
+                    {
+                        "id": "1711160143079",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Email System",
+                            "DESCRIPTION": "The internal Microsoft Exchange e-mail system.",
+                            "TECHNOLOGY": "External",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 435,
+                            "y": 635,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    }
+                ],
+                "rootIds": [
+                    "1711160142806",
+                    "1711160142868",
+                    "1711160143079"
+                ],
+                "title": "System Context",
+                "type": "Contexts"
+            },
+            {
+                "id": "1711160142780",
+                "items": [
+                    {
+                        "id": "1711160143256",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Database",
+                            "DESCRIPTION": "Stores user registration information, hashed authentication credentials, access logs, etc.",
+                            "TECHNOLOGY": "Oracle Database Schema",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 477,
+                            "y": 417,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    },
+                    {
+                        "id": "1711160143263",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Blog Server System",
+                            "DESCRIPTION": "Provides blog system functionality via a JSON/HTTPS API.",
+                            "TECHNOLOGY": "Java and Spring MVC",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 477,
+                            "y": 164,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    }
+                ],
+                "rootIds": [
+                    "1711160143256",
+                    "1711160143263"
+                ],
+                "title": "Containers",
+                "type": "Containers"
+            },
+            {
+                "id": "1711160142789",
+                "items": [
+                    {
+                        "id": "1711160143419",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Sign In Controller",
+                            "DESCRIPTION": "Allows users to sign in to the Blog System.",
+                            "TECHNOLOGY": "MVC Controller",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 185,
+                            "y": 321,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    },
+                    {
+                        "id": "1711160143482",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Security Component",
+                            "DESCRIPTION": "Provides functionality related to signing in, changing passwords, etc.",
+                            "TECHNOLOGY": "Component",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 435,
+                            "y": 112,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    },
+                    {
+                        "id": "1711160145248",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Register Controller",
+                            "DESCRIPTION": "Component for register new user.",
+                            "TECHNOLOGY": "MVC Controller",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 676,
+                            "y": 310,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    },
+                    {
+                        "id": "1711160145266",
+                        "appearance": {
+                            "FOREGROUND_COLOR": 1140925,
+                            "FONT_SIZE": 16,
+                            "BACKGROUND_COLOR": 16777215,
+                            "STROKE_COLOR": 13224393,
+                            "STROKE_THICKNESS": 1,
+                            "TEXT_ALIGNMENT": "center",
+                            "TEXT": "RegisterController",
+                            "TITLE": "Database",
+                            "DESCRIPTION": "Stores user registration information, hashed authentication credentials, access logs, etc.",
+                            "TECHNOLOGY": "Oracle Database Schema",
+                            "SHAPE": "Rectangle"
+                        },
+                        "renderer": "Register",
+                        "transform": {
+                            "x": 435,
+                            "y": 540,
+                            "w": 250,
+                            "h": 160,
+                            "r": 0
+                        },
+                        "type": "Components"
+                    }
+                ],
+                "rootIds": [
+                    "1711160143419",
+                    "1711160143482",
+                    "1711160145248",
+                    "1711160145266"
+                ],
+                "title": "Blog Server System",
+                "type": "Components"
+            }
+        ],
+        "diagramIds": [
+            "1711160142773",
+            "1711160142780",
+            "1711160142789"
+        ],
+        "id": "faa6f76763298257a6fcc87a",
+        "size": {
+            "x": 1000,
+            "y": 1000
+        },
+        "system": "blog"
+    },
+    "actions": [
+        {
+            "type": "items/transform",
+            "payload": {
+                "diagramId": "1711160142773",
+                "timestamp": 1712237339812,
+                "oldBounds": {
+                    "x": 442,
+                    "y": 147,
+                    "w": 250,
+                    "h": 140,
+                    "r": 0
+                },
+                "newBounds": {
+                    "x": 435,
+                    "y": 147,
+                    "w": 250,
+                    "h": 140,
+                    "r": 0
+                },
+                "itemIds": [
+                    "1711160142806"
+                ]
+            }
+        },
+        {
+            "type": "items/remove",
+            "payload": {
+                "diagramId": "1711160142780",
+                "timestamp": 1712237368247,
+                "itemIds": [
+                    "1711160143235"
+                ]
+            }
+        },
+        {
+            "type": "items/transform",
+            "payload": {
+                "diagramId": "1711160142780",
+                "timestamp": 1712237370476,
+                "oldBounds": {
+                    "x": 535,
+                    "y": 204,
+                    "w": 250,
+                    "h": 160,
+                    "r": 0
+                },
+                "newBounds": {
+                    "x": 371,
+                    "y": 193,
+                    "w": 250,
+                    "h": 160,
+                    "r": 0
+                },
+                "itemIds": [
+                    "1711160143263"
+                ]
+            }
+        },
+        {
+            "type": "items/appearance",
+            "payload": {
+                "diagramId": "1711160142780",
+                "timestamp": 1712237381829,
+                "appearance": {
+                    "key": "TITLE",
+                    "value": "Blog Server System"
+                },
+                "force": true,
+                "itemIds": [
+                    "1711160143263"
+                ]
+            }
+        },
+        {
+            "type": "diagram/rename",
+            "payload": {
+                "diagramId": "1711160142789",
+                "timestamp": 1712237396981,
+                "title": "Blog Server System"
+            }
+        },
+        {
+            "type": "items/appearance",
+            "payload": {
+                "diagramId": "1711160142789",
+                "timestamp": 1712237406036,
+                "appearance": {
+                    "key": "TITLE",
+                    "value": "Register Controller"
+                },
+                "force": true,
+                "itemIds": [
+                    "1711160145248"
+                ]
+            }
+        },
+        {
+            "type": "items/transform",
+            "payload": {
+                "diagramId": "1711160142789",
+                "timestamp": 1712237409460,
+                "oldBounds": {
+                    "x": 426,
+                    "y": 563,
+                    "w": 250,
+                    "h": 160,
+                    "r": 0
+                },
+                "newBounds": {
+                    "x": 456,
+                    "y": 563,
+                    "w": 250,
+                    "h": 160,
+                    "r": 0
+                },
+                "itemIds": [
+                    "1711160145266"
+                ]
+            }
+        },
+        {
+            "type": "items/transform",
+            "payload": {
+                "diagramId": "1711160142789",
+                "timestamp": 1712237410884,
+                "oldBounds": {
+                    "x": 426,
+                    "y": 112,
+                    "w": 250,
+                    "h": 160,
+                    "r": 0
+                },
+                "newBounds": {
+                    "x": 435,
+                    "y": 112,
+                    "w": 250,
+                    "h": 160,
+                    "r": 0
+                },
+                "itemIds": [
+                    "1711160143482"
+                ]
+            }
+        },
+        {
+            "type": "items/transform",
+            "payload": {
+                "diagramId": "1711160142789",
+                "timestamp": 1712237413580,
+                "oldBounds": {
+                    "x": 456,
+                    "y": 563,
+                    "w": 250,
+                    "h": 160,
+                    "r": 0
+                },
+                "newBounds": {
+                    "x": 435,
+                    "y": 540,
+                    "w": 250,
+                    "h": 160,
+                    "r": 0
+                },
+                "itemIds": [
+                    "1711160145266"
+                ]
+            }
+        },
+        {
+            "type": "items/transform",
+            "payload": {
+                "diagramId": "1711160142780",
+                "timestamp": 1712237419565,
+                "oldBounds": {
+                    "x": 371,
+                    "y": 319.5,
+                    "w": 250,
+                    "h": 413,
+                    "r": 0
+                },
+                "newBounds": {
+                    "x": 477,
+                    "y": 290.5,
+                    "w": 250,
+                    "h": 413,
+                    "r": 0
+                },
+                "itemIds": [
+                    "1711160143256",
+                    "1711160143263"
+                ]
+            }
+        },
+        {
+            "type": "items/transform",
+            "payload": {
+                "diagramId": "1711160142773",
+                "timestamp": 1712237428054,
+                "oldBounds": {
+                    "x": 617,
+                    "y": 400,
+                    "w": 250,
+                    "h": 160,
+                    "r": 0
+                },
+                "newBounds": {
+                    "x": 424,
+                    "y": 637,
+                    "w": 250,
+                    "h": 160,
+                    "r": 0
+                },
+                "itemIds": [
+                    "1711160143079"
+                ]
+            }
+        },
+        {
+            "type": "items/transform",
+            "payload": {
+                "diagramId": "1711160142773",
+                "timestamp": 1712237429765,
+                "oldBounds": {
+                    "x": 252,
+                    "y": 400,
+                    "w": 250,
+                    "h": 160,
+                    "r": 0
+                },
+                "newBounds": {
+                    "x": 435,
+                    "y": 386,
+                    "w": 250,
+                    "h": 160,
+                    "r": 0
+                },
+                "itemIds": [
+                    "1711160142868"
+                ]
+            }
+        },
+        {
+            "type": "items/transform",
+            "payload": {
+                "diagramId": "1711160142773",
+                "timestamp": 1712237432518,
+                "oldBounds": {
+                    "x": 424,
+                    "y": 637,
+                    "w": 250,
+                    "h": 160,
+                    "r": 0
+                },
+                "newBounds": {
+                    "x": 435,
+                    "y": 635,
+                    "w": 250,
+                    "h": 160,
+                    "r": 0
+                },
+                "itemIds": [
+                    "1711160143079"
+                ]
+            }
+        },
+        {
+            "type": "system/select",
+            "payload": {
+                "system": "blog"
+            }
+        },
+        {
+            "type": "items/appearance",
+            "payload": {
+                "diagramId": "1711160142789",
+                "timestamp": 1712237500395,
+                "appearance": {
+                    "key": "TECHNOLOGY",
+                    "value": "MVC Controller"
+                },
+                "force": true,
+                "itemIds": [
+                    "1711160145248"
+                ]
+            }
+        },
+        {
+            "type": "items/appearance",
+            "payload": {
+                "diagramId": "1711160142789",
+                "timestamp": 1712237506707,
+                "appearance": {
+                    "key": "TECHNOLOGY",
+                    "value": "MVC Controller"
+                },
+                "force": true,
+                "itemIds": [
+                    "1711160143419"
+                ]
+            }
+        },
+        {
+            "type": "items/appearance",
+            "payload": {
+                "diagramId": "1711160142789",
+                "timestamp": 1712237517707,
+                "appearance": {
+                    "key": "TECHNOLOGY",
+                    "value": "Component"
+                },
+                "force": true,
+                "itemIds": [
+                    "1711160143482"
+                ]
+            }
+        }
+    ]
+}

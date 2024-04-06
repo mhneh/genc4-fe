@@ -3,7 +3,7 @@ import {ShapePropertiesFunc} from "@app/wireframes/interface/shape/properties/sh
 import {RendererElement} from "@app/wireframes/interface/renderer/renderer-element.ts";
 import {RendererText} from "@app/wireframes/interface/renderer/renderer-text.ts";
 import {ShapeFactoryFunc} from "@app/wireframes/interface/shape/factory/shape-factory-func.ts";
-import {Rect2} from "@app/core";
+import {Rect2, Vec2} from "@app/core";
 
 export interface ShapeFactory {
     ellipse(strokeWidth: RendererWidth, bounds: Rect2, properties?: ShapePropertiesFunc): RendererElement;
@@ -29,4 +29,6 @@ export interface ShapeFactory {
     getOuterBounds(strokeWidth: RendererWidth, bounds: Rect2): Rect2;
 
     group(items: ShapeFactoryFunc, clip?: ShapeFactoryFunc, properties?: ShapePropertiesFunc): RendererElement;
+
+    drawLine(source: Vec2, target: Vec2, properties?: ShapePropertiesFunc): RendererElement;
 }

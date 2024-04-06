@@ -20,8 +20,10 @@ export function useRelationship() {
         if (!selectedDiagramId) {
             return;
         }
+        const title = shouldConnectedItems?.source.appearance.get('TITLE') + ' -> '
+            + shouldConnectedItems?.target.appearance.get('TITLE');
         const relationshipProps: any = {
-            title: '',
+            title: title,
             description: '',
             source: shouldConnectedItems?.source.id,
             target: shouldConnectedItems?.target.id,
@@ -41,7 +43,7 @@ export function useRelationship() {
     });
 
     const connect: UIAction = useMemo(() => ({
-        disabled: !canConnect,
+        disabled: canUnconnect,
         icon: 'icon-share',
         label: texts.common.connect,
         shortcut: 'MOD + G',
@@ -69,8 +71,8 @@ function isAlreadyConnected(relationships: ImmutableMap<Relationship> | undefine
     }
     const present = relationships.values
         .filter(relationship => {
-            return relationship.source == shouldConnectedItems.source.id
-                && relationship.target == shouldConnectedItems.target.id;
+            return (relationship.source == shouldConnectedItems.source.id && relationship.target == shouldConnectedItems.target.id)
+                || (relationship.source == shouldConnectedItems.target.id && relationship.target == shouldConnectedItems.source.id);
         });
     return present.length > 0;
 

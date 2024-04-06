@@ -5,13 +5,14 @@
  * Copyright (c) Sebastian Stehle. All rights reserved.
 */
 
-import { ImmutableList, ImmutableMap, MathHelper, Rotation, Vec2 } from '@app/core/utils';
-import { Diagram } from '../diagram/diagram.ts';
-import { DiagramItem } from '../diagram/diagram-item.ts';
-import { DiagramItemSet } from '../diagram/diagram-item-set.ts';
-import { EditorState } from '../state/editor-state.ts';
-import { RendererService } from '../renderer/renderer.service.ts';
-import { Transform } from '../transform/transform.ts';
+import {ImmutableList, ImmutableMap, MathHelper, Rotation, Vec2} from '@app/core/utils';
+import {Diagram} from '../diagram/diagram.ts';
+import {DiagramItem} from '../diagram/diagram-item.ts';
+import {DiagramItemSet} from '../diagram/diagram-item-set.ts';
+import {EditorState} from '../state/editor-state.ts';
+import {RendererService} from '../renderer/renderer.service.ts';
+import {Transform} from '../transform/transform.ts';
+import {Relationship} from "@app/wireframes/model/relationship/relationship.ts";
 
 type IdMap = { [id: string]: string };
 
@@ -95,9 +96,7 @@ export module Serializer {
     }
 
     export function serializeEditor(editor: EditorState) {
-        const output = writeEditor(editor);
-
-        return output;
+        return writeEditor(editor);
     }
 }
 
@@ -111,6 +110,13 @@ function writeDiagram(source: Diagram) {
 
 function writeDiagramItem(source: DiagramItem) {
     return writeObject(source.unsafeValues(), DIAGRAM_ITEM_SERIALIZERS);
+}
+
+function writeDiagramRelationships(source: Relationship) {
+    console.log(source)
+    let writeObject1 = writeObject(source.unsafeValues(), DIAGRAM_RELATIONSHIP_SERIALIZERS);
+    console.log(writeObject1)
+    return writeObject1;
 }
 
 function writeObject(source: object, serializers: PropertySerializers) {
@@ -153,10 +159,14 @@ function readDiagramItem(source: object, type?: any) {
             return null;
         }
 
-        return DiagramItem.createShape({ ...defaults, ...raw });
-    } else {
-        return DiagramItem.createGroup(raw);
+        return DiagramItem.createShape({...defaults, ...raw});
     }
+    return DiagramItem.createGroup(raw);
+}
+
+function readDiagramRelationships(source: object) {
+    const raw: any = readObject(source, DIAGRAM_RELATIONSHIP_SERIALIZERS);
+    return Relationship.create(raw);
 }
 
 function readObject(source: Record<string, any>, serializers: PropertySerializers) {
@@ -198,6 +208,10 @@ const EDITOR_SERIALIZERS: PropertySerializers = {
         get: (source: Vec2) => ({ x: source.x, y: source.y }),
         set: (source: any) => new Vec2(source.x, source.y),
     },
+    'system': {
+        get: (source) => source,
+        set: (source) => source,
+    },
 };
 
 const DIAGRAM_SERIALIZERS: PropertySerializers = {
@@ -224,8 +238,39 @@ const DIAGRAM_SERIALIZERS: PropertySerializers = {
     'type': {
         get: (source) => source,
         set: (source) => source,
-    }
+    },
+    'relationships': {
+        get: (source: ImmutableMap<Relationship>) => Array.from(source.values, writeDiagramRelationships),
+        set: (source: any[]) => buildObject(source.map(readDiagramRelationships), x => x.id),
+    },
 };
+
+const DIAGRAM_RELATIONSHIP_SERIALIZERS: PropertySerializers = {
+    'id': {
+        get: (source) => source,
+        set: (source) => source,
+    },
+    'title': {
+        get: (source) => source,
+        set: (source) => source,
+    },
+    'description': {
+        get: (source) => source,
+        set: (source) => source,
+    },
+    'source': {
+        get: (source) => source,
+        set: (source) => source,
+    },
+    'target': {
+        get: (source) => source,
+        set: (source) => source,
+    },
+    'diagramId': {
+        get: (source) => source,
+        set: (source) => source,
+    }
+}
 
 const DIAGRAM_ITEM_SERIALIZERS: PropertySerializers = {
     'appearance': {

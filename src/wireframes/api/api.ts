@@ -50,3 +50,28 @@ export async function postDiagram(body: any) {
 
     return json;
 }
+
+export function genCodeDiagram(writeToken: string) {
+    let filename: string;
+    fetch(`${SERVER_URL}/${writeToken}`, {
+        method: 'PATCH'
+    }).then(response => {
+        const header = response.headers.get('Content-Disposition');
+        const parts = header!.split(';');
+        filename = parts[1].split('=')[1];
+        return response.blob();
+    })
+        .then(blob => {
+            var url = window.URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a); // append the element to the dom
+            a.click();
+            a.remove(); // afterwards, remove the element
+        })
+        .catch(error => {
+            console.error(error);
+            throw Error('Failed to trigger gen code.');
+        });
+}

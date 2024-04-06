@@ -83,6 +83,45 @@ export const RenderLayer = memo((props: RenderLayerProps) => {
     }, [relationships]);
 
     useEffect(() => {
+        const references = relationshipRefsById.current;
+        for (const ref of Object.values(references)) {
+            ref.remove();
+        }
+        for (const relationship of orderedRelationships) {
+            if (!references[relationship.id]) {
+                const relationshipRenderer = RendererService.get('Relationship');
+                if (!relationshipRenderer) {
+                    throw new Error(`Cannot find renderer for relationship.`);
+                }
+                const sourceShape = findDiagramItem(orderedShapes, relationship.source);
+                const targetShape = findDiagramItem(orderedShapes, relationship.target);
+                if (!sourceShape || !targetShape) {
+                    return;
+                }
+                references[relationship.id] = new RelationshipRef(diagramLayer, relationshipRenderer,
+                    {
+                        source: sourceShape,
+                        target: targetShape,
+                    });
+            }
+        }
+        const shapeRefs = shapeRefsById.current;
+        for (const relationship of orderedRelationships) {
+            references[relationship.id].render(relationship);
+
+            const sourceShape = findDiagramItem(orderedShapes, relationship.source);
+            const targetShape = findDiagramItem(orderedShapes, relationship.target);
+            if (!sourceShape || !targetShape) {
+                return;
+            }
+
+            shapeRefs[sourceShape.id].render(sourceShape);
+            shapeRefs[targetShape.id].render(targetShape);
+
+        }
+    }, [diagramLayer, orderedRelationships]);
+
+    useEffect(() => {
         const allShapesById: { [id: string]: boolean } = {};
         const allShapes = orderedShapes;
 
@@ -140,28 +179,21 @@ export const RenderLayer = memo((props: RenderLayerProps) => {
     }, [diagramLayer, orderedShapes]);
 
     useEffect(() => {
-        const references = relationshipRefsById.current;
-        for (const relationship of orderedRelationships) {
-            if (!references[relationship.id]) {
-                const relationshipRenderer = RendererService.get('Relationship');
-                if (!relationshipRenderer) {
-                    throw new Error(`Cannot find renderer for relationship.`);
-                }
-                references[relationship.id] = new RelationshipRef(diagramLayer, relationshipRenderer, showDebugOutlines);
-            }
-        }
-        for (const shape of orderedRelationships) {
-            references[shape.id].render(shape);
-        }
-    }, [diagramLayer, orderedRelationships]);
-
-    useEffect(() => {
         return preview?.subscribe(event => {
             if (event.type === 'Update') {
+                if (relationships) {
+                    for (const relationship of Object.values(relationships)) {
+                        relationshipRefsById.current[relationship.id]?.setPreview(relationship);
+                    }
+                }
                 for (const item of Object.values(event.items)) {
                     shapeRefsById.current[item.id]?.setPreview(item);
                 }
+
             } else {
+                for (const reference of Object.values(relationshipRefsById.current)) {
+                    reference.setPreview(null);
+                }
                 for (const reference of Object.values(shapeRefsById.current)) {
                     reference.setPreview(null);
                 }
@@ -171,3 +203,7 @@ export const RenderLayer = memo((props: RenderLayerProps) => {
 
     return null;
 });
+
+function findDiagramItem(orderedShapes: DiagramItem[], itemId: string): DiagramItem | undefined {
+    return orderedShapes.find(shape => shape.id == itemId);
+}

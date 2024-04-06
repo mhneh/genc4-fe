@@ -8,7 +8,16 @@ type UpdatedProps = {
 export type Props = {
     id: string;
     title: string;
-    description: string;
+    description?: string;
+    source: string;
+    target: string;
+    diagramId: string;
+}
+
+export type InitialRelationshipProps = {
+    id: string;
+    title: string;
+    description?: string;
     source: string;
     target: string;
     diagramId: string;
@@ -47,5 +56,25 @@ export class Relationship extends Record<Props> {
     public update(data: UpdatedProps) {
         this.set('title', data.title);
         this.set('description', data.description);
+    }
+
+    public static create(setup: InitialRelationshipProps) {
+        const {
+            id,
+            title,
+            description,
+            source,
+            target,
+            diagramId,
+        } = setup;
+        const props: Props = {
+            id,
+            title,
+            description,
+            source,
+            target,
+            diagramId,
+        };
+        return new Relationship(props as any);
     }
 }

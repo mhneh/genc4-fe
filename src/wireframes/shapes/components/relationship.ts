@@ -1,7 +1,6 @@
 import {ShapePlugin} from "@app/wireframes/interface/shape/shape-plugin.ts";
 import {ConfigurableFactory, DefaultAppearance, Rect2} from "@app/wireframes/interface";
 import {RenderContext} from "@app/wireframes/interface/renderer/render-context.ts";
-import {ShapeProperties} from "@app/wireframes/interface/shape/properties/shape-properties.ts";
 import {CommonTheme} from "@app/wireframes/shapes/neutral/_theme.ts";
 import {AssetType} from "@app/wireframes/interface/common/asset-type.ts";
 
@@ -37,7 +36,9 @@ export class Relationship implements ShapePlugin {
     }
 
     public defaultSize() {
-        return {x: 250, y: 10};
+        return {
+            x: 250, y: 10
+        };
     }
 
     public configurables(factory: ConfigurableFactory) {
@@ -53,79 +54,34 @@ export class Relationship implements ShapePlugin {
     }
 
     type(): AssetType {
-        return "Components";
+        return "Shape";
+    }
+
+    showInGallery(): boolean {
+        return false;
     }
 
     public render(ctx: RenderContext) {
-        this.createShape(ctx);
-
-        this.createTitleShape(ctx);
-        this.createTechShape(ctx);
-        this.createDescShape(ctx);
-        // this.createText(ctx);
-    }
-
-    private createTitleShape(ctx: RenderContext) {
         const w = ctx.rect.width;
         const h = 30;
         const y = 0;
 
         const bounds = new Rect2(0, y, w, h);
         ctx.renderer2.rectangle(ctx.shape, 10, bounds, p => {
-            this.styleShape(ctx, p);
-            p.setStrokeColor('0xFFFFFF');
+            p.setBackgroundColor('0x1168bd');
+            p.setStrokeColor('0x1168bd');
         });
         ctx.renderer2.text(ctx.shape, bounds.deflate(4), p => {
-            p.setText(ctx.shape.getAppearance(DefaultAppearance.TITLE));
             p.setForegroundColor(ctx.shape);
         });
-    }
 
-    private createTechShape(ctx: RenderContext) {
-        const w = ctx.rect.width;
-        const h = 25;
-        const y = 31;
-
-        const bounds = new Rect2(0, y, w, h);
-        ctx.renderer2.rectangle(ctx.shape, 10, bounds, p => {
-            this.styleShape(ctx, p);
-            p.setStrokeColor('0xFFFFFF');
-        });
-        ctx.renderer2.text(ctx.shape, bounds.deflate(4), p => {
-            p.setForegroundColor('0x8fbbfb');
-            p.setText(ctx.shape.getAppearance(DefaultAppearance.TECH)
-                ? '[' + ctx.shape.getAppearance(DefaultAppearance.TECH) + ']'
-                : '');
-            p.setFontSize(12);
-        }, true);
-    }
-
-    private createDescShape(ctx: RenderContext) {
-        const w = ctx.rect.width;
-        const h = 80;
-        const y = 60;
-
-        const bounds = new Rect2(0, y, w, h);
-        ctx.renderer2.rectangle(ctx.shape, 10, bounds, p => {
-            this.styleShape(ctx, p);
-            p.setStrokeColor('0xFFFFFF');
-        });
-        ctx.renderer2.textMultiline(ctx.shape, bounds.deflate(4), p => {
-            p.setForegroundColor(ctx.shape);
-            p.setText(ctx.shape.getAppearance(DefaultAppearance.DESC));
-            p.setFontSize(12);
-        }, true);
-    }
-
-    private createShape(ctx: RenderContext) {
-        ctx.renderer2.rectangle(ctx.shape, 10, ctx.rect, p => {
-            this.styleShape(ctx, p);
-        });
-    }
-
-    private styleShape(ctx: RenderContext, p: ShapeProperties) {
-        p.setStrokeColor(ctx.shape);
-        p.setBackgroundColor(ctx.shape);
+        console.log(ctx.form)
+        ctx.renderer2.drawLine(ctx.form.source.transform.position,
+            ctx.form.target.transform.position,
+            p => {
+                p.setBackgroundColor('0x1168bd');
+                p.setStrokeColor('0x1168bd');
+            });
     }
 
 }
