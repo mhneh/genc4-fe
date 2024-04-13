@@ -26,7 +26,7 @@ const DEFAULT_APPEARANCE = {
 
 export class List implements ShapePlugin {
     type(): string {
-        return "";
+        return "Shape";
     }
     public identifier(): string {
         return 'List';

@@ -185,7 +185,7 @@ export function rootLoading(undoableReducer: Reducer<UndoableState<EditorState>>
             let initialState: EditorState;
 
             if (stored.initial) {
-                initialState = Serializer.deserializeEditor(stored.initial);
+                initialState = Serializer.deserializeEditor(stored.present);
             } else {
                 initialState = EditorState.create();
             }
@@ -194,15 +194,15 @@ export function rootLoading(undoableReducer: Reducer<UndoableState<EditorState>>
 
             let firstAction = actions[0];
 
-            if (!firstAction) {
-                firstAction = addDiagram();
-            }
+            // if (!firstAction) {
+            //     firstAction = addDiagram();
+            // }
 
-            let editor = UndoableState.create(editorReducer(initialState, firstAction), firstAction);
+            let editor = UndoableState.create(initialState, firstAction);
 
-            for (const loadedAction of actions.slice(1).filter(handleAction)) {
-                editor = undoableReducer(editor, migrateOldAction(loadedAction));
-            }
+            // for (const loadedAction of actions.slice(1).filter(handleAction)) {
+            //     editor = undoableReducer(editor, migrateOldAction(loadedAction));
+            // }
 
             const selectedDiagram = editor.present.diagrams.get(editor.present.selectedDiagramId!);
 

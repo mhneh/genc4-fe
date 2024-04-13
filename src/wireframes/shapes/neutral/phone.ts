@@ -18,7 +18,7 @@ const DEFAULT_APPEARANCE = {
 
 export class Phone implements ShapePlugin {
     type(): string {
-        return "";
+        return "Shape";
     }
     public identifier(): string {
         return 'Phone';

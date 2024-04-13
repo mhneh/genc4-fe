@@ -9,6 +9,7 @@ import {MenuProps} from 'antd/lib';
 import {texts} from '@app/texts';
 import {buildMenuItem, useAlignment, useClipboard, useGrouping, useRemove} from '../actions';
 import {useRelationship} from "@app/wireframes/components/actions/UseRelationship.ts";
+import {useLink} from "@app/wireframes/components/actions/use-link.tsx";
 
 export const useContextMenu = (isOpen: boolean) => {
     const forAlignment = useAlignment();
@@ -16,12 +17,15 @@ export const useContextMenu = (isOpen: boolean) => {
     const forGrouping = useGrouping();
     const forRemove = useRemove();
     const forRelationship = useRelationship();
+    const forLink = useLink();
 
     if (!isOpen) {
         return DEFAULT_MENU;
     }
 
     let items: MenuProps['items'] = [
+        buildMenuItem(forLink.link, 'linkComponent'),
+        {type: 'divider'},
         buildMenuItem(forClipboard.cut, 'clipboardCut'),
         buildMenuItem(forClipboard.copy, 'clipboardCopy'),
         buildMenuItem(forClipboard.paste, 'clipboarPaste'),

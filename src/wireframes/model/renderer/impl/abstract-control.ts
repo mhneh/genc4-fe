@@ -6,13 +6,26 @@
 */
 
 import * as svg from '@svgdotjs/svg.js';
-import { Rect2, SVGHelper } from '@app/core/utils';
-import { ConfigurableFactory, Constraint, ConstraintFactory } from '@app/wireframes/interface';
-import { ColorConfigurable, DiagramItem, MinSizeConstraint, NumberConfigurable, Renderer, SelectionConfigurable, SizeConstraint, SliderConfigurable, TextConfigurable, TextHeightConstraint, ToggleConfigurable } from '@app/wireframes/model';
-import { SVGRenderer2 } from '../../../shapes/utils/svg/svg-renderer2.ts';
-import { TextSizeConstraint } from './text-size-contraint.ts';
+import {Rect2, SVGHelper} from '@app/core/utils';
+import {ConfigurableFactory, Constraint, ConstraintFactory} from '@app/wireframes/interface';
+import {
+    ColorConfigurable,
+    DiagramItem,
+    MinSizeConstraint,
+    NumberConfigurable,
+    Renderer,
+    SelectionConfigurable,
+    SizeConstraint,
+    SliderConfigurable,
+    TextConfigurable,
+    TextHeightConstraint,
+    ToggleConfigurable
+} from '@app/wireframes/model';
+import {SVGRenderer2} from '../../../shapes/utils/svg/svg-renderer2.ts';
+import {TextSizeConstraint} from './text-size-contraint.ts';
 import {RenderContext} from "@app/wireframes/interface/renderer/render-context.ts";
 import {ShapePlugin} from "@app/wireframes/interface/shape/shape-plugin.ts";
+import {Relationship} from "@app/wireframes/model/relationship/relationship.ts";
 
 export class DefaultConstraintFactory implements ConstraintFactory {
     public static readonly INSTANCE = new DefaultConstraintFactory();
@@ -163,6 +176,9 @@ export class AbstractControl implements Renderer {
         SVGRenderer2.INSTANCE.setContainer(container);
 
         return existing;
+    }
+
+    renderRelationship(relationship: Relationship, existing: any, form: { source: DiagramItem; target: DiagramItem }): any {
     }
 }
 

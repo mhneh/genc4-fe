@@ -72,7 +72,7 @@ export interface AssetsState {
 
 export const createInitialAssetsState: () => AssetsState = () => {
     const allShapes = RendererService.all()
-        .filter(x => x[1].plugin().showInGallery?.() !== false)
+        .filter(x => x[1].plugin().type() === 'Shape')
         .map(([name, renderer]) => {
             return {
                 plugin: renderer.plugin(),

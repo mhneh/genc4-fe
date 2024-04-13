@@ -8,6 +8,7 @@ import {ConfigurableFactory, Constraint, ConstraintFactory} from "@app/wireframe
 import {AssetType} from "@app/wireframes/interface/common/asset-type.ts";
 
 export interface ShapePlugin {
+
     identifier(): string;
 
     defaultAppearance(): Appearance;
@@ -28,5 +29,5 @@ export interface ShapePlugin {
 
     render(ctx: RenderContext): any;
 
-    type(): AssetType,
+    type(): AssetType;
 }

@@ -54,7 +54,7 @@ export class Relationship implements ShapePlugin {
     }
 
     type(): AssetType {
-        return "Shape";
+        return "";
     }
 
     showInGallery(): boolean {

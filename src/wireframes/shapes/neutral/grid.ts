@@ -30,7 +30,7 @@ const DEFAULT_APPEARANCE = {
 
 export class Grid implements ShapePlugin {
     type(): string {
-        return "";
+        return "Shape";
     }
     public identifier(): string {
         return 'Grid';

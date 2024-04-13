@@ -6,29 +6,33 @@
 */
 
 import {Dropdown} from 'antd';
-import {useRef, useState, MouseEvent} from 'react';
+import {MouseEvent, useRef, useState} from 'react';
 import {DropTargetMonitor, useDrop} from 'react-dnd';
 import {NativeTypes} from 'react-dnd-html5-backend';
 import {findDOMNode} from 'react-dom';
-import {loadImagesToClipboardItems, sizeInPx, useClipboard, useEventCallback} from '@app/core';
+import {loadImagesToClipboardItems, MathHelper, sizeInPx, useClipboard, useEventCallback} from '@app/core';
 import {useAppDispatch} from '@app/wireframes/redux/store.ts';
 import {
+    addDiagram,
     addShape,
     changeItemsAppearance,
     Diagram,
+    DiagramRef,
     getDiagram,
     getDiagramId,
+    getDiagrams,
     getEditor,
     getMasterDiagram,
     getSelection,
+    ItemsRef,
     RendererService,
+    selectDiagram,
     selectItems,
     Transform,
     transformItems,
     useStore
 } from '@app/wireframes/model';
 import {Editor} from '@app/wireframes/renderer/editor/Editor.tsx';
-import {DiagramRef, ItemsRef} from '@app/wireframes/model';
 import {useContextMenu} from '../context-menu';
 import './EditorView.scss';
 import {ShapeSource} from "@app/wireframes/interface/shape/source/shape-source.ts";
@@ -65,6 +69,7 @@ export const EditorViewInner = ({diagram, spacing}: EditorViewProps & { diagram:
     const zoom = useStore(s => s.ui.zoom);
     const zoomedSize = editorSize.mul(zoom);
     const contextMenu = useContextMenu(menuVisible);
+    const diagrams = useStore(getDiagrams);
 
     const doChangeItemsAppearance = useEventCallback(
         (diagram: DiagramRef, visuals: ItemsRef, key: string, value: any) => {
@@ -125,6 +130,16 @@ export const EditorViewInner = ({diagram, spacing}: EditorViewProps & { diagram:
                 y += 40;
             }
         });
+
+    const doLink = useEventCallback((selectedId: string, title?: string) => {
+        const child: Diagram | undefined = diagrams.values
+            .find(d => d.parentId == selectedId);
+        if (!child) {
+            dispatch(addDiagram(MathHelper.nextId(), title, selectedId, "Components"));
+        } else {
+            dispatch(selectDiagram(child.id))
+        }
+    })
 
     useClipboard({
         onPaste: event => {
@@ -222,6 +237,7 @@ export const EditorViewInner = ({diagram, spacing}: EditorViewProps & { diagram:
                         zoom={zoom}
                         zoomedSize={zoomedSize}
                         isDefaultView={true}
+                        onLinkContainer={doLink}
                     />
                 </div>
             </div>

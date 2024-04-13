@@ -115,8 +115,8 @@ export const RenderLayer = memo((props: RenderLayerProps) => {
                 return;
             }
 
-            shapeRefs[sourceShape.id].render(sourceShape);
-            shapeRefs[targetShape.id].render(targetShape);
+            shapeRefs[sourceShape.id]?.render(sourceShape);
+            shapeRefs[targetShape.id]?.render(targetShape);
 
         }
     }, [diagramLayer, orderedRelationships]);

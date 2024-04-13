@@ -72,6 +72,8 @@ export interface EditorProps {
                         items: ReadonlyArray<DiagramItem>,
                         oldBounds: Transform,
                         newBounds: Transform) => any;
+
+    onLinkContainer: (selectedId: string, title?: string) => void;
 }
 
 export const Editor = memo((props: EditorProps) => {
@@ -85,19 +87,17 @@ export const Editor = memo((props: EditorProps) => {
         onRender,
         onSelectItems,
         onTransformItems,
-        onConnectItems,
         selectionSet,
         viewBox,
         viewSize,
         zoom,
         zoomedSize,
+        onLinkContainer,
     } = props;
 
     const adornerSelectLayer = useRef<svg.Container>();
 
     const adornerTransformLayer = useRef<svg.Container>();
-
-    const adornerRelationshipLayer = useRef<svg.Container>();
 
     const diagramTools = useRef<svg.Element>();
 
@@ -236,6 +236,7 @@ export const Editor = memo((props: EditorProps) => {
                             selectedDiagram={diagram}
                             selectionSet={selectionSet}
                             zoom={zoom}
+                            onLinkContainer={onLinkContainer}
                         />
                     }
 

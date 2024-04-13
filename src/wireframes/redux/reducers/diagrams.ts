@@ -11,8 +11,12 @@ import { Diagram, EditorState } from '../../model/internal.ts';
 import { createDiagramAction, DiagramRef } from '../../model/actions/utils.ts';
 
 export const addDiagram =
-    createAction('diagram/add', (diagramId?: string) => {
-        return { payload: createDiagramAction(diagramId || MathHelper.nextId()) };
+    createAction('diagram/add', (diagramId?: string, title?: string, parentId?: string, type?: string) => {
+        return { payload: createDiagramAction(diagramId || MathHelper.nextId(), {
+            title: title,
+            parentId: parentId,
+            type: type,
+        }) };
     });
 
 export const selectDiagram =
@@ -104,9 +108,19 @@ export function buildDiagrams(builder: ActionReducerMapBuilder<EditorState>) {
             return state.addDiagram(diagram.clone());
         })
         .addCase(addDiagram, (state, action) => {
-            const { diagramId } = action.payload;
+            const {
+                diagramId,
+                title,
+                parentId,
+                type,
+            } = action.payload;
 
-            let newState = state.addDiagram(Diagram.create({ id: diagramId }));
+            let newState = state.addDiagram(Diagram.create({
+                id: diagramId,
+                title: title,
+                parentId: parentId,
+                type: type,
+            }));
 
             if (newState.diagrams.size === 1) {
                 newState = newState.selectDiagram(diagramId);

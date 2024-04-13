@@ -30,8 +30,9 @@ const DEFAULT_APPEARANCE = {
 };
 
 export class Checkbox implements ShapePlugin {
+
     type(): string {
-        return "";
+        return "Shape";
     }
     public identifier(): string {
         return 'Checkbox';

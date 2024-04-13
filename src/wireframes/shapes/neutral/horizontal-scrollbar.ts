@@ -29,7 +29,7 @@ const DEFAULT_APPEARANCE = {
 
 export class HorizontalScrollbar implements ShapePlugin {
     type(): string {
-        return "";
+        return "Shape";
     }
     public defaultAppearance() {
         return DEFAULT_APPEARANCE;

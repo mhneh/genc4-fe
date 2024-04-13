@@ -21,7 +21,7 @@ import {
     Pages,
     PrintView,
     Properties,
-    SettingsMenu,
+    SettingsMenu, Shapes,
     UIMenu
 } from '@app/wireframes/components';
 import {
@@ -64,11 +64,11 @@ const SidebarTabs: TabsProps['items'] = [
         label: texts.common.components,
         children: <Components/>,
     },
-    // {
-    //     key: 'shapes',
-    //     label: texts.common.shapes,
-    //     children: <Shapes/>,
-    // },
+    {
+        key: 'shapes',
+        label: texts.common.shapes,
+        children: <Shapes/>,
+    },
     // {
     //     key: 'icons',
     //     label: texts.common.icons,

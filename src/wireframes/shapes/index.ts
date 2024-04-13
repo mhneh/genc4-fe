@@ -20,8 +20,67 @@ import {EmailSystem} from "@app/wireframes/shapes/contexts/email-system.ts";
 import {PersonalOwner} from "@app/wireframes/shapes/contexts/person.ts";
 import {RelationshipControl} from "@app/wireframes/model/renderer/impl/RelationshipControl.ts";
 import {Relationship} from "@app/wireframes/shapes/components/relationship.ts";
+import { AbstractControl } from '../model/renderer/impl/abstract-control';
+import {
+    Browser,
+    Button,
+    ButtonBar,
+    Checkbox,
+    ComboBox,
+    Dropdown,
+    Grid,
+    Heading,
+    HorizontalLine,
+    HorizontalScrollbar,
+    Icon,
+    Label,
+    Link,
+    List,
+    Numeric,
+    Paragraph,
+    Phone,
+    Progress,
+    RadioButton,
+    Raster,
+    Rectangle,
+    Shape,
+    Slider, Tablet, Tabs, TextArea, TextInput, Toggle, VerticalLine, VerticalScrollbar
+} from './dependencies';
 
 export function registerShapeRenderers() {
+    RendererService.addRenderer(new AbstractControl(new Browser()));
+    RendererService.addRenderer(new AbstractControl(new Button()));
+    RendererService.addRenderer(new AbstractControl(new ButtonBar()));
+    RendererService.addRenderer(new AbstractControl(new Checkbox()));
+    RendererService.addRenderer(new AbstractControl(new ComboBox()));
+    RendererService.addRenderer(new AbstractControl(new Dropdown()));
+    RendererService.addRenderer(new AbstractControl(new Grid()));
+    RendererService.addRenderer(new AbstractControl(new Heading()));
+    RendererService.addRenderer(new AbstractControl(new HorizontalLine()));
+    RendererService.addRenderer(new AbstractControl(new HorizontalScrollbar()));
+    RendererService.addRenderer(new AbstractControl(new Icon()));
+    // RendererService.addRenderer(new AbstractControl(new Image()));
+    RendererService.addRenderer(new AbstractControl(new Label()));
+    RendererService.addRenderer(new AbstractControl(new Link()));
+    RendererService.addRenderer(new AbstractControl(new List()));
+    RendererService.addRenderer(new AbstractControl(new Numeric()));
+    RendererService.addRenderer(new AbstractControl(new Paragraph()));
+    RendererService.addRenderer(new AbstractControl(new Phone()));
+    RendererService.addRenderer(new AbstractControl(new Progress()));
+    RendererService.addRenderer(new AbstractControl(new RadioButton()));
+    RendererService.addRenderer(new AbstractControl(new Raster()));
+    RendererService.addRenderer(new AbstractControl(new Rectangle()));
+    RendererService.addRenderer(new AbstractControl(new Shape()));
+    RendererService.addRenderer(new AbstractControl(new Slider()));
+    RendererService.addRenderer(new AbstractControl(new Tablet()));
+    RendererService.addRenderer(new AbstractControl(new Tabs()));
+    RendererService.addRenderer(new AbstractControl(new TextArea()));
+    RendererService.addRenderer(new AbstractControl(new TextInput()));
+    RendererService.addRenderer(new AbstractControl(new Toggle()));
+    RendererService.addRenderer(new AbstractControl(new VerticalLine()));
+    RendererService.addRenderer(new AbstractControl(new VerticalScrollbar()));
+    // RendererService.addRenderer(new AbstractControl(new Window()));
+    // RendererService.addRenderer(new AbstractControl(new Comment()));
 }
 
 export function registerComponents() {

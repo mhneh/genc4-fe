@@ -113,9 +113,7 @@ function writeDiagramItem(source: DiagramItem) {
 }
 
 function writeDiagramRelationships(source: Relationship) {
-    console.log(source)
     let writeObject1 = writeObject(source.unsafeValues(), DIAGRAM_RELATIONSHIP_SERIALIZERS);
-    console.log(writeObject1)
     return writeObject1;
 }
 
@@ -243,6 +241,10 @@ const DIAGRAM_SERIALIZERS: PropertySerializers = {
         get: (source: ImmutableMap<Relationship>) => Array.from(source.values, writeDiagramRelationships),
         set: (source: any[]) => buildObject(source.map(readDiagramRelationships), x => x.id),
     },
+    'parentId': {
+        get: (source) => source,
+        set: (source) => source,
+    }
 };
 
 const DIAGRAM_RELATIONSHIP_SERIALIZERS: PropertySerializers = {

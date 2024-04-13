@@ -37,7 +37,7 @@ class BorderHeightConstraint implements Constraint {
 
 export class HorizontalLine implements ShapePlugin {
     type(): string {
-        return "";
+        return "Shape";
     }
     public identifier(): string {
         return 'HorizontalLine';

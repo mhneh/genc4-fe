@@ -32,7 +32,7 @@ const DEFAULT_APPEARANCE = {
 
 export class RadioButton implements ShapePlugin {
     type(): string {
-        return "";
+        return "Shape";
     }
     public identifier(): string {
         return 'RadioButton';

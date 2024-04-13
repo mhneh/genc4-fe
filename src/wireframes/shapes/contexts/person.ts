@@ -1,5 +1,5 @@
 import {ShapePlugin} from "@app/wireframes/interface/shape/shape-plugin.ts";
-import {ConfigurableFactory, DefaultAppearance, Rect2} from "@app/wireframes/interface";
+import {ConfigurableFactory, DefaultAppearance, Rect2, Vec2} from "@app/wireframes/interface";
 import {RenderContext} from "@app/wireframes/interface/renderer/render-context.ts";
 import {ShapeProperties} from "@app/wireframes/interface/shape/properties/shape-properties.ts";
 import {CommonTheme} from "@app/wireframes/shapes/neutral/_theme.ts";
@@ -12,8 +12,10 @@ const SHAPE_ELLIPSE = 'Ellipse';
 const SHAPE_TRIANGLE = 'Triangle';
 const SHAPE_RHOMBUS = 'Rhombus';
 
+const RECT_RADIUS = 35;
+
 const DEFAULT_APPEARANCE = {
-    [DefaultAppearance.BACKGROUND_COLOR]: 0x1168bd,
+    [DefaultAppearance.BACKGROUND_COLOR]: 0x08427b,
     [DefaultAppearance.FONT_SIZE]: CommonTheme.CONTROL_FONT_SIZE,
     [DefaultAppearance.FOREGROUND_COLOR]: 0xFFFFFF,
     [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
@@ -59,19 +61,32 @@ export class PersonalOwner implements ShapePlugin {
     public render(ctx: RenderContext) {
         this.createShape(ctx);
 
+
+        this.createHead(ctx);
         this.createTitleShape(ctx);
         this.createTechShape(ctx);
         this.createDescShape(ctx);
+
         // this.createText(ctx);
+    }
+
+    private createHead(ctx: RenderContext) {
+        const radius = 100;
+        const x = ctx.rect.width / 2 - radius / 2;
+        const y = 0 - 5 * radius / 6;
+        ctx.renderer2.ellipse(0, new Rect2(x, y, radius, radius), p => {
+            p.setBackgroundColor(ctx.shape);
+            p.setStrokeColor(0x08427b);
+        });
     }
 
     private createTitleShape(ctx: RenderContext) {
         const w = ctx.rect.width;
         const h = 30;
-        const y = 0;
+        const y = 10;
 
         const bounds = new Rect2(0, y, w, h);
-        ctx.renderer2.rectangle(ctx.shape, 10, bounds, p => {
+        ctx.renderer2.rectangle(ctx.shape, RECT_RADIUS, bounds, p => {
             this.styleShape(ctx, p);
             p.setStrokeColor('0xFFFFFF');
         });
@@ -84,15 +99,14 @@ export class PersonalOwner implements ShapePlugin {
     private createTechShape(ctx: RenderContext) {
         const w = ctx.rect.width;
         const h = 25;
-        const y = 31;
+        const y = 41;
 
         const bounds = new Rect2(0, y, w, h);
-        ctx.renderer2.rectangle(ctx.shape, 10, bounds, p => {
+        ctx.renderer2.rectangle(ctx.shape, RECT_RADIUS, bounds, p => {
             this.styleShape(ctx, p);
             p.setStrokeColor('0xFFFFFF');
         });
         ctx.renderer2.text(ctx.shape, bounds.deflate(4), p => {
-            p.setForegroundColor('0x8fbbfb');
             p.setText(ctx.shape.getAppearance(DefaultAppearance.TECH)
                 ? '[' + ctx.shape.getAppearance(DefaultAppearance.TECH) + ']'
                 : '');
@@ -103,10 +117,10 @@ export class PersonalOwner implements ShapePlugin {
     private createDescShape(ctx: RenderContext) {
         const w = ctx.rect.width;
         const h = 80;
-        const y = 60;
+        const y = 70;
 
         const bounds = new Rect2(0, y, w, h);
-        ctx.renderer2.rectangle(ctx.shape, 10, bounds, p => {
+        ctx.renderer2.rectangle(ctx.shape, RECT_RADIUS, bounds, p => {
             this.styleShape(ctx, p);
             p.setStrokeColor('0xFFFFFF');
         });
@@ -118,7 +132,7 @@ export class PersonalOwner implements ShapePlugin {
     }
 
     private createShape(ctx: RenderContext) {
-        ctx.renderer2.rectangle(ctx.shape, 10, ctx.rect, p => {
+        ctx.renderer2.rectangle(ctx.shape, RECT_RADIUS, ctx.rect, p => {
             this.styleShape(ctx, p);
         });
     }

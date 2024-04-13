@@ -19,7 +19,7 @@ const DEFAULT_APPEARANCE = {
 
 export class Paragraph implements ShapePlugin {
     type(): string {
-        return "";
+        return "Shape";
     }
     public identifier(): string {
         return 'Paragraph';

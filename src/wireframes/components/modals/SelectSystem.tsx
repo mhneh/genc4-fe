@@ -1,4 +1,4 @@
-import {memo, useState} from "react";
+import {memo, useEffect, useState} from "react";
 import {Image, Menu, Modal} from "antd";
 import {selectSystem, useAppDispatch} from "@app/wireframes/redux/store.ts";
 import {loadDiagramFromFile, saveDiagramToServer} from "@app/wireframes/redux/thunk/loading.ts";
@@ -8,6 +8,13 @@ import blogSystemJson from "./blog-system.json";
 export const SelectSystem = memo(() => {
     const dispatch = useAppDispatch();
     const [isOpen, setOpen] = useState(true);
+
+    // useEffect(async () => {
+    //     const file: File = new File([JSON.stringify(blogSystemJson)], "");
+    //     await dispatch(loadDiagramFromFile({file}));
+    //     await dispatch(saveDiagramToServer({ navigate: true }));
+    //     await dispatch(selectSystem("blog"));
+    // }, []);
 
     return (
         <Modal title={"Select System"} open={isOpen} onCancel={() => null} onOk={() => null}>

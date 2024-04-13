@@ -29,6 +29,8 @@ export interface TextAdornerProps {
 
     // A function to change the appearance of a visual.
     onChangeItemsAppearance: (diagram: Diagram, visuals: DiagramItem[], key: string, val: any) => any;
+
+    onLinkContainer: (selectedId: string, title?: string) => void;
 }
 
 export class TextAdorner extends React.PureComponent<TextAdornerProps> implements InteractionHandler {
@@ -65,6 +67,12 @@ export class TextAdorner extends React.PureComponent<TextAdornerProps> implement
 
     public onDoubleClick(event: SvgEvent) {
         if (event.shape && !event.shape.isLocked && this.textareaElement) {
+
+            if (event.shape.type == "Containers") {
+                this.props.onLinkContainer(event.shape.id, event.shape.appearance.get('TITLE'));
+                return;
+            }
+
             if (event.shape.textDisabled) {
                 return;
             }
@@ -151,3 +159,5 @@ export class TextAdorner extends React.PureComponent<TextAdornerProps> implement
         );
     }
 }
+
+
