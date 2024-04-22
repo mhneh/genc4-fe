@@ -49,6 +49,7 @@ export const getContextsFilter = (state: AssetsStateInStore) => state.assets.con
 export const getContainersFilter = (state: AssetsStateInStore) => state.assets.containersFilter;
 export const getComponentsFilter = (state: AssetsStateInStore) => state.assets.componentsFilter;
 export const getSystem = (state: EditorStateInStore) => state.editor.present.system;
+export const getShowDescModal = (state: UIStateInStore) => state.ui.showDescModal;
 
 export const getRelationships = createSelector(
     getDiagrams,

@@ -15,6 +15,15 @@ import { Transform } from '../transform/transform.ts';
 import {Shape} from "@app/wireframes/interface/shape/shape.ts";
 import {AssetType} from "@app/wireframes/interface/common/asset-type.ts";
 
+export type DescProps = {
+
+    id: string;
+
+    description: string;
+
+    itemId: string;
+}
+
 type ItemProps = {
     // The unique id for each item.
     id: string;
@@ -27,6 +36,8 @@ type ItemProps = {
 
     // The type of the item.
     type: AssetType;
+
+    descriptions?: ImmutableMap<DescProps>;
 };
 
 type GroupProps = {
@@ -91,6 +102,8 @@ export type InitialShapeProps = {
     renderer: string;
 
     type: AssetType;
+
+    descriptions?: ImmutableMap<DescProps>;
 } & InitialItemProps;
 
 export type InitialGroupProps = {
@@ -110,6 +123,10 @@ export class DiagramItem extends Record<Props> implements Shape {
 
     public get type() {
         return this.get('type');
+    }
+
+    public get descriptions() {
+        return this.get('descriptions');
     }
 
     public get name() {
@@ -204,6 +221,36 @@ export class DiagramItem extends Record<Props> implements Shape {
         return this.appearance.get(key);
     }
 
+    public addDescription(id: string, desc?: string): DiagramItem  {
+        const descs = this.descriptions?.set(id, {
+           id: id,
+           description: desc ? desc : "",
+           itemId: this.id
+        } as DescProps);
+        return this.merge({
+            descriptions: descs
+        });
+    }
+
+    public removeDescription(id: string): DiagramItem  {
+        const descs = this.descriptions?.remove(id);
+        return this.merge({
+            descriptions: descs
+        })
+    }
+
+    public updateDescriptions(newest: ImmutableMap<DescProps> | undefined): DiagramItem {
+        if (!newest) {
+            return this.merge({
+                descriptions: this.descriptions?.empty()
+            })
+        }
+        const descs = this.descriptions?.replaceAll(newest);
+        return this.merge({
+            descriptions: descs
+        })
+    }
+
     public static createGroup(setup: InitialGroupProps = {}) {
         const { id, childIds, isLocked, name, rotation } = setup;
 
@@ -221,7 +268,17 @@ export class DiagramItem extends Record<Props> implements Shape {
     }
 
     public static createShape(setup: InitialShapeProps) {
-        const { id, appearance, configurables, constraint, isLocked, name, renderer, transform } = setup;
+        const {
+            id,
+            appearance,
+            configurables,
+            constraint,
+            isLocked,
+            name,
+            renderer,
+            transform,
+            descriptions,
+        } = setup;
 
         const props: ShapeProps & ItemProps = {
             id: id || MathHelper.nextId(),
@@ -234,6 +291,7 @@ export class DiagramItem extends Record<Props> implements Shape {
             renderer,
             transform: transform || Transform.ZERO,
             type: setup.type,
+            descriptions: ImmutableMap.of(descriptions)
         };
 
         return new DiagramItem(props as any);

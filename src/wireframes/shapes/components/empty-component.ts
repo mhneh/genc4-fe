@@ -13,23 +13,23 @@ const SHAPE_TRIANGLE = 'Triangle';
 const SHAPE_RHOMBUS = 'Rhombus';
 
 const DEFAULT_APPEARANCE = {
-    [DefaultAppearance.BACKGROUND_COLOR]: 0x438dd5,
+    [DefaultAppearance.BACKGROUND_COLOR]: 0x85bbf0,
     [DefaultAppearance.FONT_SIZE]: CommonTheme.CONTROL_FONT_SIZE,
-    [DefaultAppearance.FOREGROUND_COLOR]: 0xFFFFFF,
+    [DefaultAppearance.FOREGROUND_COLOR]: 0x000000,
     [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
     [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
     [DefaultAppearance.TEXT_ALIGNMENT]: 'center',
-    [DefaultAppearance.TEXT]: 'ApiApplication',
-    [DefaultAppearance.TITLE]: 'API Application',
-    [DefaultAppearance.DESC]: 'Allows user view, create and manage his created posts.',
-    [DefaultAppearance.TECH]: 'Software System',
-    [SHAPE]: 'BROWSER',
+    [DefaultAppearance.TEXT]: 'Empty Component',
+    [DefaultAppearance.TITLE]: 'New Component',
+    [DefaultAppearance.DESC]: 'Please describe your new component, its idea and functions.',
+    [DefaultAppearance.TECH]: 'Technology',
+    [SHAPE]: SHAPE_RECTANGLE,
 };
 
-export class ApiApplication implements ShapePlugin {
+export class EmptyComponent implements ShapePlugin {
 
     public identifier(): string {
-        return 'ApiApplication';
+        return 'EmptyComponent';
     }
 
     public defaultAppearance() {
@@ -53,7 +53,7 @@ export class ApiApplication implements ShapePlugin {
     }
 
     type(): AssetType {
-        return "Containers";
+        return "Components";
     }
 
     public render(ctx: RenderContext) {
@@ -63,7 +63,6 @@ export class ApiApplication implements ShapePlugin {
         this.createTechShape(ctx);
         this.createDescShape(ctx);
         // this.createText(ctx);
-        this.createLookupIcon(ctx);
     }
 
     private createTitleShape(ctx: RenderContext) {
@@ -93,7 +92,7 @@ export class ApiApplication implements ShapePlugin {
             p.setStrokeColor('0xFFFFFF');
         });
         ctx.renderer2.text(ctx.shape, bounds.deflate(4), p => {
-            p.setForegroundColor('0x8fbbfb');
+            p.setForegroundColor('0x85bbf0');
             p.setText(ctx.shape.getAppearance(DefaultAppearance.TECH)
                 ? '[' + ctx.shape.getAppearance(DefaultAppearance.TECH) + ']'
                 : '');
@@ -116,13 +115,6 @@ export class ApiApplication implements ShapePlugin {
             p.setText(ctx.shape.getAppearance(DefaultAppearance.DESC));
             p.setFontSize(12);
         }, true);
-    }
-
-    private createLookupIcon(ctx: RenderContext) {
-        const w = 25;
-        const h = 25;
-        const bounds = new Rect2(ctx.rect.width / 2 - w/2, 3 * ctx.rect.height / 4, w, h);
-        ctx.renderer2.raster("zoom-white.png", bounds, true);
     }
 
     private createShape(ctx: RenderContext) {

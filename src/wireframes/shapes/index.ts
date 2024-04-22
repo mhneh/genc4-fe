@@ -46,6 +46,9 @@ import {
     Shape,
     Slider, Tablet, Tabs, TextArea, TextInput, Toggle, VerticalLine, VerticalScrollbar
 } from './dependencies';
+import {ExternalSystem} from "@app/wireframes/shapes/contexts/external-system.ts";
+import {EmptyComponent} from "@app/wireframes/shapes/components/empty-component.ts";
+import {EmptyContainer} from "@app/wireframes/shapes/containers/empty-container.ts";
 
 export function registerShapeRenderers() {
     RendererService.addRenderer(new AbstractControl(new Browser()));
@@ -81,9 +84,13 @@ export function registerShapeRenderers() {
     RendererService.addRenderer(new AbstractControl(new VerticalScrollbar()));
     // RendererService.addRenderer(new AbstractControl(new Window()));
     // RendererService.addRenderer(new AbstractControl(new Comment()));
+    RendererService.addRenderer(new AbstractControl(new Icon()));
+    RendererService.addRenderer(new AbstractControl(new Raster()));
 }
 
 export function registerComponents() {
+    // Components
+    RendererService.addRenderer(new C4Control(new EmptyComponent()));
     RendererService.addRenderer(new C4Control(new Register()));
     RendererService.addRenderer(new C4Control(new SignIn()));
     RendererService.addRenderer(new C4Control(new Post()));
@@ -91,10 +98,14 @@ export function registerComponents() {
     RendererService.addRenderer(new C4Control(new Security()));
     RendererService.addRenderer(new C4Control(new EmailComponent()));
 
+    // Containers
+    RendererService.addRenderer(new C4Control(new EmptyContainer()));
     RendererService.addRenderer(new C4Control(new Database()));
     RendererService.addRenderer(new C4Control(new SinglePageApplication()));
     RendererService.addRenderer(new C4Control(new ApiApplication()));
 
+    // Contexts
+    RendererService.addRenderer(new C4Control(new ExternalSystem()));
     RendererService.addRenderer(new C4Control(new EmailSystem()));
     RendererService.addRenderer(new C4Control(new PersonalOwner()));
 

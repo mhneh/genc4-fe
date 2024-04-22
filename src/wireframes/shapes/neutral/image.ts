@@ -9,6 +9,7 @@ import { ConfigurableFactory, DefaultAppearance } from '@app/wireframes/interfac
 import { CommonTheme } from './_theme';
 import {RenderContext} from "@app/wireframes/interface/renderer/render-context.ts";
 import {ShapePlugin} from "@app/wireframes/interface/shape/shape-plugin.ts";
+import {AssetType} from "@app/wireframes/interface/common/asset-type.ts";
 
 const IMAGE_URL = 'URL';
 const IMAGE_ASPECT_RATIO = 'ASPECT_RATIO';
@@ -19,12 +20,12 @@ const DEFAULT_APPEARANCE = {
     [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
     [DefaultAppearance.TEXT_DISABLED]: true,
     [IMAGE_ASPECT_RATIO]: true,
-    [IMAGE_URL]: '',
+    [IMAGE_URL]: 'other.png',
 };
 
 export class Image implements ShapePlugin {
-    type(): string {
-        return "";
+    type(): AssetType {
+        return "Shape";
     }
     public identifier(): string {
         return 'Image';

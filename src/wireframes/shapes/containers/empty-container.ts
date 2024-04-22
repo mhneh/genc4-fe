@@ -19,17 +19,17 @@ const DEFAULT_APPEARANCE = {
     [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
     [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
     [DefaultAppearance.TEXT_ALIGNMENT]: 'center',
-    [DefaultAppearance.TEXT]: 'ApiApplication',
-    [DefaultAppearance.TITLE]: 'API Application',
-    [DefaultAppearance.DESC]: 'Allows user view, create and manage his created posts.',
+    [DefaultAppearance.TEXT]: 'Other Container',
+    [DefaultAppearance.TITLE]: 'Empty Container',
+    [DefaultAppearance.DESC]: '',
     [DefaultAppearance.TECH]: 'Software System',
-    [SHAPE]: 'BROWSER',
+    [SHAPE]: 'Rectangle',
 };
 
-export class ApiApplication implements ShapePlugin {
+export class EmptyContainer implements ShapePlugin {
 
     public identifier(): string {
-        return 'ApiApplication';
+        return 'EmptyContainer';
     }
 
     public defaultAppearance() {
@@ -119,9 +119,7 @@ export class ApiApplication implements ShapePlugin {
     }
 
     private createLookupIcon(ctx: RenderContext) {
-        const w = 25;
-        const h = 25;
-        const bounds = new Rect2(ctx.rect.width / 2 - w/2, 3 * ctx.rect.height / 4, w, h);
+        const bounds = new Rect2(ctx.rect.width / 2 - 25/2, 3 * ctx.rect.height / 4, 25, 25);
         ctx.renderer2.raster("zoom-white.png", bounds, true);
     }
 

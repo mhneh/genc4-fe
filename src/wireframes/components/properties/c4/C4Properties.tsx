@@ -4,6 +4,9 @@ import {texts} from "@app/texts";
 import {Text} from "@app/wireframes/components/properties/common/Text.tsx";
 import {DefaultAppearance} from "@app/wireframes/interface";
 import {useAppearance} from "@app/wireframes/components/actions";
+import { Input } from 'antd';
+
+const {TextArea} = Input;
 
 export const C4Properties = () => {
     const selectedDiagramId = useStore(getDiagramId);
@@ -34,10 +37,11 @@ export const C4Properties = () => {
                     <Row className='property'>
                         <Col span={12} className='property-label'>{texts.common.desc}</Col>
                         <Col span={12} className='property-value'>
-                            <Text
-                                text={desc.value}
-                                selection={selectionSet.selectedItems}
-                                onTextChange={setDesc}
+                            <TextArea
+                                value={desc.value}
+                                onChange={e => setDesc(e.target.value)}
+                                placeholder={"Description"}
+                                autoSize={{ minRows: 3, maxRows: 5 }}
                             />
                         </Col>
                     </Row>

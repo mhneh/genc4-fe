@@ -180,30 +180,53 @@ export const RenderLayer = memo((props: RenderLayerProps) => {
 
     useEffect(() => {
         return preview?.subscribe(event => {
+
             if (event.type === 'Update') {
-                if (relationships) {
-                    for (const relationship of Object.values(relationships)) {
-                        relationshipRefsById.current[relationship.id]?.setPreview(relationship);
+                if (orderedRelationships) {
+                    for (const shape of Object.values(event.items)) {
+                        if (!shape) {
+                            continue;
+                        }
+
+                        const affectedRelationships = findRelationship(orderedRelationships, shape.id);
+                        if (!affectedRelationships || affectedRelationships.length == 0) {
+                            continue;
+                        }
+                        for (const relationship of affectedRelationships) {
+                            relationshipRefsById.current[relationship.id]?.setPreview(relationship, shape);
+                        }
+
                     }
                 }
+
                 for (const item of Object.values(event.items)) {
                     shapeRefsById.current[item.id]?.setPreview(item);
                 }
 
             } else {
                 for (const reference of Object.values(relationshipRefsById.current)) {
-                    reference.setPreview(null);
+                    reference.setPreview(null, null);
                 }
                 for (const reference of Object.values(shapeRefsById.current)) {
                     reference.setPreview(null);
                 }
             }
         });
-    }, [preview]);
+    }, [preview, diagram]);
 
     return null;
 });
 
 function findDiagramItem(orderedShapes: DiagramItem[], itemId: string): DiagramItem | undefined {
     return orderedShapes.find(shape => shape.id == itemId);
+}
+
+function findRelationship(relationships: Relationship[], shapeId: string) {
+    return relationships.filter(relationship => {
+        if (relationship.source == shapeId) {
+            return true;
+        }
+        return relationship.target == shapeId;
+
+    });
 }

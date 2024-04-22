@@ -8,8 +8,17 @@
 /* eslint-disable @typescript-eslint/no-loop-func */
 
 import {ActionReducerMapBuilder, createAction} from '@reduxjs/toolkit';
-import {MathHelper, Rotation, Vec2} from '@app/core/utils';
-import {Diagram, DiagramItem, DiagramItemSet, EditorState, RendererService, Serializer, Transform} from '../../model/internal.ts';
+import {ImmutableMap, MathHelper, Rotation, Vec2} from '@app/core/utils';
+import {
+    DescProps,
+    Diagram,
+    DiagramItem,
+    DiagramItemSet,
+    EditorState,
+    RendererService,
+    Serializer,
+    Transform
+} from '../../model/internal.ts';
 import {createDiagramAction, createItemsAction, DiagramRef, ItemsRef} from '../../model/actions/utils.ts';
 import {Appearance} from "@app/wireframes/interface/common/appearance.ts";
 import {AssetType} from "@app/wireframes/interface/common/asset-type.ts";
@@ -64,8 +73,40 @@ export const renameItems =
 
 export const pasteItems =
     createAction('items/paste', (diagram: DiagramRef, json: string, offset = 0) => {
-        return {payload: createDiagramAction(diagram, {json: Serializer.tryGenerateNewIds(json), offset})};
+        return {
+            payload: createDiagramAction(diagram, {
+                json: Serializer.tryGenerateNewIds(json),
+                offset
+            })
+        };
     });
+
+export const addDesc = createAction('desc/add',
+    (diagram: DiagramRef, items: ItemsRef, desc?: string, id?: string) => {
+        return {
+            payload: createItemsAction(diagram, items, {
+                desc: desc,
+                id: id,
+            })
+        }
+    })
+
+export const removeDesc = createAction('desc/remove',
+    (diagram: DiagramRef, items: ItemsRef, id: string) => {
+        return {
+            payload: createItemsAction(diagram, items, {
+                id: id,
+            })
+        }
+    })
+export const updateDescs = createAction('desc/updateAll',
+    (diagram: DiagramRef, items: ItemsRef, descs: DescProps[]) => {
+        return {
+            payload: createItemsAction(diagram, items, {
+                descs: descs,
+            })
+        }
+    })
 
 export function buildItems(builder: ActionReducerMapBuilder<EditorState>) {
     return builder
@@ -81,7 +122,18 @@ export function buildItems(builder: ActionReducerMapBuilder<EditorState>) {
 
             return state.updateDiagram(diagramId, diagram => {
                 const set = DiagramItemSet.createFromDiagram(itemIds, diagram);
-
+                let removedRelationshipIds: string[] = [];
+                for (const item of set.nested.values()) {
+                    const relation = diagram.relationships.values
+                        .filter(r => r.source == item.id || r.target == item.id);
+                    if (!relation) {
+                        continue;
+                    }
+                    removedRelationshipIds = [...removedRelationshipIds, ...relation.map(r => r.id)];
+                }
+                for (const relationshipId of removedRelationshipIds) {
+                    diagram = diagram.removeRelationship(relationshipId);
+                }
                 return diagram.removeItems(set!);
             });
         })
@@ -179,6 +231,46 @@ export function buildItems(builder: ActionReducerMapBuilder<EditorState>) {
                 const shape = DiagramItem.createShape(initialProps);
 
                 return diagram.addShape(shape).selectItems([id]);
+            });
+        })
+        .addCase(addDesc, (state, action) => {
+            const {
+                diagramId,
+                itemIds,
+                desc,
+                id,
+            } = action.payload;
+            return state.updateDiagram(diagramId, diagram => {
+                return diagram.updateItems(itemIds, item => {
+                    const descId = id ? id : MathHelper.nextId();
+                    return item.addDescription(descId, desc);
+                })
+            });
+        })
+        .addCase(removeDesc, (state, action) => {
+            const {
+                diagramId,
+                itemIds,
+                id,
+            } = action.payload;
+            return state.updateDiagram(diagramId, diagram => {
+                return diagram.updateItems(itemIds, item => {
+                    return item.removeDescription(id);
+                })
+            });
+        })
+        .addCase(updateDescs, (state, action) => {
+            const {
+                diagramId,
+                itemIds,
+                descs,
+            } = action.payload;
+            return state.updateDiagram(diagramId, diagram => {
+                return diagram.updateItems(itemIds, item => {
+                    const itemsMap = descs.reduce((a, v) => ({ ...a, [v.id]: v}), {})
+                    const descsMap: ImmutableMap<DescProps> = ImmutableMap.of(itemsMap);
+                    return item.updateDescriptions(descsMap);
+                })
             });
         });
 }

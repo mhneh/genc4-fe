@@ -31,6 +31,8 @@ export interface TextAdornerProps {
     onChangeItemsAppearance: (diagram: Diagram, visuals: DiagramItem[], key: string, val: any) => any;
 
     onLinkContainer: (selectedId: string, title?: string) => void;
+
+    toggleDescModal: () => void;
 }
 
 export class TextAdorner extends React.PureComponent<TextAdornerProps> implements InteractionHandler {
@@ -73,33 +75,35 @@ export class TextAdorner extends React.PureComponent<TextAdornerProps> implement
                 return;
             }
 
-            if (event.shape.textDisabled) {
-                return;
-            }
-
-            const zoom = this.props.zoom;
-
-            const transform = event.shape.transform;
-
-            const x = sizeInPx(zoom * (transform.position.x - 0.5 * transform.size.x) - 2);
-            const y = sizeInPx(zoom * (transform.position.y - 0.5 * transform.size.y) - 2);
-
-            const w = sizeInPx(zoom * (Math.max(transform.size.x, MIN_WIDTH)) + 4);
-            const h = sizeInPx(zoom * (Math.max(transform.size.y, MIN_HEIGHT)) + 4);
-
-            this.textareaElement.value = event.shape.text;
-            this.textareaElement.style.top = y;
-            this.textareaElement.style.left = x;
-            this.textareaElement.style.width = w;
-            this.textareaElement.style.height = h;
-            this.textareaElement.style.resize = 'none';
-            this.textareaElement.style.display = 'block';
-            this.textareaElement.style.position = 'absolute';
-            this.textareaElement.focus();
+            // if (event.shape.textDisabled) {
+            //     return;
+            // }
+            //
+            // const zoom = this.props.zoom;
+            //
+            // const transform = event.shape.transform;
+            //
+            // const x = sizeInPx(zoom * (transform.position.x - 0.5 * transform.size.x) - 2);
+            // const y = sizeInPx(zoom * (transform.position.y - 0.5 * transform.size.y) - 2);
+            //
+            // const w = sizeInPx(zoom * (Math.max(transform.size.x, MIN_WIDTH)) + 4);
+            // const h = sizeInPx(zoom * (Math.max(transform.size.y, MIN_HEIGHT)) + 4);
+            //
+            // this.textareaElement.value = event.shape.text;
+            // this.textareaElement.style.top = y;
+            // this.textareaElement.style.left = x;
+            // this.textareaElement.style.width = w;
+            // this.textareaElement.style.height = h;
+            // this.textareaElement.style.resize = 'none';
+            // this.textareaElement.style.display = 'block';
+            // this.textareaElement.style.position = 'absolute';
+            // this.textareaElement.focus();
 
             this.props.interactionService.hideAdorners();
 
             this.selectedShape = event.shape;
+
+            this.props.toggleDescModal();
         }
     }
 

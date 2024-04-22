@@ -15,7 +15,7 @@ import {
     ArrangeMenu,
     ClipboardMenu,
     EditorView,
-    HistoryMenu,
+    HistoryMenu, Icons,
     LoadingMenu,
     LockMenu,
     Pages,
@@ -42,6 +42,7 @@ import {Components} from "@app/wireframes/components/assets/components/Component
 import {Contexts} from "@app/wireframes/components/assets/contexts/Contexts.tsx";
 import {Containers} from "@app/wireframes/components/assets/containers/Containers.tsx";
 import {SelectSystem} from "@app/wireframes/components/modals/SelectSystem.tsx";
+import {DescriptionAppender} from "@app/wireframes/components/modals/DescriptionAppender.tsx";
 
 const SidebarTabs: TabsProps['items'] = [
     {
@@ -69,11 +70,11 @@ const SidebarTabs: TabsProps['items'] = [
         label: texts.common.shapes,
         children: <Shapes/>,
     },
-    // {
-    //     key: 'icons',
-    //     label: texts.common.icons,
-    //     children: <Icons/>,
-    // },
+    {
+        key: 'icons',
+        label: texts.common.icons,
+        children: <Icons/>,
+    },
     // {
     //     key: 'outline',
     //     label: texts.common.outline,
@@ -222,6 +223,8 @@ export const App = () => {
 
                 <CustomDragLayer/>
             </ClipboardContainer>
+
+            <DescriptionAppender />
         </OverlayContainer>
     );
 };

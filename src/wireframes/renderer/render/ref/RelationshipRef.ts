@@ -36,23 +36,35 @@ export class RelationshipRef {
         return result;
     }
 
-    public setPreview(relationship: Relationship | null) {
-        if (this.previewShape !== relationship) {
+    public setPreview(relationship: Relationship | null, change: DiagramItem | null) {
+        if (!this.renderedElement) {
+            return;
+        }
+        if (this.previewShape !== relationship || change != null) {
             const shapeToRender = relationship || this.currentShape;
 
             if (!shapeToRender) {
                 return;
             }
 
-            this.renderedElement = new svg.Line();
+            if (!change) {
+                return;
+            }
+            if (change.id == this.form.source.id) {
+                this.form.source = change;
+            }
+
+            if (change.id == this.form.target.id) {
+                this.form.target = change;
+            }
             const {
                 source,
-                target,
+                target
             } = this.form;
             this.renderedElement.plot(
                 source.transform.position.x, source.transform.position.y,
-                target.transform.position.x, target.transform.position.y)
-                .stroke({width: 3, color: '#000'});
+                target.transform.position.x, target.transform.position.y
+            ).stroke({width: 3, color: '#000'});
 
             this.previewShape = relationship;
         }
@@ -73,8 +85,8 @@ export class RelationshipRef {
         } = this.form;
         this.renderedElement.plot(
             source.transform.position.x, source.transform.position.y,
-            target.transform.position.x, target.transform.position.y)
-            .stroke({width: 3, color: '#000'});
+            target.transform.position.x, target.transform.position.y
+        ).stroke({width: 3, color: '#000'});
 
         // Always update shape to keep a reference to the actual object, not the old object.
         (this.renderedElement!.node as any)['shape'] = relationship;

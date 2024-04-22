@@ -27,7 +27,7 @@ import {
     ItemsRef,
     RendererService,
     selectDiagram,
-    selectItems,
+    selectItems, selectTab,
     Transform,
     transformItems,
     useStore
@@ -139,6 +139,7 @@ export const EditorViewInner = ({diagram, spacing}: EditorViewProps & { diagram:
         } else {
             dispatch(selectDiagram(child.id))
         }
+        dispatch(selectTab("pages"));
     })
 
     useClipboard({

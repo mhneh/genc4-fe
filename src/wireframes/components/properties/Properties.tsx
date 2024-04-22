@@ -78,11 +78,11 @@ const c4Items: CollapseProps['items'] = [
             </>
         ),
     },
-    {
-        key: 'visual',
-        label: texts.common.visual,
-        children: <VisualProperties/>,
-    },
+    // {
+    //     key: 'visual',
+    //     label: texts.common.visual,
+    //     children: <VisualProperties/>,
+    // },
 ];
 
 export const Properties = () => {
@@ -92,7 +92,7 @@ export const Properties = () => {
     const selectedItem = selectionSet.selectedItems.length > 0
         ? selectionSet.selectedItems.at(0)
         : null;
-    if (selectedItem && selectedItem.type === 'Components') {
+    if (selectedItem && ["Contexts", "Containers", "Components"].includes(selectedItem.type)) {
         return <Collapse
             className={(classNames({hidden: !hasSelection}))}
             items={c4Items}

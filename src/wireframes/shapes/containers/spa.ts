@@ -63,6 +63,7 @@ export class SinglePageApplication implements ShapePlugin {
         this.createTechShape(ctx);
         this.createDescShape(ctx);
         // this.createText(ctx);
+        this.createLookupIcon(ctx);
     }
 
     private createTitleShape(ctx: RenderContext) {
@@ -115,6 +116,11 @@ export class SinglePageApplication implements ShapePlugin {
             p.setText(ctx.shape.getAppearance(DefaultAppearance.DESC));
             p.setFontSize(12);
         }, true);
+    }
+
+    private createLookupIcon(ctx: RenderContext) {
+        const bounds = new Rect2(ctx.rect.width / 2 - 25/2, 3 * ctx.rect.height / 4, 25, 25);
+        ctx.renderer2.raster("zoom-white.png", bounds, true);
     }
 
     private createShape(ctx: RenderContext) {

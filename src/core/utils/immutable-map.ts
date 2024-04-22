@@ -5,7 +5,7 @@
  * Copyright (c) Sebastian Stehle. All rights reserved.
 */
 
-import { Types } from './types';
+import {Types} from './types';
 
 type Mutator<V> = {
     remove: (key: string) => void;
@@ -26,7 +26,7 @@ export class ImmutableMap<V> {
         return Array.from(this.items.keys());
     }
 
-    public get values(): ReadonlyArray<V> {
+    public get values(): Array<V> {
         return Array.from(this.items.values());
     }
 
@@ -187,5 +187,15 @@ export class ImmutableMap<V> {
         }
 
         return Types.equalsMap(this.items, other.items);
+    }
+
+    public empty() {
+        this.items.clear();
+        return new ImmutableMap<V>(this.items);
+    }
+
+    public replaceAll(other: ImmutableMap<V>) {
+        this.empty();
+        return ImmutableMap.of(other);
     }
 }

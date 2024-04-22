@@ -10,7 +10,7 @@
 import * as svg from '@svgdotjs/svg.js';
 import {memo, useCallback, useEffect, useRef, useState} from 'react';
 import {Color, Rect2, Subscription, SVGHelper, Vec2} from '@app/core';
-import {Diagram, DiagramItem, DiagramItemSet, Transform} from '@app/wireframes/model';
+import {Diagram, DiagramItem, DiagramItemSet, toggleDescModal, Transform} from '@app/wireframes/model';
 import {useOverlayContext} from '../../contexts/OverlayContext.tsx';
 import {CanvasView} from './CanvasView.tsx';
 import {NavigateAdorner} from '@app/wireframes/renderer/adorner/navigate/NavigateAdorner.tsx';
@@ -23,6 +23,7 @@ import {InteractionOverlays} from '../interaction/interaction-overlays.ts';
 import {InteractionService} from '../interaction/interaction-service.ts';
 import {PreviewEvent} from '../common/preview.ts';
 import './Editor.scss';
+import {useAppDispatch} from "@app/wireframes/redux/store.ts";
 
 export interface EditorProps {
     // The selected diagram.
@@ -77,6 +78,7 @@ export interface EditorProps {
 }
 
 export const Editor = memo((props: EditorProps) => {
+    const dispatch = useAppDispatch();
     const {
         color,
         diagram,
@@ -237,6 +239,7 @@ export const Editor = memo((props: EditorProps) => {
                             selectionSet={selectionSet}
                             zoom={zoom}
                             onLinkContainer={onLinkContainer}
+                            toggleDescModal={() => dispatch(toggleDescModal())}
                         />
                     }
 

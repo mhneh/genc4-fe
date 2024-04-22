@@ -29,6 +29,9 @@ export interface UIState {
 
     // The filter for the diagram.
     diagramsFilter?: string;
+
+    // Description Appender
+    showDescModal?: boolean;
 }
 
 export interface UIStateInStore {
@@ -42,5 +45,6 @@ export const createInitialUIState: () => UIState = () => {
         showLeftSidebar: true,
         showRightSidebar: true,
         selectedColorTab: 'palette',
+        showDescModal: false,
     };
 };

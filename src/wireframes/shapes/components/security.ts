@@ -13,9 +13,9 @@ const SHAPE_TRIANGLE = 'Triangle';
 const SHAPE_RHOMBUS = 'Rhombus';
 
 const DEFAULT_APPEARANCE = {
-    [DefaultAppearance.BACKGROUND_COLOR]: 0x1168bd,
+    [DefaultAppearance.BACKGROUND_COLOR]: 0x85bbf0,
     [DefaultAppearance.FONT_SIZE]: CommonTheme.CONTROL_FONT_SIZE,
-    [DefaultAppearance.FOREGROUND_COLOR]: 0xFFFFFF,
+    [DefaultAppearance.FOREGROUND_COLOR]: 0x000000,
     [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
     [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
     [DefaultAppearance.TEXT_ALIGNMENT]: 'center',

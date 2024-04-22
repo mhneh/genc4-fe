@@ -7,7 +7,7 @@
 
 import {ImmutableList, ImmutableMap, MathHelper, Rotation, Vec2} from '@app/core/utils';
 import {Diagram} from '../diagram/diagram.ts';
-import {DiagramItem} from '../diagram/diagram-item.ts';
+import {DescProps, DiagramItem} from '../diagram/diagram-item.ts';
 import {DiagramItemSet} from '../diagram/diagram-item-set.ts';
 import {EditorState} from '../state/editor-state.ts';
 import {RendererService} from '../renderer/renderer.service.ts';
@@ -117,6 +117,11 @@ function writeDiagramRelationships(source: Relationship) {
     return writeObject1;
 }
 
+function writeDiagramItemDescriptions(source: DescProps) {
+    let writeObject1 = writeObject(source, DIAGRAM_ITEM_DESCRIPTION_SERIALIZERS);
+    return writeObject1;
+}
+
 function writeObject(source: object, serializers: PropertySerializers) {
     const result: Record<string, any> = {};
 
@@ -165,6 +170,15 @@ function readDiagramItem(source: object, type?: any) {
 function readDiagramRelationships(source: object) {
     const raw: any = readObject(source, DIAGRAM_RELATIONSHIP_SERIALIZERS);
     return Relationship.create(raw);
+}
+
+function readDiagramItemDescriptions(source: object) {
+    const raw: any = readObject(source, DIAGRAM_ITEM_DESCRIPTION_SERIALIZERS);
+    return {
+        id: raw.id,
+        description: raw.description,
+        itemId: raw.itemId
+    }
 }
 
 function readObject(source: Record<string, any>, serializers: PropertySerializers) {
@@ -311,7 +325,26 @@ const DIAGRAM_ITEM_SERIALIZERS: PropertySerializers = {
         get: (source: Transform) => source.toJS(),
         set: (source: any) => Transform.fromJS(source),
     },
+    'descriptions': {
+        get: (source: ImmutableMap<DescProps>) => Array.from(source.values, writeDiagramItemDescriptions),
+        set: (source: any[]) => buildObject(source.map(readDiagramItemDescriptions), x => x.id),
+    },
 };
+
+const DIAGRAM_ITEM_DESCRIPTION_SERIALIZERS: PropertySerializers = {
+    'id': {
+        get: (source) => source,
+        set: (source) => source,
+    },
+    'description': {
+        get: (source) => source,
+        set: (source) => source,
+    },
+    'itemId': {
+        get: (source) => source,
+        set: (source) => source,
+    }
+}
 
 function buildObject<V>(source: ReadonlyArray<V | undefined | null>, selector: (source: V) => string) {
     const result: { [key: string]: V } = {};

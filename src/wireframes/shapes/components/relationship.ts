@@ -75,7 +75,6 @@ export class Relationship implements ShapePlugin {
             p.setForegroundColor(ctx.shape);
         });
 
-        console.log(ctx.form)
         ctx.renderer2.drawLine(ctx.form.source.transform.position,
             ctx.form.target.transform.position,
             p => {
