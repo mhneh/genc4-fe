@@ -22,10 +22,9 @@ import {
     ToggleConfigurable
 } from '@app/wireframes/model';
 import {SVGRenderer2} from '../../../shapes/utils/svg/svg-renderer2.ts';
-import {TextSizeConstraint} from './text-size-contraint.ts';
+import {TextSizeConstraint} from './TextSizeContraint.ts';
 import {RenderContext} from "@app/wireframes/interface/renderer/render-context.ts";
 import {ShapePlugin} from "@app/wireframes/interface/shape/shape-plugin.ts";
-import {Relationship} from "@app/wireframes/model/relationship/relationship.ts";
 
 export class DefaultConstraintFactory implements ConstraintFactory {
     public static readonly INSTANCE = new DefaultConstraintFactory();
@@ -37,7 +36,7 @@ export class DefaultConstraintFactory implements ConstraintFactory {
     public minSize(): any {
         return new MinSizeConstraint();
     }
-    
+
     public textHeight(padding: number): any {
         return new TextHeightConstraint(padding);
     }
@@ -69,15 +68,15 @@ export class DefaultConfigurableFactory implements ConfigurableFactory {
     public text(name: string, label: string) {
         return new TextConfigurable(name, label);
     }
-    
+
     public toggle(name: string, label: string) {
         return new ToggleConfigurable(name, label);
     }
 }
 
-const GLOBAL_CONTEXT: Writeable<RenderContext> = { renderer2: SVGRenderer2.INSTANCE } as any;
+const GLOBAL_CONTEXT: Writeable<RenderContext> = {renderer2: SVGRenderer2.INSTANCE} as any;
 
-export class AbstractControl implements Renderer {
+export class C4Control implements Renderer {
     constructor(
         private readonly shapePlugin: ShapePlugin,
     ) {
@@ -108,10 +107,14 @@ export class AbstractControl implements Renderer {
         const size = this.shapePlugin.defaultSize();
         const type = this.shapePlugin.type();
 
-        return { renderer, size, appearance, configurables, constraint, type };
+        return {renderer, size, appearance, configurables, constraint, type};
     }
 
-    public render(shape: DiagramItem, existing: svg.G | undefined, options?: { debug?: boolean; noOpacity?: boolean; noTransform?: boolean }): any {
+    public render(shape: DiagramItem, existing: svg.G | undefined, options?: {
+        debug?: boolean;
+        noOpacity?: boolean;
+        noTransform?: boolean
+    }): any {
         const localRect = new Rect2(0, 0, shape.transform.size.x, shape.transform.size.y);
 
         // Reuse a global context to make the code easier.
@@ -126,7 +129,7 @@ export class AbstractControl implements Renderer {
             existing.add(new svg.Rect().fill('#ffffff').opacity(0.001));
 
             if (options?.debug) {
-                existing.rect().fill('#ffffff').stroke({ color: '#ff0000' });
+                existing.rect().fill('#ffffff').stroke({color: '#ff0000'});
             }
         }
 
@@ -176,9 +179,6 @@ export class AbstractControl implements Renderer {
         SVGRenderer2.INSTANCE.setContainer(container);
 
         return existing;
-    }
-
-    renderRelationship(relationship: Relationship, existing: any, form: { source: DiagramItem; target: DiagramItem }): any {
     }
 }
 

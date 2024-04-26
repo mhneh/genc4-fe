@@ -7,7 +7,7 @@
 
 import {ICONS_FONT_AWESOME} from '../../../icons/font_awesome_unified.ts';
 import {ICONS_MATERIAL_DESIGN} from '../../../icons/material_icons_unified.ts';
-import {RendererService} from '../renderer/renderer.service.ts';
+import {RendererService} from '../renderer/RendererService.ts';
 import {ShapePlugin} from "@app/wireframes/interface/shape/shape-plugin.ts";
 
 export interface AssetInfo {

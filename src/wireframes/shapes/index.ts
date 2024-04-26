@@ -5,9 +5,9 @@
  * Copyright (c) Sebastian Stehle. All rights reserved.
 */
 
-import {RendererService} from '@app/wireframes/model/renderer/renderer.service.ts';
+import {RendererService} from '@app/wireframes/model/renderer/RendererService.ts';
 import {Register} from "@app/wireframes/shapes/components/register.ts";
-import {C4Control} from "@app/wireframes/model/renderer/impl/c4-control.ts";
+import {C4Control} from "@app/wireframes/model/renderer/impl/C4Control.ts";
 import {SignIn} from "@app/wireframes/shapes/components/signin.ts";
 import {Post} from "@app/wireframes/shapes/components/post.ts";
 import {ResetPassword} from "@app/wireframes/shapes/components/reset-password.ts";
@@ -20,7 +20,7 @@ import {EmailSystem} from "@app/wireframes/shapes/contexts/email-system.ts";
 import {PersonalOwner} from "@app/wireframes/shapes/contexts/person.ts";
 import {RelationshipControl} from "@app/wireframes/model/renderer/impl/RelationshipControl.ts";
 import {Relationship} from "@app/wireframes/shapes/components/relationship.ts";
-import { AbstractControl } from '../model/renderer/impl/abstract-control';
+import { AbstractControl } from '../model/renderer/impl/AbstractControl.ts';
 import {
     Browser,
     Button,

@@ -178,19 +178,24 @@ export const App = () => {
                         </div>
                     </Layout.Header>
                     <Layout className='content'>
-                        <Layout.Sider width={320} className='sidebar-left'
+                        <Layout.Sider width={300} className='sidebar-left'
                                       collapsed={!showLeftSidebar}
                                       collapsedWidth={0}>
 
-                            <Tabs type='card' activeKey={selectedTab} items={SidebarTabs} onChange={doSelectTab}
-                                  destroyInactiveTabPane={true}/>
+                            <Tabs
+                                type='card'
+                                activeKey={selectedTab}
+                                defaultActiveKey={"pages"}
+                                items={SidebarTabs}
+                                onChange={doSelectTab}
+                                destroyInactiveTabPane={true}/>
                         </Layout.Sider>
 
                         <Layout.Content className='editor-content'>
                             <EditorView spacing={40}/>
                         </Layout.Content>
 
-                        <Layout.Sider width={330} className='sidebar-right'
+                        <Layout.Sider width={400} className='sidebar-right'
                                       collapsed={!showRightSidebar}
                                       collapsedWidth={0}>
 

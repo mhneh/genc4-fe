@@ -138,7 +138,8 @@ export class SelectionAdorner extends React.Component<SelectionAdornerProps> imp
     }
 
     private selectMultiple(rect: Rect2, diagram: Diagram): ReadonlyArray<string> {
-        const selectedItems = diagram.rootItems.filter(i => rect.contains(i.bounds(diagram).aabb));
+        const selectedItems = diagram.rootItems
+            .filter(i => rect.contains(i.bounds(diagram).aabb));
 
         return calculateSelection(selectedItems, diagram, false);
     }

@@ -10,7 +10,7 @@ import {Diagram} from '../diagram/diagram.ts';
 import {DescProps, DiagramItem} from '../diagram/diagram-item.ts';
 import {DiagramItemSet} from '../diagram/diagram-item-set.ts';
 import {EditorState} from '../state/editor-state.ts';
-import {RendererService} from '../renderer/renderer.service.ts';
+import {RendererService} from '../renderer/RendererService.ts';
 import {Transform} from '../transform/transform.ts';
 import {Relationship} from "@app/wireframes/model/relationship/relationship.ts";
 

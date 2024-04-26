@@ -5,7 +5,7 @@
  * Copyright (c) Sebastian Stehle. All rights reserved.
 */
 
-import { Renderer } from './renderer.ts';
+import { Renderer } from './Renderer.ts';
 import {CreatedShape} from "@app/wireframes/interface/shape/created-shape.ts";
 import {ShapeSource} from "@app/wireframes/interface/shape/source/shape-source.ts";
 

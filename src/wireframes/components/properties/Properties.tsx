@@ -10,7 +10,6 @@ import {CollapseProps} from 'antd/lib';
 import classNames from 'classnames';
 import {texts} from '@app/texts';
 import {getDiagram, getSelection, useStore} from '@app/wireframes/model';
-import {Colors} from './colors/Colors.tsx';
 import {CustomProperties} from './custom/CustomProperties.tsx';
 import {DiagramProperties} from './diagram/DiagramProperties.tsx';
 import {LayoutProperties} from './layout/LayoutProperties.tsx';
@@ -54,11 +53,11 @@ const diagramItems: CollapseProps['items'] = [
         label: texts.common.diagram,
         children: <DiagramProperties/>,
     },
-    {
-        key: 'colors',
-        label: texts.common.colors,
-        children: <Colors/>,
-    },
+    // {
+    //     key: 'colors',
+    //     label: texts.common.colors,
+    //     children: <Colors/>,
+    // },
 ];
 
 const c4Items: CollapseProps['items'] = [

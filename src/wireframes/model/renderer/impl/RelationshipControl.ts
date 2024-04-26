@@ -22,7 +22,7 @@ import {
     ToggleConfigurable
 } from '@app/wireframes/model';
 import {SVGRenderer2} from '../../../shapes/utils/svg/svg-renderer2.ts';
-import {TextSizeConstraint} from './text-size-contraint.ts';
+import {TextSizeConstraint} from './TextSizeContraint.ts';
 import {RenderContext} from "@app/wireframes/interface/renderer/render-context.ts";
 import {ShapePlugin} from "@app/wireframes/interface/shape/shape-plugin.ts";
 import {Relationship} from "@app/wireframes/model/relationship/relationship.ts";
@@ -185,7 +185,6 @@ export class RelationshipControl implements Renderer {
         existing: svg.G | undefined,
         form: {source: DiagramItem, target: DiagramItem}
     ): any {
-        const first = form.source;
         const second = form.target;
         const localRect = new Rect2(
             0, 0,
