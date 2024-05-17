@@ -14,7 +14,7 @@ import {
     loadDiagramFromFile,
     newDiagram,
     saveDiagramToFile,
-    saveDiagramToServer,
+    saveDiagramToServer, showToast, updateLoadingScreen,
     useStore
 } from '@app/wireframes/model';
 import {UIAction} from './shared';
@@ -53,10 +53,34 @@ export function useLoading() {
 
     const triggerGenCode = useEventCallback(async () => {
         if (!tokenToWrite) {
-            console.log("cc du ma may, khong gen code duoc.");
+            dispatch(showToast("Please save your workspace first!", 'error'));
             return;
         }
-        genCodeDiagram(tokenToWrite);
+        let filename: string;
+        dispatch(updateLoadingScreen(true));
+        dispatch(showToast(texts.common.loadingTriggerGenCode));
+        genCodeDiagram(tokenToWrite).then(response => {
+            const header = response.headers.get('Content-Disposition');
+            const parts = header!.split(';');
+            filename = parts[1].split('=')[1];
+            return response.blob();
+        })
+            .then(blob => {
+                var url = window.URL.createObjectURL(blob);
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a); // append the element to the dom
+                a.click();
+                a.remove(); // afterwards, remove the element
+                dispatch(updateLoadingScreen(false));
+                dispatch(showToast("Gen code successfully."));
+            })
+            .catch(error => {
+                dispatch(updateLoadingScreen(false));
+                console.error(error);
+                throw Error('Failed to trigger gen code.');
+            });
     })
 
     const newDiagramAction: UIAction = React.useMemo(() => ({

@@ -58,6 +58,7 @@ export const texts = {
         loadingDiagram: 'Loading diagram...',
         loadingDiagramDone: 'Loading diagram completed successfully.',
         loadingDiagramFailed: 'Loading diagram failed with internal error.',
+        loadingTriggerGenCode: 'Please wait for gen code ...',
         lock: 'Lock',
         lockTooltip: 'Lock or unlock item',
         masterPage: 'Master Page',

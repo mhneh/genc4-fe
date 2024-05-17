@@ -22,7 +22,6 @@ import {
 import {getDiagram, postDiagram, putDiagram} from '../../api/api.ts';
 import {addDiagram, selectDiagram} from '@app/wireframes/redux/reducers/diagrams.ts';
 import {selectItems} from '@app/wireframes/redux/reducers/items.ts';
-import {migrateOldAction} from '../../model/actions/obsolete.ts';
 import {showToast} from '@app/wireframes/redux/reducers/ui.ts';
 
 export const newDiagram =
@@ -61,6 +60,14 @@ export const saveDiagramToFile =
 
         saveAs(bodyBlob, 'diagram.json');
     });
+
+export const updateLoadingScreen = createAction('screen/loading', (loading: boolean) => {
+    return {
+        payload: {
+            loading: loading
+        }
+    }
+})
 
 export const saveDiagramToServer =
     createAsyncThunk('diagram/save/server', async (args: { navigate?: boolean; operationId?: string }, thunkAPI) => {
@@ -170,6 +177,12 @@ export function loading(initialState: LoadingState) {
             state.tokenToRead = tokenToRead;
             state.tokenToWrite = tokenToWrite;
             state.recentDiagrams[tokenToRead] = {date: new Date().getTime(), tokenToWrite};
+        })
+        .addCase(updateLoadingScreen, (state, action) => {
+            const {
+                loading: loading
+            } = action.payload;
+            state.isLoading = loading;
         }));
 }
 
@@ -224,7 +237,6 @@ export function rootLoading(undoableReducer: Reducer<UndoableState<EditorState>>
 function getSaveState(state: EditorStateInStore) {
     const initial = Serializer.serializeEditor(state.editor.firstState);
     const present = Serializer.serializeEditor(state.editor.present);
-    console.log(present)
 
     const actions = state.editor.actions.slice(1).filter(handleAction);
 
