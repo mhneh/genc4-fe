@@ -1,3 +1,4 @@
+import { UpdateScreen } from "./update";
 import { ShapePlugin } from "@app/wireframes/interface/shape/shape-plugin.ts";
 import {
   ConfigurableFactory,
@@ -17,22 +18,23 @@ const SHAPE_TRIANGLE = "Triangle";
 const SHAPE_RHOMBUS = "Rhombus";
 
 const DEFAULT_APPEARANCE = {
-  [DefaultAppearance.BACKGROUND_COLOR]: 0x85bbf0,
+  [DefaultAppearance.BACKGROUND_COLOR]: 0xbbdbfc,
   [DefaultAppearance.FONT_SIZE]: CommonTheme.CONTROL_FONT_SIZE,
-  [DefaultAppearance.FOREGROUND_COLOR]: 0x000000,
+  [DefaultAppearance.FOREGROUND_COLOR]: 0xccc,
   [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
-  [DefaultAppearance.TEXT]: "RegisterController",
-  [DefaultAppearance.TITLE]: "RegisterController",
-  [DefaultAppearance.DESC]: "Component for register new user.",
-  [DefaultAppearance.TECH]: "java",
-  [SHAPE]: SHAPE_RECTANGLE,
+  [DefaultAppearance.TEXT]: "Delete Screen",
+  [DefaultAppearance.TITLE]: "Delete Screen",
+  [DefaultAppearance.DESC]:
+    "This screen is used to delete somthing in its container",
+  [DefaultAppearance.TECH]: "Delete Screen",
+  [SHAPE]: "Rectangle",
 };
 
-export class Register implements ShapePlugin {
+export class DeleteScreen implements ShapePlugin {
   public identifier(): string {
-    return "Register";
+    return "DeleteScreen";
   }
 
   public defaultAppearance() {
@@ -56,11 +58,7 @@ export class Register implements ShapePlugin {
   }
 
   type(): AssetType {
-    return "Components";
-  }
-
-  isOpen(): boolean {
-    return true;
+    return "Screens";
   }
 
   public render(ctx: RenderContext) {
@@ -102,7 +100,7 @@ export class Register implements ShapePlugin {
       ctx.shape,
       bounds.deflate(4),
       (p) => {
-        p.setForegroundColor("0x85bbf0");
+        p.setForegroundColor("0x8fbbfb");
         p.setText(
           ctx.shape.getAppearance(DefaultAppearance.TECH)
             ? "[" + ctx.shape.getAppearance(DefaultAppearance.TECH) + "]"

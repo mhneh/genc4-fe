@@ -21,7 +21,7 @@ export default defineConfig({
         (process.env.NODE_ENV === 'production' ?
             [
                 ViteFaviconsPlugin({
-                    logo: './public/logo-square.svg',
+                    logo: './public/c4-logo.png',
                     favicons: {
                         appName: 'mydraft',
                         appDescription: 'Open Source Wireframing Tool',
