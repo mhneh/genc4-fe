@@ -49,13 +49,14 @@ import { Containers } from "@app/wireframes/components/assets/containers/Contain
 import { SelectSystem } from "@app/wireframes/components/modals/SelectSystem.tsx";
 import { DescriptionAppender } from "@app/wireframes/components/modals/DescriptionAppender.tsx";
 import { Screens } from "./wireframes/components/assets/details/details.tsx";
+import {RelationshipCreator} from "@app/wireframes/components/modals/RelationshipCreator.tsx";
 
 const SidebarTabs: TabsProps["items"] = [
-  //   {
-  //     key: "Pages",
-  //     label: texts.common.level,
-  //     children: <Pages />,
-  //   },
+    {
+      key: "Pages",
+      label: texts.common.level,
+      children: <Pages />,
+    },
   {
     key: "Contexts",
     label: texts.common.contexts,
@@ -277,6 +278,7 @@ export const App = () => {
       </ClipboardContainer>
 
       <DescriptionAppender />
+      <RelationshipCreator/>
     </OverlayContainer>
   );
 };

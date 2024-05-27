@@ -63,6 +63,8 @@ export const getSystem = (state: EditorStateInStore) =>
   state.editor.present.system;
 export const getShowDescModal = (state: UIStateInStore) =>
   state.ui.showDescModal;
+export const getShowRelationshipModal = (state: UIStateInStore) =>
+    state.ui.showRelationshipModal;
 
 export const getRelationships = createSelector(
   getDiagrams,

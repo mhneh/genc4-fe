@@ -29,6 +29,7 @@ import { SVGRenderer2 } from "../../../shapes/utils/svg/svg-renderer2.ts";
 import { TextSizeConstraint } from "./TextSizeContraint.ts";
 import { RenderContext } from "@app/wireframes/interface/renderer/render-context.ts";
 import { ShapePlugin } from "@app/wireframes/interface/shape/shape-plugin.ts";
+import {Relationship} from "@app/wireframes/model/relationship/relationship.ts";
 
 export class DefaultConstraintFactory implements ConstraintFactory {
   public static readonly INSTANCE = new DefaultConstraintFactory();
@@ -126,7 +127,7 @@ export class C4Control implements Renderer {
     const renderer = this.identifier();
     const size = this.shapePlugin.defaultSize();
     const type = this.shapePlugin.type();
-    const isOpen = this.shapePlugin.isOpen();
+    const isOpen = this.shapePlugin.isOpen;
 
     return {
       renderer,
@@ -217,6 +218,14 @@ export class C4Control implements Renderer {
     SVGRenderer2.INSTANCE.setContainer(container);
 
     return existing;
+  }
+
+  renderRelationship(relationship: Relationship, existing: any, form: {
+    source: DiagramItem;
+    target: DiagramItem
+  }): any {
+    console.log(relationship, existing, form)
+    return
   }
 }
 

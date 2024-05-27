@@ -1,7 +1,7 @@
 import {MathHelper, Record} from "@app/core";
 
 type UpdatedProps = {
-    title: string;
+    title?: string;
     description: string;
 }
 
@@ -54,8 +54,14 @@ export class Relationship extends Record<Props> {
     }
 
     public update(data: UpdatedProps) {
-        this.set('title', data.title);
-        this.set('description', data.description);
+        let newState = this;
+        if (data.title) {
+            newState = this.set('title', data.title);
+        }
+        if (data.description) {
+            newState = this.set('description', data.description);
+        }
+        return newState;
     }
 
     public static create(setup: InitialRelationshipProps) {

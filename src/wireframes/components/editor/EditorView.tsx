@@ -22,7 +22,7 @@ import {
   addDiagram,
   addShape,
   changeItemsAppearance,
-  Diagram,
+  Diagram, DiagramItem,
   DiagramRef,
   getDiagram,
   getDiagramId,
@@ -138,41 +138,50 @@ export const EditorViewInner = ({
     }
   );
 
-  const doLink = useEventCallback((selectedId: string, title?: string) => {
+  const doLink = useEventCallback((selectedItem: DiagramItem) => {
+    if (!selectedItem) {
+      return;
+    }
+
     const child: Diagram | undefined = diagrams.values.find(
-      (d) => d.parentId == selectedId
+      (d) => d.parentId == selectedItem.id
     );
     if (!child) {
-      dispatch(
-        addDiagram(MathHelper.nextId(), title, selectedId, "Components")
-      );
+      const newDiagramTitle = selectedItem.appearance.get("TITLE");
+      if (selectedItem.type == "Components") {
+        dispatch(
+            addDiagram(MathHelper.nextId(), newDiagramTitle, selectedItem.id, "Screens")
+        );
+        dispatch(selectTab("Screens"));
+      }
     } else {
       dispatch(selectDiagram(child.id));
+      dispatch(selectTab(child?.type as string));
     }
-    if (child?.type) {
-      dispatch(selectTab(child?.type));
-      if (child.type === "Contexts") {
-        const contextDiagram = diagrams.values.find(
-          (item, _) => item.type === "Contexts"
-        );
-        contextDiagram && dispatch(selectDiagram(contextDiagram));
-        return;
-      }
-      if (child.type === "Containers") {
-        const contextDiagram = diagrams.values.find(
-          (item, _) => item.type === "Containers"
-        );
-        contextDiagram && dispatch(selectDiagram(contextDiagram));
-        return;
-      }
-      if (child.type === "Components") {
-        const contextDiagram = diagrams.values.find(
-          (item, _) => item.type === "Components"
-        );
-        contextDiagram && dispatch(selectDiagram(contextDiagram));
-        return;
-      }
-    }
+    // if (child?.type) {
+    //   dispatch(selectTab(child?.type));
+    //   if (child.type === "Contexts") {
+    //     const contextDiagram = diagrams.values.find(
+    //       (item, _) => item.type === "Contexts"
+    //     );
+    //     contextDiagram && dispatch(selectDiagram(contextDiagram));
+    //     return;
+    //   }
+    //   if (child.type === "Containers") {
+    //     const contextDiagram = diagrams.values.find(
+    //       (item, _) => item.type === "Containers"
+    //     );
+    //     contextDiagram && dispatch(selectDiagram(contextDiagram));
+    //     return;
+    //   }
+    //   if (child.type === "Components") {
+    //     const contextDiagram = diagrams.values.find(
+    //       (item, _) => item.type === "Components"
+    //     );
+    //     contextDiagram && dispatch(selectDiagram(contextDiagram));
+    //     return;
+    //   }
+    // }
   });
 
   useClipboard({

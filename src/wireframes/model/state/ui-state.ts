@@ -32,6 +32,8 @@ export interface UIState {
 
     // Description Appender
     showDescModal?: boolean;
+
+    showRelationshipModal?: boolean;
 }
 
 export interface UIStateInStore {
@@ -46,5 +48,6 @@ export const createInitialUIState: () => UIState = () => {
         showRightSidebar: true,
         selectedColorTab: 'palette',
         showDescModal: false,
+        showRelationshipModal: false,
     };
 };

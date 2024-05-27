@@ -36,6 +36,20 @@ export const removeRelationship = createAction(
     }
 )
 
+export const updateRelationship = createAction(
+    'relationship/update',
+    (digramId: string, target?: string, source?: string, description?: string) => {
+        return {
+            payload: {
+                diagramId: digramId,
+                source: source,
+                target: target,
+                description: description
+            }
+        }
+    }
+)
+
 export function buildRelationships(builder: ActionReducerMapBuilder<EditorState>) {
     return builder
         .addCase(addRelationship, (state, action) => {
@@ -73,5 +87,28 @@ export function buildRelationships(builder: ActionReducerMapBuilder<EditorState>
                 }
                 return diagram.removeRelationship(relationship.id);
             });
+        })
+        .addCase(updateRelationship, (state, action) => {
+            const {
+                diagramId: diagramId,
+                source: source,
+                target: target,
+                description: description,
+            } = action.payload;
+            return state.updateDiagram(diagramId, (diagram) => {
+                if (!source && !target) {
+                    return diagram;
+                }
+                const relationship = diagram.findRelationship(source as string,
+                    target as string);
+                if (!relationship) {
+                    return diagram;
+                }
+                return diagram.updateRelationship(relationship.id, rel => {
+                   return rel.update({
+                       description: description ? description : "",
+                   });
+                });
+            })
         });
 }

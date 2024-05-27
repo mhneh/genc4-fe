@@ -6,17 +6,10 @@
  */
 
 import * as React from "react";
-import { Keys, sizeInPx } from "@app/core";
-import { DefaultAppearance } from "@app/wireframes/interface";
-import { Diagram, DiagramItem, DiagramItemSet } from "@app/wireframes/model";
-import {
-  InteractionHandler,
-  InteractionService,
-  SvgEvent,
-} from "../../interaction/interaction-service.ts";
-
-const MIN_WIDTH = 150;
-const MIN_HEIGHT = 30;
+import {Keys} from "@app/core";
+import {DefaultAppearance} from "@app/wireframes/interface";
+import {Diagram, DiagramItem, DiagramItemSet} from "@app/wireframes/model";
+import {InteractionHandler, InteractionService, SvgEvent,} from "../../interaction/interaction-service.ts";
 
 export interface TextAdornerProps {
   // The current zoom value.
@@ -39,7 +32,7 @@ export interface TextAdornerProps {
     val: any
   ) => any;
 
-  onLinkContainer: (selectedId: string, title?: string) => void;
+  onLinkContainer: (selectedItem: DiagramItem) => void;
 
   toggleDescModal: () => void;
 }
@@ -89,41 +82,18 @@ export class TextAdorner
         event.shape.type === "Components"
       ) {
         this.props.onLinkContainer(
-          event.shape.id,
-          event.shape.appearance.get("TITLE")
+          event.shape
         );
         return;
       }
-
-      // if (event.shape.textDisabled) {
-      //     return;
-      // }
-      //
-      // const zoom = this.props.zoom;
-      //
-      // const transform = event.shape.transform;
-      //
-      // const x = sizeInPx(zoom * (transform.position.x - 0.5 * transform.size.x) - 2);
-      // const y = sizeInPx(zoom * (transform.position.y - 0.5 * transform.size.y) - 2);
-      //
-      // const w = sizeInPx(zoom * (Math.max(transform.size.x, MIN_WIDTH)) + 4);
-      // const h = sizeInPx(zoom * (Math.max(transform.size.y, MIN_HEIGHT)) + 4);
-      //
-      // this.textareaElement.value = event.shape.text;
-      // this.textareaElement.style.top = y;
-      // this.textareaElement.style.left = x;
-      // this.textareaElement.style.width = w;
-      // this.textareaElement.style.height = h;
-      // this.textareaElement.style.resize = 'none';
-      // this.textareaElement.style.display = 'block';
-      // this.textareaElement.style.position = 'absolute';
-      // this.textareaElement.focus();
 
       this.props.interactionService.hideAdorners();
 
       this.selectedShape = event.shape;
 
-      this.props.toggleDescModal();
+      if (event.shape.type == "Screens") {
+        this.props.toggleDescModal();
+      }
     }
   }
 

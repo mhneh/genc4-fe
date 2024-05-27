@@ -86,7 +86,7 @@ export interface EditorProps {
     newBounds: Transform
   ) => any;
 
-  onLinkContainer: (selectedId: string, title?: string) => void;
+  onLinkContainer: (selectedItem: DiagramItem) => void;
 }
 
 export const Editor = memo((props: EditorProps) => {
