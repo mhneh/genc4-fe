@@ -33,11 +33,11 @@ export class Browser implements ShapePlugin {
     }
 
     public defaultSize() {
-        return { x: 400, y: 300 };
+        return { x: 300, y: 250 };
     }
 
     public previewSize() {
-        return { x: 400, y: 300 };
+        return { x: 300, y: 250 };
     }
 
     public previewOffset() {

@@ -9,6 +9,7 @@ import { DefaultAppearance } from '@app/wireframes/interface';
 import {ShapeSource} from "@app/wireframes/interface/shape/source/shape-source.ts";
 import {RenderContext} from "@app/wireframes/interface/renderer/render-context.ts";
 import {ShapePlugin} from "@app/wireframes/interface/shape/shape-plugin.ts";
+import {AssetType} from "@app/wireframes/interface/common/asset-type.ts";
 
 const MAX_IMAGE_SIZE = 300;
 const SOURCE = 'SOURCE';
@@ -69,7 +70,7 @@ export class Raster implements ShapePlugin {
         ctx.renderer2.raster(ctx.shape.getAppearance(SOURCE), ctx.rect, true);
     }
 
-    type(): string {
-        return "";
+    type(): AssetType {
+        return "Shape";
     }
 }

@@ -22,7 +22,7 @@ const DEFAULT_APPEARANCE = {
 
 export class Numeric implements ShapePlugin {
     type(): string {
-        return "";
+        return "Shape";
     }
     public identifier(): string {
         return 'Numeric';

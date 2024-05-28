@@ -48,6 +48,10 @@ type Props = {
     selectedRelationshipId?: string | null;
 
     type?: string;
+
+    parentId?: string;
+
+    mainSystem?: boolean;
 };
 
 export type InitialDiagramProps = {
@@ -71,6 +75,10 @@ export type InitialDiagramProps = {
     selectedRelationshipId?: string | null;
 
     type?: string;
+
+    parentId?: string;
+
+    mainSystem?: boolean;
 };
 
 export class Diagram extends Record<Props> {
@@ -113,6 +121,14 @@ export class Diagram extends Record<Props> {
         return this.get('type');
     }
 
+    public get parentId() {
+        return this.get('parentId');
+    }
+
+    public get mainSystem() {
+        return this.get('mainSystem');
+    }
+
     public get rootItems(): ReadonlyArray<DiagramItem> {
         return this.cachedRootItems ||= this.findItems(this.rootIds.values);
     }
@@ -126,6 +142,8 @@ export class Diagram extends Record<Props> {
             title,
             relationships,
             type,
+            parentId,
+            mainSystem
         } = setup;
 
         const props: Props = {
@@ -137,6 +155,8 @@ export class Diagram extends Record<Props> {
             title,
             relationships: ImmutableMap.of(relationships),
             type,
+            parentId,
+            mainSystem
         };
 
         return new Diagram(props);
@@ -393,7 +413,7 @@ export class Diagram extends Record<Props> {
     }
 
     public updateRelationship(relationshipId: string, updater: (relationship: Relationship) => Relationship) {
-        this.set('relationships', this.relationships.update(relationshipId, updater));
+        return this.set('relationships', this.relationships.update(relationshipId, updater));
     }
 
     public removeRelationship(relationshipId: string) {

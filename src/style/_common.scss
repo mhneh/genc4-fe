@@ -130,7 +130,7 @@ ul {
 $toggle-button-top: 72px;
 $toggle-button-offset-left: 10px;
 $toggle-button-offset-right: 27px;
-$sidebar-size: 320px;
+$sidebar-size: 400px;
 
 .content {
     .toggle-button-left {
@@ -139,7 +139,7 @@ $sidebar-size: 320px;
         }
 
         &.visible {
-            left: $sidebar-size + $toggle-button-offset-left;
+            left: 300 + $toggle-button-offset-left;
         }
     }
 

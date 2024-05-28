@@ -30,6 +30,8 @@ type Props = {
 
     // The color for all diagrams.
     color: Color;
+
+    system?: string;
 };
 
 export type InitialEditorProps = {
@@ -44,6 +46,8 @@ export type InitialEditorProps = {
 
     // The color for all diagrams.
     color?: Color;
+
+    system?: string;
 };
 
 export class EditorState extends Record<Props> {
@@ -70,6 +74,10 @@ export class EditorState extends Record<Props> {
 
     public get size() {
         return this.get('size');
+    }
+
+    public get system() {
+        return this.get('system');
     }
 
     public get orderedDiagrams(): ReadonlyArray<Diagram> {
@@ -154,6 +162,12 @@ export class EditorState extends Record<Props> {
             diagrams: this.diagrams.set(diagram.id, diagram),
             diagramIds: this.diagramIds.add(diagram.id),
         });
+    }
+
+    public selectSystem(system: string) {
+        return this.merge({
+            system: system,
+        })
     }
 }
 

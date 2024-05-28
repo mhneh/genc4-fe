@@ -6,11 +6,11 @@
 */
 
 import * as svg from '@svgdotjs/svg.js';
-import { Color } from './color';
-import { sizeInPx } from './react';
-import { Rect2 } from './rect2';
-import { Types } from './types';
-import { Vec2 } from './vec2';
+import {Color} from './color';
+import {sizeInPx} from './react';
+import {Rect2} from './rect2';
+import {Types} from './types';
+import {Vec2} from './vec2';
 
 export interface MatrixTransform {
     x?: number;
@@ -25,7 +25,12 @@ export interface MatrixTransform {
     h?: number;
 }
 
-export module SVGHelper {    
+export module SVGHelper {
+
+    export function drawLine(source: Vec2, target: Vec2) {
+        return `M${source.x} ${source.y} ${target.x} ${target.y}`;
+    }
+
     export function roundedRectangleRight(rectangle: Rect2, radius = 10) {
         const rad = Math.min(radius, rectangle.width * 0.5, rectangle.height * 0.5);
 

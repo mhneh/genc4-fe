@@ -51,7 +51,8 @@ export interface TransformAdornerProps {
     previewStream: Subscription<PreviewEvent>;
 
     // A function to transform a set of items.
-    onTransformItems: (diagram: Diagram, items: ReadonlyArray<DiagramItem>, oldBounds: Transform, newBounds: Transform) => void;
+    onTransformItems: (diagram: Diagram, items: ReadonlyArray<DiagramItem>,
+                       oldBounds: Transform, newBounds: Transform) => void;
 }
 
 const DRAG_SIZE = 12;

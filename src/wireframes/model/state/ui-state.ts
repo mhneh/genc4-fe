@@ -29,6 +29,11 @@ export interface UIState {
 
     // The filter for the diagram.
     diagramsFilter?: string;
+
+    // Description Appender
+    showDescModal?: boolean;
+
+    showRelationshipModal?: boolean;
 }
 
 export interface UIStateInStore {
@@ -37,10 +42,12 @@ export interface UIStateInStore {
 
 export const createInitialUIState: () => UIState = () => {
     return {
-        zoom: 1,
+        zoom: 0.7,
         selectedTab: 'pages',
         showLeftSidebar: true,
         showRightSidebar: true,
         selectedColorTab: 'palette',
+        showDescModal: false,
+        showRelationshipModal: false,
     };
 };

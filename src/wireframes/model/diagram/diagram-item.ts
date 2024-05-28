@@ -3,17 +3,31 @@
  *
  * @license
  * Copyright (c) Sebastian Stehle. All rights reserved.
-*/
+ */
 
-import { ImmutableList, ImmutableMap, MathHelper, Record, Rotation } from '@app/core/utils';
-import { DefaultAppearance } from '@app/wireframes/interface';
-import { Configurable } from '../config/configurables.ts';
-import { Constraint } from '../constraints/constraints.ts';
-import { Diagram } from './diagram.ts';
-import { DiagramItemSet } from './diagram-item-set.ts';
-import { Transform } from '../transform/transform.ts';
+import {
+    ImmutableList,
+    ImmutableMap,
+    MathHelper,
+    Record,
+    Rotation,
+} from "@app/core/utils";
+import {DefaultAppearance} from "@app/wireframes/interface";
+import {Configurable} from "../config/configurables.ts";
+import {Constraint} from "../constraints/constraints.ts";
+import {Diagram} from "./diagram.ts";
+import {DiagramItemSet} from "./diagram-item-set.ts";
+import {Transform} from "../transform/transform.ts";
 import {Shape} from "@app/wireframes/interface/shape/shape.ts";
 import {AssetType} from "@app/wireframes/interface/common/asset-type.ts";
+
+export type DescProps = {
+    id: string;
+
+    description: string;
+
+    itemId: string;
+};
 
 type ItemProps = {
     // The unique id for each item.
@@ -27,6 +41,14 @@ type ItemProps = {
 
     // The type of the item.
     type: AssetType;
+
+    descriptions?: ImmutableMap<DescProps>;
+
+    isOpen: boolean;
+
+    mainSystem?: boolean;
+
+    screens?: ImmutableMap<Screen>;
 };
 
 type GroupProps = {
@@ -62,7 +84,6 @@ type ShapeProps = {
 
 type Props = ItemProps & GroupProps & ShapeProps;
 
-
 type InitialItemProps = {
     // The unique id for each item.
     id?: string;
@@ -91,6 +112,11 @@ export type InitialShapeProps = {
     renderer: string;
 
     type: AssetType;
+
+    descriptions?: ImmutableMap<DescProps>;
+
+    mainSystem?: boolean;
+    screens?: ImmutableMap<Screen>;
 } & InitialItemProps;
 
 export type InitialGroupProps = {
@@ -105,51 +131,67 @@ export class DiagramItem extends Record<Props> implements Shape {
     private cachedBounds: { [id: string]: Transform } | undefined = {};
 
     public get id() {
-        return this.get('id');
+        return this.get("id");
     }
 
     public get type() {
-        return this.get('type');
+        return this.get("type");
+    }
+
+    public get isOpen() {
+        return this.get("isOpen");
+    }
+
+    public get descriptions() {
+        return this.get("descriptions");
     }
 
     public get name() {
-        return this.get('name');
+        return this.get("name");
     }
 
     public get appearance() {
-        return this.get('appearance');
+        return this.get("appearance");
     }
 
     public get childIds() {
-        return this.get('childIds');
+        return this.get("childIds");
     }
 
     public get configurables() {
-        return this.get('configurables');
+        return this.get("configurables");
     }
 
     public get constraint() {
-        return this.get('constraint');
+        return this.get("constraint");
     }
 
     public get isLocked() {
-        return this.get('isLocked');
+        return this.get("isLocked");
     }
 
     public get rotation() {
-        return this.get('rotation');
+        return this.get("rotation");
     }
 
     public get renderCache() {
-        return this.get('renderCache');
+        return this.get("renderCache");
     }
 
     public get renderer() {
-        return this.get('renderer');
+        return this.get("renderer");
     }
 
     public get transform() {
-        return this.get('transform');
+        return this.get("transform");
+    }
+
+    public get mainSystem() {
+        return this.get("mainSystem");
+    }
+
+    public get screens() {
+        return this.get("screens");
     }
 
     public get fontSize(): number {
@@ -157,7 +199,7 @@ export class DiagramItem extends Record<Props> implements Shape {
     }
 
     public get fontFamily(): string {
-        return this.getAppearance(DefaultAppearance.FONT_FAMILY) || 'inherit';
+        return this.getAppearance(DefaultAppearance.FONT_FAMILY) || "inherit";
     }
 
     public get backgroundColor(): string {
@@ -204,8 +246,40 @@ export class DiagramItem extends Record<Props> implements Shape {
         return this.appearance.get(key);
     }
 
+    public addDescription(id: string, desc?: string): DiagramItem {
+        const descs = this.descriptions?.set(id, {
+            id: id,
+            description: desc ? desc : "",
+            itemId: this.id,
+        } as DescProps);
+        return this.merge({
+            descriptions: descs,
+        });
+    }
+
+    public removeDescription(id: string): DiagramItem {
+        const descs = this.descriptions?.remove(id);
+        return this.merge({
+            descriptions: descs,
+        });
+    }
+
+    public updateDescriptions(
+        newest: ImmutableMap<DescProps> | undefined
+    ): DiagramItem {
+        if (!newest) {
+            return this.merge({
+                descriptions: this.descriptions?.empty(),
+            });
+        }
+        const descs = this.descriptions?.replaceAll(newest);
+        return this.merge({
+            descriptions: descs,
+        });
+    }
+
     public static createGroup(setup: InitialGroupProps = {}) {
-        const { id, childIds, isLocked, name, rotation } = setup;
+        const {id, childIds, isLocked, name, rotation} = setup;
 
         const props: GroupProps & ItemProps = {
             id: id || MathHelper.nextId(),
@@ -214,14 +288,27 @@ export class DiagramItem extends Record<Props> implements Shape {
             isLocked,
             name,
             rotation: rotation || Rotation.ZERO,
-            type: 'Group',
+            type: "Group",
+            isOpen: false,
         };
 
         return new DiagramItem(props as any);
     }
 
     public static createShape(setup: InitialShapeProps) {
-        const { id, appearance, configurables, constraint, isLocked, name, renderer, transform } = setup;
+        const {
+            id,
+            appearance,
+            configurables,
+            constraint,
+            isLocked,
+            name,
+            renderer,
+            transform,
+            descriptions,
+            mainSystem,
+            screens,
+        } = setup;
 
         const props: ShapeProps & ItemProps = {
             id: id || MathHelper.nextId(),
@@ -234,43 +321,47 @@ export class DiagramItem extends Record<Props> implements Shape {
             renderer,
             transform: transform || Transform.ZERO,
             type: setup.type,
+            descriptions: ImmutableMap.of(descriptions),
+            mainSystem: mainSystem,
+            isOpen: false,
+            screens: ImmutableMap.of(screens),
         };
 
         return new DiagramItem(props as any);
     }
 
     public lock() {
-        return this.set('isLocked', true);
+        return this.set("isLocked", true);
     }
 
     public unlock() {
-        return this.set('isLocked', undefined);
+        return this.set("isLocked", undefined);
     }
 
     public rename(name: string) {
-        return this.set('name', name);
+        return this.set("name", name);
     }
 
-    public replaceAppearance(appearance:ImmutableMap<any>) {
-        if (this.type === 'Group' || !appearance) {
+    public replaceAppearance(appearance: ImmutableMap<any>) {
+        if (this.type === "Group" || !appearance) {
             return this;
         }
 
-        return this.set('appearance', appearance);
+        return this.set("appearance", appearance);
     }
 
     public setAppearance(key: string, value: any) {
-        if (this.type === 'Group') {
+        if (this.type === "Group") {
             return this;
         }
 
         const appearance = this.appearance.set(key, value);
 
-        return this.set('appearance', appearance);
+        return this.set("appearance", appearance);
     }
 
     public transformWith(transformer: (t: Transform) => Transform) {
-        if (this.type === 'Group' || !transformer) {
+        if (this.type === "Group" || !transformer) {
             return this;
         }
 
@@ -280,26 +371,36 @@ export class DiagramItem extends Record<Props> implements Shape {
             return this;
         }
 
-        return this.set('transform', newTransform);
+        return this.set("transform", newTransform);
     }
 
     public bounds(diagram: Diagram): Transform {
-        if (this.type === 'Group') {
+        if (this.type === "Group") {
             this.cachedBounds ||= {};
-        
+
             let cacheId = diagram.instanceId;
             let cached = this.cachedBounds[cacheId];
 
             if (!cached) {
-                const allShapes = DiagramItemSet.createFromDiagram([this.id], diagram).nested;
+                const allShapes = DiagramItemSet.createFromDiagram(
+                    [this.id],
+                    diagram
+                ).nested;
 
                 if (allShapes.size === 0) {
                     return Transform.ZERO;
                 }
 
-                const transforms = Array.from(allShapes.values(), x => x.transform).filter(x => !!x);
+                const transforms = Array.from(
+                    allShapes.values(),
+                    (x) => x.transform
+                ).filter((x) => !!x);
 
-                this.cachedBounds[cacheId] = cached = Transform.createFromTransformationsAndRotation(transforms, this.rotation);
+                this.cachedBounds[cacheId] = cached =
+                    Transform.createFromTransformationsAndRotation(
+                        transforms,
+                        this.rotation
+                    );
             }
 
             return cached;
@@ -313,14 +414,20 @@ export class DiagramItem extends Record<Props> implements Shape {
             return this;
         }
 
-        if (this.type === 'Group') {
-            const rotation = this.rotation.add(newBounds.rotation).sub(oldBounds.rotation);
+        if (this.type === "Group") {
+            const rotation = this.rotation
+                .add(newBounds.rotation)
+                .sub(oldBounds.rotation);
 
-            return this.set('rotation', rotation);
+            return this.set("rotation", rotation);
         } else {
-            const transform = this.transform.transformByBounds(oldBounds, newBounds, undefined);
+            const transform = this.transform.transformByBounds(
+                oldBounds,
+                newBounds,
+                undefined
+            );
 
-            return this.set('transform', transform);
+            return this.set("transform", transform);
         }
     }
 

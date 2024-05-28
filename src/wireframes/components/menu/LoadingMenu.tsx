@@ -5,22 +5,22 @@
  * Copyright (c) Sebastian Stehle. All rights reserved.
 */
 
-import { GithubOutlined, QuestionCircleOutlined } from '@ant-design/icons';
-import { Button, Modal } from 'antd';
-import { MenuProps } from 'antd/lib';
+import {GithubOutlined, QuestionCircleOutlined} from '@ant-design/icons';
+import {Button, Modal} from 'antd';
+import {MenuProps} from 'antd/lib';
 import * as React from 'react';
-import { MarkerButton, Title, useEventCallback } from '@app/core';
+import {MarkerButton, Title, useEventCallback} from '@app/core';
 import text from '@app/legal.html?raw';
-import { texts } from '@app/texts';
-import { useStore } from '@app/wireframes/model';
-import { ActionDropdownButton, ActionMenuButton, buildMenuItem, useLoading } from './../actions';
+import {texts} from '@app/texts';
+import {useStore} from '@app/wireframes/model';
+import {ActionDropdownButton, ActionMenuButton, buildMenuItem, useLoading} from './../actions';
 
 export const LoadingMenu = React.memo(() => {
     const forLoading = useLoading();
-    const editor = useStore(s => s.editor);
+    // const editor = useStore(s => s.editor);
     const tokenToRead = useStore(s => s.loading.tokenToRead);
-    const tokenToWrite = useStore(s => s.loading.tokenToWrite);
-    const saveTimer = React.useRef<any>();
+    // const tokenToWrite = useStore(s => s.loading.tokenToWrite);
+    // const saveTimer = React.useRef<any>();
     const saveAction = React.useRef(forLoading.saveDiagram);
     const [isOpen, setIsOpen] = React.useState(false);
 
@@ -30,36 +30,36 @@ export const LoadingMenu = React.memo(() => {
         setIsOpen(x => !x);
     });
 
-    React.useEffect(() => {
-        function clearTimer() {
-            if (saveTimer.current) {
-                clearInterval(saveTimer.current);
-                saveTimer.current = null;
-            }
-        }
-
-        if (tokenToWrite) {
-            if (!saveTimer.current) {
-                saveTimer.current = setInterval(() => {
-                    if (!saveAction.current.disabled) {
-                        saveAction.current.onAction();
-                    }
-                }, 30000);
-            }
-
-            const stopTimer = setTimeout(() => {
-                clearTimer();
-            }, 40000);
-
-            return () => {
-                clearTimeout(stopTimer);
-            };
-        } else {
-            clearTimer();
-
-            return undefined;
-        }
-    }, [tokenToWrite, editor]);
+    // React.useEffect(() => {
+    //     function clearTimer() {
+    //         if (saveTimer.current) {
+    //             clearInterval(saveTimer.current);
+    //             saveTimer.current = null;
+    //         }
+    //     }
+    //
+    //     if (tokenToWrite) {
+    //         if (!saveTimer.current) {
+    //             saveTimer.current = setInterval(() => {
+    //                 if (!saveAction.current.disabled) {
+    //                     saveAction.current.onAction();
+    //                 }
+    //             }, 30000);
+    //         }
+    //
+    //         const stopTimer = setTimeout(() => {
+    //             clearTimer();
+    //         }, 40000);
+    //
+    //         return () => {
+    //             clearTimeout(stopTimer);
+    //         };
+    //     } else {
+    //         clearTimer();
+    //
+    //         return undefined;
+    //     }
+    // }, [tokenToWrite, editor]);
 
     const saveMenuItems: MenuProps['items'] = [
         buildMenuItem(forLoading.saveDiagramToFile, 'save'),
@@ -73,6 +73,8 @@ export const LoadingMenu = React.memo(() => {
             <ActionMenuButton displayMode='Icon' action={forLoading.openDiagramAction} />
 
             <ActionDropdownButton className='menu-dropdown' displayMode='IconLabel' action={forLoading.saveDiagram} type='primary' menu={{ items: saveMenuItems }} />
+
+            <ActionMenuButton displayMode='IconLabel' action={forLoading.genCode} type='primary' />
 
             <Button className='menu-item' onClick={doToggleInfoDialog}
                 icon={<QuestionCircleOutlined />} />
@@ -90,9 +92,12 @@ export const LoadingMenu = React.memo(() => {
 });
 
 const CustomTitle = React.memo(({ token }: { token?: string | null }) => {
+    const system = useStore(store => store.editor.present.system);
+
+    const prefix = (system === "blog") ? "Blog System - " : "";
     const title = token && token.length > 0 ?
-        `mydraft.cc - Diagram ${token}` :
-        `mydraft.cc - Diagram ${texts.common.unsaved}`;
+        prefix + ` Diagram ${token}` :
+        prefix + ` C4 - Diagram ${texts.common.unsaved}`;
 
     return (
         <Title text={title} />

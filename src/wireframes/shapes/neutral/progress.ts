@@ -28,7 +28,7 @@ const HEIGHT_TOTAL = 16;
 
 export class Progress implements ShapePlugin {
     type(): string {
-        return "";
+        return "Shape";
     }
     public identifier(): string {
         return 'Progress';

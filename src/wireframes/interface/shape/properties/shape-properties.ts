@@ -23,4 +23,6 @@ export interface ShapeProperties {
     setTextDecoration(decoration: TextDecoration): ShapeProperties;
 
     setFontSize(size: number): ShapeProperties;
+
+    setStrokeWidth(size: number): ShapeProperties;
 }

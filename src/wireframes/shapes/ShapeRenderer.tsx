@@ -9,7 +9,7 @@ import * as svg from '@svgdotjs/svg.js';
 import * as React from 'react';
 import {Rotation, SVGHelper, Vec2} from '@app/core';
 import {DiagramItem, Transform} from '@app/wireframes/model';
-import {AbstractControl, DefaultConstraintFactory} from '../model/renderer/impl/abstract-control.ts';
+import {AbstractControl, DefaultConstraintFactory} from '../model/renderer/impl/AbstractControl.ts';
 import {ShapePlugin} from "@app/wireframes/interface/shape/shape-plugin.ts";
 
 interface ShapeRendererProps {

@@ -22,7 +22,6 @@ import {
 import {getDiagram, postDiagram, putDiagram} from '../../api/api.ts';
 import {addDiagram, selectDiagram} from '@app/wireframes/redux/reducers/diagrams.ts';
 import {selectItems} from '@app/wireframes/redux/reducers/items.ts';
-import {migrateOldAction} from '../../model/actions/obsolete.ts';
 import {showToast} from '@app/wireframes/redux/reducers/ui.ts';
 
 export const newDiagram =
@@ -61,6 +60,14 @@ export const saveDiagramToFile =
 
         saveAs(bodyBlob, 'diagram.json');
     });
+
+export const updateLoadingScreen = createAction('screen/loading', (loading: boolean) => {
+    return {
+        payload: {
+            loading: loading
+        }
+    }
+})
 
 export const saveDiagramToServer =
     createAsyncThunk('diagram/save/server', async (args: { navigate?: boolean; operationId?: string }, thunkAPI) => {
@@ -170,6 +177,12 @@ export function loading(initialState: LoadingState) {
             state.tokenToRead = tokenToRead;
             state.tokenToWrite = tokenToWrite;
             state.recentDiagrams[tokenToRead] = {date: new Date().getTime(), tokenToWrite};
+        })
+        .addCase(updateLoadingScreen, (state, action) => {
+            const {
+                loading: loading
+            } = action.payload;
+            state.isLoading = loading;
         }));
 }
 
@@ -185,7 +198,7 @@ export function rootLoading(undoableReducer: Reducer<UndoableState<EditorState>>
             let initialState: EditorState;
 
             if (stored.initial) {
-                initialState = Serializer.deserializeEditor(stored.initial);
+                initialState = Serializer.deserializeEditor(stored.present);
             } else {
                 initialState = EditorState.create();
             }
@@ -194,15 +207,15 @@ export function rootLoading(undoableReducer: Reducer<UndoableState<EditorState>>
 
             let firstAction = actions[0];
 
-            if (!firstAction) {
-                firstAction = addDiagram();
-            }
+            // if (!firstAction) {
+            //     firstAction = addDiagram();
+            // }
 
-            let editor = UndoableState.create(editorReducer(initialState, firstAction), firstAction);
+            let editor = UndoableState.create(initialState, firstAction);
 
-            for (const loadedAction of actions.slice(1).filter(handleAction)) {
-                editor = undoableReducer(editor, migrateOldAction(loadedAction));
-            }
+            // for (const loadedAction of actions.slice(1).filter(handleAction)) {
+            //     editor = undoableReducer(editor, migrateOldAction(loadedAction));
+            // }
 
             const selectedDiagram = editor.present.diagrams.get(editor.present.selectedDiagramId!);
 
@@ -222,10 +235,12 @@ export function rootLoading(undoableReducer: Reducer<UndoableState<EditorState>>
 }
 
 function getSaveState(state: EditorStateInStore) {
-    const initial = Serializer.serializeEditor(state.editor.present);
+    const initial = Serializer.serializeEditor(state.editor.firstState);
+    const present = Serializer.serializeEditor(state.editor.present);
+
     const actions = state.editor.actions.slice(1).filter(handleAction);
 
-    return {initial, actions};
+    return {initial, present, actions};
 }
 
 function handleAction(action: AnyAction) {

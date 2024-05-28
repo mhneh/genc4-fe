@@ -50,3 +50,10 @@ export async function postDiagram(body: any) {
 
     return json;
 }
+
+export function genCodeDiagram(writeToken: string) {
+
+    return fetch(`${SERVER_URL}/${writeToken}`, {
+        method: 'PATCH'
+    });
+}

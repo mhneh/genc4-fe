@@ -144,10 +144,10 @@ export const Page = (props: PageProps) => {
                 {editing ? (
                     <Input value={editName} onChange={setText} onBlur={doRenameCancel} onKeyUp={doEnter} ref={initInput} />
                 ) : (
-                    <Dropdown menu={contextMenu} trigger={['contextMenu']} onOpenChange={setIsOpen}>
+                    <Dropdown menu={contextMenu} trigger={['contextMenu']} onOpenChange={setIsOpen} disabled={diagram.type != "Components"}>
                         <Row className={classNames('tree-item-header', { selected })} wrap={false} onDoubleClick={doRenameStart} onClick={doSelect}>
                             <Col flex='none'>
-                                {pageMaster ? (
+                                {pageMaster || diagram.type == "Components" ? (
                                     <FileMarkdownOutlined />
                                 ) : (
                                     <FileOutlined />
