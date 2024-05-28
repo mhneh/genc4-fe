@@ -69,9 +69,8 @@ export class RelationshipRef {
             const description = relationship?.description ? relationship?.description
                 : '';
             const text = this.renderedElement.text(function (add) {
-                add.tspan(description).fill('#1168bd')
+                add.tspan(description).fill('#c2c2c2')
                 add.font({
-                    family: 'Helvetica',
                     size: 16,
                     anchor: 'middle',
                     leading: '1.5em',
@@ -103,9 +102,8 @@ export class RelationshipRef {
 
         const description = relationship?.description ? relationship?.description : '';
         const text = this.renderedElement.text(function (add) {
-            add.tspan(description).fill('#1168bd')
+            add.tspan(description).fill('#c2c2c2')
             add.font({
-                family: 'Helvetica',
                 size: 16,
                 anchor: 'middle',
                 leading: '1.5em',
