@@ -47,7 +47,7 @@ export class CreateScreen implements ShapePlugin {
   }
 
   public defaultSize() {
-    return { x: 300, y: 250 };
+    return { x: 250, y: 250 };
   }
 
   public configurables(factory: ConfigurableFactory) {

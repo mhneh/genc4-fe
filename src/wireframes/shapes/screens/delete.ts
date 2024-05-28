@@ -1,14 +1,9 @@
-import { UpdateScreen } from "./update";
-import { ShapePlugin } from "@app/wireframes/interface/shape/shape-plugin.ts";
-import {
-  ConfigurableFactory,
-  DefaultAppearance,
-  Rect2,
-} from "@app/wireframes/interface";
-import { RenderContext } from "@app/wireframes/interface/renderer/render-context.ts";
-import { ShapeProperties } from "@app/wireframes/interface/shape/properties/shape-properties.ts";
-import { CommonTheme } from "@app/wireframes/shapes/neutral/_theme.ts";
-import { AssetType } from "@app/wireframes/interface/common/asset-type.ts";
+import {ShapePlugin} from "@app/wireframes/interface/shape/shape-plugin.ts";
+import {ConfigurableFactory, DefaultAppearance, Rect2,} from "@app/wireframes/interface";
+import {RenderContext} from "@app/wireframes/interface/renderer/render-context.ts";
+import {ShapeProperties} from "@app/wireframes/interface/shape/properties/shape-properties.ts";
+import {CommonTheme} from "@app/wireframes/shapes/neutral/_theme.ts";
+import {AssetType} from "@app/wireframes/interface/common/asset-type.ts";
 
 const SHAPE = "SHAPE";
 const SHAPE_RECTANGLE = "Rectangle";
@@ -47,7 +42,7 @@ export class DeleteScreen implements ShapePlugin {
   }
 
   public defaultSize() {
-    return { x: 300, y: 250 };
+    return { x: 250, y: 250 };
   }
 
   public configurables(factory: ConfigurableFactory) {
@@ -205,5 +200,9 @@ export class DeleteScreen implements ShapePlugin {
   private styleShape(ctx: RenderContext, p: ShapeProperties) {
     p.setStrokeColor(ctx.shape);
     p.setBackgroundColor(ctx.shape);
+  }
+
+  isOpen(): boolean {
+    return false;
   }
 }

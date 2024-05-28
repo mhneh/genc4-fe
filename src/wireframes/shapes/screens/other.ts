@@ -46,7 +46,7 @@ export class OtherScreen implements ShapePlugin {
   }
 
   public defaultSize() {
-    return { x: 300, y: 250 };
+    return { x: 250, y: 250 };
   }
 
   public configurables(factory: ConfigurableFactory) {
@@ -204,5 +204,9 @@ export class OtherScreen implements ShapePlugin {
   private styleShape(ctx: RenderContext, p: ShapeProperties) {
     p.setStrokeColor(ctx.shape);
     p.setBackgroundColor(ctx.shape);
+  }
+
+  isOpen(): boolean {
+    return false;
   }
 }
