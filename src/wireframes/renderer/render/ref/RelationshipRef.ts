@@ -14,7 +14,7 @@ export class RelationshipRef {
     private currentShape: Relationship | null = null;
     private currentIndex = -1;
 
-    public renderedElement: svg.Line | null = null;
+    public renderedElement: svg.G | null = null;
 
     constructor(
         public readonly doc: svg.Container,
@@ -61,10 +61,27 @@ export class RelationshipRef {
                 source,
                 target
             } = this.form;
-            this.renderedElement.plot(
+            this.renderedElement.clear();
+            this.renderedElement.line(
                 source.transform.position.x, source.transform.position.y,
                 target.transform.position.x, target.transform.position.y
-            ).stroke({width: 3, color: '#000'});
+            ).stroke({width: 2, color: '#c2c2c2'});
+            const description = relationship?.description ? relationship?.description
+                : '';
+            const text = this.renderedElement.text(function (add) {
+                add.tspan(description).fill('#1168bd')
+                add.font({
+                    family: 'Helvetica',
+                    size: 16,
+                    anchor: 'middle',
+                    leading: '1.5em',
+                    weight: 'bold'
+                });
+            });
+            const desLength = description.length;
+            const relX = (source.transform.position.x + target.transform.position.x) / 2 - desLength * 4;
+            const relY = (source.transform.position.y + target.transform.position.y) / 2 - 25;
+            text.move(relX, relY);
 
             this.previewShape = relationship;
         }
@@ -77,16 +94,33 @@ export class RelationshipRef {
             this.doc.add(this.renderedElement!);
             return;
         }
-        this.renderedElement = new svg.Line();
-
+        this.renderedElement = new svg.G();
         const {
             source,
-            target,
+            target
         } = this.form;
-        this.renderedElement.plot(
+        this.renderedElement.clear();
+
+        const description = relationship?.description ? relationship?.description : '';
+        const text = this.renderedElement.text(function (add) {
+            add.tspan(description).fill('#1168bd')
+            add.font({
+                family: 'Helvetica',
+                size: 16,
+                anchor: 'middle',
+                leading: '1.5em',
+                weight: 'bold'
+            });
+        });
+        const desLength = description.length;
+        const relX = (source.transform.position.x + target.transform.position.x) / 2 - desLength * 4;
+        const relY = (source.transform.position.y + target.transform.position.y) / 2 - 25;
+        text.move(relX, relY);
+        this.renderedElement.line(
             source.transform.position.x, source.transform.position.y,
             target.transform.position.x, target.transform.position.y
-        ).stroke({width: 3, color: '#000'});
+        ).stroke({width: 2, color: '#c2c2c2'});
+
 
         // Always update shape to keep a reference to the actual object, not the old object.
         (this.renderedElement!.node as any)['shape'] = relationship;

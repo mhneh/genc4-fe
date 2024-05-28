@@ -94,10 +94,10 @@ export const LoadingMenu = React.memo(() => {
 const CustomTitle = React.memo(({ token }: { token?: string | null }) => {
     const system = useStore(store => store.editor.present.system);
 
-    const prefix = (system == "blog") ? "Blog System - " : "";
+    const prefix = (system === "blog") ? "Blog System - " : "";
     const title = token && token.length > 0 ?
         prefix + ` Diagram ${token}` :
-        prefix + ` mydraft.cc - Diagram ${texts.common.unsaved}`;
+        prefix + ` C4 - Diagram ${texts.common.unsaved}`;
 
     return (
         <Title text={title} />

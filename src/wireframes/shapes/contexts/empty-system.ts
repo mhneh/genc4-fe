@@ -17,22 +17,22 @@ const SHAPE_TRIANGLE = "Triangle";
 const SHAPE_RHOMBUS = "Rhombus";
 
 const DEFAULT_APPEARANCE = {
-  [DefaultAppearance.BACKGROUND_COLOR]: 0x85bbf0,
+  [DefaultAppearance.BACKGROUND_COLOR]: 0x08427b,
   [DefaultAppearance.FONT_SIZE]: CommonTheme.CONTROL_FONT_SIZE,
-  [DefaultAppearance.FOREGROUND_COLOR]: 0x000000,
+  [DefaultAppearance.FOREGROUND_COLOR]: 0xffffff,
   [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
-  [DefaultAppearance.TEXT]: "RegisterController",
-  [DefaultAppearance.TITLE]: "RegisterController",
-  [DefaultAppearance.DESC]: "Component for register new user.",
-  [DefaultAppearance.TECH]: "java",
-  [SHAPE]: SHAPE_RECTANGLE,
+  [DefaultAppearance.TEXT]: "Other System",
+  [DefaultAppearance.TITLE]: "Other System",
+  [DefaultAppearance.DESC]: "",
+  [DefaultAppearance.TECH]: "Other System",
+  [SHAPE]: "Rectangle",
 };
 
-export class Register implements ShapePlugin {
+export class EmptySystem implements ShapePlugin {
   public identifier(): string {
-    return "Register";
+    return "EmptySystem";
   }
 
   public defaultAppearance() {
@@ -56,7 +56,7 @@ export class Register implements ShapePlugin {
   }
 
   type(): AssetType {
-    return "Components";
+    return "Contexts";
   }
 
   isOpen(): boolean {
@@ -70,6 +70,7 @@ export class Register implements ShapePlugin {
     this.createTechShape(ctx);
     this.createDescShape(ctx);
     // this.createText(ctx);
+    this.createLookupIcon(ctx);
   }
 
   private createTitleShape(ctx: RenderContext) {
@@ -102,7 +103,7 @@ export class Register implements ShapePlugin {
       ctx.shape,
       bounds.deflate(4),
       (p) => {
-        p.setForegroundColor("0x85bbf0");
+        p.setForegroundColor("0x8fbbfb");
         p.setText(
           ctx.shape.getAppearance(DefaultAppearance.TECH)
             ? "[" + ctx.shape.getAppearance(DefaultAppearance.TECH) + "]"
@@ -134,6 +135,16 @@ export class Register implements ShapePlugin {
       },
       true
     );
+  }
+
+  private createLookupIcon(ctx: RenderContext) {
+    const bounds = new Rect2(
+      ctx.rect.width / 2 - 25 / 2,
+      (3 * ctx.rect.height) / 4,
+      25,
+      25
+    );
+    ctx.renderer2.raster("zoom-white.png", bounds, true);
   }
 
   private createShape(ctx: RenderContext) {

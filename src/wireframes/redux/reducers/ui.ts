@@ -55,6 +55,10 @@ export const toggleDescModal = createAction('ui/openDescModal', () => {
     return {payload: {}}
 })
 
+export const toggleRelationshipModal = createAction('ui/openRelationshipModal', () => {
+    return {payload: {}}
+})
+
 export function toastMiddleware() {
     const middleware: Middleware = () => (next: Dispatch<AnyAction>) => (action: any) => {
         if (showToast.match(action)) {
@@ -93,5 +97,8 @@ export function ui(initialState: UIState): Reducer<UIState> {
         })
         .addCase(toggleDescModal, (state) => {
             state.showDescModal = !state.showDescModal;
+        })
+        .addCase(toggleRelationshipModal, (state) => {
+            state.showRelationshipModal = !state.showRelationshipModal;
         }));
 }

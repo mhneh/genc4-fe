@@ -1,9 +1,16 @@
-import {DiagramItem, getDiagramId, getRelationships, getShouldConnectedItems, useStore} from "@app/wireframes/model";
+import {
+    DiagramItem,
+    getDiagramId,
+    getRelationships,
+    getShouldConnectedItems,
+    toggleRelationshipModal,
+    useStore
+} from "@app/wireframes/model";
 import {ImmutableMap, useEventCallback} from "@app/core";
 import {useMemo} from "react";
 import {UIAction} from "@app/wireframes/components/actions/shared.ts";
 import {texts} from "@app/texts";
-import {addRelationship, removeRelationship} from "@app/wireframes/redux/reducers/relationships.ts";
+import {removeRelationship} from "@app/wireframes/redux/reducers/relationships.ts";
 import {useAppDispatch} from "@app/wireframes/redux/store.ts";
 import {Relationship} from "@app/wireframes/model/relationship/relationship.ts";
 
@@ -17,18 +24,7 @@ export function useRelationship() {
     const canUnconnect = isAlreadyConnected(relationships, shouldConnectedItems);
 
     const doConnect = useEventCallback(() => {
-        if (!selectedDiagramId) {
-            return;
-        }
-        const title = shouldConnectedItems?.source.appearance.get('TITLE') + ' -> '
-            + shouldConnectedItems?.target.appearance.get('TITLE');
-        const relationshipProps: any = {
-            title: title,
-            description: '',
-            source: shouldConnectedItems?.source.id,
-            target: shouldConnectedItems?.target.id,
-        }
-        dispatch(addRelationship(selectedDiagramId, relationshipProps));
+        dispatch(toggleRelationshipModal());
     });
 
     const doUnconnect = useEventCallback(() => {
@@ -43,16 +39,16 @@ export function useRelationship() {
     });
 
     const connect: UIAction = useMemo(() => ({
-        disabled: canUnconnect,
+        disabled: !canConnect,
         icon: 'icon-share',
-        label: texts.common.connect,
+        label: texts.common.relationship,
         shortcut: 'MOD + G',
         tooltip: texts.common.groupTooltip,
         onAction: doConnect,
     }), [canConnect, doConnect]);
     const unConnect: UIAction = useMemo(() => ({
         disabled: !canUnconnect,
-        icon: 'icon-share_off',
+        icon: 'icon-cut',
         label: texts.common.disConnect,
         shortcut: 'MOD + G',
         tooltip: texts.common.groupTooltip,

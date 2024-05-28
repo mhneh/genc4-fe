@@ -13,6 +13,7 @@ import {EditorState} from '../state/editor-state.ts';
 import {RendererService} from '../renderer/RendererService.ts';
 import {Transform} from '../transform/transform.ts';
 import {Relationship} from "@app/wireframes/model/relationship/relationship.ts";
+import {Screen, ScreenProps} from "@app/wireframes/model/screen/screen.ts";
 
 type IdMap = { [id: string]: string };
 
@@ -122,6 +123,11 @@ function writeDiagramItemDescriptions(source: DescProps) {
     return writeObject1;
 }
 
+function writeDiagramItemScreens(source: ScreenProps) {
+    let writeObject1 = writeObject(source, DIAGRAM_ITEM_SCREEN_SERIALIZERS);
+    return writeObject1;
+}
+
 function writeObject(source: object, serializers: PropertySerializers) {
     const result: Record<string, any> = {};
 
@@ -179,6 +185,11 @@ function readDiagramItemDescriptions(source: object) {
         description: raw.description,
         itemId: raw.itemId
     }
+}
+
+function readDiagramItemScreens(source: object) {
+    const raw: any = readObject(source, DIAGRAM_ITEM_SCREEN_SERIALIZERS);
+    return Screen.create(raw);
 }
 
 function readObject(source: Record<string, any>, serializers: PropertySerializers) {
@@ -258,6 +269,10 @@ const DIAGRAM_SERIALIZERS: PropertySerializers = {
     'parentId': {
         get: (source) => source,
         set: (source) => source,
+    },
+    'mainSystem': {
+        get: (source) => source,
+        set: (source) => source,
     }
 };
 
@@ -329,6 +344,14 @@ const DIAGRAM_ITEM_SERIALIZERS: PropertySerializers = {
         get: (source: ImmutableMap<DescProps>) => Array.from(source.values, writeDiagramItemDescriptions),
         set: (source: any[]) => buildObject(source.map(readDiagramItemDescriptions), x => x.id),
     },
+    'mainSystem': {
+        get: (source) => source,
+        set: (source) => source,
+    },
+    'screens': {
+        get: (source: ImmutableList<ScreenProps>) => Array.from(source.values, writeDiagramItemScreens),
+        set: (source: any[]) => buildObject(source.map(readDiagramItemScreens), x => x.id),
+    }
 };
 
 const DIAGRAM_ITEM_DESCRIPTION_SERIALIZERS: PropertySerializers = {
@@ -344,6 +367,29 @@ const DIAGRAM_ITEM_DESCRIPTION_SERIALIZERS: PropertySerializers = {
         get: (source) => source,
         set: (source) => source,
     }
+}
+
+const DIAGRAM_ITEM_SCREEN_SERIALIZERS: PropertySerializers = {
+    'id': {
+        get: (source) => source,
+        set: (source) => source,
+    },
+    'title': {
+        get: (source) => source,
+        set: (source) => source,
+    },
+    'description': {
+        get: (source) => source,
+        set: (source) => source,
+    },
+    'itemId': {
+        get: (source) => source,
+        set: (source) => source,
+    },
+    'functions': {
+        get: (source: ImmutableList<string>) => source.values,
+        set: (source) => source,
+    },
 }
 
 function buildObject<V>(source: ReadonlyArray<V | undefined | null>, selector: (source: V) => string) {

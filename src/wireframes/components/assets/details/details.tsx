@@ -1,11 +1,15 @@
-import { RootState, useAppDispatch } from "@app/wireframes/redux/store.ts";
+import {
+  RootState,
+  useAppDispatch,
+  useAppSelector,
+} from "@app/wireframes/redux/store.ts";
 import { useStore as useReduxStore } from "react-redux";
 import {
   addShape,
   filterShapes,
-  getContextsFilter,
+  getComponentsFilter,
   getDiagramId,
-  getFilteredContexts,
+  getFilteredComponents,
   ShapeInfo,
   useStore,
 } from "@app/wireframes/model";
@@ -15,18 +19,18 @@ import { Grid, useEventCallback } from "@app/core";
 import { Input } from "antd";
 import { texts } from "@app/texts";
 import { SearchOutlined } from "@ant-design/icons";
+import { useCallback } from "react";
 
 const keyBuilder = (shape: ShapeInfo) => {
   return shape.name;
 };
 
-export const Contexts = () => {
+export const Screens = () => {
   const dispatch = useAppDispatch();
   const store = useReduxStore<RootState>();
-  const contextsFiltered = useStore(getFilteredContexts);
-  const contextsFilter = useStore(getContextsFilter);
+  const detailsFiltered = useAppSelector((state) => state.assets.details);
 
-  const cellRenderer = React.useCallback(
+  const cellRenderer = useCallback(
     (shape: ShapeInfo) => {
       const doAdd = () => {
         const selectedDiagramId = getDiagramId(store.getState());
@@ -55,30 +59,13 @@ export const Contexts = () => {
     [dispatch, store]
   );
 
-  const doFilterShapes = useEventCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch(filterShapes(event.target.value));
-    }
-  );
-
   return (
-    <>
-      <div className="asset-shapes-search">
-        <Input
-          value={contextsFilter}
-          onChange={doFilterShapes}
-          placeholder={texts.common.findShape}
-          prefix={<SearchOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
-        />
-      </div>
-
-      <Grid
-        className="asset-shapes-list"
-        renderer={cellRenderer}
-        columns={2}
-        items={contextsFiltered}
-        keyBuilder={keyBuilder}
-      />
-    </>
+    <Grid
+      className="asset-shapes-list"
+      renderer={cellRenderer}
+      columns={2}
+      items={detailsFiltered}
+      keyBuilder={keyBuilder}
+    />
   );
 };
