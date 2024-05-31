@@ -78,6 +78,7 @@ export function useLoading() {
             })
             .catch(error => {
                 dispatch(updateLoadingScreen(false));
+                dispatch(showToast("Gen code failed.", 'error'));
                 console.error(error);
                 throw Error('Failed to trigger gen code.');
             });

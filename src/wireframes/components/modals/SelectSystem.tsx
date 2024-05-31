@@ -9,11 +9,11 @@ export const SelectSystem = memo(() => {
     const dispatch = useAppDispatch();
     const [isOpen, setOpen] = useState(true);
 
-    useEffect(async () => {
-        const file: File = new File([JSON.stringify(blogSystemJson)], "");
-        await dispatch(loadDiagramFromFile({file}));
-        await dispatch(selectSystem("blog"));
-    }, []);
+    // useEffect(async () => {
+    //     const file: File = new File([JSON.stringify(blogSystemJson)], "");
+    //     await dispatch(loadDiagramFromFile({file}));
+    //     await dispatch(selectSystem("blog"));
+    // }, []);
 
     return (
         <Modal title={"Select System"} open={isOpen} onCancel={() => null} onOk={() => null}>
