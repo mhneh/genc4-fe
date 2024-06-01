@@ -5,6 +5,7 @@ import {loadDiagramFromFile, saveDiagramToServer} from "@app/wireframes/redux/th
 import Icon from "@ant-design/icons";
 import blogSystemJson from "./blog-system.json";
 import ecommerceSystemJson from "./ecommerce-system.json";
+import customSystemJson from "./custom-system.json";
 
 export const SelectSystem = memo(() => {
     const dispatch = useAppDispatch();
@@ -80,8 +81,10 @@ export const SelectSystem = memo(() => {
                         justifyContent: "center",
                         alignItems: "center"
                     }}
-                         onClick={() => {
-                             dispatch(selectSystem("custom"));
+                         onClick={async () => {
+                             const file: File = new File([JSON.stringify(customSystemJson)], "");
+                             await dispatch(loadDiagramFromFile({file}));
+                             await dispatch(selectSystem("custom"));
                              setOpen(false);
                          }}
                     >

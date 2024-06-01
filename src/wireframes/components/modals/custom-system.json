@@ -1,0 +1,779 @@
+{
+  "initial": {
+  },
+  "present": {
+    "diagrams": [
+      {
+        "id": "1712974336896",
+        "items": [
+          {
+            "id": "1712974336908",
+            "appearance": {
+              "BACKGROUND_COLOR": 16777215,
+              "DESCRIPTION": "Single user of this system.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 541307,
+              "SHAPE": "PERSON",
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TECHNOLOGY": "Person",
+              "TEXT": "PersonalOwner",
+              "TEXT_ALIGNMENT": "center",
+              "TITLE": "Personal Owner"
+            },
+            "renderer": "PersonalOwner",
+            "transform": {
+              "x": 501,
+              "y": 199,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Contexts",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "1712974336915",
+            "appearance": {
+              "BACKGROUND_COLOR": 16777215,
+              "DESCRIPTION": "Other system that interacts with our custom system.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 10066329,
+              "SHAPE": "RECTANGLE",
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TECHNOLOGY": "External System",
+              "TEXT": "EmailSystem",
+              "TEXT_ALIGNMENT": "center",
+              "TITLE": "Other System"
+            },
+            "renderer": "EmailSystem",
+            "transform": {
+              "x": 501,
+              "y": 743,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Contexts",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "1712974337050",
+            "appearance": {
+              "BACKGROUND_COLOR": 16777215,
+              "DESCRIPTION": "Custom system that provides a bundle of functionality. Need to define more!",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 1140925,
+              "SHAPE": "Rectangle",
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TECHNOLOGY": "Software system",
+              "TEXT": "BlogSystem",
+              "TEXT_ALIGNMENT": "center",
+              "TITLE": "Custom System"
+            },
+            "renderer": "EmptyContainer",
+            "transform": {
+              "x": 501,
+              "y": 474,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Contexts",
+            "descriptions": [],
+            "screens": []
+          }
+        ],
+        "rootIds": [
+          "1712974336908",
+          "1712974336915",
+          "1712974337050"
+        ],
+        "title": "Context",
+        "relationships": [
+          {
+            "id": "1712974337201",
+            "title": "Personal Owner -> Custom System",
+            "description": "",
+            "source": "1712974336908",
+            "target": "1712974337050",
+            "diagramId": "1712974336896"
+          },
+          {
+            "id": "1712974337210",
+            "title": "Custom System -> Other System",
+            "description": "",
+            "source": "1712974337050",
+            "target": "1712974336915",
+            "diagramId": "1712974336896"
+          }
+        ],
+        "type": "Contexts",
+        "parentId": ""
+      },
+      {
+        "id": "1712974337219",
+        "items": [
+          {
+            "id": "1712974337235",
+            "appearance": {
+              "BACKGROUND_COLOR": 16777215,
+              "DESCRIPTION": "Main server's responsible for providing functions and views.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 4427221,
+              "SHAPE": "BROWSER",
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TECHNOLOGY": "NodeJS",
+              "TEXT": "ApiApplication",
+              "TEXT_ALIGNMENT": "center",
+              "TITLE": "Main custom Server"
+            },
+            "renderer": "ApiApplication",
+            "transform": {
+              "x": 476,
+              "y": 257,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Containers",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "1712974337251",
+            "appearance": {
+              "BACKGROUND_COLOR": 16777215,
+              "DESCRIPTION": "Stores user registration information, hashed authentication credentials, access logs, etc.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 4427221,
+              "SHAPE": "DATABASE",
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TECHNOLOGY": "Oracle Database Schema",
+              "TEXT": "Database",
+              "TEXT_ALIGNMENT": "center",
+              "TITLE": "Database"
+            },
+            "renderer": "Database",
+            "transform": {
+              "x": 476,
+              "y": 511,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Containers",
+            "descriptions": [],
+            "screens": []
+          }
+        ],
+        "rootIds": [
+          "1712974337235",
+          "1712974337251"
+        ],
+        "title": "Blog System",
+        "relationships": [
+          {
+            "id": "1712974337315",
+            "title": "Blog Server System -> Database",
+            "description": "Custom system uses Database as data source, stores all information of system.",
+            "source": "1712974337235",
+            "target": "1712974337251",
+            "diagramId": "1712974337219"
+          }
+        ],
+        "type": "Containers",
+        "parentId": "1712974337050"
+      }
+    ],
+    "diagramIds": [
+      "1712974336896",
+      "1712974337219"
+    ],
+    "id": "2dd8ec3611751e15afdeb4c2",
+    "size": {
+      "x": 1000,
+      "y": 1000
+    },
+    "system": "custom"
+  },
+  "system": "custom",
+  "actions": [
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119023",
+        "timestamp": 1717167483053,
+        "appearance": {
+          "key": "DESCRIPTION",
+          "value": "Screen contains a form to input all new data of n"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119037"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119023",
+        "timestamp": 1717167483156,
+        "appearance": {
+          "key": "DESCRIPTION",
+          "value": "Screen contains a form to input all new data of ne"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119037"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119023",
+        "timestamp": 1717167483255,
+        "appearance": {
+          "key": "DESCRIPTION",
+          "value": "Screen contains a form to input all new data of new"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119037"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119023",
+        "timestamp": 1717167483342,
+        "appearance": {
+          "key": "DESCRIPTION",
+          "value": "Screen contains a form to input all new data of new "
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119037"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119023",
+        "timestamp": 1717167483469,
+        "appearance": {
+          "key": "DESCRIPTION",
+          "value": "Screen contains a form to input all new data of new a"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119037"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119023",
+        "timestamp": 1717167483679,
+        "appearance": {
+          "key": "DESCRIPTION",
+          "value": "Screen contains a form to input all new data of new ac"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119037"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119023",
+        "timestamp": 1717167483828,
+        "appearance": {
+          "key": "DESCRIPTION",
+          "value": "Screen contains a form to input all new data of new acc"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119037"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119023",
+        "timestamp": 1717167483958,
+        "appearance": {
+          "key": "DESCRIPTION",
+          "value": "Screen contains a form to input all new data of new acco"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119037"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119023",
+        "timestamp": 1717167484169,
+        "appearance": {
+          "key": "DESCRIPTION",
+          "value": "Screen contains a form to input all new data of new accou"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119037"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119023",
+        "timestamp": 1717167484229,
+        "appearance": {
+          "key": "DESCRIPTION",
+          "value": "Screen contains a form to input all new data of new accoun"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119037"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119023",
+        "timestamp": 1717167484369,
+        "appearance": {
+          "key": "DESCRIPTION",
+          "value": "Screen contains a form to input all new data of new account"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119037"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119023",
+        "timestamp": 1717167484507,
+        "appearance": {
+          "key": "DESCRIPTION",
+          "value": "Screen contains a form to input all new data of new account."
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119037"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119023",
+        "timestamp": 1717167485842,
+        "appearance": {
+          "key": "DESCRIPTION",
+          "value": "Screen contains a form to input all new data of new account.\n"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119037"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119023",
+        "timestamp": 1717167487230,
+        "appearance": {
+          "key": "DESCRIPTION",
+          "value": "Screen contains a form to input all new data of new account."
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119037"
+        ]
+      }
+    },
+    {
+      "type": "diagram/add",
+      "payload": {
+        "diagramId": "1717165119487",
+        "timestamp": 1717167494076,
+        "title": "Comment",
+        "parentId": "1715877980216",
+        "type": "Screens"
+      }
+    },
+    {
+      "type": "items/addShape",
+      "payload": {
+        "diagramId": "1717165119487",
+        "timestamp": 1717167496583,
+        "id": "1717165119501",
+        "renderer": "CreateScreen",
+        "type": "Screens",
+        "position": {
+          "x": 94.42857469831195,
+          "y": 118.00000871930804
+        }
+      }
+    },
+    {
+      "type": "items/addShape",
+      "payload": {
+        "diagramId": "1717165119487",
+        "timestamp": 1717167497519,
+        "id": "1717165119508",
+        "renderer": "ViewScreen",
+        "type": "Screens",
+        "position": {
+          "x": 563.0000087193081,
+          "y": 125.14286586216518
+        }
+      }
+    },
+    {
+      "type": "items/addShape",
+      "payload": {
+        "diagramId": "1717165119487",
+        "timestamp": 1717167500070,
+        "id": "1717165119515",
+        "renderer": "UpdateScreen",
+        "type": "Screens",
+        "position": {
+          "x": 513.0000032697405,
+          "y": 543.7142944335938
+        }
+      }
+    },
+    {
+      "type": "items/transform",
+      "payload": {
+        "diagramId": "1717165119487",
+        "timestamp": 1717167501516,
+        "oldBounds": {
+          "x": 638,
+          "y": 668,
+          "w": 250,
+          "h": 250,
+          "r": 0
+        },
+        "newBounds": {
+          "x": 678,
+          "y": 691,
+          "w": 250,
+          "h": 250,
+          "r": 0
+        },
+        "itemIds": [
+          "1717165119515"
+        ]
+      }
+    },
+    {
+      "type": "items/transform",
+      "payload": {
+        "diagramId": "1717165119487",
+        "timestamp": 1717167503515,
+        "oldBounds": {
+          "x": 219,
+          "y": 243,
+          "w": 250,
+          "h": 250,
+          "r": 0
+        },
+        "newBounds": {
+          "x": 219,
+          "y": 691,
+          "w": 250,
+          "h": 250,
+          "r": 0
+        },
+        "itemIds": [
+          "1717165119501"
+        ]
+      }
+    },
+    {
+      "type": "items/addShape",
+      "payload": {
+        "diagramId": "1717165119487",
+        "timestamp": 1717167505007,
+        "id": "1717165119591",
+        "renderer": "OtherScreen",
+        "type": "Screens",
+        "position": {
+          "x": 95.8571515764509,
+          "y": 123.71429443359376
+        }
+      }
+    },
+    {
+      "type": "items/transform",
+      "payload": {
+        "diagramId": "1717165119487",
+        "timestamp": 1717167506091,
+        "oldBounds": {
+          "x": 220,
+          "y": 248,
+          "w": 250,
+          "h": 250,
+          "r": 0
+        },
+        "newBounds": {
+          "x": 234,
+          "y": 250,
+          "w": 250,
+          "h": 250,
+          "r": 0
+        },
+        "itemIds": [
+          "1717165119591"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119487",
+        "timestamp": 1717167509822,
+        "appearance": {
+          "key": "TECHNOLOGY",
+          "value": "Screen"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119591"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119487",
+        "timestamp": 1717167514595,
+        "appearance": {
+          "key": "TITLE",
+          "value": "List Screen"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119591"
+        ]
+      }
+    },
+    {
+      "type": "diagram/add",
+      "payload": {
+        "diagramId": "1717165119641",
+        "timestamp": 1717167519771,
+        "title": "Post Category",
+        "parentId": "1715877980105",
+        "type": "Screens"
+      }
+    },
+    {
+      "type": "items/addShape",
+      "payload": {
+        "diagramId": "1717165119641",
+        "timestamp": 1717167521599,
+        "id": "1717165119655",
+        "renderer": "ViewScreen",
+        "type": "Screens",
+        "position": {
+          "x": 595.857151576451,
+          "y": 139.42858014787947
+        }
+      }
+    },
+    {
+      "type": "items/addShape",
+      "payload": {
+        "diagramId": "1717165119641",
+        "timestamp": 1717167523742,
+        "id": "1717165119662",
+        "renderer": "UpdateScreen",
+        "type": "Screens",
+        "position": {
+          "x": 75.85714612688338,
+          "y": 506.57143729073664
+        }
+      }
+    },
+    {
+      "type": "items/addShape",
+      "payload": {
+        "diagramId": "1717165119641",
+        "timestamp": 1717167525654,
+        "id": "1717165119669",
+        "renderer": "CreateScreen",
+        "type": "Screens",
+        "position": {
+          "x": 534.428574698312,
+          "y": 543.7142944335938
+        }
+      }
+    },
+    {
+      "type": "items/transform",
+      "payload": {
+        "diagramId": "1717165119641",
+        "timestamp": 1717167526755,
+        "oldBounds": {
+          "x": 200,
+          "y": 631,
+          "w": 250,
+          "h": 250,
+          "r": 0
+        },
+        "newBounds": {
+          "x": 210,
+          "y": 683,
+          "w": 250,
+          "h": 250,
+          "r": 0
+        },
+        "itemIds": [
+          "1717165119662"
+        ]
+      }
+    },
+    {
+      "type": "items/transform",
+      "payload": {
+        "diagramId": "1717165119641",
+        "timestamp": 1717167527971,
+        "oldBounds": {
+          "x": 659,
+          "y": 668,
+          "w": 250,
+          "h": 250,
+          "r": 0
+        },
+        "newBounds": {
+          "x": 712,
+          "y": 691,
+          "w": 250,
+          "h": 250,
+          "r": 0
+        },
+        "itemIds": [
+          "1717165119669"
+        ]
+      }
+    },
+    {
+      "type": "items/addShape",
+      "payload": {
+        "diagramId": "1717165119641",
+        "timestamp": 1717167529550,
+        "id": "1717165119719",
+        "renderer": "OtherScreen",
+        "type": "Screens",
+        "position": {
+          "x": 70.14286586216518,
+          "y": 115.14286586216518
+        }
+      }
+    },
+    {
+      "type": "items/transform",
+      "payload": {
+        "diagramId": "1717165119641",
+        "timestamp": 1717167530803,
+        "oldBounds": {
+          "x": 195,
+          "y": 240,
+          "w": 250,
+          "h": 250,
+          "r": 0
+        },
+        "newBounds": {
+          "x": 232,
+          "y": 240,
+          "w": 250,
+          "h": 250,
+          "r": 0
+        },
+        "itemIds": [
+          "1717165119719"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119641",
+        "timestamp": 1717167535660,
+        "appearance": {
+          "key": "TITLE",
+          "value": "List Screen"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119719"
+        ]
+      }
+    },
+    {
+      "type": "items/appearance",
+      "payload": {
+        "diagramId": "1717165119641",
+        "timestamp": 1717167536932,
+        "appearance": {
+          "key": "TECHNOLOGY",
+          "value": "Screen"
+        },
+        "force": true,
+        "itemIds": [
+          "1717165119719"
+        ]
+      }
+    },
+    {
+      "type": "items/transform",
+      "payload": {
+        "diagramId": "1717165119641",
+        "timestamp": 1717167539067,
+        "oldBounds": {
+          "x": 232,
+          "y": 240,
+          "w": 250,
+          "h": 250,
+          "r": 0
+        },
+        "newBounds": {
+          "x": 202,
+          "y": 254,
+          "w": 250,
+          "h": 250,
+          "r": 0
+        },
+        "itemIds": [
+          "1717165119719"
+        ]
+      }
+    }
+  ]
+}
