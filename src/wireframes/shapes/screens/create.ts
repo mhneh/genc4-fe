@@ -29,6 +29,7 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.DESC]:
     "This screen is used to add new single data to this component.",
   [DefaultAppearance.TECH]: "Handlebars.js",
+  [DefaultAppearance.ACTION]: "create",
   [SHAPE]: "Rectangle",
 };
 

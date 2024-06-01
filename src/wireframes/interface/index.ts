@@ -27,6 +27,7 @@ export const DefaultAppearance = {
   TITLE: "TITLE",
   DESC: "DESCRIPTION",
   TECH: "TECHNOLOGY",
+  ACTION: "",
 };
 
 export function getPageLink(id: string) {

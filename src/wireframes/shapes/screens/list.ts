@@ -24,12 +24,11 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
-  [DefaultAppearance.TEXT]: "Update Screen",
-  [DefaultAppearance.TITLE]: "Update Screen",
-  [DefaultAppearance.DESC]:
-    "This screen is used to update something in its container",
-  [DefaultAppearance.TECH]: "Update Screen",
-  [DefaultAppearance.ACTION]: "edit",
+  [DefaultAppearance.TEXT]: "List Screen",
+  [DefaultAppearance.TITLE]: "List Screen",
+  [DefaultAppearance.DESC]: "Screen displays all existing data in component.",
+  [DefaultAppearance.TECH]: "List Screen",
+  [DefaultAppearance.ACTION]: "list",
   [SHAPE]: "Rectangle",
 };
 
@@ -37,9 +36,10 @@ const OFFSET = { left: 4, top: 70, right: 4, bottom: 15 };
 
 const REFRESH_CODE = String.fromCharCode(0xf021);
 
-export class UpdateScreen implements ShapePlugin {
+export class ListScreen implements ShapePlugin {
+
   public identifier(): string {
-    return "UpdateScreen";
+    return "ListScreen";
   }
 
   public defaultAppearance() {

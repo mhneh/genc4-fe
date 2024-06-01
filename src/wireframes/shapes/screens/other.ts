@@ -28,6 +28,7 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.TITLE]: "Other Screen",
   [DefaultAppearance.DESC]: "Describe your idea with new screen",
   [DefaultAppearance.TECH]: "Other Screen",
+  [DefaultAppearance.ACTION]: "custom",
   [SHAPE]: "Rectangle",
 };
 

@@ -76,12 +76,19 @@ export const saveDiagramToServer =
         const tokenToWrite = state.loading.tokenToWrite;
         const tokenToRead = state.loading.tokenToRead;
 
+        const currentState = getSaveState(state)
         if (tokenToRead && tokenToWrite) {
-            await putDiagram(tokenToWrite, getSaveState(state));
+            await putDiagram(tokenToWrite, {
+                ...currentState,
+                system: state.editor.present.system
+            });
 
             return {tokenToRead, tokenToWrite, update: true, navigate: args.navigate};
         } else {
-            const {readToken, writeToken} = await postDiagram(getSaveState(state));
+            const {readToken, writeToken} = await postDiagram({
+                ...currentState,
+                system: state.editor.present.system
+            });
 
             return {tokenToRead: readToken, tokenToWrite: writeToken, navigate: args.navigate};
         }
@@ -237,7 +244,7 @@ export function rootLoading(undoableReducer: Reducer<UndoableState<EditorState>>
 function getSaveState(state: EditorStateInStore) {
     const initial = Serializer.serializeEditor(state.editor.firstState);
     const present = Serializer.serializeEditor(state.editor.present);
-
+    console.log(present)
     const actions = state.editor.actions.slice(1).filter(handleAction);
 
     return {initial, present, actions};

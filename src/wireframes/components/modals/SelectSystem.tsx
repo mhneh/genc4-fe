@@ -4,6 +4,7 @@ import {selectSystem, useAppDispatch} from "@app/wireframes/redux/store.ts";
 import {loadDiagramFromFile, saveDiagramToServer} from "@app/wireframes/redux/thunk/loading.ts";
 import Icon from "@ant-design/icons";
 import blogSystemJson from "./blog-system.json";
+import ecommerceSystemJson from "./ecommerce-system.json";
 
 export const SelectSystem = memo(() => {
     const dispatch = useAppDispatch();
@@ -16,9 +17,11 @@ export const SelectSystem = memo(() => {
     // }, []);
 
     return (
-        <Modal title={"Select System"} open={isOpen} onCancel={() => null} onOk={() => null}>
+        <Modal title={"Please select system"}
+               footer={null}
+               open={isOpen} onCancel={() => null} onOk={() => null}>
             <Menu mode={'horizontal'} theme={"light"} style={{margin: "10px"}}>
-                <Menu.Item key={"blog"} style={{width: "40%"}}>
+                <Menu.Item key={"blog"} style={{width: "33%"}}>
                     <div style={{
                         padding: "10px",
                         borderRadius: "10px",
@@ -31,8 +34,8 @@ export const SelectSystem = memo(() => {
 
                              const file: File = new File([JSON.stringify(blogSystemJson)], "");
                              await dispatch(loadDiagramFromFile({file}));
-                             await dispatch(saveDiagramToServer({ navigate: true }));
                              await dispatch(selectSystem("blog"));
+                             await dispatch(saveDiagramToServer({navigate: true}));
                              setOpen(false);
                          }}>
                         <Image
@@ -43,7 +46,7 @@ export const SelectSystem = memo(() => {
                     </div>
                 </Menu.Item>
 
-                <Menu.Item key={"other"} style={{width: "50%"}}>
+                <Menu.Item key={"ecommerce"} style={{width: "33%"}}>
                     <div style={{
                         padding: "10px",
                         borderRadius: "10px",
@@ -52,16 +55,42 @@ export const SelectSystem = memo(() => {
                         justifyContent: "center",
                         alignItems: "center"
                     }}
-                        onClick={() => {
-                            dispatch(selectSystem("other"));
-                            setOpen(false);
-                        }}
+                         onClick={async () => {
+
+                             const file: File = new File([JSON.stringify(ecommerceSystemJson)], "");
+                             await dispatch(loadDiagramFromFile({file}));
+                             await dispatch(selectSystem("ecommerce"));
+                             await dispatch(saveDiagramToServer({navigate: true}));
+                             setOpen(false);
+                         }}>
+                        <Image
+                            src="./ecommerce.png"
+                            preview={false}
+                        />
+                        <p style={{fontWeight: "bold"}}>Ecommerce System</p>
+                    </div>
+                </Menu.Item>
+
+                <Menu.Item key={"other"} style={{width: "33%"}}>
+                    <div style={{
+                        padding: "10px",
+                        borderRadius: "10px",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center"
+                    }}
+                         onClick={() => {
+                             dispatch(selectSystem("custom"));
+                             setOpen(false);
+                         }}
                     >
                         <Image
                             src="./other.png"
                             preview={false}
                         />
-                        <p style={{fontWeight: "bold"}}>Create new one <Icon component={() => <i className={'icon-new'} />} /></p>
+                        <p style={{fontWeight: "bold"}}>Create new one <Icon
+                            component={() => <i className={'icon-new'}/>}/></p>
                     </div>
                 </Menu.Item>
             </Menu>

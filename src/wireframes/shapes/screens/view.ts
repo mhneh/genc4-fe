@@ -29,6 +29,7 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.DESC]:
     "This screen is used to view something in its container",
   [DefaultAppearance.TECH]: "Screen",
+  [DefaultAppearance.ACTION]: "detail",
   [SHAPE]: "Rectangle",
 };
 

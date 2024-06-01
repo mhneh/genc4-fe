@@ -61,6 +61,7 @@ import {CreateScreen} from "./screens/create.ts";
 import {ViewScreen} from "./screens/view.ts";
 import {UpdateScreen} from "./screens/update.ts";
 import {OtherScreen} from "./screens/other.ts";
+import {ListScreen} from "@app/wireframes/shapes/screens/list.ts";
 
 export function registerShapeRenderers() {
   // RendererService.addRenderer(new AbstractControl(new Browser()));
@@ -127,6 +128,7 @@ export function registerComponents() {
   RendererService.addRenderer(new C4Control(new ViewScreen()));
   RendererService.addRenderer(new C4Control(new UpdateScreen()));
   RendererService.addRenderer(new C4Control(new OtherScreen()));
+  RendererService.addRenderer(new C4Control(new ListScreen()));
 
   RendererService.addRenderer(new RelationshipControl(new Relationship()));
 }
