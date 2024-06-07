@@ -27,7 +27,8 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.TITLE]: "Authentication",
   [DefaultAppearance.DESC]:
     "Provides functionality about login, register.",
-  [DefaultAppearance.TECH]: "Express middleware",
+  [DefaultAppearance.TECH]: "Express Middleware",
+  [DefaultAppearance.ACTION]: "auth",
   [SHAPE]: SHAPE_RECTANGLE,
 };
 

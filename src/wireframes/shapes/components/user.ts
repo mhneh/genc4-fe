@@ -23,17 +23,17 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
-  [DefaultAppearance.TEXT]: "Post",
-  [DefaultAppearance.TITLE]: "Post",
-  [DefaultAppearance.DESC]: "Provides information of posts.",
+  [DefaultAppearance.TEXT]: "User",
+  [DefaultAppearance.TITLE]: "User",
+  [DefaultAppearance.DESC]: "Provides information of users.",
   [DefaultAppearance.TECH]: "Express",
   [DefaultAppearance.ACTION]: "service",
   [SHAPE]: SHAPE_RECTANGLE,
 };
 
-export class Post implements ShapePlugin {
+export class User implements ShapePlugin {
   public identifier(): string {
-    return "Post";
+    return "User";
   }
 
   public defaultAppearance() {

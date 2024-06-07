@@ -66,7 +66,9 @@ import {SpecsService} from "@app/wireframes/model/renderer/SpecsService.ts";
 
 import postSpecs from '@app/specs/blog/post.json';
 import authenticationSpecs from '@app/specs/blog/authentication.json';
+import userSpecs from '@app/specs/blog/user.json';
 import {Serializer} from "@app/wireframes/model";
+import {User} from "@app/wireframes/shapes/components/user.ts";
 
 export function registerShapeRenderers() {
   // RendererService.addRenderer(new AbstractControl(new Browser()));
@@ -111,9 +113,10 @@ export function registerComponents() {
   // RendererService.addRenderer(new C4Control(new EmptyComponent()));
   // RendererService.addRenderer(new C4Control(new Register()));
   // RendererService.addRenderer(new C4Control(new SignIn()));
+  RendererService.addRenderer(new C4Control(new Authentication()));
+  RendererService.addRenderer(new C4Control(new User()));
   RendererService.addRenderer(new C4Control(new Post()));
   // RendererService.addRenderer(new C4Control(new ResetPassword()));
-  RendererService.addRenderer(new C4Control(new Authentication()));
   // RendererService.addRenderer(new C4Control(new EmailComponent()));
 
   // Containers
@@ -124,9 +127,9 @@ export function registerComponents() {
 
   // Contexts
   RendererService.addRenderer(new C4Control(new PersonalOwner()));
-  RendererService.addRenderer(new C4Control(new ExternalSystem()));
+  // RendererService.addRenderer(new C4Control(new ExternalSystem()));
   RendererService.addRenderer(new C4Control(new EmailSystem()));
-  RendererService.addRenderer(new C4Control(new EmptySystem()));
+  // RendererService.addRenderer(new C4Control(new EmptySystem()));
 
   //   Screens
   RendererService.addRenderer(new C4Control(new CreateScreen()));
@@ -141,4 +144,5 @@ export function registerComponents() {
 export function registerSpecs() {
   SpecsService.addSpecs(new Post().identifier(), Serializer.deserializeDiagram(postSpecs));
   SpecsService.addSpecs(new Authentication().identifier(), Serializer.deserializeDiagram(authenticationSpecs));
+  SpecsService.addSpecs(new User().identifier(), Serializer.deserializeDiagram(userSpecs));
 }
