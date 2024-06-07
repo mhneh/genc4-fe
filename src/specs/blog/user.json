@@ -4,7 +4,7 @@
   "models": "",
   "items": [
     {
-      "id": "665f269d5fc1a553f9e105e1",
+      "id": "6662f6bcd1660c007486c67a",
       "appearance": {
         "FOREGROUND_COLOR": 16777215,
         "TEXT_DISABLED": true,
@@ -15,7 +15,7 @@
         "TEXT_ALIGNMENT": "center",
         "TEXT": "New User Screen",
         "TITLE": "New User Screen",
-        "DESCRIPTION": "Display a form contains all field to create new User. Submit form will post data to /user/create. If create successfully, please alert created success. If not, please display error message.",
+        "DESCRIPTION": "Display a form contains all field to create new User. Submit form will post data to /user/create. If create successfully, please redirect to '/user/'. If not, please display error message.",
         "TECHNOLOGY": "Handlebars.js",
         "ACTION": "create",
         "SHAPE": "Rectangle"
@@ -31,14 +31,14 @@
       "type": "Screens",
       "descriptions": [
         {
-          "id": "66624b89ff9c2d34f6496c9e",
+          "id": "6662f6c81c13ca82ea0c3428",
           "description": "Create new user in database by data from request.",
-          "itemId": "665f269d5fc1a553f9e105e1"
+          "itemId": "6662f6bcd1660c007486c67a"
         }
       ]
     },
     {
-      "id": "665f26a72fd6218fa29d51d9",
+      "id": "6662f708d7afca65d71db6c4",
       "appearance": {
         "FOREGROUND_COLOR": 16777215,
         "TEXT_DISABLED": true,
@@ -49,7 +49,7 @@
         "TEXT_ALIGNMENT": "center",
         "TEXT": "View Screen",
         "TITLE": "View Screen",
-        "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /post/edit/:id with id will be its ID. Delete button to get delete at /post/delete/:id with id will be its ID.",
+        "DESCRIPTION": "This screen will have 2 button: Edit, Delete. 'Edit' button is used get edit user form at /post/edit/:id with id will be its user id. 'Delete' button is used to get delete at /post/delete/:id with id will be its user id.",
         "TECHNOLOGY": "Screen",
         "ACTION": "detail",
         "SHAPE": "Rectangle"
@@ -65,14 +65,14 @@
       "type": "Screens",
       "descriptions": [
         {
-          "id": "66624b8dde8c854eb339dffd",
-          "description": "Find post by id.",
-          "itemId": "665f26a72fd6218fa29d51d9"
+          "id": "6662f70d94a75fd0e34cdd06",
+          "description": "Find user by id.",
+          "itemId": "6662f708d7afca65d71db6c4"
         }
       ]
     },
     {
-      "id": "665f26af562b6e389d723241",
+      "id": "6662f76dda8690300611f0d8",
       "appearance": {
         "FOREGROUND_COLOR": 16777215,
         "TEXT_DISABLED": true,
@@ -83,7 +83,7 @@
         "TEXT_ALIGNMENT": "center",
         "TEXT": "Update Screen",
         "TITLE": "Update Screen",
-        "DESCRIPTION": "Display form contains all the information of single Post record. Submit form will post data to /post/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
+        "DESCRIPTION": "Screens contains form displays all the information of single User record. Submit form will post data to /user/edit/:id. If updated successfully, please redirect to '/user/'. Otherwise, please display error message.",
         "TECHNOLOGY": "Update Screen",
         "ACTION": "edit",
         "SHAPE": "Rectangle"
@@ -99,14 +99,19 @@
       "type": "Screens",
       "descriptions": [
         {
-          "id": "66624b9117cc1754af2600a1",
-          "description": "Update the the information post by data from request.",
-          "itemId": "665f26af562b6e389d723241"
+          "id": "6662f7d51093135dc1346193",
+          "description": "Find user by id.",
+          "itemId": "6662f76dda8690300611f0d8"
+        },
+        {
+          "id": "6662f7b29fc1e3450a0e24e6",
+          "description": "Update information of user by data from request.",
+          "itemId": "6662f76dda8690300611f0d8"
         }
       ]
     },
     {
-      "id": "665f26b54372408c69692540",
+      "id": "6662f7ec2b7f9ce4386e046f",
       "appearance": {
         "FOREGROUND_COLOR": 16777215,
         "TEXT_DISABLED": true,
@@ -117,7 +122,7 @@
         "TEXT_ALIGNMENT": "center",
         "TEXT": "Other Screen",
         "TITLE": "List All Screen",
-        "DESCRIPTION": "Data will be displayed as a list, each of element will have three buttons to view, update and delete it. 'View' button will lead to get detail view of Post at /post/detail/:id with id will be its ID.'Update' button will lead to get edit form at /post/edit/:id with id will be its ID.'Delete' button will lead to get delete at /post/delete/:id with id will be its ID.Screen will have a search bar to search post by its name.",
+        "DESCRIPTION": "Screen will displayed all users as a list, each of element will have three buttons to view, update and delete user. 'View' button will get detail view of User at /user/detail/:id with id will be its user id. 'Update' button will get edit form at /user/edit/:id with id will be its user id. 'Delete' button get delete at /user/delete/:id with id will be its user id. Screen will have a search bar to search user by username.",
         "TECHNOLOGY": "Screen",
         "ACTION": "list",
         "SHAPE": "Rectangle"
@@ -133,33 +138,33 @@
       "type": "Screens",
       "descriptions": [
         {
-          "id": "66624b96689d28d67b11bbe0",
-          "description": "Get all existing posts in database.",
-          "itemId": "665f26b54372408c69692540"
+          "id": "6662f7f2fa618648dbbfd088",
+          "description": "Find all existing users in database.",
+          "itemId": "6662f7ec2b7f9ce4386e046f"
         }
       ]
     }
   ],
   "rootIds": [
-    "665f269d5fc1a553f9e105e1",
-    "665f26a72fd6218fa29d51d9",
-    "665f26af562b6e389d723241",
-    "665f26b54372408c69692540"
+    "6662f6bcd1660c007486c67a",
+    "6662f708d7afca65d71db6c4",
+    "6662f76dda8690300611f0d8",
+    "6662f7ec2b7f9ce4386e046f"
   ],
   "relationships": [
     {
-      "id": "665f28b74dce8beeaaf14820",
-      "title": "List All Screen -> Creation Screen",
-      "description": "List of posts contains buttons to create or update new post.",
-      "source": "665f26b54372408c69692540",
-      "target": "665f269d5fc1a553f9e105e1"
+      "id": "6662f89e00cd7ce328e22d3e",
+      "title": "List All Screen -> New User Screen",
+      "description": "List of users contains button to create new user.",
+      "source": "6662f7ec2b7f9ce4386e046f",
+      "target": "6662f6bcd1660c007486c67a"
     },
     {
-      "id": "665f28c15addb9fa47d86f7d",
+      "id": "6662f8a2963fff5135312f09",
       "title": "List All Screen -> Update Screen",
-      "description": "List of posts contains buttons to create or update post.",
-      "source": "665f26b54372408c69692540",
-      "target": "665f26af562b6e389d723241"
+      "description": "List of posts contains button to update existed user.",
+      "source": "6662f7ec2b7f9ce4386e046f",
+      "target": "6662f76dda8690300611f0d8"
     }
   ],
   "type": "Screens"
