@@ -145,7 +145,7 @@ export class NewContainer implements ShapePlugin {
       w,
       h
     );
-    ctx.renderer2.raster("zoom-white.png", bounds, true);
+    ctx.renderer2.raster("/zoom-white.png", bounds, true);
   }
 
   private createShape(ctx: RenderContext) {

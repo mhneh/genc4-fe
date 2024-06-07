@@ -103,7 +103,7 @@ export function loadingMiddleware(history: History): Middleware {
                 }
             } else if (loadDiagramFromServer.fulfilled.match(action)) {
                 if (action.meta.arg.navigate) {
-                    history.push(action.payload.tokenToRead);
+                    history.push(`/C4/${action.payload.tokenToRead}`);
                 }
 
                 store.dispatch(loadDiagramInternal(action.payload.stored, action.meta.requestId));
@@ -115,14 +115,14 @@ export function loadingMiddleware(history: History): Middleware {
                 store.dispatch(showToast(texts.common.loadingDiagramDone, 'success', action.payload.requestId));
             } else if (saveDiagramToServer.fulfilled.match(action)) {
                 if (action.meta.arg.navigate) {
-                    history.push(action.payload.tokenToRead);
+                    history.push(`/C4/${action.payload.tokenToRead}`);
                 }
 
                 saveRecentDiagrams((store.getState() as LoadingStateInStore).loading.recentDiagrams);
 
                 const content = action.payload.update ?
                     texts.common.savingDiagramDone :
-                    texts.common.savingDiagramDoneUrl(`${window.location.protocol}//${window.location.host}/${action.payload.tokenToRead}`);
+                    texts.common.savingDiagramDoneUrl(`${window.location.protocol}//${window.location.host}/C4/${action.payload.tokenToRead}`);
 
                 store.dispatch(showToast(content, 'success', action.meta.requestId, 1000));
             } else if (saveDiagramToFile.fulfilled.match(action)) {

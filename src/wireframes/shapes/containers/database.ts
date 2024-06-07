@@ -145,7 +145,7 @@ export class Database implements ShapePlugin {
       w,
       h
     );
-    ctx.renderer2.raster("database.png", bounds, true);
+    ctx.renderer2.raster("/database.png", bounds, true);
   }
 
   private createShape(ctx: RenderContext) {

@@ -177,7 +177,7 @@ export const App = () => {
             <div className="top-menu">
               <Logo
                 className="logo"
-                src="c4-logo.png"
+                src="/c4-logo.png"
                 alt="C4"
                 onClick={openHomepage}
               />
