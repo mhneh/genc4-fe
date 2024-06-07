@@ -1,617 +1,5 @@
 {
   "initial": {
-    "diagrams": [
-      {
-        "id": "1712974336896",
-        "items": [
-          {
-            "id": "1712974336908",
-            "appearance": {
-              "BACKGROUND_COLOR": 16777215,
-              "DESCRIPTION": "Single user of this blog system.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 541307,
-              "SHAPE": "PERSON",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "Person",
-              "TEXT": "PersonalOwner",
-              "TEXT_ALIGNMENT": "center",
-              "TITLE": "Personal Owner"
-            },
-            "renderer": "PersonalOwner",
-            "transform": {
-              "x": 501,
-              "y": 199,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Contexts",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1712974336915",
-            "appearance": {
-              "BACKGROUND_COLOR": 16777215,
-              "DESCRIPTION": "The internal Microsoft Exchange e-mail system.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 10066329,
-              "SHAPE": "RECTANGLE",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "External System",
-              "TEXT": "EmailSystem",
-              "TEXT_ALIGNMENT": "center",
-              "TITLE": "E-mail System"
-            },
-            "renderer": "EmailSystem",
-            "transform": {
-              "x": 501,
-              "y": 743,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Contexts",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1712974337050",
-            "appearance": {
-              "BACKGROUND_COLOR": 16777215,
-              "DESCRIPTION": "Allows user view, create and manage his created posts.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 1140925,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "Software system",
-              "TEXT": "BlogSystem",
-              "TEXT_ALIGNMENT": "center",
-              "TITLE": "Blog System"
-            },
-            "renderer": "EmptyContainer",
-            "transform": {
-              "x": 501,
-              "y": 474,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Contexts",
-            "descriptions": [],
-            "screens": []
-          }
-        ],
-        "rootIds": [
-          "1712974336908",
-          "1712974336915",
-          "1712974337050"
-        ],
-        "title": "Context",
-        "relationships": [
-          {
-            "id": "1712974337201",
-            "title": "Personal Owner -> Blog System",
-            "description": "User will use blog system to mange their posts.",
-            "source": "1712974336908",
-            "target": "1712974337050",
-            "diagramId": "1712974336896"
-          },
-          {
-            "id": "1712974337210",
-            "title": "Blog System -> E-mail System",
-            "description": "Blog system use Email system to send notifications about new posts by email.",
-            "source": "1712974337050",
-            "target": "1712974336915",
-            "diagramId": "1712974336896"
-          }
-        ],
-        "type": "Contexts",
-        "parentId": ""
-      },
-      {
-        "id": "1712974337219",
-        "items": [
-          {
-            "id": "1712974337235",
-            "appearance": {
-              "BACKGROUND_COLOR": 16777215,
-              "DESCRIPTION": "Provides blog system functionality via a JSON/HTTPS API.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 4427221,
-              "SHAPE": "BROWSER",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "NodeJS",
-              "TEXT": "ApiApplication",
-              "TEXT_ALIGNMENT": "center",
-              "TITLE": "Blog Server"
-            },
-            "renderer": "ApiApplication",
-            "transform": {
-              "x": 476,
-              "y": 257,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Containers",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1712974337251",
-            "appearance": {
-              "BACKGROUND_COLOR": 16777215,
-              "DESCRIPTION": "Stores user registration information, hashed authentication credentials, access logs, etc.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 4427221,
-              "SHAPE": "DATABASE",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "Oracle Database Schema",
-              "TEXT": "Database",
-              "TEXT_ALIGNMENT": "center",
-              "TITLE": "Database"
-            },
-            "renderer": "Database",
-            "transform": {
-              "x": 476,
-              "y": 511,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Containers",
-            "descriptions": [],
-            "screens": []
-          }
-        ],
-        "rootIds": [
-          "1712974337235",
-          "1712974337251"
-        ],
-        "title": "Blog System",
-        "relationships": [
-          {
-            "id": "1712974337315",
-            "title": "Blog Server System -> Database",
-            "description": "Blog system uses Database as data source, stores all informations of system.",
-            "source": "1712974337235",
-            "target": "1712974337251",
-            "diagramId": "1712974337219"
-          }
-        ],
-        "type": "Containers",
-        "parentId": "1712974337050"
-      },
-      {
-        "id": "1712974337304",
-        "items": [
-          {
-            "id": "1712974337335",
-            "appearance": {
-              "BACKGROUND_COLOR": 16777215,
-              "DESCRIPTION": "Allows users to sign in to the Blog System.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 1140925,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "ExpressJS",
-              "TEXT": "SignInController",
-              "TEXT_ALIGNMENT": "center",
-              "TITLE": "Sign In"
-            },
-            "renderer": "SignIn",
-            "transform": {
-              "x": 497,
-              "y": 584,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1712974337342",
-            "appearance": {
-              "BACKGROUND_COLOR": 16777215,
-              "DESCRIPTION": "Component for register new user.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 1140925,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "ExpressJS",
-              "TEXT": "RegisterController",
-              "TEXT_ALIGNMENT": "center",
-              "TITLE": "Register"
-            },
-            "renderer": "Register",
-            "transform": {
-              "x": 497,
-              "y": 869,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1715877980098",
-            "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 0,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "PostController",
-              "TITLE": "Post",
-              "DESCRIPTION": "Provides information of posts.",
-              "TECHNOLOGY": "Express Controller",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "Post",
-            "transform": {
-              "x": 166,
-              "y": 351,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1715877980105",
-            "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 0,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "PostController",
-              "TITLE": "Post Category",
-              "DESCRIPTION": "Provides information of post categories\n.",
-              "TECHNOLOGY": "Express Controller",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "Post",
-            "transform": {
-              "x": 841,
-              "y": 344,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1715877980216",
-            "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 0,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "PostController",
-              "TITLE": "Comment",
-              "DESCRIPTION": "Provides information of post comments\n.",
-              "TECHNOLOGY": "Express Controller",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "Post",
-            "transform": {
-              "x": 516,
-              "y": 117,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          }
-        ],
-        "rootIds": [
-          "1712974337335",
-          "1712974337342",
-          "1715877980098",
-          "1715877980105",
-          "1715877980216"
-        ],
-        "title": "Blog Server",
-        "relationships": [
-          {
-            "id": "1715877980873",
-            "title": "Post -> Comment",
-            "description": "Comments stores all the existing comments of each post.",
-            "source": "1715877980098",
-            "target": "1715877980216",
-            "diagramId": "1712974337304"
-          },
-          {
-            "id": "1715877980883",
-            "title": "Post -> Post Category",
-            "description": "Post category stores the category of user's posts.",
-            "source": "1715877980098",
-            "target": "1715877980105",
-            "diagramId": "1712974337304"
-          },
-          {
-            "id": "1715877980899",
-            "title": "Post -> Sign In",
-            "description": "",
-            "source": "1715877980098",
-            "target": "1712974337335",
-            "diagramId": "1712974337304"
-          },
-          {
-            "id": "1717165116785",
-            "title": "Register -> Sign In",
-            "description": "After register success, user will be redirected to Login page.",
-            "source": "1712974337342",
-            "target": "1712974337335",
-            "diagramId": "1712974337304"
-          }
-        ],
-        "type": "Components",
-        "parentId": "1712974337235"
-      },
-      {
-        "id": "1717165117626",
-        "items": [
-          {
-            "id": "1717165117640",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Create Screen",
-              "TITLE": "Creation Screen",
-              "DESCRIPTION": "Screen contains a form for user to input all information of new post.\n",
-              "TECHNOLOGY": "Handlebars.js",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 241,
-              "y": 712,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1717165117647",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "Screen displays detail information of single post.\n",
-              "TECHNOLOGY": "Screen",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 749,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1717165117654",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Update Screen",
-              "TITLE": "Update Screen",
-              "DESCRIPTION": "Screen used to update a existing post.",
-              "TECHNOLOGY": "Update Screen",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "UpdateScreen",
-            "transform": {
-              "x": 761,
-              "y": 757,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1717165117844",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List All Screen",
-              "DESCRIPTION": "Screen display all the existing posts.\n",
-              "TECHNOLOGY": "Screen",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 248,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          }
-        ],
-        "rootIds": [
-          "1717165117640",
-          "1717165117647",
-          "1717165117654",
-          "1717165117844"
-        ],
-        "title": "Post",
-        "relationships": [
-          {
-            "id": "1717165118640",
-            "title": "List All Screen -> Creation Screen",
-            "description": "List of posts contains buttons to create or update new post.",
-            "source": "1717165117844",
-            "target": "1717165117640",
-            "diagramId": "1717165117626"
-          },
-          {
-            "id": "1717165118650",
-            "title": "List All Screen -> Update Screen",
-            "description": "List of posts contains buttons to create or update post.",
-            "source": "1717165117844",
-            "target": "1717165117654",
-            "diagramId": "1717165117626"
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1715877980098"
-      },
-      {
-        "id": "1717165118799",
-        "items": [
-          {
-            "id": "1717165118813",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "Login Screen",
-              "DESCRIPTION": "Screen contains a form with username and password.",
-              "TECHNOLOGY": "Screen",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 470,
-              "y": 401,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          }
-        ],
-        "rootIds": [
-          "1717165118813"
-        ],
-        "title": "Sign In",
-        "relationships": [],
-        "type": "Screens",
-        "parentId": "1712974337335"
-      },
-      {
-        "id": "1717165119023",
-        "items": [
-          {
-            "id": "1717165119037",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "Login Screen",
-              "DESCRIPTION": "Screen contains a form to input all new data of ",
-              "TECHNOLOGY": "Screen",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 479,
-              "y": 315,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          }
-        ],
-        "rootIds": [
-          "1717165119037"
-        ],
-        "title": "Register",
-        "relationships": [],
-        "type": "Screens",
-        "parentId": "1712974337342"
-      }
-    ],
-    "diagramIds": [
-      "1712974336896",
-      "1712974337219",
-      "1712974337304",
-      "1717165117626",
-      "1717165118799",
-      "1717165119023"
-    ],
-    "id": "2dd8ec3611751e15afdeb4c2",
-    "size": {
-      "x": 1000,
-      "y": 1000
-    },
-    "system": "blog"
   },
   "present": {
     "diagrams": [
@@ -687,7 +75,7 @@
               "TEXT_ALIGNMENT": "center",
               "TITLE": "Blog System"
             },
-            "renderer": "EmptyContainer",
+            "renderer": "ApiApplication",
             "transform": {
               "x": 501,
               "y": 474,
@@ -807,60 +195,6 @@
         "id": "1712974337304",
         "items": [
           {
-            "id": "1712974337335",
-            "appearance": {
-              "BACKGROUND_COLOR": 16777215,
-              "DESCRIPTION": "Allows users to sign in to the Blog System.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 1140925,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "ExpressJS",
-              "TEXT": "SignInController",
-              "TEXT_ALIGNMENT": "center",
-              "TITLE": "Sign In"
-            },
-            "renderer": "SignIn",
-            "transform": {
-              "x": 497,
-              "y": 584,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1712974337342",
-            "appearance": {
-              "BACKGROUND_COLOR": 16777215,
-              "DESCRIPTION": "Component for register new user.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 1140925,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "ExpressJS",
-              "TEXT": "RegisterController",
-              "TEXT_ALIGNMENT": "center",
-              "TITLE": "Register"
-            },
-            "renderer": "Register",
-            "transform": {
-              "x": 497,
-              "y": 869,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          },
-          {
             "id": "1715877980098",
             "appearance": {
               "FOREGROUND_COLOR": 8764400,
@@ -877,8 +211,8 @@
             },
             "renderer": "Post",
             "transform": {
-              "x": 166,
-              "y": 351,
+              "x": 488,
+              "y": 291,
               "w": 250,
               "h": 160,
               "r": 0
@@ -888,7 +222,7 @@
             "screens": []
           },
           {
-            "id": "1715877980105",
+            "id": "1717695139647",
             "appearance": {
               "FOREGROUND_COLOR": 8764400,
               "FONT_SIZE": 16,
@@ -896,43 +230,16 @@
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
               "TEXT_ALIGNMENT": "center",
-              "TEXT": "PostController",
-              "TITLE": "Post Category",
-              "DESCRIPTION": "Provides information of post categories\n.",
-              "TECHNOLOGY": "Express Controller",
+              "TEXT": "Authentication",
+              "TITLE": "Authentication",
+              "DESCRIPTION": "Provides functionality about login, register.",
+              "TECHNOLOGY": "Express middleware",
               "SHAPE": "Rectangle"
             },
-            "renderer": "Post",
+            "renderer": "Authentication",
             "transform": {
-              "x": 841,
-              "y": 344,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1715877980216",
-            "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 0,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "PostController",
-              "TITLE": "Comment",
-              "DESCRIPTION": "Provides information of post comments\n.",
-              "TECHNOLOGY": "Express Controller",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "Post",
-            "transform": {
-              "x": 516,
-              "y": 117,
+              "x": 488,
+              "y": 563,
               "w": 250,
               "h": 160,
               "r": 0
@@ -943,47 +250,11 @@
           }
         ],
         "rootIds": [
-          "1712974337335",
-          "1712974337342",
           "1715877980098",
-          "1715877980105",
-          "1715877980216"
+          "1717695139647"
         ],
         "title": "Blog Server",
-        "relationships": [
-          {
-            "id": "1715877980873",
-            "title": "Post -> Comment",
-            "description": "Comments stores all the existing comments of each post.",
-            "source": "1715877980098",
-            "target": "1715877980216",
-            "diagramId": "1712974337304"
-          },
-          {
-            "id": "1715877980883",
-            "title": "Post -> Post Category",
-            "description": "Post category stores the category of user's posts.",
-            "source": "1715877980098",
-            "target": "1715877980105",
-            "diagramId": "1712974337304"
-          },
-          {
-            "id": "1715877980899",
-            "title": "Post -> Sign In",
-            "description": "",
-            "source": "1715877980098",
-            "target": "1712974337335",
-            "diagramId": "1712974337304"
-          },
-          {
-            "id": "1717165116785",
-            "title": "Register -> Sign In",
-            "description": "After register success, user will be redirected to Login page.",
-            "source": "1712974337342",
-            "target": "1712974337335",
-            "diagramId": "1712974337304"
-          }
-        ],
+        "relationships": [],
         "type": "Components",
         "parentId": "1712974337235"
       },
@@ -1002,7 +273,7 @@
               "TEXT_ALIGNMENT": "center",
               "TEXT": "Create Screen",
               "TITLE": "Creation Screen",
-              "DESCRIPTION": "Screen contains a form for user to input all information of new post.\n",
+              "DESCRIPTION": "Display a form contains all field to create new Post. Submit form will post data to /post/create. If create successfully, please alert created success. If not, please display error message.",
               "TECHNOLOGY": "Handlebars.js",
               "ACTION": "create",
               "SHAPE": "Rectangle"
@@ -1016,7 +287,13 @@
               "r": 0
             },
             "type": "Screens",
-            "descriptions": [],
+            "descriptions": [
+              {
+                "id": "1717695140075",
+                "description": "Create new post in database by data from request.",
+                "itemId": "1717165117640"
+              }
+            ],
             "screens": []
           },
           {
@@ -1030,8 +307,8 @@
               "STROKE_THICKNESS": 1,
               "TEXT_ALIGNMENT": "center",
               "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "Screen displays detail information of single post.\n",
+              "TITLE": "Detail Screen",
+              "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /post/edit/:id with id will be its ID. Delete button to get delete at /post/delete/:id with id will be its ID.",
               "TECHNOLOGY": "Screen",
               "ACTION": "detail",
               "SHAPE": "Rectangle"
@@ -1045,7 +322,13 @@
               "r": 0
             },
             "type": "Screens",
-            "descriptions": [],
+            "descriptions": [
+              {
+                "id": "1717695140069",
+                "description": "Find post by id.",
+                "itemId": "1717165117647"
+              }
+            ],
             "screens": []
           },
           {
@@ -1060,7 +343,7 @@
               "TEXT_ALIGNMENT": "center",
               "TEXT": "Update Screen",
               "TITLE": "Update Screen",
-              "DESCRIPTION": "Screen used to update a existing post.",
+              "DESCRIPTION": "Display form contains all the information of single Post record. Submit form will post data to /post/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
               "TECHNOLOGY": "Update Screen",
               "ACTION": "edit",
               "SHAPE": "Rectangle"
@@ -1074,7 +357,13 @@
               "r": 0
             },
             "type": "Screens",
-            "descriptions": [],
+            "descriptions": [
+              {
+                "id": "1717695140081",
+                "description": "Update the the information post by data from request.",
+                "itemId": "1717165117654"
+              }
+            ],
             "screens": []
           },
           {
@@ -1088,8 +377,8 @@
               "STROKE_THICKNESS": 1,
               "TEXT_ALIGNMENT": "center",
               "TEXT": "Other Screen",
-              "TITLE": "List All Screen",
-              "DESCRIPTION": "Screen display all the existing posts.\n",
+              "TITLE": "List Screen",
+              "DESCRIPTION": "Data will be displayed as a list, each of element will have three buttons to view, update and delete it. 'View' button will lead to get detail view of Post at /post/detail/:id with id will be its ID.'Update' button will lead to get edit form at /post/edit/:id with id will be its ID.'Delete' button will lead to get delete at /post/delete/:id with id will be its ID.Screen will have a search bar to search post by its name.",
               "TECHNOLOGY": "Screen",
               "ACTION": "list",
               "SHAPE": "Rectangle"
@@ -1103,7 +392,13 @@
               "r": 0
             },
             "type": "Screens",
-            "descriptions": [],
+            "descriptions": [
+              {
+                "id": "1717695140063",
+                "description": "Get all existing posts in database.",
+                "itemId": "1717165117844"
+              }
+            ],
             "screens": []
           }
         ],
@@ -1136,10 +431,10 @@
         "parentId": "1715877980098"
       },
       {
-        "id": "1717165118799",
+        "id": "1717695139733",
         "items": [
           {
-            "id": "1717165118813",
+            "id": "1717695139749",
             "appearance": {
               "FOREGROUND_COLOR": 16777215,
               "TEXT_DISABLED": true,
@@ -1150,37 +445,41 @@
               "TEXT_ALIGNMENT": "center",
               "TEXT": "View Screen",
               "TITLE": "Login Screen",
-              "DESCRIPTION": "Screen contains a form with username and password.",
+              "DESCRIPTION": "Contain a login form with username and password. Submit form will post data to '/authentication/login' endpoint.",
               "TECHNOLOGY": "Screen",
-              "ACTION": "view",
+              "ACTION": "login",
               "SHAPE": "Rectangle"
             },
             "renderer": "ViewScreen",
             "transform": {
-              "x": 470,
-              "y": 401,
+              "x": 225,
+              "y": 382,
               "w": 250,
               "h": 250,
               "r": 0
             },
             "type": "Screens",
-            "descriptions": [],
+            "descriptions": [
+              {
+                "id": "1717695139865",
+                "description": "Find account by username and password",
+                "itemId": "1717695139749"
+              },
+              {
+                "id": "1717695139866",
+                "description": "If find successfully, please generate accessToken for this username, and redirect to / ",
+                "itemId": "1717695139749"
+              },
+              {
+                "id": "1717695139867",
+                "description": "Otherwise, please alert login failed.",
+                "itemId": "1717695139749"
+              }
+            ],
             "screens": []
-          }
-        ],
-        "rootIds": [
-          "1717165118813"
-        ],
-        "title": "Sign In",
-        "relationships": [],
-        "type": "Screens",
-        "parentId": "1712974337335"
-      },
-      {
-        "id": "1717165119023",
-        "items": [
+          },
           {
-            "id": "1717165119037",
+            "id": "1717695139756",
             "appearance": {
               "FOREGROUND_COLOR": 16777215,
               "TEXT_DISABLED": true,
@@ -1191,293 +490,48 @@
               "TEXT_ALIGNMENT": "center",
               "TEXT": "View Screen",
               "TITLE": "Register Screen",
-              "DESCRIPTION": "Screen contains a form to input all new data of new account.",
+              "DESCRIPTION": "Contain a register form with username, password, email, phone. Submit form will post data to '/authentication/register' endpoint.",
               "TECHNOLOGY": "Screen",
-              "ACTION": "view",
+              "ACTION": "register",
               "SHAPE": "Rectangle"
             },
             "renderer": "ViewScreen",
             "transform": {
-              "x": 479,
-              "y": 315,
+              "x": 709,
+              "y": 377,
               "w": 250,
               "h": 250,
               "r": 0
             },
             "type": "Screens",
-            "descriptions": [],
+            "descriptions": [
+              {
+                "id": "1717695139877",
+                "description": "Create new account with sent data in register request.",
+                "itemId": "1717695139756"
+              },
+              {
+                "id": "1717695139878",
+                "description": "If create successfully, please redirect to /authentication/login.",
+                "itemId": "1717695139756"
+              },
+              {
+                "id": "1717695139879",
+                "description": "Otherwise, please alert register failed.",
+                "itemId": "1717695139756"
+              }
+            ],
             "screens": []
           }
         ],
         "rootIds": [
-          "1717165119037"
+          "1717695139749",
+          "1717695139756"
         ],
-        "title": "Register",
+        "title": "Authentication",
         "relationships": [],
         "type": "Screens",
-        "parentId": "1712974337342"
-      },
-      {
-        "id": "1717165119487",
-        "items": [
-          {
-            "id": "1717165119501",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Create Screen",
-              "TITLE": "Creation Screen",
-              "DESCRIPTION": "This screen is used to add new single data to this component.",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "create",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 219,
-              "y": 691,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1717165119508",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "This screen is used to view something in its container",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "detail",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 688,
-              "y": 250,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1717165119515",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Update Screen",
-              "TITLE": "Update Screen",
-              "DESCRIPTION": "This screen is used to update something in its container",
-              "TECHNOLOGY": "Update Screen",
-              "ACTION": "edit",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "UpdateScreen",
-            "transform": {
-              "x": 678,
-              "y": 691,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1717165119591",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List Screen",
-              "DESCRIPTION": "Describe your idea with new screen",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "list",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 234,
-              "y": 250,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          }
-        ],
-        "rootIds": [
-          "1717165119501",
-          "1717165119508",
-          "1717165119515",
-          "1717165119591"
-        ],
-        "title": "Comment",
-        "relationships": [],
-        "type": "Screens",
-        "parentId": "1715877980216"
-      },
-      {
-        "id": "1717165119641",
-        "items": [
-          {
-            "id": "1717165119655",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "This screen is used to view something in its container",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "detail",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 720,
-              "y": 264,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1717165119662",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Update Screen",
-              "TITLE": "Update Screen",
-              "DESCRIPTION": "This screen is used to update something in its container",
-              "TECHNOLOGY": "Update Screen",
-              "ACTION": "edit",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "UpdateScreen",
-            "transform": {
-              "x": 210,
-              "y": 683,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1717165119669",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Create Screen",
-              "TITLE": "Creation Screen",
-              "DESCRIPTION": "This screen is used to add new single data to this component.",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "create",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 712,
-              "y": 691,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1717165119719",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List Screen",
-              "DESCRIPTION": "Describe your idea with new screen",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "list",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 202,
-              "y": 254,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          }
-        ],
-        "rootIds": [
-          "1717165119655",
-          "1717165119662",
-          "1717165119669",
-          "1717165119719"
-        ],
-        "title": "Post Category",
-        "relationships": [],
-        "type": "Screens",
-        "parentId": "1715877980105"
+        "parentId": "1717695139647"
       }
     ],
     "diagramIds": [
@@ -1488,9 +542,11 @@
       "1717165118799",
       "1717165119023",
       "1717165119487",
-      "1717165119641"
+      "1717165119641",
+      "1717695139535",
+      "1717695139733"
     ],
-    "id": "2dd8ec3611751e15afdeb4c2",
+    "id": "f183569015fe5c332d569546",
     "size": {
       "x": 1000,
       "y": 1000
@@ -1498,575 +554,5 @@
     "system": "blog"
   },
   "actions": [
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119023",
-        "timestamp": 1717167483053,
-        "appearance": {
-          "key": "DESCRIPTION",
-          "value": "Screen contains a form to input all new data of n"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119037"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119023",
-        "timestamp": 1717167483156,
-        "appearance": {
-          "key": "DESCRIPTION",
-          "value": "Screen contains a form to input all new data of ne"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119037"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119023",
-        "timestamp": 1717167483255,
-        "appearance": {
-          "key": "DESCRIPTION",
-          "value": "Screen contains a form to input all new data of new"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119037"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119023",
-        "timestamp": 1717167483342,
-        "appearance": {
-          "key": "DESCRIPTION",
-          "value": "Screen contains a form to input all new data of new "
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119037"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119023",
-        "timestamp": 1717167483469,
-        "appearance": {
-          "key": "DESCRIPTION",
-          "value": "Screen contains a form to input all new data of new a"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119037"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119023",
-        "timestamp": 1717167483679,
-        "appearance": {
-          "key": "DESCRIPTION",
-          "value": "Screen contains a form to input all new data of new ac"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119037"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119023",
-        "timestamp": 1717167483828,
-        "appearance": {
-          "key": "DESCRIPTION",
-          "value": "Screen contains a form to input all new data of new acc"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119037"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119023",
-        "timestamp": 1717167483958,
-        "appearance": {
-          "key": "DESCRIPTION",
-          "value": "Screen contains a form to input all new data of new acco"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119037"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119023",
-        "timestamp": 1717167484169,
-        "appearance": {
-          "key": "DESCRIPTION",
-          "value": "Screen contains a form to input all new data of new accou"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119037"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119023",
-        "timestamp": 1717167484229,
-        "appearance": {
-          "key": "DESCRIPTION",
-          "value": "Screen contains a form to input all new data of new accoun"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119037"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119023",
-        "timestamp": 1717167484369,
-        "appearance": {
-          "key": "DESCRIPTION",
-          "value": "Screen contains a form to input all new data of new account"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119037"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119023",
-        "timestamp": 1717167484507,
-        "appearance": {
-          "key": "DESCRIPTION",
-          "value": "Screen contains a form to input all new data of new account."
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119037"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119023",
-        "timestamp": 1717167485842,
-        "appearance": {
-          "key": "DESCRIPTION",
-          "value": "Screen contains a form to input all new data of new account.\n"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119037"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119023",
-        "timestamp": 1717167487230,
-        "appearance": {
-          "key": "DESCRIPTION",
-          "value": "Screen contains a form to input all new data of new account."
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119037"
-        ]
-      }
-    },
-    {
-      "type": "diagram/add",
-      "payload": {
-        "diagramId": "1717165119487",
-        "timestamp": 1717167494076,
-        "title": "Comment",
-        "parentId": "1715877980216",
-        "type": "Screens"
-      }
-    },
-    {
-      "type": "items/addShape",
-      "payload": {
-        "diagramId": "1717165119487",
-        "timestamp": 1717167496583,
-        "id": "1717165119501",
-        "renderer": "CreateScreen",
-        "type": "Screens",
-        "position": {
-          "x": 94.42857469831195,
-          "y": 118.00000871930804
-        }
-      }
-    },
-    {
-      "type": "items/addShape",
-      "payload": {
-        "diagramId": "1717165119487",
-        "timestamp": 1717167497519,
-        "id": "1717165119508",
-        "renderer": "ViewScreen",
-        "type": "Screens",
-        "position": {
-          "x": 563.0000087193081,
-          "y": 125.14286586216518
-        }
-      }
-    },
-    {
-      "type": "items/addShape",
-      "payload": {
-        "diagramId": "1717165119487",
-        "timestamp": 1717167500070,
-        "id": "1717165119515",
-        "renderer": "UpdateScreen",
-        "type": "Screens",
-        "position": {
-          "x": 513.0000032697405,
-          "y": 543.7142944335938
-        }
-      }
-    },
-    {
-      "type": "items/transform",
-      "payload": {
-        "diagramId": "1717165119487",
-        "timestamp": 1717167501516,
-        "oldBounds": {
-          "x": 638,
-          "y": 668,
-          "w": 250,
-          "h": 250,
-          "r": 0
-        },
-        "newBounds": {
-          "x": 678,
-          "y": 691,
-          "w": 250,
-          "h": 250,
-          "r": 0
-        },
-        "itemIds": [
-          "1717165119515"
-        ]
-      }
-    },
-    {
-      "type": "items/transform",
-      "payload": {
-        "diagramId": "1717165119487",
-        "timestamp": 1717167503515,
-        "oldBounds": {
-          "x": 219,
-          "y": 243,
-          "w": 250,
-          "h": 250,
-          "r": 0
-        },
-        "newBounds": {
-          "x": 219,
-          "y": 691,
-          "w": 250,
-          "h": 250,
-          "r": 0
-        },
-        "itemIds": [
-          "1717165119501"
-        ]
-      }
-    },
-    {
-      "type": "items/addShape",
-      "payload": {
-        "diagramId": "1717165119487",
-        "timestamp": 1717167505007,
-        "id": "1717165119591",
-        "renderer": "OtherScreen",
-        "type": "Screens",
-        "position": {
-          "x": 95.8571515764509,
-          "y": 123.71429443359376
-        }
-      }
-    },
-    {
-      "type": "items/transform",
-      "payload": {
-        "diagramId": "1717165119487",
-        "timestamp": 1717167506091,
-        "oldBounds": {
-          "x": 220,
-          "y": 248,
-          "w": 250,
-          "h": 250,
-          "r": 0
-        },
-        "newBounds": {
-          "x": 234,
-          "y": 250,
-          "w": 250,
-          "h": 250,
-          "r": 0
-        },
-        "itemIds": [
-          "1717165119591"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119487",
-        "timestamp": 1717167509822,
-        "appearance": {
-          "key": "TECHNOLOGY",
-          "value": "Screen"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119591"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119487",
-        "timestamp": 1717167514595,
-        "appearance": {
-          "key": "TITLE",
-          "value": "List Screen"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119591"
-        ]
-      }
-    },
-    {
-      "type": "diagram/add",
-      "payload": {
-        "diagramId": "1717165119641",
-        "timestamp": 1717167519771,
-        "title": "Post Category",
-        "parentId": "1715877980105",
-        "type": "Screens"
-      }
-    },
-    {
-      "type": "items/addShape",
-      "payload": {
-        "diagramId": "1717165119641",
-        "timestamp": 1717167521599,
-        "id": "1717165119655",
-        "renderer": "ViewScreen",
-        "type": "Screens",
-        "position": {
-          "x": 595.857151576451,
-          "y": 139.42858014787947
-        }
-      }
-    },
-    {
-      "type": "items/addShape",
-      "payload": {
-        "diagramId": "1717165119641",
-        "timestamp": 1717167523742,
-        "id": "1717165119662",
-        "renderer": "UpdateScreen",
-        "type": "Screens",
-        "position": {
-          "x": 75.85714612688338,
-          "y": 506.57143729073664
-        }
-      }
-    },
-    {
-      "type": "items/addShape",
-      "payload": {
-        "diagramId": "1717165119641",
-        "timestamp": 1717167525654,
-        "id": "1717165119669",
-        "renderer": "CreateScreen",
-        "type": "Screens",
-        "position": {
-          "x": 534.428574698312,
-          "y": 543.7142944335938
-        }
-      }
-    },
-    {
-      "type": "items/transform",
-      "payload": {
-        "diagramId": "1717165119641",
-        "timestamp": 1717167526755,
-        "oldBounds": {
-          "x": 200,
-          "y": 631,
-          "w": 250,
-          "h": 250,
-          "r": 0
-        },
-        "newBounds": {
-          "x": 210,
-          "y": 683,
-          "w": 250,
-          "h": 250,
-          "r": 0
-        },
-        "itemIds": [
-          "1717165119662"
-        ]
-      }
-    },
-    {
-      "type": "items/transform",
-      "payload": {
-        "diagramId": "1717165119641",
-        "timestamp": 1717167527971,
-        "oldBounds": {
-          "x": 659,
-          "y": 668,
-          "w": 250,
-          "h": 250,
-          "r": 0
-        },
-        "newBounds": {
-          "x": 712,
-          "y": 691,
-          "w": 250,
-          "h": 250,
-          "r": 0
-        },
-        "itemIds": [
-          "1717165119669"
-        ]
-      }
-    },
-    {
-      "type": "items/addShape",
-      "payload": {
-        "diagramId": "1717165119641",
-        "timestamp": 1717167529550,
-        "id": "1717165119719",
-        "renderer": "OtherScreen",
-        "type": "Screens",
-        "position": {
-          "x": 70.14286586216518,
-          "y": 115.14286586216518
-        }
-      }
-    },
-    {
-      "type": "items/transform",
-      "payload": {
-        "diagramId": "1717165119641",
-        "timestamp": 1717167530803,
-        "oldBounds": {
-          "x": 195,
-          "y": 240,
-          "w": 250,
-          "h": 250,
-          "r": 0
-        },
-        "newBounds": {
-          "x": 232,
-          "y": 240,
-          "w": 250,
-          "h": 250,
-          "r": 0
-        },
-        "itemIds": [
-          "1717165119719"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119641",
-        "timestamp": 1717167535660,
-        "appearance": {
-          "key": "TITLE",
-          "value": "List Screen"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119719"
-        ]
-      }
-    },
-    {
-      "type": "items/appearance",
-      "payload": {
-        "diagramId": "1717165119641",
-        "timestamp": 1717167536932,
-        "appearance": {
-          "key": "TECHNOLOGY",
-          "value": "Screen"
-        },
-        "force": true,
-        "itemIds": [
-          "1717165119719"
-        ]
-      }
-    },
-    {
-      "type": "items/transform",
-      "payload": {
-        "diagramId": "1717165119641",
-        "timestamp": 1717167539067,
-        "oldBounds": {
-          "x": 232,
-          "y": 240,
-          "w": 250,
-          "h": 250,
-          "r": 0
-        },
-        "newBounds": {
-          "x": 202,
-          "y": 254,
-          "w": 250,
-          "h": 250,
-          "r": 0
-        },
-        "itemIds": [
-          "1717165119719"
-        ]
-      }
-    }
   ]
 }

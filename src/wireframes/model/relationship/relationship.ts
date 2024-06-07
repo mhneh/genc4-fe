@@ -50,7 +50,7 @@ export class Relationship extends Record<Props> {
     }
 
     public clone() {
-        return this.set('id', MathHelper.guid());
+        return this.set('id', MathHelper.nextId());
     }
 
     public update(data: UpdatedProps) {
@@ -62,6 +62,10 @@ export class Relationship extends Record<Props> {
             newState = this.set('description', data.description);
         }
         return newState;
+    }
+
+    public updateDiagramId(diagramId: string) {
+        return this.set("diagramId", diagramId);
     }
 
     public static create(setup: InitialRelationshipProps) {

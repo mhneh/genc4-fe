@@ -75,7 +75,7 @@
               "TEXT_ALIGNMENT": "center",
               "TITLE": "Custom System"
             },
-            "renderer": "EmptyContainer",
+            "renderer": "ApiApplication",
             "transform": {
               "x": 501,
               "y": 474,
@@ -106,7 +106,7 @@
           {
             "id": "1712974337210",
             "title": "Custom System -> Other System",
-            "description": "",
+            "description": "Our custom system will interact with other system.",
             "source": "1712974337050",
             "target": "1712974336915",
             "diagramId": "1712974336896"
@@ -177,7 +177,7 @@
           "1712974337235",
           "1712974337251"
         ],
-        "title": "Blog System",
+        "title": "Custom System",
         "relationships": [
           {
             "id": "1712974337315",
@@ -190,6 +190,18 @@
         ],
         "type": "Containers",
         "parentId": "1712974337050"
+      },
+      {
+        "id": "1712974337304",
+        "items": [
+        ],
+        "rootIds": [
+        ],
+        "title": "Custom Server",
+        "relationships": [
+        ],
+        "type": "Components",
+        "parentId": "1712974337235"
       }
     ],
     "diagramIds": [

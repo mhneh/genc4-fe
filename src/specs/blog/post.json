@@ -1,0 +1,166 @@
+{
+  "id": "",
+  "title": "Post",
+  "models": "",
+  "items": [
+    {
+      "id": "665f269d5fc1a553f9e105e1",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "Create Screen",
+        "TITLE": "Creation Screen",
+        "DESCRIPTION": "Display a form contains all field to create new Post. Submit form will post data to /post/create. If create successfully, please alert created success. If not, please display error message.",
+        "TECHNOLOGY": "Handlebars.js",
+        "ACTION": "create",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "CreateScreen",
+      "transform": {
+        "x": 241,
+        "y": 712,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "66624b89ff9c2d34f6496c9e",
+          "description": "Create new post in database by data from request.",
+          "itemId": "665f269d5fc1a553f9e105e1"
+        }
+      ]
+    },
+    {
+      "id": "665f26a72fd6218fa29d51d9",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "View Screen",
+        "TITLE": "View Screen",
+        "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /post/edit/:id with id will be its ID. Delete button to get delete at /post/delete/:id with id will be its ID.",
+        "TECHNOLOGY": "Screen",
+        "ACTION": "detail",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "ViewScreen",
+      "transform": {
+        "x": 749,
+        "y": 245,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "66624b8dde8c854eb339dffd",
+          "description": "Find post by id.",
+          "itemId": "665f26a72fd6218fa29d51d9"
+        }
+      ]
+    },
+    {
+      "id": "665f26af562b6e389d723241",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "Update Screen",
+        "TITLE": "Update Screen",
+        "DESCRIPTION": "Display form contains all the information of single Post record. Submit form will post data to /post/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
+        "TECHNOLOGY": "Update Screen",
+        "ACTION": "edit",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "UpdateScreen",
+      "transform": {
+        "x": 761,
+        "y": 757,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "66624b9117cc1754af2600a1",
+          "description": "Update the the information post by data from request.",
+          "itemId": "665f26af562b6e389d723241"
+        }
+      ]
+    },
+    {
+      "id": "665f26b54372408c69692540",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "Other Screen",
+        "TITLE": "List All Screen",
+        "DESCRIPTION": "Data will be displayed as a list, each of element will have three buttons to view, update and delete it. 'View' button will lead to get detail view of Post at /post/detail/:id with id will be its ID.'Update' button will lead to get edit form at /post/edit/:id with id will be its ID.'Delete' button will lead to get delete at /post/delete/:id with id will be its ID.Screen will have a search bar to search post by its name.",
+        "TECHNOLOGY": "Screen",
+        "ACTION": "list",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "OtherScreen",
+      "transform": {
+        "x": 248,
+        "y": 245,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "66624b96689d28d67b11bbe0",
+          "description": "Get all existing posts in database.",
+          "itemId": "665f26b54372408c69692540"
+        }
+      ]
+    }
+  ],
+  "rootIds": [
+    "665f269d5fc1a553f9e105e1",
+    "665f26a72fd6218fa29d51d9",
+    "665f26af562b6e389d723241",
+    "665f26b54372408c69692540"
+  ],
+  "relationships": [
+    {
+      "id": "665f28b74dce8beeaaf14820",
+      "title": "List All Screen -> Creation Screen",
+      "description": "List of posts contains buttons to create or update new post.",
+      "source": "665f26b54372408c69692540",
+      "target": "665f269d5fc1a553f9e105e1"
+    },
+    {
+      "id": "665f28c15addb9fa47d86f7d",
+      "title": "List All Screen -> Update Screen",
+      "description": "List of posts contains buttons to create or update post.",
+      "source": "665f26b54372408c69692540",
+      "target": "665f26af562b6e389d723241"
+    }
+  ],
+  "type": "Screens"
+}

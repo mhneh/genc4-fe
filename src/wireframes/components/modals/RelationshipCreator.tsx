@@ -46,8 +46,7 @@ export const RelationshipCreator = memo(() => {
         if (relationship?.description) {
             setDesc(relationship.description);
         }
-        console.log(relationship);
-    }, [relationships]);
+    }, [relationships, showRelationshipModal]);
 
     const doConnect = useEventCallback((d: string) => {
         if (!selectedDiagramId) {

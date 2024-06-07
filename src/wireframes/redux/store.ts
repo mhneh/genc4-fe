@@ -33,7 +33,7 @@ import {
   createInitialLoadingState,
   createInitialUIState,
 } from "../model/internal.ts";
-import { registerComponents, registerShapeRenderers } from "../shapes";
+import {registerComponents, registerShapeRenderers, registerSpecs} from "../shapes";
 import { buildRelationships } from "@app/wireframes/redux/reducers/relationships.ts";
 
 export type RootState = ReturnType<typeof store.getState>;
@@ -43,6 +43,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 registerShapeRenderers();
 registerComponents();
+registerSpecs();
 
 export const selectSystem = createAction("system/select", (system: string) => {
   return { payload: { system: system } };

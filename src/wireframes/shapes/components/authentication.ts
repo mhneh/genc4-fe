@@ -23,17 +23,17 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
-  [DefaultAppearance.TEXT]: "SecurityComponent",
-  [DefaultAppearance.TITLE]: "Security Component",
+  [DefaultAppearance.TEXT]: "Authentication",
+  [DefaultAppearance.TITLE]: "Authentication",
   [DefaultAppearance.DESC]:
-    "Provides functionality related to signing in, changing passwords, etc.",
-  [DefaultAppearance.TECH]: "Spring Bean",
+    "Provides functionality about login, register.",
+  [DefaultAppearance.TECH]: "Express middleware",
   [SHAPE]: SHAPE_RECTANGLE,
 };
 
-export class Security implements ShapePlugin {
+export class Authentication implements ShapePlugin {
   public identifier(): string {
-    return "Security";
+    return "Authentication";
   }
 
   public defaultAppearance() {

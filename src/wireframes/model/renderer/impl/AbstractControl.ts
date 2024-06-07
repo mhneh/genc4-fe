@@ -178,7 +178,9 @@ export class AbstractControl implements Renderer {
         return existing;
     }
 
-    renderRelationship(relationship: Relationship, existing: any, form: { source: DiagramItem; target: DiagramItem }): any {
+    renderRelationship(relationship: Relationship,
+                       existing: any, form: { source: DiagramItem; target: DiagramItem }): any {
+        console.log(relationship, existing, form)
     }
 }
 

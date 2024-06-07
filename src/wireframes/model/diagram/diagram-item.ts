@@ -431,6 +431,10 @@ export class DiagramItem extends Record<Props> implements Shape {
         }
     }
 
+    public clone() {
+        return this.set('id', MathHelper.guid());
+    }
+
     protected afterClone(values: Props, prev?: DiagramItem) {
         if (this.constraint) {
             const size = this.constraint.updateSize(this, this.transform.size, prev);

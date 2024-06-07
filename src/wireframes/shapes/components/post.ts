@@ -27,6 +27,7 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.TITLE]: "Post Controller",
   [DefaultAppearance.DESC]: "Provides information of posts.",
   [DefaultAppearance.TECH]: "Spring MVC Rest Controller",
+  [DefaultAppearance.ACTION]: "auth",
   [SHAPE]: SHAPE_RECTANGLE,
 };
 
