@@ -23,17 +23,18 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
-  [DefaultAppearance.TEXT]: "Post",
-  [DefaultAppearance.TITLE]: "Post",
-  [DefaultAppearance.DESC]: "Provides information of posts.",
-  [DefaultAppearance.TECH]: "Express",
-  [DefaultAppearance.ACTION]: "service",
+  [DefaultAppearance.TEXT]: "Authentication",
+  [DefaultAppearance.TITLE]: "Authentication",
+  [DefaultAppearance.DESC]:
+    "Provides functionality about login, register.",
+  [DefaultAppearance.TECH]: "Express Middleware",
+  [DefaultAppearance.ACTION]: "auth",
   [SHAPE]: SHAPE_RECTANGLE,
 };
 
-export class Post implements ShapePlugin {
+export class Authentication implements ShapePlugin {
   public identifier(): string {
-    return "Post";
+    return "Authentication";
   }
 
   public defaultAppearance() {
@@ -103,7 +104,7 @@ export class Post implements ShapePlugin {
       ctx.shape,
       bounds.deflate(4),
       (p) => {
-        p.setForegroundColor("0x85bbf0");
+        p.setForegroundColor("0x8fbbfb");
         p.setText(
           ctx.shape.getAppearance(DefaultAppearance.TECH)
             ? "[" + ctx.shape.getAppearance(DefaultAppearance.TECH) + "]"

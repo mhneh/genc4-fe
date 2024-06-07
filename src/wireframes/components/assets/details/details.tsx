@@ -1,25 +1,9 @@
-import {
-  RootState,
-  useAppDispatch,
-  useAppSelector,
-} from "@app/wireframes/redux/store.ts";
-import { useStore as useReduxStore } from "react-redux";
-import {
-  addShape,
-  filterShapes,
-  getComponentsFilter,
-  getDiagramId,
-  getFilteredComponents,
-  ShapeInfo,
-  useStore,
-} from "@app/wireframes/model";
-import * as React from "react";
-import { ShapeImage } from "@app/wireframes/components/assets/shapes/ShapeImage.tsx";
-import { Grid, useEventCallback } from "@app/core";
-import { Input } from "antd";
-import { texts } from "@app/texts";
-import { SearchOutlined } from "@ant-design/icons";
-import { useCallback } from "react";
+import {RootState, useAppDispatch, useAppSelector,} from "@app/wireframes/redux/store.ts";
+import {useStore as useReduxStore} from "react-redux";
+import {addShape, getDiagramId, ShapeInfo,} from "@app/wireframes/model";
+import {useCallback} from "react";
+import {ShapeImage} from "@app/wireframes/components/assets/shapes/ShapeImage.tsx";
+import {Grid} from "@app/core";
 
 const keyBuilder = (shape: ShapeInfo) => {
   return shape.name;

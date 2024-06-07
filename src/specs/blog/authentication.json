@@ -1,0 +1,111 @@
+{
+  "id": "",
+  "title": "Authentication",
+  "models": "",
+  "items": [
+    {
+      "id": "66624adb7180b67f5484c957",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "View Screen",
+        "TITLE": "Login Screen",
+        "DESCRIPTION": "Contain a login form with username and password. Submit form will post data to '/authentication/login' endpoint.",
+        "TECHNOLOGY": "Screen",
+        "ACTION": "login",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "ViewScreen",
+      "transform": {
+        "x": 225,
+        "y": 382,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "66624aee86d3ae1350e26c23",
+          "description": "Find account by username and password",
+          "itemId": "66624adb7180b67f5484c957"
+        },
+        {
+          "id": "66624bbd71ad9268f92cc13d",
+          "description": "If find successfully, please generate accessToken for this username, and redirect to / ",
+          "itemId": "66624adb7180b67f5484c957"
+        },
+        {
+          "id": "66624bc1450432b79f1edaaa",
+          "description": "Otherwise, please alert login failed.",
+          "itemId": "66624adb7180b67f5484c957"
+        }
+      ],
+      "screens": []
+    },
+    {
+      "id": "66624bcf313688beb7e9698d",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "View Screen",
+        "TITLE": "Register Screen",
+        "DESCRIPTION": "Contain a register form with username, password, email, phone. Submit form will post data to '/authentication/register' endpoint.",
+        "TECHNOLOGY": "Screen",
+        "ACTION": "register",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "ViewScreen",
+      "transform": {
+        "x": 709,
+        "y": 377,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "66624bd5f3ffbd3e036cb9fd",
+          "description": "Create new account with sent data in register request.",
+          "itemId": "66624bcf313688beb7e9698d"
+        },
+        {
+          "id": "66624be0f90a5435c52229dc",
+          "description": "If create successfully, please redirect to /authentication/login.",
+          "itemId": "66624bcf313688beb7e9698d"
+        },
+        {
+          "id": "66624be0f90a5435c52229dc",
+          "description": "Otherwise, please alert register failed.",
+          "itemId": "66624bcf313688beb7e9698d"
+        }
+      ],
+      "screens": []
+    }
+  ],
+  "rootIds": [
+    "1717695139749",
+    "1717695139756"
+  ],
+  "relationships": [
+    {
+      "id": "66624e7362d8af72b105ec7b",
+      "title": "Register Screen -> Login Screen",
+      "description": "Register successfully will be redirected to Login page.",
+      "source": "66624bcf313688beb7e9698d",
+      "target": "66624adb7180b67f5484c957"
+    }
+  ],
+  "type": "Screens"
+}

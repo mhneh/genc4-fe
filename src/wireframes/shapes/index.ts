@@ -11,7 +11,7 @@ import {C4Control} from "@app/wireframes/model/renderer/impl/C4Control.ts";
 import {SignIn} from "@app/wireframes/shapes/components/signin.ts";
 import {Post} from "@app/wireframes/shapes/components/post.ts";
 import {ResetPassword} from "@app/wireframes/shapes/components/reset-password.ts";
-import {Security} from "@app/wireframes/shapes/components/security.ts";
+import {Authentication} from "@app/wireframes/shapes/components/authentication.ts";
 import {EmailComponent} from "@app/wireframes/shapes/components/email.ts";
 import {Database} from "@app/wireframes/shapes/containers/database.ts";
 import {SinglePageApplication} from "@app/wireframes/shapes/containers/spa.ts";
@@ -62,6 +62,13 @@ import {ViewScreen} from "./screens/view.ts";
 import {UpdateScreen} from "./screens/update.ts";
 import {OtherScreen} from "./screens/other.ts";
 import {ListScreen} from "@app/wireframes/shapes/screens/list.ts";
+import {SpecsService} from "@app/wireframes/model/renderer/SpecsService.ts";
+
+import postSpecs from '@app/specs/blog/post.json';
+import authenticationSpecs from '@app/specs/blog/authentication.json';
+import userSpecs from '@app/specs/blog/user.json';
+import {Serializer} from "@app/wireframes/model";
+import {User} from "@app/wireframes/shapes/components/user.ts";
 
 export function registerShapeRenderers() {
   // RendererService.addRenderer(new AbstractControl(new Browser()));
@@ -103,25 +110,26 @@ export function registerShapeRenderers() {
 
 export function registerComponents() {
   // Components
-  RendererService.addRenderer(new C4Control(new EmptyComponent()));
-  RendererService.addRenderer(new C4Control(new Register()));
-  RendererService.addRenderer(new C4Control(new SignIn()));
+  // RendererService.addRenderer(new C4Control(new EmptyComponent()));
+  // RendererService.addRenderer(new C4Control(new Register()));
+  // RendererService.addRenderer(new C4Control(new SignIn()));
+  RendererService.addRenderer(new C4Control(new Authentication()));
+  RendererService.addRenderer(new C4Control(new User()));
   RendererService.addRenderer(new C4Control(new Post()));
-  RendererService.addRenderer(new C4Control(new ResetPassword()));
-  RendererService.addRenderer(new C4Control(new Security()));
-  RendererService.addRenderer(new C4Control(new EmailComponent()));
+  // RendererService.addRenderer(new C4Control(new ResetPassword()));
+  // RendererService.addRenderer(new C4Control(new EmailComponent()));
 
   // Containers
-  RendererService.addRenderer(new C4Control(new EmptyContainer()));
+  // RendererService.addRenderer(new C4Control(new EmptyContainer()));
   RendererService.addRenderer(new C4Control(new Database()));
-  RendererService.addRenderer(new C4Control(new SinglePageApplication()));
+  // RendererService.addRenderer(new C4Control(new SinglePageApplication()));
   RendererService.addRenderer(new C4Control(new ApiApplication()));
 
   // Contexts
   RendererService.addRenderer(new C4Control(new PersonalOwner()));
-  RendererService.addRenderer(new C4Control(new ExternalSystem()));
+  // RendererService.addRenderer(new C4Control(new ExternalSystem()));
   RendererService.addRenderer(new C4Control(new EmailSystem()));
-  RendererService.addRenderer(new C4Control(new EmptySystem()));
+  // RendererService.addRenderer(new C4Control(new EmptySystem()));
 
   //   Screens
   RendererService.addRenderer(new C4Control(new CreateScreen()));
@@ -131,4 +139,10 @@ export function registerComponents() {
   RendererService.addRenderer(new C4Control(new ListScreen()));
 
   RendererService.addRenderer(new RelationshipControl(new Relationship()));
+}
+
+export function registerSpecs() {
+  SpecsService.addSpecs(new Post().identifier(), Serializer.deserializeDiagram(postSpecs));
+  SpecsService.addSpecs(new Authentication().identifier(), Serializer.deserializeDiagram(authenticationSpecs));
+  SpecsService.addSpecs(new User().identifier(), Serializer.deserializeDiagram(userSpecs));
 }

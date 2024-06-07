@@ -1,0 +1,171 @@
+{
+  "id": "",
+  "title": "User",
+  "models": "",
+  "items": [
+    {
+      "id": "6662f6bcd1660c007486c67a",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "New User Screen",
+        "TITLE": "New User Screen",
+        "DESCRIPTION": "Display a form contains all field to create new User. Submit form will post data to /user/create. If create successfully, please redirect to '/user/'. If not, please display error message.",
+        "TECHNOLOGY": "Handlebars.js",
+        "ACTION": "create",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "CreateScreen",
+      "transform": {
+        "x": 241,
+        "y": 712,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "6662f6c81c13ca82ea0c3428",
+          "description": "Create new user in database by data from request.",
+          "itemId": "6662f6bcd1660c007486c67a"
+        }
+      ]
+    },
+    {
+      "id": "6662f708d7afca65d71db6c4",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "View Screen",
+        "TITLE": "View Screen",
+        "DESCRIPTION": "This screen will have 2 button: Edit, Delete. 'Edit' button is used get edit user form at /post/edit/:id with id will be its user id. 'Delete' button is used to get delete at /post/delete/:id with id will be its user id.",
+        "TECHNOLOGY": "Screen",
+        "ACTION": "detail",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "ViewScreen",
+      "transform": {
+        "x": 749,
+        "y": 245,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "6662f70d94a75fd0e34cdd06",
+          "description": "Find user by id.",
+          "itemId": "6662f708d7afca65d71db6c4"
+        }
+      ]
+    },
+    {
+      "id": "6662f76dda8690300611f0d8",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "Update Screen",
+        "TITLE": "Update Screen",
+        "DESCRIPTION": "Screens contains form displays all the information of single User record. Submit form will post data to /user/edit/:id. If updated successfully, please redirect to '/user/'. Otherwise, please display error message.",
+        "TECHNOLOGY": "Update Screen",
+        "ACTION": "edit",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "UpdateScreen",
+      "transform": {
+        "x": 761,
+        "y": 757,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "6662f7d51093135dc1346193",
+          "description": "Find user by id.",
+          "itemId": "6662f76dda8690300611f0d8"
+        },
+        {
+          "id": "6662f7b29fc1e3450a0e24e6",
+          "description": "Update information of user by data from request.",
+          "itemId": "6662f76dda8690300611f0d8"
+        }
+      ]
+    },
+    {
+      "id": "6662f7ec2b7f9ce4386e046f",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "Other Screen",
+        "TITLE": "List All Screen",
+        "DESCRIPTION": "Screen will displayed all users as a list, each of element will have three buttons to view, update and delete user. 'View' button will get detail view of User at /user/detail/:id with id will be its user id. 'Update' button will get edit form at /user/edit/:id with id will be its user id. 'Delete' button get delete at /user/delete/:id with id will be its user id. Screen will have a search bar to search user by username.",
+        "TECHNOLOGY": "Screen",
+        "ACTION": "list",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "OtherScreen",
+      "transform": {
+        "x": 248,
+        "y": 245,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "6662f7f2fa618648dbbfd088",
+          "description": "Find all existing users in database.",
+          "itemId": "6662f7ec2b7f9ce4386e046f"
+        }
+      ]
+    }
+  ],
+  "rootIds": [
+    "6662f6bcd1660c007486c67a",
+    "6662f708d7afca65d71db6c4",
+    "6662f76dda8690300611f0d8",
+    "6662f7ec2b7f9ce4386e046f"
+  ],
+  "relationships": [
+    {
+      "id": "6662f89e00cd7ce328e22d3e",
+      "title": "List All Screen -> New User Screen",
+      "description": "List of users contains button to create new user.",
+      "source": "6662f7ec2b7f9ce4386e046f",
+      "target": "6662f6bcd1660c007486c67a"
+    },
+    {
+      "id": "6662f8a2963fff5135312f09",
+      "title": "List All Screen -> Update Screen",
+      "description": "List of posts contains button to update existed user.",
+      "source": "6662f7ec2b7f9ce4386e046f",
+      "target": "6662f76dda8690300611f0d8"
+    }
+  ],
+  "type": "Screens"
+}

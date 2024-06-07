@@ -99,6 +99,10 @@ export module Serializer {
     export function serializeEditor(editor: EditorState) {
         return writeEditor(editor);
     }
+
+    export function deserializeDiagram(input: any) {
+        return readDiagram(input);
+    }
 }
 
 function writeEditor(source: EditorState) {

@@ -23,17 +23,17 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
-  [DefaultAppearance.TEXT]: "SecurityComponent",
-  [DefaultAppearance.TITLE]: "Security Component",
-  [DefaultAppearance.DESC]:
-    "Provides functionality related to signing in, changing passwords, etc.",
-  [DefaultAppearance.TECH]: "Spring Bean",
+  [DefaultAppearance.TEXT]: "User",
+  [DefaultAppearance.TITLE]: "User",
+  [DefaultAppearance.DESC]: "Provides information of users.",
+  [DefaultAppearance.TECH]: "Express",
+  [DefaultAppearance.ACTION]: "service",
   [SHAPE]: SHAPE_RECTANGLE,
 };
 
-export class Security implements ShapePlugin {
+export class User implements ShapePlugin {
   public identifier(): string {
-    return "Security";
+    return "User";
   }
 
   public defaultAppearance() {
@@ -103,7 +103,7 @@ export class Security implements ShapePlugin {
       ctx.shape,
       bounds.deflate(4),
       (p) => {
-        p.setForegroundColor("0x8fbbfb");
+        p.setForegroundColor("0x85bbf0");
         p.setText(
           ctx.shape.getAppearance(DefaultAppearance.TECH)
             ? "[" + ctx.shape.getAppearance(DefaultAppearance.TECH) + "]"

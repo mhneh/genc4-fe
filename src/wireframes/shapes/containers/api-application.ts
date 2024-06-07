@@ -23,8 +23,8 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
-  [DefaultAppearance.TEXT]: "ApiApplication",
-  [DefaultAppearance.TITLE]: "API Application",
+  [DefaultAppearance.TEXT]: "New Container",
+  [DefaultAppearance.TITLE]: "New Container",
   [DefaultAppearance.DESC]:
     "Allows user view, create and manage his created posts.",
   [DefaultAppearance.TECH]: "Software System",
