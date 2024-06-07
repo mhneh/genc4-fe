@@ -34,6 +34,8 @@ export interface UIState {
     showDescModal?: boolean;
 
     showRelationshipModal?: boolean;
+
+    isLoading?: boolean;
 }
 
 export interface UIStateInStore {
@@ -49,5 +51,6 @@ export const createInitialUIState: () => UIState = () => {
         selectedColorTab: 'palette',
         showDescModal: false,
         showRelationshipModal: false,
+        isLoading: false,
     };
 };

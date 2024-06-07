@@ -6,7 +6,7 @@
  */
 
 import {LeftOutlined, RightOutlined} from "@ant-design/icons";
-import {Button, Layout, Tabs, TabsProps} from "antd";
+import {Alert, Button, Layout, Spin, Tabs, TabsProps} from "antd";
 import classNames from "classnames";
 import * as React from "react";
 import {useRouteMatch} from "react-router";
@@ -27,7 +27,7 @@ import {
     UIMenu,
 } from "@app/wireframes/components";
 import {
-    EditorStateInStore,
+    EditorStateInStore, getLoadingStatus,
     loadDiagramFromServer,
     newDiagram,
     removeDiagram,
@@ -35,7 +35,7 @@ import {
     selectTab,
     showToast,
     toggleLeftSidebar,
-    toggleRightSidebar,
+    toggleRightSidebar, UIStateInStore,
     useStore,
 } from "@app/wireframes/model";
 import {useAppDispatch, useAppSelector} from "./wireframes/redux/store.ts";
@@ -113,6 +113,7 @@ export const App = () => {
     const showLeftSidebar = useStore((s) => s.ui.showLeftSidebar);
     const showRightSidebar = useStore((s) => s.ui.showRightSidebar);
     const [presenting, setPresenting] = React.useState(false);
+    const isLoading = useAppSelector((state: UIStateInStore) => state.ui.isLoading);
 
     const [print, printReady, isPrinting, ref] = usePrinter();
     React.useEffect(() => {
@@ -281,6 +282,8 @@ export const App = () => {
 
             <DescriptionAppender/>
             <RelationshipCreator/>
+
+            <Spin tip="Loading..." spinning={isLoading} fullscreen={true} size={"large"} />
         </OverlayContainer>
     );
 };

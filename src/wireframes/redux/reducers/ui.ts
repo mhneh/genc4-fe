@@ -59,6 +59,14 @@ export const toggleRelationshipModal = createAction('ui/openRelationshipModal', 
     return {payload: {}}
 })
 
+export const updateLoadingScreen = createAction('screen/loading', (loading: boolean) => {
+    return {
+        payload: {
+            loading: loading
+        }
+    }
+})
+
 export function toastMiddleware() {
     const middleware: Middleware = () => (next: Dispatch<AnyAction>) => (action: any) => {
         if (showToast.match(action)) {
@@ -100,5 +108,11 @@ export function ui(initialState: UIState): Reducer<UIState> {
         })
         .addCase(toggleRelationshipModal, (state) => {
             state.showRelationshipModal = !state.showRelationshipModal;
+        })
+        .addCase(updateLoadingScreen, (state, action) => {
+            const {
+                loading: loading
+            } = action.payload;
+            state.isLoading = loading;
         }));
 }

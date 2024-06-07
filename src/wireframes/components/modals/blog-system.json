@@ -31,6 +31,7 @@
             },
             "type": "Contexts",
             "descriptions": [],
+            "mainSystem": false,
             "screens": []
           },
           {
@@ -58,6 +59,7 @@
             },
             "type": "Contexts",
             "descriptions": [],
+            "mainSystem": false,
             "screens": []
           },
           {
@@ -75,7 +77,7 @@
               "TEXT_ALIGNMENT": "center",
               "TITLE": "Blog System"
             },
-            "renderer": "ApiApplication",
+            "renderer": "NewContainer",
             "transform": {
               "x": 501,
               "y": 474,
@@ -85,6 +87,7 @@
             },
             "type": "Contexts",
             "descriptions": [],
+            "mainSystem": false,
             "screens": []
           }
         ],
@@ -113,7 +116,8 @@
           }
         ],
         "type": "Contexts",
-        "parentId": ""
+        "parentId": "",
+        "mainSystem": false
       },
       {
         "id": "1712974337219",
@@ -129,11 +133,11 @@
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
               "TECHNOLOGY": "NodeJS",
-              "TEXT": "ApiApplication",
+              "TEXT": "Blog Server",
               "TEXT_ALIGNMENT": "center",
               "TITLE": "Blog Server"
             },
-            "renderer": "ApiApplication",
+            "renderer": "NewContainer",
             "transform": {
               "x": 476,
               "y": 257,
@@ -143,6 +147,7 @@
             },
             "type": "Containers",
             "descriptions": [],
+            "mainSystem": false,
             "screens": []
           },
           {
@@ -170,6 +175,7 @@
             },
             "type": "Containers",
             "descriptions": [],
+            "mainSystem": false,
             "screens": []
           }
         ],
@@ -189,7 +195,8 @@
           }
         ],
         "type": "Containers",
-        "parentId": "1712974337050"
+        "parentId": "1712974337050",
+        "mainSystem": false
       },
       {
         "id": "1712974337304",
@@ -197,66 +204,116 @@
           {
             "id": "1715877980098",
             "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
               "BACKGROUND_COLOR": 0,
+              "DESCRIPTION": "Provides information of posts.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 8764400,
+              "SHAPE": "Rectangle",
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "PostController",
-              "TITLE": "Post",
-              "DESCRIPTION": "Provides information of posts.",
               "TECHNOLOGY": "Express Controller",
-              "SHAPE": "Rectangle"
+              "TEXT": "PostController",
+              "TEXT_ALIGNMENT": "center",
+              "TITLE": "Post"
             },
             "renderer": "Post",
             "transform": {
-              "x": 488,
-              "y": 291,
+              "x": 736,
+              "y": 442,
               "w": 250,
               "h": 160,
               "r": 0
             },
             "type": "Components",
             "descriptions": [],
+            "mainSystem": false,
             "screens": []
           },
           {
             "id": "1717695139647",
             "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
               "BACKGROUND_COLOR": 0,
+              "DESCRIPTION": "Provides functionality about login, register.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 8764400,
+              "SHAPE": "Rectangle",
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Authentication",
-              "TITLE": "Authentication",
-              "DESCRIPTION": "Provides functionality about login, register.",
               "TECHNOLOGY": "Express middleware",
-              "SHAPE": "Rectangle"
+              "TEXT": "Authentication",
+              "TEXT_ALIGNMENT": "center",
+              "TITLE": "Authentication"
             },
             "renderer": "Authentication",
             "transform": {
-              "x": 488,
-              "y": 563,
+              "x": 493,
+              "y": 154,
               "w": 250,
               "h": 160,
               "r": 0
             },
             "type": "Components",
             "descriptions": [],
+            "mainSystem": false,
+            "screens": []
+          },
+          {
+            "id": "1717777315261",
+            "appearance": {
+              "ACTION": "service",
+              "BACKGROUND_COLOR": 0,
+              "DESCRIPTION": "Provides information of users.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 8764400,
+              "SHAPE": "Rectangle",
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TECHNOLOGY": "Express",
+              "TEXT": "User",
+              "TEXT_ALIGNMENT": "center",
+              "TITLE": "User"
+            },
+            "renderer": "User",
+            "transform": {
+              "x": 266,
+              "y": 442,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Components",
+            "descriptions": [],
+            "mainSystem": false,
             "screens": []
           }
         ],
         "rootIds": [
           "1715877980098",
-          "1717695139647"
+          "1717695139647",
+          "1717777315261"
         ],
         "title": "Blog Server",
-        "relationships": [],
+        "relationships": [
+          {
+            "id": "1717777315290",
+            "title": "Authentication -> User",
+            "description": "",
+            "source": "1717695139647",
+            "target": "1717777315261",
+            "diagramId": "1712974337304"
+          },
+          {
+            "id": "1717777315300",
+            "title": "Authentication -> Post",
+            "description": "",
+            "source": "1717695139647",
+            "target": "1715877980098",
+            "diagramId": "1712974337304"
+          }
+        ],
         "type": "Components",
-        "parentId": "1712974337235"
+        "parentId": "1712974337235",
+        "mainSystem": false
       },
       {
         "id": "1717165117626",
@@ -264,23 +321,23 @@
           {
             "id": "1717165117640",
             "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
+              "ACTION": "create",
               "BACKGROUND_COLOR": 3276,
+              "DESCRIPTION": "Display a form contains all field to create new Post. Submit form will post data to /post/create. If create successfully, please alert created success. If not, please display error message.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 16777215,
+              "SHAPE": "Rectangle",
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Create Screen",
-              "TITLE": "Creation Screen",
-              "DESCRIPTION": "Display a form contains all field to create new Post. Submit form will post data to /post/create. If create successfully, please alert created success. If not, please display error message.",
               "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "create",
-              "SHAPE": "Rectangle"
+              "TEXT": "Create Screen",
+              "TEXT_ALIGNMENT": "center",
+              "TEXT_DISABLED": true,
+              "TITLE": "Creation Screen"
             },
             "renderer": "CreateScreen",
             "transform": {
-              "x": 241,
+              "x": 248,
               "y": 712,
               "w": 250,
               "h": 250,
@@ -294,29 +351,30 @@
                 "itemId": "1717165117640"
               }
             ],
+            "mainSystem": false,
             "screens": []
           },
           {
             "id": "1717165117647",
             "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
+              "ACTION": "detail",
               "BACKGROUND_COLOR": 3276,
+              "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /post/edit/:id with id will be its ID. Delete button to get delete at /post/delete/:id with id will be its ID.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 16777215,
+              "SHAPE": "Rectangle",
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "Detail Screen",
-              "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /post/edit/:id with id will be its ID. Delete button to get delete at /post/delete/:id with id will be its ID.",
               "TECHNOLOGY": "Screen",
-              "ACTION": "detail",
-              "SHAPE": "Rectangle"
+              "TEXT": "View Screen",
+              "TEXT_ALIGNMENT": "center",
+              "TEXT_DISABLED": true,
+              "TITLE": "Detail Screen"
             },
             "renderer": "ViewScreen",
             "transform": {
-              "x": 749,
-              "y": 245,
+              "x": 767,
+              "y": 231,
               "w": 250,
               "h": 250,
               "r": 0
@@ -329,29 +387,30 @@
                 "itemId": "1717165117647"
               }
             ],
+            "mainSystem": false,
             "screens": []
           },
           {
             "id": "1717165117654",
             "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
+              "ACTION": "edit",
               "BACKGROUND_COLOR": 3276,
+              "DESCRIPTION": "Display form contains all the information of single Post record. Submit form will post data to /post/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 16777215,
+              "SHAPE": "Rectangle",
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Update Screen",
-              "TITLE": "Update Screen",
-              "DESCRIPTION": "Display form contains all the information of single Post record. Submit form will post data to /post/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
               "TECHNOLOGY": "Update Screen",
-              "ACTION": "edit",
-              "SHAPE": "Rectangle"
+              "TEXT": "Update Screen",
+              "TEXT_ALIGNMENT": "center",
+              "TEXT_DISABLED": true,
+              "TITLE": "Update Screen"
             },
             "renderer": "UpdateScreen",
             "transform": {
-              "x": 761,
-              "y": 757,
+              "x": 767,
+              "y": 641,
               "w": 250,
               "h": 250,
               "r": 0
@@ -364,24 +423,25 @@
                 "itemId": "1717165117654"
               }
             ],
+            "mainSystem": false,
             "screens": []
           },
           {
             "id": "1717165117844",
             "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
+              "ACTION": "list",
               "BACKGROUND_COLOR": 3276,
+              "DESCRIPTION": "Data will be displayed as a list, each of element will have three buttons to view, update and delete it. 'View' button will lead to get detail view of Post at /post/detail/:id with id will be its ID.'Update' button will lead to get edit form at /post/edit/:id with id will be its ID.'Delete' button will lead to get delete at /post/delete/:id with id will be its ID.Screen will have a search bar to search post by its name.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 16777215,
+              "SHAPE": "Rectangle",
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List Screen",
-              "DESCRIPTION": "Data will be displayed as a list, each of element will have three buttons to view, update and delete it. 'View' button will lead to get detail view of Post at /post/detail/:id with id will be its ID.'Update' button will lead to get edit form at /post/edit/:id with id will be its ID.'Delete' button will lead to get delete at /post/delete/:id with id will be its ID.Screen will have a search bar to search post by its name.",
               "TECHNOLOGY": "Screen",
-              "ACTION": "list",
-              "SHAPE": "Rectangle"
+              "TEXT": "Other Screen",
+              "TEXT_ALIGNMENT": "center",
+              "TEXT_DISABLED": true,
+              "TITLE": "List Screen"
             },
             "renderer": "OtherScreen",
             "transform": {
@@ -399,6 +459,7 @@
                 "itemId": "1717165117844"
               }
             ],
+            "mainSystem": false,
             "screens": []
           }
         ],
@@ -428,7 +489,8 @@
           }
         ],
         "type": "Screens",
-        "parentId": "1715877980098"
+        "parentId": "1715877980098",
+        "mainSystem": false
       },
       {
         "id": "1717695139733",
@@ -436,24 +498,24 @@
           {
             "id": "1717695139749",
             "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
+              "ACTION": "login",
               "BACKGROUND_COLOR": 3276,
+              "DESCRIPTION": "Contain a login form with username and password. Submit form will post data to '/authentication/login' endpoint.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 16777215,
+              "SHAPE": "Rectangle",
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "Login Screen",
-              "DESCRIPTION": "Contain a login form with username and password. Submit form will post data to '/authentication/login' endpoint.",
               "TECHNOLOGY": "Screen",
-              "ACTION": "login",
-              "SHAPE": "Rectangle"
+              "TEXT": "View Screen",
+              "TEXT_ALIGNMENT": "center",
+              "TEXT_DISABLED": true,
+              "TITLE": "Login Screen"
             },
             "renderer": "ViewScreen",
             "transform": {
-              "x": 225,
-              "y": 382,
+              "x": 509,
+              "y": 239,
               "w": 250,
               "h": 250,
               "r": 0
@@ -476,29 +538,30 @@
                 "itemId": "1717695139749"
               }
             ],
+            "mainSystem": false,
             "screens": []
           },
           {
             "id": "1717695139756",
             "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
+              "ACTION": "register",
               "BACKGROUND_COLOR": 3276,
+              "DESCRIPTION": "Contain a register form with username, password, email, phone. Submit form will post data to '/authentication/register' endpoint.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 16777215,
+              "SHAPE": "Rectangle",
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "Register Screen",
-              "DESCRIPTION": "Contain a register form with username, password, email, phone. Submit form will post data to '/authentication/register' endpoint.",
               "TECHNOLOGY": "Screen",
-              "ACTION": "register",
-              "SHAPE": "Rectangle"
+              "TEXT": "View Screen",
+              "TEXT_ALIGNMENT": "center",
+              "TEXT_DISABLED": true,
+              "TITLE": "Register Screen"
             },
             "renderer": "ViewScreen",
             "transform": {
-              "x": 709,
-              "y": 377,
+              "x": 509,
+              "y": 699,
               "w": 250,
               "h": 250,
               "r": 0
@@ -521,6 +584,7 @@
                 "itemId": "1717695139756"
               }
             ],
+            "mainSystem": false,
             "screens": []
           }
         ],
@@ -529,9 +593,201 @@
           "1717695139756"
         ],
         "title": "Authentication",
-        "relationships": [],
+        "relationships": [
+          {
+            "id": "1717778005738",
+            "title": "Register Screen -> Login Screen",
+            "description": "Register success will lead to Login page.",
+            "source": "1717695139756",
+            "target": "1717695139749",
+            "diagramId": "1717695139733"
+          }
+        ],
         "type": "Screens",
-        "parentId": "1717695139647"
+        "parentId": "1717695139647",
+        "mainSystem": false
+      },
+      {
+        "id": "1717777315266",
+        "items": [
+          {
+            "id": "6662f6bcd1660c007486c67a",
+            "appearance": {
+              "ACTION": "create",
+              "BACKGROUND_COLOR": 3276,
+              "DESCRIPTION": "Display a form contains all field to create new User. Submit form will post data to /user/create. If create successfully, please redirect to '/user/'. If not, please display error message.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 16777215,
+              "SHAPE": "Rectangle",
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TECHNOLOGY": "Handlebars.js",
+              "TEXT": "New User Screen",
+              "TEXT_ALIGNMENT": "center",
+              "TEXT_DISABLED": true,
+              "TITLE": "New User Screen"
+            },
+            "renderer": "CreateScreen",
+            "transform": {
+              "x": 241,
+              "y": 712,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "6662f6c81c13ca82ea0c3428",
+                "description": "Create new user in database by data from request.",
+                "itemId": "6662f6bcd1660c007486c67a"
+              }
+            ],
+            "mainSystem": false,
+            "screens": []
+          },
+          {
+            "id": "6662f708d7afca65d71db6c4",
+            "appearance": {
+              "ACTION": "detail",
+              "BACKGROUND_COLOR": 3276,
+              "DESCRIPTION": "This screen will have 2 button: Edit, Delete. 'Edit' button is used get edit user form at /post/edit/:id with id will be its user id. 'Delete' button is used to get delete at /post/delete/:id with id will be its user id.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 16777215,
+              "SHAPE": "Rectangle",
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TECHNOLOGY": "Screen",
+              "TEXT": "View Screen",
+              "TEXT_ALIGNMENT": "center",
+              "TEXT_DISABLED": true,
+              "TITLE": "View Screen"
+            },
+            "renderer": "ViewScreen",
+            "transform": {
+              "x": 749,
+              "y": 245,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "6662f70d94a75fd0e34cdd06",
+                "description": "Find user by id.",
+                "itemId": "6662f708d7afca65d71db6c4"
+              }
+            ],
+            "mainSystem": false,
+            "screens": []
+          },
+          {
+            "id": "6662f76dda8690300611f0d8",
+            "appearance": {
+              "ACTION": "edit",
+              "BACKGROUND_COLOR": 3276,
+              "DESCRIPTION": "Screens contains form displays all the information of single User record. Submit form will post data to /user/edit/:id. If updated successfully, please redirect to '/user/'. Otherwise, please display error message.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 16777215,
+              "SHAPE": "Rectangle",
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TECHNOLOGY": "Update Screen",
+              "TEXT": "Update Screen",
+              "TEXT_ALIGNMENT": "center",
+              "TEXT_DISABLED": true,
+              "TITLE": "Update Screen"
+            },
+            "renderer": "UpdateScreen",
+            "transform": {
+              "x": 767,
+              "y": 654,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "6662f7d51093135dc1346193",
+                "description": "Find user by id.",
+                "itemId": "6662f76dda8690300611f0d8"
+              },
+              {
+                "id": "6662f7b29fc1e3450a0e24e6",
+                "description": "Update information of user by data from request.",
+                "itemId": "6662f76dda8690300611f0d8"
+              }
+            ],
+            "mainSystem": false,
+            "screens": []
+          },
+          {
+            "id": "6662f7ec2b7f9ce4386e046f",
+            "appearance": {
+              "ACTION": "list",
+              "BACKGROUND_COLOR": 3276,
+              "DESCRIPTION": "Screen will displayed all users as a list, each of element will have three buttons to view, update and delete user. 'View' button will get detail view of User at /user/detail/:id with id will be its user id. 'Update' button will get edit form at /user/edit/:id with id will be its user id. 'Delete' button get delete at /user/delete/:id with id will be its user id. Screen will have a search bar to search user by username.",
+              "FONT_SIZE": 16,
+              "FOREGROUND_COLOR": 16777215,
+              "SHAPE": "Rectangle",
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TECHNOLOGY": "Screen",
+              "TEXT": "Other Screen",
+              "TEXT_ALIGNMENT": "center",
+              "TEXT_DISABLED": true,
+              "TITLE": "List All Screen"
+            },
+            "renderer": "OtherScreen",
+            "transform": {
+              "x": 248,
+              "y": 245,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "6662f7f2fa618648dbbfd088",
+                "description": "Find all existing users in database.",
+                "itemId": "6662f7ec2b7f9ce4386e046f"
+              }
+            ],
+            "mainSystem": false,
+            "screens": []
+          }
+        ],
+        "rootIds": [
+          "6662f6bcd1660c007486c67a",
+          "6662f708d7afca65d71db6c4",
+          "6662f76dda8690300611f0d8",
+          "6662f7ec2b7f9ce4386e046f"
+        ],
+        "title": "User",
+        "relationships": [
+          {
+            "id": "6662f89e00cd7ce328e22d3e",
+            "title": "List All Screen -> New User Screen",
+            "description": "List of users contains button to create new user.",
+            "source": "6662f7ec2b7f9ce4386e046f",
+            "target": "6662f6bcd1660c007486c67a",
+            "diagramId": ""
+          },
+          {
+            "id": "6662f8a2963fff5135312f09",
+            "title": "List All Screen -> Update Screen",
+            "description": "List of posts contains button to update existed user.",
+            "source": "6662f7ec2b7f9ce4386e046f",
+            "target": "6662f76dda8690300611f0d8",
+            "diagramId": ""
+          }
+        ],
+        "type": "Screens",
+        "parentId": "1717777315261",
+        "mainSystem": false
       }
     ],
     "diagramIds": [
@@ -544,14 +800,14 @@
       "1717165119487",
       "1717165119641",
       "1717695139535",
-      "1717695139733"
+      "1717695139733",
+      "1717777315266"
     ],
-    "id": "f183569015fe5c332d569546",
+    "id": "f47e6f2163796f4baf9fe0eb",
     "size": {
       "x": 1000,
       "y": 1000
-    },
-    "system": "blog"
+    }
   },
   "actions": [
   ]

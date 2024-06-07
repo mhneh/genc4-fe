@@ -28,7 +28,7 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.TITLE]: "View Screen",
   [DefaultAppearance.DESC]:
     "This screen is used to view something in its container",
-  [DefaultAppearance.TECH]: "Screen",
+  [DefaultAppearance.TECH]: "Handlebars.js",
   [DefaultAppearance.ACTION]: "detail",
   [SHAPE]: "Rectangle",
 };
@@ -79,7 +79,6 @@ export class ViewScreen implements ShapePlugin {
 
     this.createTitleShape(ctx);
     this.createTechShape(ctx);
-    this.createDescShape(ctx);
   }
 
   private createWindow(ctx: RenderContext) {
@@ -141,7 +140,7 @@ export class ViewScreen implements ShapePlugin {
   private createTitleShape(ctx: RenderContext) {
     const w = ctx.rect.width;
     const h = 30;
-    const y = ctx.rect.bottom + 20;
+    const y = 60;
 
     const bounds = new Rect2(0, y, w, h);
 
@@ -156,7 +155,7 @@ export class ViewScreen implements ShapePlugin {
   private createTechShape(ctx: RenderContext) {
     const w = ctx.rect.width;
     const h = 30;
-    const y = ctx.rect.bottom + 20 + 30;
+    const y = 95;
 
     const bounds = new Rect2(0, y, w, h);
     ctx.renderer2.text(

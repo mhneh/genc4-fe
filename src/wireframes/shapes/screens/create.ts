@@ -25,7 +25,7 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
   [DefaultAppearance.TEXT]: "Create Screen",
-  [DefaultAppearance.TITLE]: "Creation Screen",
+  [DefaultAppearance.TITLE]: "Create Screen",
   [DefaultAppearance.DESC]:
     "This screen is used to add new single data to this component.",
   [DefaultAppearance.TECH]: "Handlebars.js",
@@ -79,7 +79,6 @@ export class CreateScreen implements ShapePlugin {
 
     this.createTitleShape(ctx);
     this.createTechShape(ctx);
-    this.createDescShape(ctx);
   }
 
   private createWindow(ctx: RenderContext) {
@@ -129,19 +128,10 @@ export class CreateScreen implements ShapePlugin {
     });
   }
 
-  public render_old(ctx: RenderContext) {
-    this.createShape(ctx);
-
-    this.createTitleShape(ctx);
-    this.createTechShape(ctx);
-    this.createDescShape(ctx);
-    // this.createText(ctx);
-  }
-
   private createTitleShape(ctx: RenderContext) {
     const w = ctx.rect.width;
     const h = 30;
-    const y = ctx.rect.bottom + 20;
+    const y = 60;
 
     const bounds = new Rect2(0, y, w, h);
 
@@ -156,7 +146,7 @@ export class CreateScreen implements ShapePlugin {
   private createTechShape(ctx: RenderContext) {
     const w = ctx.rect.width;
     const h = 30;
-    const y = ctx.rect.bottom + 20 + 30;
+    const y = 90;
 
     const bounds = new Rect2(0, y, w, h);
     ctx.renderer2.text(

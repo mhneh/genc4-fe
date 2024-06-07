@@ -72,6 +72,7 @@ export class Authentication implements ShapePlugin {
     this.createTechShape(ctx);
     this.createDescShape(ctx);
     // this.createText(ctx);
+    this.createLookupIcon(ctx);
   }
 
   private createTitleShape(ctx: RenderContext) {
@@ -136,6 +137,18 @@ export class Authentication implements ShapePlugin {
       },
       true
     );
+  }
+
+  private createLookupIcon(ctx: RenderContext) {
+    const w = 25;
+    const h = 25;
+    const bounds = new Rect2(
+        ctx.rect.width / 2 - w / 2,
+        (3 * ctx.rect.height) / 4,
+        w,
+        h
+    );
+    ctx.renderer2.raster("zoom-white.png", bounds, true);
   }
 
   private createShape(ctx: RenderContext) {

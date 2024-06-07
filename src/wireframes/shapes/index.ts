@@ -15,7 +15,7 @@ import {Authentication} from "@app/wireframes/shapes/components/authentication.t
 import {EmailComponent} from "@app/wireframes/shapes/components/email.ts";
 import {Database} from "@app/wireframes/shapes/containers/database.ts";
 import {SinglePageApplication} from "@app/wireframes/shapes/containers/spa.ts";
-import {ApiApplication} from "@app/wireframes/shapes/containers/api-application.ts";
+import {NewContainer} from "@app/wireframes/shapes/containers/new-container.ts";
 import {EmailSystem} from "@app/wireframes/shapes/contexts/email-system.ts";
 import {PersonalOwner} from "@app/wireframes/shapes/contexts/person.ts";
 import {RelationshipControl} from "@app/wireframes/model/renderer/impl/RelationshipControl.ts";
@@ -123,7 +123,7 @@ export function registerComponents() {
   // RendererService.addRenderer(new C4Control(new EmptyContainer()));
   RendererService.addRenderer(new C4Control(new Database()));
   // RendererService.addRenderer(new C4Control(new SinglePageApplication()));
-  RendererService.addRenderer(new C4Control(new ApiApplication()));
+  RendererService.addRenderer(new C4Control(new NewContainer()));
 
   // Contexts
   RendererService.addRenderer(new C4Control(new PersonalOwner()));

@@ -1,5 +1,5 @@
 import {Breadcrumb} from "antd";
-import {AppstoreOutlined, HomeOutlined, RollbackOutlined, UserOutlined} from "@ant-design/icons";
+import {AppstoreOutlined, BorderOutlined, HomeOutlined, UserOutlined} from "@ant-design/icons";
 import {selectDiagram} from "@app/wireframes/redux/reducers/diagrams.ts";
 import {useAppDispatch, useAppSelector} from "@app/wireframes/redux/store.ts";
 import {EditorStateInStore, getDiagram, selectTab, useStore} from "@app/wireframes/model";
@@ -11,15 +11,14 @@ export const C4Breadcrumb = () => {
         (state: EditorStateInStore) => state.editor.present.diagrams
     );
     const dispatch = useAppDispatch();
+
+
     const selectedDiagram = useStore(getDiagram);
     const parentDiagram = useMemo(() => {
         return diagrams.values.find(d => d.items.values.find(item => item.id == selectedDiagram?.parentId));
     }, [diagrams, selectedDiagram])
 
     const onClick = (activeKey: string | undefined) => {
-        console.log(activeKey)
-        console.log(selectedDiagram)
-        console.log(diagrams)
         if (!activeKey) {
             return
         }
@@ -137,22 +136,14 @@ export const C4Breadcrumb = () => {
                         <AppstoreOutlined/>
                         <span>{parentDiagram?.title}</span>
                     </>
-                )
+                ),
+                onClick: () => onClick(selectedDiagram?.type)
             },
             {
                 title: (
                     <>
-                        {selectedDiagram?.type != "Screens" ?
-                        <>
-                            <AppstoreOutlined />
-                            <span>{selectedDiagram?.title}</span>
-                        </>
-                            : <>
-                                <RollbackOutlined />
-                                <span>{"Back"}</span>
-                            </>
-                        }
-
+                        <BorderOutlined />
+                        <span>{selectedDiagram?.title}</span>
                     </>
                 ),
                 onClick: () => onClick(selectedDiagram?.type)
