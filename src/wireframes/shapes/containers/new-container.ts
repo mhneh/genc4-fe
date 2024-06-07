@@ -26,14 +26,14 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.TEXT]: "New Container",
   [DefaultAppearance.TITLE]: "New Container",
   [DefaultAppearance.DESC]:
-    "Allows user view, create and manage his created posts.",
+    "Container can be server-side web application, single-page application, desktop application, mobile app, etc.",
   [DefaultAppearance.TECH]: "Software System",
   [SHAPE]: "BROWSER",
 };
 
-export class ApiApplication implements ShapePlugin {
+export class NewContainer implements ShapePlugin {
   public identifier(): string {
-    return "ApiApplication";
+    return "NewContainer";
   }
 
   public defaultAppearance() {

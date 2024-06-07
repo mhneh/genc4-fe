@@ -75,7 +75,7 @@
               "TEXT_ALIGNMENT": "center",
               "TITLE": "Custom System"
             },
-            "renderer": "ApiApplication",
+            "renderer": "NewContainer",
             "transform": {
               "x": 501,
               "y": 474,
@@ -129,11 +129,11 @@
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
               "TECHNOLOGY": "NodeJS",
-              "TEXT": "ApiApplication",
+              "TEXT": "NewContainer",
               "TEXT_ALIGNMENT": "center",
               "TITLE": "Main custom Server"
             },
-            "renderer": "ApiApplication",
+            "renderer": "NewContainer",
             "transform": {
               "x": 476,
               "y": 257,

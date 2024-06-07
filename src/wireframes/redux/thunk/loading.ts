@@ -61,14 +61,6 @@ export const saveDiagramToFile =
         saveAs(bodyBlob, 'diagram.json');
     });
 
-export const updateLoadingScreen = createAction('screen/loading', (loading: boolean) => {
-    return {
-        payload: {
-            loading: loading
-        }
-    }
-})
-
 export const saveDiagramToServer =
     createAsyncThunk('diagram/save/server', async (args: { navigate?: boolean; operationId?: string }, thunkAPI) => {
         const state = thunkAPI.getState() as LoadingStateInStore & EditorStateInStore;
@@ -184,12 +176,6 @@ export function loading(initialState: LoadingState) {
             state.tokenToRead = tokenToRead;
             state.tokenToWrite = tokenToWrite;
             state.recentDiagrams[tokenToRead] = {date: new Date().getTime(), tokenToWrite};
-        })
-        .addCase(updateLoadingScreen, (state, action) => {
-            const {
-                loading: loading
-            } = action.payload;
-            state.isLoading = loading;
         }));
 }
 
@@ -244,10 +230,9 @@ export function rootLoading(undoableReducer: Reducer<UndoableState<EditorState>>
 function getSaveState(state: EditorStateInStore) {
     const initial = Serializer.serializeEditor(state.editor.firstState);
     const present = Serializer.serializeEditor(state.editor.present);
-    console.log(present)
     const actions = state.editor.actions.slice(1).filter(handleAction);
-
-    return {initial, present, actions};
+    const system = state.editor.present.system;
+    return {initial, present, actions, system};
 }
 
 function handleAction(action: AnyAction) {

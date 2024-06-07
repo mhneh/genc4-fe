@@ -29,6 +29,8 @@ import { UndoableState } from "../state/undoable-state.ts";
 
 const EMPTY_SELECTION_SET = DiagramItemSet.EMPTY;
 
+export const getLoadingStatus = (state: UIStateInStore) =>
+    state.ui.isLoading;
 export const getDiagramId = (state: EditorStateInStore) =>
   state.editor.present.selectedDiagramId;
 export const getDiagrams = (state: EditorStateInStore) =>

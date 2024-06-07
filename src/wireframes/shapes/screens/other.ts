@@ -27,7 +27,7 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.TEXT]: "Other Screen",
   [DefaultAppearance.TITLE]: "Other Screen",
   [DefaultAppearance.DESC]: "Describe your idea with new screen",
-  [DefaultAppearance.TECH]: "Other Screen",
+  [DefaultAppearance.TECH]: "Handlebars.js",
   [DefaultAppearance.ACTION]: "custom",
   [SHAPE]: "Rectangle",
 };
@@ -78,7 +78,6 @@ export class OtherScreen implements ShapePlugin {
 
     this.createTitleShape(ctx);
     this.createTechShape(ctx);
-    this.createDescShape(ctx);
   }
 
   private createWindow(ctx: RenderContext) {
@@ -140,7 +139,7 @@ export class OtherScreen implements ShapePlugin {
   private createTitleShape(ctx: RenderContext) {
     const w = ctx.rect.width;
     const h = 30;
-    const y = ctx.rect.bottom + 20;
+    const y = 60;
 
     const bounds = new Rect2(0, y, w, h);
 
@@ -155,7 +154,7 @@ export class OtherScreen implements ShapePlugin {
   private createTechShape(ctx: RenderContext) {
     const w = ctx.rect.width;
     const h = 30;
-    const y = ctx.rect.bottom + 20 + 30;
+    const y = 90;
 
     const bounds = new Rect2(0, y, w, h);
     ctx.renderer2.text(

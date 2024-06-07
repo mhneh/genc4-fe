@@ -47,30 +47,30 @@ export const SelectSystem = memo(() => {
                     </div>
                 </Menu.Item>
 
-                <Menu.Item key={"ecommerce"} style={{width: "33%"}}>
-                    <div style={{
-                        padding: "10px",
-                        borderRadius: "10px",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "center"
-                    }}
-                         onClick={async () => {
+                {/*<Menu.Item key={"ecommerce"} style={{width: "33%"}}>*/}
+                {/*    <div style={{*/}
+                {/*        padding: "10px",*/}
+                {/*        borderRadius: "10px",*/}
+                {/*        display: "flex",*/}
+                {/*        flexDirection: "column",*/}
+                {/*        justifyContent: "center",*/}
+                {/*        alignItems: "center"*/}
+                {/*    }}*/}
+                {/*         onClick={async () => {*/}
 
-                             const file: File = new File([JSON.stringify(ecommerceSystemJson)], "");
-                             await dispatch(loadDiagramFromFile({file}));
-                             await dispatch(selectSystem("ecommerce"));
-                             await dispatch(saveDiagramToServer({navigate: true}));
-                             setOpen(false);
-                         }}>
-                        <Image
-                            src="./ecommerce.png"
-                            preview={false}
-                        />
-                        <p style={{fontWeight: "bold"}}>Ecommerce System</p>
-                    </div>
-                </Menu.Item>
+                {/*             const file: File = new File([JSON.stringify(ecommerceSystemJson)], "");*/}
+                {/*             await dispatch(loadDiagramFromFile({file}));*/}
+                {/*             await dispatch(selectSystem("ecommerce"));*/}
+                {/*             await dispatch(saveDiagramToServer({navigate: true}));*/}
+                {/*             setOpen(false);*/}
+                {/*         }}>*/}
+                {/*        <Image*/}
+                {/*            src="./ecommerce.png"*/}
+                {/*            preview={false}*/}
+                {/*        />*/}
+                {/*        <p style={{fontWeight: "bold"}}>Ecommerce System</p>*/}
+                {/*    </div>*/}
+                {/*</Menu.Item>*/}
 
                 <Menu.Item key={"other"} style={{width: "33%"}}>
                     <div style={{

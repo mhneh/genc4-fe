@@ -127,11 +127,11 @@
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
               "TECHNOLOGY": "NodeJS",
-              "TEXT": "ApiApplication",
+              "TEXT": "NewContainer",
               "TEXT_ALIGNMENT": "center",
               "TITLE": "Blog Server"
             },
-            "renderer": "ApiApplication",
+            "renderer": "NewContainer",
             "transform": {
               "x": 476,
               "y": 257,
@@ -741,11 +741,11 @@
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
               "TECHNOLOGY": "NodeJS",
-              "TEXT": "ApiApplication",
+              "TEXT": "NewContainer",
               "TEXT_ALIGNMENT": "center",
               "TITLE": "Blog Server"
             },
-            "renderer": "ApiApplication",
+            "renderer": "NewContainer",
             "transform": {
               "x": 476,
               "y": 257,

@@ -5,8 +5,8 @@
  * Copyright (c) Sebastian Stehle. All rights reserved.
  */
 
-import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-import { Button, Layout, Tabs, TabsProps } from "antd";
+import {LeftOutlined, RightOutlined} from "@ant-design/icons";
+import {Alert, Button, Layout, Spin, Tabs, TabsProps} from "antd";
 import classNames from "classnames";
 import * as React from "react";
 import { useHistory, useRouteMatch } from "react-router";
@@ -27,16 +27,16 @@ import {
   UIMenu,
 } from "@app/wireframes/components";
 import {
-  EditorStateInStore,
-  loadDiagramFromServer,
-  newDiagram,
-  removeDiagram,
-  selectDiagram,
-  selectTab,
-  showToast,
-  toggleLeftSidebar,
-  toggleRightSidebar,
-  useStore,
+    EditorStateInStore, getLoadingStatus,
+    loadDiagramFromServer,
+    newDiagram,
+    removeDiagram,
+    selectDiagram,
+    selectTab,
+    showToast,
+    toggleLeftSidebar,
+    toggleRightSidebar, UIStateInStore,
+    useStore,
 } from "@app/wireframes/model";
 import { useAppDispatch, useAppSelector } from "./wireframes/redux/store.ts";
 import { texts } from "./texts";
@@ -115,7 +115,7 @@ export const App = () => {
   const showRightSidebar = useStore((s) => s.ui.showRightSidebar);
   const [presenting, setPresenting] = React.useState(false);
   const history = useHistory();
-
+  const isLoading = useAppSelector((state: UIStateInStore) => state.ui.isLoading);
   const [print, printReady, isPrinting, ref] = usePrinter();
   React.useEffect(() => {
     dispatch(selectTab("Contexts"));
@@ -290,10 +290,12 @@ export const App = () => {
         <CustomDragLayer />
       </ClipboardContainer>
 
-      <DescriptionAppender />
-      <RelationshipCreator />
-    </OverlayContainer>
-  );
+            <DescriptionAppender/>
+            <RelationshipCreator/>
+
+            <Spin tip="Loading..." spinning={isLoading} fullscreen={true} size={"large"} />
+        </OverlayContainer>
+    );
 };
 
 const Logo = styled.img`
