@@ -1,0 +1,131 @@
+{
+  "id": "",
+  "title": "Contact",
+  "models": "",
+  "items": [
+    {
+      "id": "6663de7e3680422c431cdfd4",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "Create Screen",
+        "TITLE": "Creation Screen",
+        "DESCRIPTION": "Display a form contains all field to create new contact message. Submit form will post data to /contact/create. If create successfully, please alert created success. If not, please display error message.",
+        "TECHNOLOGY": "Handlebars.js",
+        "ACTION": "create",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "CreateScreen",
+      "transform": {
+        "x": 241,
+        "y": 712,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "6663deac5952bd630ed50843",
+          "description": "Create new contact record in database by data from request.",
+          "itemId": "6663de7e3680422c431cdfd4"
+        }
+      ]
+    },
+    {
+      "id": "6663deb12e3d0da9ff62d628",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "View Screen",
+        "TITLE": "View Screen",
+        "DESCRIPTION": "This view file will have 'Delete' button. 'Delete' button to get delete at /contact/delete/:id with id will be its ID.",
+        "TECHNOLOGY": "Screen",
+        "ACTION": "detail",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "ViewScreen",
+      "transform": {
+        "x": 749,
+        "y": 245,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "6663dedc619cb44e998aa98e",
+          "description": "Find contact by id.",
+          "itemId": "6663deb12e3d0da9ff62d628"
+        }
+      ]
+    },
+    {
+      "id": "6663def637d2d25b83cf325a",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "Other Screen",
+        "TITLE": "List All Screen",
+        "DESCRIPTION": "Data will be displayed as a list, each of element will have two buttons to view, and delete it. 'View' button will lead to get detail view of Post at /contact/detail/:id with id will be its ID. 'Delete' button will lead to get delete at /post/contact/:id with id will be its ID. Screen will have a search bar to search contact by its title.",
+        "TECHNOLOGY": "Screen",
+        "ACTION": "list",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "OtherScreen",
+      "transform": {
+        "x": 248,
+        "y": 245,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "6663defa77387eeb2c23cb1c",
+          "description": "Get all existing contacts in database.",
+          "itemId": "6663def637d2d25b83cf325a"
+        }
+      ]
+    }
+  ],
+  "rootIds": [
+    "6663de7e3680422c431cdfd4",
+    "6663deb12e3d0da9ff62d628",
+    "6663def637d2d25b83cf325a"
+  ],
+  "relationships": [
+    {
+      "id": "665f28b74dce8beeaaf14820",
+      "title": "List All Screen -> Creation Screen",
+      "description": "List of contacts contains buttons to create new contact.",
+      "source": "6663def637d2d25b83cf325a",
+      "target": "6663de7e3680422c431cdfd4"
+    },
+    {
+      "id": "665f28b74dce8beeaaf14821",
+      "title": "List All Screen -> View Screen",
+      "description": "List of contacts contains buttons to view existing contact.",
+      "source": "6663def637d2d25b83cf325a",
+      "target": "6663deb12e3d0da9ff62d628"
+    }
+  ],
+  "type": "Screens"
+}

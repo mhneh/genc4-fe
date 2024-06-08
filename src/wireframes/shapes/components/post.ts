@@ -25,7 +25,7 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
   [DefaultAppearance.TEXT]: "Post",
   [DefaultAppearance.TITLE]: "Post",
-  [DefaultAppearance.DESC]: "Provides information of posts.",
+  [DefaultAppearance.DESC]: "Provides information of posts, contains following information: title, description, content.",
   [DefaultAppearance.TECH]: "Express",
   [DefaultAppearance.ACTION]: "service",
   [SHAPE]: SHAPE_RECTANGLE,

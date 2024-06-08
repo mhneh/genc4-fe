@@ -67,8 +67,10 @@ import {SpecsService} from "@app/wireframes/model/renderer/SpecsService.ts";
 import postSpecs from '@app/specs/blog/post.json';
 import authenticationSpecs from '@app/specs/blog/authentication.json';
 import userSpecs from '@app/specs/blog/user.json';
+import contactSpecs from '@app/specs/common/contact.json';
 import {Serializer} from "@app/wireframes/model";
 import {User} from "@app/wireframes/shapes/components/user.ts";
+import {Contact} from "@app/wireframes/shapes/components/contact.ts";
 
 export function registerShapeRenderers() {
   // RendererService.addRenderer(new AbstractControl(new Browser()));
@@ -116,6 +118,7 @@ export function registerComponents() {
   RendererService.addRenderer(new C4Control(new Authentication()));
   RendererService.addRenderer(new C4Control(new User()));
   RendererService.addRenderer(new C4Control(new Post()));
+  RendererService.addRenderer(new C4Control(new Contact()));
   // RendererService.addRenderer(new C4Control(new ResetPassword()));
   // RendererService.addRenderer(new C4Control(new EmailComponent()));
 
@@ -145,4 +148,5 @@ export function registerSpecs() {
   SpecsService.addSpecs(new Post().identifier(), Serializer.deserializeDiagram(postSpecs));
   SpecsService.addSpecs(new Authentication().identifier(), Serializer.deserializeDiagram(authenticationSpecs));
   SpecsService.addSpecs(new User().identifier(), Serializer.deserializeDiagram(userSpecs));
+  SpecsService.addSpecs(new Contact().identifier(), Serializer.deserializeDiagram(contactSpecs));
 }

@@ -205,7 +205,7 @@
             "id": "1715877980098",
             "appearance": {
               "BACKGROUND_COLOR": 0,
-              "DESCRIPTION": "Provides information of posts.",
+              "DESCRIPTION": "Provides information of posts, contains following information: title, description, content.",
               "FONT_SIZE": 16,
               "FOREGROUND_COLOR": 8764400,
               "SHAPE": "Rectangle",
@@ -258,24 +258,24 @@
             "screens": []
           },
           {
-            "id": "1717777315261",
+            "id": "1717822848397",
             "appearance": {
-              "ACTION": "service",
-              "BACKGROUND_COLOR": 0,
-              "DESCRIPTION": "Provides information of users.",
-              "FONT_SIZE": 16,
               "FOREGROUND_COLOR": 8764400,
-              "SHAPE": "Rectangle",
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 0,
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "Express",
-              "TEXT": "User",
               "TEXT_ALIGNMENT": "center",
-              "TITLE": "User"
+              "TEXT": "Contact",
+              "TITLE": "Contact",
+              "DESCRIPTION": "Provides information of contacts, contains following information: title, email, content.",
+              "TECHNOLOGY": "Express",
+              "ACTION": "service",
+              "SHAPE": "Rectangle"
             },
-            "renderer": "User",
+            "renderer": "Contact",
             "transform": {
-              "x": 266,
+              "x": 326,
               "y": 442,
               "w": 250,
               "h": 160,
@@ -283,31 +283,30 @@
             },
             "type": "Components",
             "descriptions": [],
-            "mainSystem": false,
             "screens": []
           }
         ],
         "rootIds": [
           "1715877980098",
           "1717695139647",
-          "1717777315261"
+          "1717822848397"
         ],
         "title": "Blog Server",
         "relationships": [
-          {
-            "id": "1717777315290",
-            "title": "Authentication -> User",
-            "description": "",
-            "source": "1717695139647",
-            "target": "1717777315261",
-            "diagramId": "1712974337304"
-          },
           {
             "id": "1717777315300",
             "title": "Authentication -> Post",
             "description": "",
             "source": "1717695139647",
             "target": "1715877980098",
+            "diagramId": "1712974337304"
+          },
+          {
+            "id": "1717822848753",
+            "title": "Authentication -> Contact",
+            "description": "",
+            "source": "1717695139647",
+            "target": "1717822848397",
             "diagramId": "1712974337304"
           }
         ],
@@ -788,6 +787,142 @@
         "type": "Screens",
         "parentId": "1717777315261",
         "mainSystem": false
+      },
+      {
+        "id": "1717822848402",
+        "items": [
+          {
+            "id": "6663de7e3680422c431cdfd4",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Create Screen",
+              "TITLE": "Creation Screen",
+              "DESCRIPTION": "Display a form contains all field to create new contact message. Submit form will post data to /contact/create. If create successfully, please alert created success. If not, please display error message.",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "create",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "CreateScreen",
+            "transform": {
+              "x": 217,
+              "y": 705,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "6663deac5952bd630ed50843",
+                "description": "Create new contact record in database by data from request.",
+                "itemId": "6663de7e3680422c431cdfd4"
+              }
+            ],
+            "screens": []
+          },
+          {
+            "id": "6663deb12e3d0da9ff62d628",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "View Screen",
+              "TITLE": "View Screen",
+              "DESCRIPTION": "This view file will have 'Delete' button. 'Delete' button to get delete at /contact/delete/:id with id will be its ID.",
+              "TECHNOLOGY": "Screen",
+              "ACTION": "detail",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "ViewScreen",
+            "transform": {
+              "x": 827,
+              "y": 645,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "6663dedc619cb44e998aa98e",
+                "description": "Find contact by id.",
+                "itemId": "6663deb12e3d0da9ff62d628"
+              }
+            ],
+            "screens": []
+          },
+          {
+            "id": "6663def637d2d25b83cf325a",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Other Screen",
+              "TITLE": "List All Screen",
+              "DESCRIPTION": "Data will be displayed as a list, each of element will have two buttons to view, and delete it. 'View' button will lead to get detail view of Post at /contact/detail/:id with id will be its ID. 'Delete' button will lead to get delete at /post/contact/:id with id will be its ID. Screen will have a search bar to search contact by its title.",
+              "TECHNOLOGY": "Screen",
+              "ACTION": "list",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "OtherScreen",
+            "transform": {
+              "x": 467,
+              "y": 225,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "6663defa77387eeb2c23cb1c",
+                "description": "Get all existing contacts in database.",
+                "itemId": "6663def637d2d25b83cf325a"
+              }
+            ],
+            "screens": []
+          }
+        ],
+        "master": "1717822848397",
+        "rootIds": [
+          "6663de7e3680422c431cdfd4",
+          "6663deb12e3d0da9ff62d628",
+          "6663def637d2d25b83cf325a"
+        ],
+        "title": "Contact",
+        "relationships": [
+          {
+            "id": "665f28b74dce8beeaaf14820",
+            "title": "List All Screen -> Creation Screen",
+            "description": "List of contacts contains buttons to create new contact.",
+            "source": "6663def637d2d25b83cf325a",
+            "target": "6663de7e3680422c431cdfd4"
+          },
+          {
+            "id": "665f28b74dce8beeaaf14821",
+            "title": "List All Screen -> View Screen",
+            "description": "List of contacts contains buttons to view existing contact.",
+            "source": "6663def637d2d25b83cf325a",
+            "target": "6663deb12e3d0da9ff62d628"
+          }
+        ],
+        "type": "Screens",
+        "parentId": "1717822848397",
+        "mainSystem": false
       }
     ],
     "diagramIds": [
@@ -801,14 +936,18 @@
       "1717165119641",
       "1717695139535",
       "1717695139733",
-      "1717777315266"
+      "1717777315266",
+      "1717822848402"
     ],
-    "id": "f47e6f2163796f4baf9fe0eb",
+    "id": "483ebbd610b7b8fbc52509d1",
     "size": {
       "x": 1000,
       "y": 1000
-    }
+    },
+    "system": "blog"
   },
   "actions": [
-  ]
+
+  ],
+  "system": "blog"
 }

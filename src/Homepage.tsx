@@ -29,8 +29,7 @@ const Homepage = () => {
             Save time by building fast system with C4 Template
           </Text>
           <Text style={{ fontSize: "16px", lineHeight: "28px" }}>
-            Funding handshake buyer business-to-business metrics iPad
-            partnership. First mover advantage innovator success deployment
+            Fast design, fast product. First mover advantage innovator success deployment
             non-disclosure.
           </Text>
         </About>

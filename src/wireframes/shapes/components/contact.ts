@@ -23,17 +23,17 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
-  [DefaultAppearance.TEXT]: "User",
-  [DefaultAppearance.TITLE]: "User",
-  [DefaultAppearance.DESC]: "Provides information of users, contains following information: username, password, email, phone.",
+  [DefaultAppearance.TEXT]: "Contact",
+  [DefaultAppearance.TITLE]: "Contact",
+  [DefaultAppearance.DESC]: "Provides information of contacts, contains following information: title, email, content.",
   [DefaultAppearance.TECH]: "Express",
   [DefaultAppearance.ACTION]: "service",
   [SHAPE]: SHAPE_RECTANGLE,
 };
 
-export class User implements ShapePlugin {
+export class Contact implements ShapePlugin {
   public identifier(): string {
-    return "User";
+    return "Contact";
   }
 
   public defaultAppearance() {
