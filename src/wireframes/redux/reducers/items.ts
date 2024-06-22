@@ -19,14 +19,8 @@ import {
     Serializer,
     Transform,
 } from "../../model/internal.ts";
-import {
-    createDiagramAction,
-    createItemsAction,
-    DiagramRef,
-    ItemsRef,
-} from "../../model/actions/utils.ts";
+import {createDiagramAction, createItemsAction, DiagramRef, ItemsRef,} from "../../model/actions/utils.ts";
 import {Appearance} from "@app/wireframes/interface/common/appearance.ts";
-import {AssetType} from "@app/wireframes/interface/common/asset-type.ts";
 import {SpecsService} from "@app/wireframes/model/renderer/SpecsService.ts";
 
 export const addShape = createAction(
@@ -38,6 +32,7 @@ export const addShape = createAction(
             position?: { x: number; y: number };
             size?: { x: number; y: number };
             appearance?: Appearance;
+            type?: string,
         } = {},
         id?: string
     ) => {
@@ -143,7 +138,7 @@ export function buildItems(builder: ActionReducerMapBuilder<EditorState>) {
         .addCase(removeItems, (state, action) => {
             const {diagramId, itemIds} = action.payload;
 
-            return state.updateDiagram(diagramId, (diagram) => {
+            let updateDiagram = state.updateDiagram(diagramId, (diagram) => {
                 const set = DiagramItemSet.createFromDiagram(itemIds, diagram);
                 let removedRelationshipIds: string[] = [];
                 for (const item of set.nested.values()) {
@@ -163,6 +158,7 @@ export function buildItems(builder: ActionReducerMapBuilder<EditorState>) {
                 }
                 return diagram.removeItems(set!);
             });
+            return updateDiagram;
         })
         .addCase(lockItems, (state, action) => {
             const {diagramId, itemIds} = action.payload;
@@ -257,13 +253,12 @@ export function buildItems(builder: ActionReducerMapBuilder<EditorState>) {
                 newShape = shape;
                 return diagram.addShape(shape).selectItems([id]);
             });
-            const newDiagram = SpecsService.create(newShape);
-            if (!newDiagram) {
+            const newDiagrams = SpecsService.create(newShape);
+            console.log(newDiagrams);
+            if (!newDiagrams) {
                 return newState;
             }
-            const test = newState.addDiagram(newDiagram);
-            console.log(newDiagram)
-            return test;
+            return newState.addDiagrams(newDiagrams);
         })
         .addCase(addDesc, (state, action) => {
             const {diagramId, itemIds, desc, id} = action.payload;

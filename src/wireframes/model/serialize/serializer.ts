@@ -103,6 +103,14 @@ export module Serializer {
     export function deserializeDiagram(input: any) {
         return readDiagram(input);
     }
+
+    export function deserializeDiagrams(input: any[]) {
+        let diagrams: Diagram[] = [];
+        for (let raw of input) {
+            diagrams.push(deserializeDiagram(raw));
+        }
+        return diagrams;
+    }
 }
 
 function writeEditor(source: EditorState) {

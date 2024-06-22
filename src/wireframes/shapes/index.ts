@@ -9,13 +9,13 @@ import {RendererService} from "@app/wireframes/model/renderer/RendererService.ts
 import {Register} from "@app/wireframes/shapes/components/register.ts";
 import {C4Control} from "@app/wireframes/model/renderer/impl/C4Control.ts";
 import {SignIn} from "@app/wireframes/shapes/components/signin.ts";
-import {Post} from "@app/wireframes/shapes/components/post.ts";
+import {Post} from "@app/wireframes/shapes/components/post/post.ts";
 import {ResetPassword} from "@app/wireframes/shapes/components/reset-password.ts";
-import {Authentication} from "@app/wireframes/shapes/components/authentication.ts";
+import {Authentication} from "@app/wireframes/shapes/components/common/authentication.ts";
 import {EmailComponent} from "@app/wireframes/shapes/components/email.ts";
 import {Database} from "@app/wireframes/shapes/containers/database.ts";
 import {SinglePageApplication} from "@app/wireframes/shapes/containers/spa.ts";
-import {NewContainer} from "@app/wireframes/shapes/containers/new-container.ts";
+import {Container} from "@app/wireframes/shapes/containers/container.ts";
 import {EmailSystem} from "@app/wireframes/shapes/contexts/email-system.ts";
 import {PersonalOwner} from "@app/wireframes/shapes/contexts/person.ts";
 import {RelationshipControl} from "@app/wireframes/model/renderer/impl/RelationshipControl.ts";
@@ -68,9 +68,26 @@ import postSpecs from '@app/specs/blog/post.json';
 import authenticationSpecs from '@app/specs/blog/authentication.json';
 import userSpecs from '@app/specs/blog/user.json';
 import contactSpecs from '@app/specs/common/contact.json';
+import aboutSpecs from '@app/specs/common/about.json';
+import consultingSpecs from '@app/specs/common/consulting.json';
+import postModuleSpecs from '@app/specs/blog/post-module.json';
+import newsModuleSpecs from '@app/specs/blog/news-module.json';
+import productModuleSpecs from '@app/specs/ecommerce/product-module.json';
+import orderModuleSpecs from '@app/specs/ecommerce/order-module.json';
+import serviceModuleSpecs from '@app/specs/ecommerce/service-module.json';
+import partnerModuleSpecs from '@app/specs/ecommerce/partner-module.json';
+
 import {Serializer} from "@app/wireframes/model";
-import {User} from "@app/wireframes/shapes/components/user.ts";
-import {Contact} from "@app/wireframes/shapes/components/contact.ts";
+import {User} from "@app/wireframes/shapes/components/common/user.ts";
+import {Contact} from "@app/wireframes/shapes/components/common/contact.ts";
+import {PostModule} from "@app/wireframes/shapes/modules/postModule.ts";
+import {NewsModule} from "@app/wireframes/shapes/modules/newsModule.ts";
+import {ProductModule} from "@app/wireframes/shapes/modules/productModule.ts";
+import {OrderModule} from "@app/wireframes/shapes/modules/orderModule.ts";
+import {About} from "@app/wireframes/shapes/components/common/about.ts";
+import {ServiceModule} from "@app/wireframes/shapes/modules/serviceModule.ts";
+import {PartnerModule} from "@app/wireframes/shapes/modules/partnerModule.ts";
+import {Consulting} from "@app/wireframes/shapes/components/ecommerce/consulting.ts";
 
 export function registerShapeRenderers() {
   // RendererService.addRenderer(new AbstractControl(new Browser()));
@@ -118,7 +135,15 @@ export function registerComponents() {
   RendererService.addRenderer(new C4Control(new Authentication()));
   RendererService.addRenderer(new C4Control(new User()));
   RendererService.addRenderer(new C4Control(new Post()));
+  RendererService.addRenderer(new C4Control(new PostModule()));
+  RendererService.addRenderer(new C4Control(new NewsModule()));
+  RendererService.addRenderer(new C4Control(new ProductModule()));
+  RendererService.addRenderer(new C4Control(new OrderModule()));
+  RendererService.addRenderer(new C4Control(new ServiceModule()));
+  RendererService.addRenderer(new C4Control(new PartnerModule()));
   RendererService.addRenderer(new C4Control(new Contact()));
+  RendererService.addRenderer(new C4Control(new About()));
+  RendererService.addRenderer(new C4Control(new Consulting()));
   // RendererService.addRenderer(new C4Control(new ResetPassword()));
   // RendererService.addRenderer(new C4Control(new EmailComponent()));
 
@@ -126,7 +151,7 @@ export function registerComponents() {
   // RendererService.addRenderer(new C4Control(new EmptyContainer()));
   RendererService.addRenderer(new C4Control(new Database()));
   // RendererService.addRenderer(new C4Control(new SinglePageApplication()));
-  RendererService.addRenderer(new C4Control(new NewContainer()));
+  RendererService.addRenderer(new C4Control(new Container()));
 
   // Contexts
   RendererService.addRenderer(new C4Control(new PersonalOwner()));
@@ -145,8 +170,17 @@ export function registerComponents() {
 }
 
 export function registerSpecs() {
-  SpecsService.addSpecs(new Post().identifier(), Serializer.deserializeDiagram(postSpecs));
-  SpecsService.addSpecs(new Authentication().identifier(), Serializer.deserializeDiagram(authenticationSpecs));
-  SpecsService.addSpecs(new User().identifier(), Serializer.deserializeDiagram(userSpecs));
-  SpecsService.addSpecs(new Contact().identifier(), Serializer.deserializeDiagram(contactSpecs));
+  SpecsService.addSpecs(new Post().identifier(), [Serializer.deserializeDiagram(postSpecs)]);
+  SpecsService.addSpecs(new Authentication().identifier(), [Serializer.deserializeDiagram(authenticationSpecs)]);
+  SpecsService.addSpecs(new User().identifier(), [Serializer.deserializeDiagram(userSpecs)]);
+  SpecsService.addSpecs(new Contact().identifier(), [Serializer.deserializeDiagram(contactSpecs)]);
+  SpecsService.addSpecs(new About().identifier(), [Serializer.deserializeDiagram(aboutSpecs)]);
+  SpecsService.addSpecs(new Consulting().identifier(), [Serializer.deserializeDiagram(consultingSpecs)]);
+
+  SpecsService.addSpecs(new PostModule().identifier(), Serializer.deserializeDiagrams(postModuleSpecs.children));
+  SpecsService.addSpecs(new NewsModule().identifier(), Serializer.deserializeDiagrams(newsModuleSpecs.children));
+  SpecsService.addSpecs(new ProductModule().identifier(), Serializer.deserializeDiagrams(productModuleSpecs.children));
+  SpecsService.addSpecs(new OrderModule().identifier(), Serializer.deserializeDiagrams(orderModuleSpecs.children));
+  SpecsService.addSpecs(new ServiceModule().identifier(), Serializer.deserializeDiagrams(serviceModuleSpecs.children));
+  SpecsService.addSpecs(new PartnerModule().identifier(), Serializer.deserializeDiagrams(partnerModuleSpecs.children));
 }

@@ -23,18 +23,17 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
-  [DefaultAppearance.TEXT]: "Authentication",
-  [DefaultAppearance.TITLE]: "Authentication",
-  [DefaultAppearance.DESC]:
-    "Provides functionality about login, register.",
-  [DefaultAppearance.TECH]: "Express Middleware",
-  [DefaultAppearance.ACTION]: "auth",
+  [DefaultAppearance.TEXT]: "Consulting",
+  [DefaultAppearance.TITLE]: "Consulting",
+  [DefaultAppearance.DESC]: "Provides information of contacts, contains following information: title, email, content.",
+  [DefaultAppearance.TECH]: "Express",
+  [DefaultAppearance.ACTION]: "service",
   [SHAPE]: SHAPE_RECTANGLE,
 };
 
-export class Authentication implements ShapePlugin {
+export class Consulting implements ShapePlugin {
   public identifier(): string {
-    return "Authentication";
+    return "Consulting";
   }
 
   public defaultAppearance() {
@@ -62,6 +61,10 @@ export class Authentication implements ShapePlugin {
   }
 
   isOpen(): boolean {
+    return true;
+  }
+
+  showInGallery(): boolean {
     return true;
   }
 
@@ -105,7 +108,7 @@ export class Authentication implements ShapePlugin {
       ctx.shape,
       bounds.deflate(4),
       (p) => {
-        p.setForegroundColor("0x8fbbfb");
+        p.setForegroundColor("0x85bbf0");
         p.setText(
           ctx.shape.getAppearance(DefaultAppearance.TECH)
             ? "[" + ctx.shape.getAppearance(DefaultAppearance.TECH) + "]"

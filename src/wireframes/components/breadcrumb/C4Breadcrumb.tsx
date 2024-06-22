@@ -2,8 +2,9 @@ import {Breadcrumb} from "antd";
 import {AppstoreOutlined, BorderOutlined, HomeOutlined, UserOutlined} from "@ant-design/icons";
 import {selectDiagram} from "@app/wireframes/redux/reducers/diagrams.ts";
 import {useAppDispatch, useAppSelector} from "@app/wireframes/redux/store.ts";
-import {EditorStateInStore, getDiagram, selectTab, useStore} from "@app/wireframes/model";
+import {Diagram, EditorStateInStore, getDiagram, selectTab, useStore} from "@app/wireframes/model";
 import {useMemo} from "react";
+import {ImmutableMap} from "@app/core";
 
 export const C4Breadcrumb = () => {
 
@@ -15,7 +16,7 @@ export const C4Breadcrumb = () => {
 
     const selectedDiagram = useStore(getDiagram);
     const parentDiagram = useMemo(() => {
-        return diagrams.values.find(d => d.items.values.find(item => item.id == selectedDiagram?.parentId));
+        return findParentDiagram(diagrams, selectedDiagram?.parentId);
     }, [diagrams, selectedDiagram])
 
     const onClick = (activeKey: string | undefined) => {
@@ -30,13 +31,13 @@ export const C4Breadcrumb = () => {
             return;
         }
         if (activeKey === "Containers") {
-            const contextDiagram = diagrams.values.find(
+            const containerDiagram = diagrams.values.find(
                 (item, _) => item.type === "Containers"
             );
-            contextDiagram && dispatch(selectDiagram(contextDiagram)) && dispatch(selectTab("Containers"));
+            containerDiagram && dispatch(selectDiagram(containerDiagram)) && dispatch(selectTab("Containers"));
             return;
         }
-        if (activeKey == "Screens") {
+        if (activeKey == "Modules" || activeKey == "Screens") {
             dispatch(selectDiagram(parentDiagram))
             && dispatch(selectTab(parentDiagram?.type ? parentDiagram?.type : "Components"))
             return
@@ -102,7 +103,7 @@ export const C4Breadcrumb = () => {
                 {
                     title: (
                         <>
-                            <AppstoreOutlined />
+                            <AppstoreOutlined/>
                             <span>{selectedDiagram?.title}</span>
                         </>
                     )
@@ -142,7 +143,7 @@ export const C4Breadcrumb = () => {
             {
                 title: (
                     <>
-                        <BorderOutlined />
+                        <BorderOutlined/>
                         <span>{selectedDiagram?.title}</span>
                     </>
                 ),
@@ -151,10 +152,24 @@ export const C4Breadcrumb = () => {
         ]
     }, [selectedDiagram])
     return (
-        <div style={{width: "100%", display: "flex", justifyContent: "center", alignItems: "center", marginTop: "10px"}}>
+        <div style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "10px",
+            cursor: "pointer"
+        }}>
             <Breadcrumb
                 items={items}
             />
         </div>
     )
+}
+
+const findParentDiagram = (diagrams: ImmutableMap<Diagram>, parentId: string | undefined) => {
+    if (!parentId) {
+        return undefined;
+    }
+    return diagrams.values.find(d => d.items.values.find(item => item.id == parentId));
 }

@@ -148,7 +148,7 @@ export const EditorViewInner = ({
     );
     if (!child) {
       const newDiagramTitle = selectedItem.appearance.get("TITLE");
-      if (selectedItem.type == "Components") {
+      if (selectedItem.type == "Components" || selectedItem.type == "Modules") {
         dispatch(
             addDiagram(MathHelper.nextId(), newDiagramTitle, selectedItem.id, "Screens")
         );
@@ -280,7 +280,7 @@ export const EditorViewInner = ({
       <div className="editor-view" onClick={doSetPosition}>
         <div
           className="editor-diagram"
-          style={{ width: w, height: h, padding }}
+          style={{ width: w, height: h, padding, paddingTop: "0" }}
           ref={renderRef}
         >
           <Editor

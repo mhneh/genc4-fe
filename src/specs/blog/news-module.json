@@ -1,0 +1,620 @@
+{
+  "id": "",
+  "title": "News Module",
+  "models": [
+    "news: id string, title string, "
+  ],
+  "children": [
+    {
+      "id": "",
+      "items": [
+        {
+          "id": "6675b1d630db816175416dff",
+          "appearance": {
+            "FOREGROUND_COLOR": 8764400,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 0,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "News",
+            "TITLE": "News",
+            "DESCRIPTION": "Provides information of News, contains following information: title, description, content.",
+            "TECHNOLOGY": "Express",
+            "ACTION": "service",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "Post",
+          "transform": {
+            "x": 484,
+            "y": 147,
+            "w": 250,
+            "h": 160,
+            "r": 0
+          },
+          "type": "Components",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b1df34dc39c1a7dfd183",
+          "appearance": {
+            "FOREGROUND_COLOR": 8764400,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 0,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "News Category",
+            "TITLE": "News Category",
+            "DESCRIPTION": "Provides information of NewsCategory, contains following information: title, description, content.",
+            "TECHNOLOGY": "Express",
+            "ACTION": "service",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "Contact",
+          "transform": {
+            "x": 822,
+            "y": 442,
+            "w": 250,
+            "h": 160,
+            "r": 0
+          },
+          "type": "Components",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b1e9cd732f8bac68d8dc",
+          "appearance": {
+            "FOREGROUND_COLOR": 8764400,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 0,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "News Tag",
+            "TITLE": "News Tag",
+            "DESCRIPTION": "Provides information of NewsTag, contains following information: title, description.",
+            "TECHNOLOGY": "Express",
+            "ACTION": "service",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "User",
+          "transform": {
+            "x": 164,
+            "y": 442,
+            "w": 250,
+            "h": 160,
+            "r": 0
+          },
+          "type": "Components",
+          "descriptions": [],
+          "screens": []
+        }
+      ],
+      "rootIds": [
+        "6675b1d630db816175416dff",
+        "6675b1df34dc39c1a7dfd183",
+        "6675b1e9cd732f8bac68d8dc"
+      ],
+      "title": "News Module",
+      "relationships": [
+        {
+          "id": "6675b292ea7335b6d19776f4",
+          "title": "News -> News Tag",
+          "description": "One news has many tags.",
+          "source": "6675b1d630db816175416dff",
+          "target": "6675b1e9cd732f8bac68d8dc",
+          "diagramId": "1712974337304"
+        },
+        {
+          "id": "6675b2950ba355bda2e6bbff",
+          "title": "News -> News Category",
+          "description": "One news has belong to one category.",
+          "source": "6675b1d630db816175416dff",
+          "target": "6675b1df34dc39c1a7dfd183",
+          "diagramId": "1712974337304"
+        }
+      ],
+      "type": "Modules",
+      "master": "",
+      "parentId": "",
+      "mainSystem": false
+    },
+    {
+      "id": "6675b2b3af97eae80ce3a497",
+      "title": "News",
+      "items": [
+        {
+          "id": "6675b2bca18a69561d6a9302",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Create Screen",
+            "TITLE": "Creation Screen",
+            "DESCRIPTION": "Display a form contains all field to create new News. Submit form will post data to /news/create. If create successfully, please alert created success. If not, please display error message.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "create",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "CreateScreen",
+          "transform": {
+            "x": 241,
+            "y": 691,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "66624b89ff9c2d34f6496c9e",
+              "description": "Create new News in database by data from request.",
+              "itemId": "6675b2bca18a69561d6a9302"
+            }
+          ],
+          "screens": []
+        },
+        {
+          "id": "6675b2d4deea3688c62b82d7",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "View Screen",
+            "TITLE": "View Screen",
+            "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /news/edit/:id with id will be its ID. Delete button to get delete at /news/delete/:id with id will be its ID.",
+            "TECHNOLOGY": "Screen",
+            "ACTION": "detail",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "ViewScreen",
+          "transform": {
+            "x": 901,
+            "y": 245,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "66624b8dde8c854eb339dffd",
+              "description": "Find news by id.",
+              "itemId": "6675b2d4deea3688c62b82d7"
+            }
+          ],
+          "screens": []
+        },
+        {
+          "id": "6675b2e14954190471c3ed34",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Update Screen",
+            "TITLE": "Update Screen",
+            "DESCRIPTION": "Display form contains all the information of single News record. Submit form will post data to /news/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
+            "TECHNOLOGY": "Update Screen",
+            "ACTION": "edit",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "UpdateScreen",
+          "transform": {
+            "x": 901,
+            "y": 736,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "66624b9117cc1754af2600a1",
+              "description": "Update the the information news by data from request.",
+              "itemId": "6675b2e14954190471c3ed34"
+            }
+          ],
+          "screens": []
+        },
+        {
+          "id": "6675b2e937aa431c479edaab",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Other Screen",
+            "TITLE": "List All Screen",
+            "DESCRIPTION": "Data will be displayed as a list, each of element will have three buttons to view, update and delete it. 'View' button will lead to get detail view of Post at /news/detail/:id with id will be its ID.'Update' button will lead to get edit form at /news/edit/:id with id will be its ID.'Delete' button will lead to get delete at /news/delete/:id with id will be its ID.Screen will have a search bar to search news by its name.",
+            "TECHNOLOGY": "Screen",
+            "ACTION": "list",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "OtherScreen",
+          "transform": {
+            "x": 248,
+            "y": 245,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "66624b96689d28d67b11bbe0",
+              "description": "Get all existing news in database.",
+              "itemId": "6675b2e937aa431c479edaab"
+            }
+          ],
+          "screens": []
+        }
+      ],
+      "master": "6675b1d630db816175416dff",
+      "rootIds": [
+        "6675b2bca18a69561d6a9302",
+        "6675b2e14954190471c3ed34",
+        "6675b2e937aa431c479edaab",
+        "6675b2d4deea3688c62b82d7"
+      ],
+      "relationships": [
+        {
+          "id": "665f28b74dce8beeaaf14820",
+          "title": "List All Screen -> Creation Screen",
+          "description": "Can create new news.",
+          "source": "6675b2e937aa431c479edaab",
+          "target": "6675b2bca18a69561d6a9302",
+          "diagramId": "6675b2b3af97eae80ce3a497"
+        },
+        {
+          "id": "665f28c15addb9fa47d86f7d",
+          "title": "List All Screen -> Update Screen",
+          "description": "Can update existing news.",
+          "source": "6675b2e937aa431c479edaab",
+          "target": "6675b2e14954190471c3ed34",
+          "diagramId": "6675b2b3af97eae80ce3a497"
+        },
+        {
+          "id": "1718638819595",
+          "title": "List All Screen -> View Screen",
+          "description": "Can view detail of existing news.",
+          "source": "6675b2e937aa431c479edaab",
+          "target": "6675b2d4deea3688c62b82d7",
+          "diagramId": "6675b2b3af97eae80ce3a497"
+        }
+      ],
+      "type": "Screens",
+      "parentId": "6675b1d630db816175416dff",
+      "mainSystem": false
+    },
+    {
+      "id": "6675b3384c0661b01081a73f",
+      "title": "News Category",
+      "items": [
+        {
+          "id": "6675b33f438dc3a79c90bdd6",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Other Screen",
+            "TITLE": "List All Screen",
+            "DESCRIPTION": "Describe your idea with new screen",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "list",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "OtherScreen",
+          "transform": {
+            "x": 229,
+            "y": 220,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b34c72ca0cc1295d87ed",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "View Screen",
+            "TITLE": "View Screen",
+            "DESCRIPTION": "This screen is used to view something in its container",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "detail",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "ViewScreen",
+          "transform": {
+            "x": 780,
+            "y": 220,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b353ff1130dd0cf4f93a",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Create Screen",
+            "TITLE": "Create Screen",
+            "DESCRIPTION": "This screen is used to add new single data to this component.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "create",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "CreateScreen",
+          "transform": {
+            "x": 229,
+            "y": 637,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b35b0e079127a9b5e764",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Update Screen",
+            "TITLE": "Update Screen",
+            "DESCRIPTION": "This screen is used to update something in its container",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "edit",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "UpdateScreen",
+          "transform": {
+            "x": 780,
+            "y": 721,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        }
+      ],
+      "rootIds": [
+        "6675b33f438dc3a79c90bdd6",
+        "6675b34c72ca0cc1295d87ed",
+        "6675b353ff1130dd0cf4f93a",
+        "6675b35b0e079127a9b5e764"
+      ],
+      "relationships": [
+        {
+          "id": "1718638821050",
+          "title": "List All Screen -> View Screen",
+          "description": "Can view detail of news category.",
+          "source": "6675b33f438dc3a79c90bdd6",
+          "target": "6675b34c72ca0cc1295d87ed",
+          "diagramId": "6675b3384c0661b01081a73f"
+        },
+        {
+          "id": "1718638821060",
+          "title": "List All Screen -> Create Screen",
+          "description": "Can create new news category.",
+          "source": "6675b33f438dc3a79c90bdd6",
+          "target": "6675b353ff1130dd0cf4f93a",
+          "diagramId": "6675b3384c0661b01081a73f"
+        },
+        {
+          "id": "1718638821070",
+          "title": "List All Screen -> Update Screen",
+          "description": "Can update existing news category.",
+          "source": "6675b33f438dc3a79c90bdd6",
+          "target": "6675b35b0e079127a9b5e764",
+          "diagramId": "6675b3384c0661b01081a73f"
+        }
+      ],
+      "type": "Screens",
+      "parentId": "6675b1df34dc39c1a7dfd183"
+    },
+    {
+      "id": "6675b3a11289df60edc50854",
+      "title": "News Tag",
+      "items": [
+        {
+          "id": "6675b3f98861a218fb489ce8",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Other Screen",
+            "TITLE": "List All Screen",
+            "DESCRIPTION": "Describe your idea with new screen",
+            "TECHNOLOGY": "Screen",
+            "ACTION": "custom",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "OtherScreen",
+          "transform": {
+            "x": 238,
+            "y": 244,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b4025f37e2c51bd8705c",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "View Screen",
+            "TITLE": "View Screen",
+            "DESCRIPTION": "This screen is used to view something in its container",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "detail",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "ViewScreen",
+          "transform": {
+            "x": 810,
+            "y": 244,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b409bdc6fc9919db1d03",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Update Screen",
+            "TITLE": "Update Screen",
+            "DESCRIPTION": "This screen is used to update something in its container",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "edit",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "UpdateScreen",
+          "transform": {
+            "x": 810,
+            "y": 730,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b41242a5319ff2d17591",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Create Screen",
+            "TITLE": "Create Screen",
+            "DESCRIPTION": "This screen is used to add new single data to this component.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "create",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "CreateScreen",
+          "transform": {
+            "x": 228,
+            "y": 660,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        }
+      ],
+      "rootIds": [
+        "6675b3f98861a218fb489ce8",
+        "6675b4025f37e2c51bd8705c",
+        "6675b409bdc6fc9919db1d03",
+        "6675b41242a5319ff2d17591"
+      ],
+      "relationships": [
+        {
+          "id": "1718638820806",
+          "title": "List All Screen -> View Screen",
+          "description": "Can view detail of news tag.",
+          "source": "6675b3f98861a218fb489ce8",
+          "target": "6675b4025f37e2c51bd8705c",
+          "diagramId": "6675b3a11289df60edc50854"
+        },
+        {
+          "id": "1718638820816",
+          "title": "List All Screen -> Create Screen",
+          "description": "Can create new news tag.",
+          "source": "6675b3f98861a218fb489ce8",
+          "target": "6675b41242a5319ff2d17591",
+          "diagramId": "6675b3a11289df60edc50854"
+        },
+        {
+          "id": "1718638820826",
+          "title": "List All Screen -> Update Screen",
+          "description": "Can update existing news tag.",
+          "source": "6675b3f98861a218fb489ce8",
+          "target": "6675b409bdc6fc9919db1d03",
+          "diagramId": "6675b3a11289df60edc50854"
+        }
+      ],
+      "type": "Screens",
+      "parentId": "6675b1e9cd732f8bac68d8dc"
+    }
+  ]
+}

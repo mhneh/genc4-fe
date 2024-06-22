@@ -54,11 +54,11 @@ import { C4Breadcrumb } from "@app/wireframes/components/breadcrumb/C4Breadcrumb
 import styled from "styled-components";
 
 const SidebarTabs: TabsProps["items"] = [
-  // {
-  //   key: "Pages",
-  //   label: texts.common.level,
-  //   children: <Pages />,
-  // },
+  {
+    key: "Pages",
+    label: texts.common.level,
+    children: <Pages />,
+  },
   {
     key: "Contexts",
     label: texts.common.contexts,
@@ -73,11 +73,14 @@ const SidebarTabs: TabsProps["items"] = [
     key: "Components",
     label: texts.common.components,
     children: <Components />,
+    disabled: true,
+
   },
   {
     key: "Screens",
     label: texts.common.screens,
     children: <Screens />,
+    disabled: true,
   },
   // {
   //   key: "Shapes",
@@ -219,10 +222,6 @@ export const App = () => {
                 defaultActiveKey={"Contexts"}
                 items={SidebarTabs}
                 onTabClick={(activeKey) => {
-                  if (activeKey === "Components" || activeKey === "Screens") {
-                    dispatch(removeDiagram(""));
-                    return;
-                  }
                   if (activeKey === "Contexts") {
                     const contextDiagram = diagrams.values.find(
                       (item, _) => item.type === "Contexts"
@@ -240,6 +239,7 @@ export const App = () => {
                 }}
                 onChange={doSelectTab}
                 destroyInactiveTabPane={true}
+
               />
             </Layout.Sider>
 

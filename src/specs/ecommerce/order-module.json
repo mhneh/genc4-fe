@@ -1,0 +1,250 @@
+{
+  "id": "",
+  "title": "Order Module",
+  "models": [
+    "order: id string, title string.",
+    "cart: id string"
+  ],
+  "children": [
+    {
+      "id": "6675d9011a5874c0e726c797",
+      "title": "Order Module",
+      "items": [
+        {
+          "id": "6675d8e1edf2b5e4be4464c6",
+          "appearance": {
+            "FOREGROUND_COLOR": 8764400,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 0,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Order",
+            "TITLE": "Order",
+            "DESCRIPTION": "Provides information of Order, contains following information: items, user, address.",
+            "TECHNOLOGY": "Express",
+            "ACTION": "service",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "Post",
+          "transform": {
+            "x": 512,
+            "y": 170,
+            "w": 250,
+            "h": 160,
+            "r": 0
+          },
+          "type": "Components",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675d8eb81df67aa9e4d33a7",
+          "appearance": {
+            "FOREGROUND_COLOR": 8764400,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 0,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Order",
+            "TITLE": "Cart",
+            "DESCRIPTION": "Provides information of Cart, contains following information: items.",
+            "TECHNOLOGY": "Express",
+            "ACTION": "service",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "Post",
+          "transform": {
+            "x": 512,
+            "y": 543,
+            "w": 250,
+            "h": 160,
+            "r": 0
+          },
+          "type": "Components",
+          "descriptions": [],
+          "screens": []
+        }
+      ],
+      "rootIds": [
+        "6675d8e1edf2b5e4be4464c6",
+        "6675d8eb81df67aa9e4d33a7"
+      ],
+      "relationships": [
+        {
+          "id": "1718997600080",
+          "title": "Order -> Cart",
+          "description": "Can place and checkout products in cart.",
+          "source": "6675d8e1edf2b5e4be4464c6",
+          "target": "6675d8eb81df67aa9e4d33a7",
+          "diagramId": "6675d9011a5874c0e726c797"
+        }
+      ],
+      "type": "Modules",
+      "master": "",
+      "parentId": "",
+      "mainSystem": false
+    },
+    {
+      "id": "6675d90c56e063eff2e4556a",
+      "items": [
+        {
+          "id": "6675d91bdcfc7495ea29d36c",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "List Screen",
+            "TITLE": "List All Screen",
+            "DESCRIPTION": "Data will be displayed as a list, each of element will have button to view. 'View' button will lead to get detail view of Order at /order/detail/:id with id will be its ID. Screen will have a search bar to search order by date.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "list",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "ListScreen",
+          "transform": {
+            "x": 225,
+            "y": 361,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675d9217343d04c4a140da9",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "View Screen",
+            "TITLE": "View Screen",
+            "DESCRIPTION": "",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "detail",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "ViewScreen",
+          "transform": {
+            "x": 822,
+            "y": 361,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        }
+      ],
+      "rootIds": [
+        "6675d91bdcfc7495ea29d36c",
+        "6675d9217343d04c4a140da9"
+      ],
+      "title": "Order",
+      "relationships": [
+        {
+          "id": "1718997600524",
+          "title": "List All Screen -> View Screen",
+          "description": "Can view detail of order.",
+          "source": "6675d91bdcfc7495ea29d36c",
+          "target": "6675d9217343d04c4a140da9",
+          "diagramId": "6675d90c56e063eff2e4556a"
+        }
+      ],
+      "type": "Screens",
+      "parentId": "6675d8e1edf2b5e4be4464c6"
+    },
+    {
+      "id": "6675d93099b8de4a2ac445b2",
+      "items": [
+        {
+          "id": "6675d9381b5ef0a7306072ec",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "View Screen",
+            "TITLE": "View Screen",
+            "DESCRIPTION": "This screen is used to view something in its container",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "detail",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "ViewScreen",
+          "transform": {
+            "x": 216,
+            "y": 366,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675d940fbe9199343012bce",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Update Screen",
+            "TITLE": "Update Screen",
+            "DESCRIPTION": "This screen is used to update something in its container",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "edit",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "UpdateScreen",
+          "transform": {
+            "x": 812,
+            "y": 354,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        }
+      ],
+      "rootIds": [
+        "6675d9381b5ef0a7306072ec",
+        "6675d940fbe9199343012bce"
+      ],
+      "title": "Cart",
+      "relationships": [
+        {
+          "id": "1718997600735",
+          "title": "View Screen -> Update Screen",
+          "description": "Can update current cart items.",
+          "source": "6675d9381b5ef0a7306072ec",
+          "target": "6675d940fbe9199343012bce",
+          "diagramId": "6675d93099b8de4a2ac445b2"
+        }
+      ],
+      "type": "Screens",
+      "parentId": "6675d8eb81df67aa9e4d33a7"
+    }
+  ]
+}

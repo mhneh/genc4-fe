@@ -6,7 +6,7 @@ import {
   saveDiagramToServer,
 } from "@app/wireframes/redux/thunk/loading.ts";
 import Icon, { SearchOutlined } from "@ant-design/icons";
-import blogSystemJson from "./blog-system.json";
+import blogSystemJson from "../../../specs/blog-system.json";
 import { texts } from "@app/texts";
 import { Grid } from "@app/core";
 import * as React from "react";

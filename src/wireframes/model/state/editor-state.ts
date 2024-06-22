@@ -164,6 +164,15 @@ export class EditorState extends Record<Props> {
         });
     }
 
+    public addDiagrams(diagrams: Diagram[]) {
+        let state = this;
+        for (let diagram of diagrams) {
+            state = state.addDiagram(diagram);
+        }
+
+        return state;
+    }
+
     public selectSystem(system: string) {
         return this.merge({
             system: system,

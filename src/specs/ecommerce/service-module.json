@@ -1,0 +1,620 @@
+{
+  "id": "",
+  "title": "Service Module",
+  "models": [
+    "service: id string, title string, description string, plan string."
+  ],
+  "children": [
+    {
+      "id": "",
+      "items": [
+        {
+          "id": "6675da206d20fc114898bc56",
+          "appearance": {
+            "FOREGROUND_COLOR": 8764400,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 0,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Service",
+            "TITLE": "Service",
+            "DESCRIPTION": "Provides information of Service, contains following information: title, description, content.",
+            "TECHNOLOGY": "Express",
+            "ACTION": "service",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "Post",
+          "transform": {
+            "x": 484,
+            "y": 147,
+            "w": 250,
+            "h": 160,
+            "r": 0
+          },
+          "type": "Components",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675da2b4afbf8dcc54cf5d5",
+          "appearance": {
+            "FOREGROUND_COLOR": 8764400,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 0,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Service Category",
+            "TITLE": "Service Category",
+            "DESCRIPTION": "Provides information of ServiceCategory, contains following information: title, description, content.",
+            "TECHNOLOGY": "Express",
+            "ACTION": "service",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "Contact",
+          "transform": {
+            "x": 822,
+            "y": 442,
+            "w": 250,
+            "h": 160,
+            "r": 0
+          },
+          "type": "Components",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675da34197dcb192a787b38",
+          "appearance": {
+            "FOREGROUND_COLOR": 8764400,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 0,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Service Tag",
+            "TITLE": "Service Tag",
+            "DESCRIPTION": "Provides information of ServiceTag, contains following information: title, description.",
+            "TECHNOLOGY": "Express",
+            "ACTION": "service",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "User",
+          "transform": {
+            "x": 164,
+            "y": 442,
+            "w": 250,
+            "h": 160,
+            "r": 0
+          },
+          "type": "Components",
+          "descriptions": [],
+          "screens": []
+        }
+      ],
+      "rootIds": [
+        "6675da206d20fc114898bc56",
+        "6675da2b4afbf8dcc54cf5d5",
+        "6675da34197dcb192a787b38"
+      ],
+      "title": "Service Module",
+      "relationships": [
+        {
+          "id": "6675b292ea7335b6d19776f4",
+          "title": "Service -> Service Tag",
+          "description": "One service has many tags.",
+          "source": "6675da206d20fc114898bc56",
+          "target": "6675da34197dcb192a787b38",
+          "diagramId": "1712974337304"
+        },
+        {
+          "id": "6675b2950ba355bda2e6bbff",
+          "title": "Service -> Service Category",
+          "description": "One service has belong to one category.",
+          "source": "6675da206d20fc114898bc56",
+          "target": "6675da2b4afbf8dcc54cf5d5",
+          "diagramId": "1712974337304"
+        }
+      ],
+      "type": "Modules",
+      "master": "",
+      "parentId": "",
+      "mainSystem": false
+    },
+    {
+      "id": "6675da6e2eca04f8a7138de3",
+      "title": "Service",
+      "items": [
+        {
+          "id": "6675da7527ecf5a842613d0a",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Create Screen",
+            "TITLE": "Creation Screen",
+            "DESCRIPTION": "Display a form contains all field to create new Service. Submit form will post data to /service/create. If create successfully, please alert created success. If not, please display error message.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "create",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "CreateScreen",
+          "transform": {
+            "x": 241,
+            "y": 691,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "66624b89ff9c2d34f6496c9e",
+              "description": "Create new Service in database by data from request.",
+              "itemId": "6675da7527ecf5a842613d0a"
+            }
+          ],
+          "screens": []
+        },
+        {
+          "id": "6675da85b0f55fe85af25f1c",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "View Screen",
+            "TITLE": "View Screen",
+            "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /service/edit/:id with id will be its ID. Delete button to get delete at /service/delete/:id with id will be its ID.",
+            "TECHNOLOGY": "Screen",
+            "ACTION": "detail",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "ViewScreen",
+          "transform": {
+            "x": 901,
+            "y": 245,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "66624b8dde8c854eb339dffd",
+              "description": "Find service by id.",
+              "itemId": "6675da85b0f55fe85af25f1c"
+            }
+          ],
+          "screens": []
+        },
+        {
+          "id": "6675da93833864d3475c7717",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Update Screen",
+            "TITLE": "Update Screen",
+            "DESCRIPTION": "Display form contains all the information of single Service record. Submit form will post data to /service/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
+            "TECHNOLOGY": "Update Screen",
+            "ACTION": "edit",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "UpdateScreen",
+          "transform": {
+            "x": 901,
+            "y": 736,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "66624b9117cc1754af2600a1",
+              "description": "Update the the information service by data from request.",
+              "itemId": "6675da93833864d3475c7717"
+            }
+          ],
+          "screens": []
+        },
+        {
+          "id": "6675da9de8a281d44c1dfcb8",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Other Screen",
+            "TITLE": "List All Screen",
+            "DESCRIPTION": "Data will be displayed as a list, each of element will have three buttons to view, update and delete it. 'View' button will lead to get detail view of Post at /service/detail/:id with id will be its ID.'Update' button will lead to get edit form at /service/edit/:id with id will be its ID.'Delete' button will lead to get delete at /service/delete/:id with id will be its ID.Screen will have a search bar to search service by its name.",
+            "TECHNOLOGY": "Screen",
+            "ACTION": "list",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "OtherScreen",
+          "transform": {
+            "x": 248,
+            "y": 245,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "66624b96689d28d67b11bbe0",
+              "description": "Get all existing service in database.",
+              "itemId": "6675da9de8a281d44c1dfcb8"
+            }
+          ],
+          "screens": []
+        }
+      ],
+      "master": "6675da206d20fc114898bc56",
+      "rootIds": [
+        "6675da7527ecf5a842613d0a",
+        "6675da93833864d3475c7717",
+        "6675da9de8a281d44c1dfcb8",
+        "6675da85b0f55fe85af25f1c"
+      ],
+      "relationships": [
+        {
+          "id": "665f28b74dce8beeaaf14820",
+          "title": "List All Screen -> Creation Screen",
+          "description": "Can create new service.",
+          "source": "6675da9de8a281d44c1dfcb8",
+          "target": "6675da7527ecf5a842613d0a",
+          "diagramId": "6675da6e2eca04f8a7138de3"
+        },
+        {
+          "id": "665f28c15addb9fa47d86f7d",
+          "title": "List All Screen -> Update Screen",
+          "description": "Can update existing service.",
+          "source": "6675da9de8a281d44c1dfcb8",
+          "target": "6675da93833864d3475c7717",
+          "diagramId": "6675da6e2eca04f8a7138de3"
+        },
+        {
+          "id": "1718638819595",
+          "title": "List All Screen -> View Screen",
+          "description": "Can view detail of existing service.",
+          "source": "6675da9de8a281d44c1dfcb8",
+          "target": "6675da85b0f55fe85af25f1c",
+          "diagramId": "6675da6e2eca04f8a7138de3"
+        }
+      ],
+      "type": "Screens",
+      "parentId": "6675da206d20fc114898bc56",
+      "mainSystem": false
+    },
+    {
+      "id": "6675dab4170ba17a04c8771a",
+      "title": "Service Category",
+      "items": [
+        {
+          "id": "6675dabb04cf7913b55f8e45",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Other Screen",
+            "TITLE": "List All Screen",
+            "DESCRIPTION": "Describe your idea with new screen",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "list",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "OtherScreen",
+          "transform": {
+            "x": 229,
+            "y": 220,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675dac4b628512e71513dda",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "View Screen",
+            "TITLE": "View Screen",
+            "DESCRIPTION": "This screen is used to view something in its container",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "detail",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "ViewScreen",
+          "transform": {
+            "x": 780,
+            "y": 220,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675dacd4f4938adb22373ea",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Create Screen",
+            "TITLE": "Create Screen",
+            "DESCRIPTION": "This screen is used to add new single data to this component.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "create",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "CreateScreen",
+          "transform": {
+            "x": 229,
+            "y": 637,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675dad7f47a8541dbf099d8",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Update Screen",
+            "TITLE": "Update Screen",
+            "DESCRIPTION": "This screen is used to update something in its container",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "edit",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "UpdateScreen",
+          "transform": {
+            "x": 780,
+            "y": 721,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        }
+      ],
+      "rootIds": [
+        "6675dabb04cf7913b55f8e45",
+        "6675dac4b628512e71513dda",
+        "6675dacd4f4938adb22373ea",
+        "6675dad7f47a8541dbf099d8"
+      ],
+      "relationships": [
+        {
+          "id": "1718638821050",
+          "title": "List All Screen -> View Screen",
+          "description": "Can view detail of service category.",
+          "source": "6675dabb04cf7913b55f8e45",
+          "target": "6675dac4b628512e71513dda",
+          "diagramId": "6675dab4170ba17a04c8771a"
+        },
+        {
+          "id": "1718638821060",
+          "title": "List All Screen -> Create Screen",
+          "description": "Can create new service category.",
+          "source": "6675dabb04cf7913b55f8e45",
+          "target": "6675dacd4f4938adb22373ea",
+          "diagramId": "6675dab4170ba17a04c8771a"
+        },
+        {
+          "id": "1718638821070",
+          "title": "List All Screen -> Update Screen",
+          "description": "Can update existing service category.",
+          "source": "6675dabb04cf7913b55f8e45",
+          "target": "6675dad7f47a8541dbf099d8",
+          "diagramId": "6675dab4170ba17a04c8771a"
+        }
+      ],
+      "type": "Screens",
+      "parentId": "6675da2b4afbf8dcc54cf5d5"
+    },
+    {
+      "id": "6675dae606fe24b1da65d4e2",
+      "title": "Service Tag",
+      "items": [
+        {
+          "id": "6675daef76352f008bbaa6cb",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Other Screen",
+            "TITLE": "List All Screen",
+            "DESCRIPTION": "Describe your idea with new screen",
+            "TECHNOLOGY": "Screen",
+            "ACTION": "custom",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "OtherScreen",
+          "transform": {
+            "x": 238,
+            "y": 244,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675daf7f6ff263b818ef412",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "View Screen",
+            "TITLE": "View Screen",
+            "DESCRIPTION": "This screen is used to view something in its container",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "detail",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "ViewScreen",
+          "transform": {
+            "x": 810,
+            "y": 244,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675daff9dc4bf99c30eef3c",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Update Screen",
+            "TITLE": "Update Screen",
+            "DESCRIPTION": "This screen is used to update something in its container",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "edit",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "UpdateScreen",
+          "transform": {
+            "x": 810,
+            "y": 730,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675db08c1f8889db4a712fa",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Create Screen",
+            "TITLE": "Create Screen",
+            "DESCRIPTION": "This screen is used to add new single data to this component.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "create",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "CreateScreen",
+          "transform": {
+            "x": 228,
+            "y": 660,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        }
+      ],
+      "rootIds": [
+        "6675daef76352f008bbaa6cb",
+        "6675daf7f6ff263b818ef412",
+        "6675daff9dc4bf99c30eef3c",
+        "6675db08c1f8889db4a712fa"
+      ],
+      "relationships": [
+        {
+          "id": "1718638820806",
+          "title": "List All Screen -> View Screen",
+          "description": "Can view detail of service tag.",
+          "source": "6675daef76352f008bbaa6cb",
+          "target": "6675daf7f6ff263b818ef412",
+          "diagramId": "6675dae606fe24b1da65d4e2"
+        },
+        {
+          "id": "1718638820816",
+          "title": "List All Screen -> Create Screen",
+          "description": "Can create new service tag.",
+          "source": "6675daef76352f008bbaa6cb",
+          "target": "6675db08c1f8889db4a712fa",
+          "diagramId": "6675dae606fe24b1da65d4e2"
+        },
+        {
+          "id": "1718638820826",
+          "title": "List All Screen -> Update Screen",
+          "description": "Can update existing service tag.",
+          "source": "6675daef76352f008bbaa6cb",
+          "target": "6675daff9dc4bf99c30eef3c",
+          "diagramId": "6675dae606fe24b1da65d4e2"
+        }
+      ],
+      "type": "Screens",
+      "parentId": "6675da34197dcb192a787b38"
+    }
+  ]
+}

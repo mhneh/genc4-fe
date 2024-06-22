@@ -1,0 +1,174 @@
+{
+  "id": "",
+  "title": "About",
+  "models": "",
+  "items": [
+    {
+      "id": "6675e03b21d6e0cd702b91d1",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "Create Screen",
+        "TITLE": "Creation Screen",
+        "DESCRIPTION": "Display a form contains all field to create new about message. Submit form will post data to /about/create. If create successfully, please alert created success. If not, please display error message.",
+        "TECHNOLOGY": "Handlebars.js",
+        "ACTION": "create",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "CreateScreen",
+      "transform": {
+        "x": 173,
+        "y": 749,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "6675e04ffd95f64374985ff7",
+          "description": "Create new about record in database by data from request.",
+          "itemId": "6675e03b21d6e0cd702b91d1"
+        }
+      ],
+      "screens": []
+    },
+    {
+      "id": "6675e04b968acb469a122599",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "View Screen",
+        "TITLE": "View Screen",
+        "DESCRIPTION": "This view file will have 'Delete' button. 'Delete' button to get delete at /about/delete/:id with id will be its ID.",
+        "TECHNOLOGY": "Screen",
+        "ACTION": "detail",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "ViewScreen",
+      "transform": {
+        "x": 810,
+        "y": 245,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "6663dedc619cb44e998aa98e",
+          "description": "Find about by id.",
+          "itemId": "6675e04b968acb469a122599"
+        }
+      ],
+      "screens": []
+    },
+    {
+      "id": "6675e05b8b353aeb9b66d1be",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "Other Screen",
+        "TITLE": "List All Screen",
+        "DESCRIPTION": "Data will be displayed as a list, each of element will have two buttons to view, and delete it. 'View' button will lead to get detail view of Post at /about/detail/:id with id will be its ID. 'Delete' button will lead to get delete at /post/about/:id with id will be its ID. Screen will have a search bar to search about by its title.",
+        "TECHNOLOGY": "Screen",
+        "ACTION": "list",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "OtherScreen",
+      "transform": {
+        "x": 173,
+        "y": 245,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [
+        {
+          "id": "6675e061972a56e2a25bc3cb",
+          "description": "Get all existing abouts in database.",
+          "itemId": "6675e05b8b353aeb9b66d1be"
+        }
+      ],
+      "screens": []
+    },
+    {
+      "id": "1719001395199",
+      "appearance": {
+        "FOREGROUND_COLOR": 16777215,
+        "TEXT_DISABLED": true,
+        "FONT_SIZE": 16,
+        "BACKGROUND_COLOR": 3276,
+        "STROKE_COLOR": 13224393,
+        "STROKE_THICKNESS": 1,
+        "TEXT_ALIGNMENT": "center",
+        "TEXT": "Update Screen",
+        "TITLE": "Update Screen",
+        "DESCRIPTION": "This screen is used to update something in its container",
+        "TECHNOLOGY": "Handlebars.js",
+        "ACTION": "edit",
+        "SHAPE": "Rectangle"
+      },
+      "renderer": "UpdateScreen",
+      "transform": {
+        "x": 810,
+        "y": 723,
+        "w": 250,
+        "h": 250,
+        "r": 0
+      },
+      "type": "Screens",
+      "descriptions": [],
+      "screens": []
+    }
+  ],
+  "rootIds": [
+    "6675e03b21d6e0cd702b91d1",
+    "6675e04b968acb469a122599",
+    "6675e05b8b353aeb9b66d1be",
+    "1719001395199"
+  ],
+  "title": "About",
+  "relationships": [
+    {
+      "id": "6675e06a222fbd006fb5d7b4",
+      "title": "List All Screen -> Creation Screen",
+      "description": "Can create new about information.",
+      "source": "6675e05b8b353aeb9b66d1be",
+      "target": "6675e03b21d6e0cd702b91d1"
+    },
+    {
+      "id": "6675e06d5802bf95ed329dea",
+      "title": "List All Screen -> View Screen",
+      "description": "Can view detail of about.",
+      "source": "6675e05b8b353aeb9b66d1be",
+      "target": "6675e04b968acb469a122599"
+    },
+    {
+      "id": "1719001395247",
+      "title": "List All Screen -> Update Screen",
+      "description": "Can update existing about information.",
+      "source": "6675e05b8b353aeb9b66d1be",
+      "target": "1719001395199",
+      "diagramId": "1719001395141"
+    }
+  ],
+  "type": "Screens",
+  "mainSystem": false
+}

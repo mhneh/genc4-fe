@@ -6,9 +6,11 @@
 */
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+const WORKSPACE_PATH = import.meta.env.VITE_WORKSPACE_PATH;
+const LOGIN_PATH = import.meta.env.VITE_LOGIN_PATH;
 
 export async function getDiagram(readToken: string) {
-    const response = await fetch(`${SERVER_URL}/${readToken}`);
+    const response = await fetch(`${SERVER_URL}/${WORKSPACE_PATH}/${readToken}`);
 
     if (!response.ok) {
         throw Error('Failed to load diagram');
@@ -20,7 +22,7 @@ export async function getDiagram(readToken: string) {
 }
 
 export async function putDiagram(writeToken: string, body: any) {
-    const response = await fetch(`${SERVER_URL}/${writeToken}`, {
+    const response = await fetch(`${SERVER_URL}/${WORKSPACE_PATH}/${writeToken}`, {
         method: 'PUT',
         headers: {
             ['Content-Type']: 'application/json'
@@ -34,7 +36,7 @@ export async function putDiagram(writeToken: string, body: any) {
 }
 
 export async function postDiagram(body: any) {
-    const response = await fetch(`${SERVER_URL}/`, {
+    const response = await fetch(`${SERVER_URL}/${WORKSPACE_PATH}/`, {
         method: 'POST',
         headers: {
             ['Content-Type']: 'application/json'
@@ -53,7 +55,14 @@ export async function postDiagram(body: any) {
 
 export function genCodeDiagram(writeToken: string) {
 
-    return fetch(`${SERVER_URL}/${writeToken}`, {
+    return fetch(`${SERVER_URL}/${WORKSPACE_PATH}/${writeToken}`, {
         method: 'PATCH'
+    });
+}
+
+export function login(username: string, password: string) {
+    return fetch(`${SERVER_URL}/${LOGIN_PATH}`, {
+        method: 'POST',
+        body: JSON.stringify({username, password})
     });
 }
