@@ -65,16 +65,15 @@ export class RelationshipRef {
             this.renderedElement.line(
                 source.transform.position.x, source.transform.position.y,
                 target.transform.position.x, target.transform.position.y
-            ).stroke({width: 2, color: '#c2c2c2'});
+            ).stroke({width: 2, color: '#c2c2c2', dasharray: '5'});
             const description = relationship?.description ? relationship?.description
                 : '';
             const text = this.renderedElement.text(function (add) {
                 add.tspan(description).fill('#c2c2c2')
                 add.font({
-                    size: 16,
+                    size: 17,
                     anchor: 'middle',
-                    leading: '1.5em',
-                    weight: 'bold'
+                    leading: '1.5em'
                 });
             });
             const desLength = description.length;
@@ -104,10 +103,9 @@ export class RelationshipRef {
         const text = this.renderedElement.text(function (add) {
             add.tspan(description).fill('#c2c2c2')
             add.font({
-                size: 16,
+                size: 17,
                 anchor: 'middle',
-                leading: '1.5em',
-                weight: 'bold'
+                leading: '1.5em'
             });
         });
         const desLength = description.length;
@@ -117,7 +115,7 @@ export class RelationshipRef {
         this.renderedElement.line(
             source.transform.position.x, source.transform.position.y,
             target.transform.position.x, target.transform.position.y
-        ).stroke({width: 2, color: '#c2c2c2'});
+        ).stroke({width: 2, color: '#c2c2c2', dasharray: '5'});
 
 
         // Always update shape to keep a reference to the actual object, not the old object.

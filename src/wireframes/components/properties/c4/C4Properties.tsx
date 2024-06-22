@@ -4,7 +4,8 @@ import {texts} from "@app/texts";
 import {Text} from "@app/wireframes/components/properties/common/Text.tsx";
 import {DefaultAppearance} from "@app/wireframes/interface";
 import {useAppearance} from "@app/wireframes/components/actions";
-import { Input } from 'antd';
+import {Input} from 'antd';
+import {HorizontalLine} from "@app/wireframes/shapes/ShapeRenderer.stories.tsx";
 
 const {TextArea} = Input;
 
@@ -25,6 +26,9 @@ export const C4Properties = () => {
                 <div className='property-subsection visual-properties'>
                     <Row className='property'>
                         <Col span={7} className='property-label'>{texts.common.title}</Col>
+                    </Row>
+
+                    <Row className='property'>
                         <Col span={17} className='property-value'>
                             <Text
                                 text={title.value}
@@ -35,19 +39,10 @@ export const C4Properties = () => {
                     </Row>
 
                     <Row className='property'>
-                        <Col span={7} className='property-label'>{texts.common.desc}</Col>
-                        <Col span={17} className='property-value'>
-                            <TextArea
-                                value={desc.value}
-                                onChange={e => setDesc(e.target.value)}
-                                placeholder={"Description"}
-                                autoSize={{ minRows: 3, maxRows: 5 }}
-                            />
-                        </Col>
+                        <Col span={7} className='property-label'>{texts.common.tech}</Col>
                     </Row>
 
-                    <Row className='property'>
-                        <Col span={7} className='property-label'>{texts.common.tech}</Col>
+                    <Row className={"property"}>
                         <Col span={17} className='property-value'>
                             <Text
                                 text={tech.value}
@@ -56,6 +51,24 @@ export const C4Properties = () => {
                             />
                         </Col>
                     </Row>
+
+                    <Row className='property'>
+                        <Col span={7} className='property-label'>{texts.common.desc}</Col>
+
+                    </Row>
+
+                    <Row className={"property"}>
+                        <Col span={24} className='property-value'>
+                            <TextArea
+                                value={desc.value}
+                                onChange={e => setDesc(e.target.value)}
+                                placeholder={"Description"}
+                                autoSize={{minRows: 3, maxRows: 5}}
+                            />
+                        </Col>
+                    </Row>
+
+
                 </div>
             </div>
         </>

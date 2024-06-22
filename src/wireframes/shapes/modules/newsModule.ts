@@ -23,17 +23,17 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
-  [DefaultAppearance.TEXT]: "Contact",
-  [DefaultAppearance.TITLE]: "Contact",
-  [DefaultAppearance.DESC]: "Provides information of contacts, contains following information: title, email, content.",
+  [DefaultAppearance.TEXT]: "News Module",
+  [DefaultAppearance.TITLE]: "News Module",
+  [DefaultAppearance.DESC]: "Provides information of news, contains following information: title, description, content.",
   [DefaultAppearance.TECH]: "Express",
   [DefaultAppearance.ACTION]: "service",
   [SHAPE]: SHAPE_RECTANGLE,
 };
 
-export class Contact implements ShapePlugin {
+export class NewsModule implements ShapePlugin {
   public identifier(): string {
-    return "Contact";
+    return "News Module";
   }
 
   public defaultAppearance() {
@@ -57,10 +57,14 @@ export class Contact implements ShapePlugin {
   }
 
   type(): AssetType {
-    return "Components";
+    return "Modules";
   }
 
   isOpen(): boolean {
+    return true;
+  }
+
+  showInGallery(): boolean {
     return true;
   }
 

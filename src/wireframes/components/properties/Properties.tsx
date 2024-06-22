@@ -91,7 +91,7 @@ export const Properties = () => {
     const selectedItem = selectionSet.selectedItems.length > 0
         ? selectionSet.selectedItems.at(0)
         : null;
-    if (selectedItem && ["Contexts", "Containers", "Components", "Screens"].includes(selectedItem.type)) {
+    if (selectedItem && ["Contexts", "Containers", "Components", "Modules", "Screens"].includes(selectedItem.type)) {
         return <Collapse
             className={(classNames({hidden: !hasSelection}))}
             items={c4Items}

@@ -23,6 +23,17 @@ export const addDiagram = createAction(
     }
 );
 
+export const addDiagrams = createAction(
+    "diagram/addMany",
+    (diagrams: Diagram[]) => {
+        return {
+            payload: {
+                diagrams: diagrams
+            },
+        };
+    }
+);
+
 export const selectDiagram = createAction(
     "diagram/select",
     (diagram: DiagramRef) => {
@@ -140,6 +151,12 @@ export function buildDiagrams(builder: ActionReducerMapBuilder<EditorState>) {
 
             newState = newState.selectDiagram(diagramId);
 
+            return newState;
+        })
+        .addCase(addDiagrams, (state, action) => {
+            const {diagrams} = action.payload;
+            let newState = state.addDiagrams(diagrams);
+            newState = newState.selectDiagram(diagrams[0].id);
             return newState;
         });
 }

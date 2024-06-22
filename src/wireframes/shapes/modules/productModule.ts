@@ -23,17 +23,17 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
-  [DefaultAppearance.TEXT]: "Post",
-  [DefaultAppearance.TITLE]: "Post",
-  [DefaultAppearance.DESC]: "Provides information of posts, contains following information: title, description, content.",
+  [DefaultAppearance.TEXT]: "Product Module",
+  [DefaultAppearance.TITLE]: "Product Module",
+  [DefaultAppearance.DESC]: "Provides information of news, contains following information: title, description, content.",
   [DefaultAppearance.TECH]: "Express",
   [DefaultAppearance.ACTION]: "service",
   [SHAPE]: SHAPE_RECTANGLE,
 };
 
-export class Post implements ShapePlugin {
+export class ProductModule implements ShapePlugin {
   public identifier(): string {
-    return "Post";
+    return "Product Module";
   }
 
   public defaultAppearance() {
@@ -57,10 +57,14 @@ export class Post implements ShapePlugin {
   }
 
   type(): AssetType {
-    return "Components";
+    return "Modules";
   }
 
   isOpen(): boolean {
+    return true;
+  }
+
+  showInGallery(): boolean {
     return true;
   }
 

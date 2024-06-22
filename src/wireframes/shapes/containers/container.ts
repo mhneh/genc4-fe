@@ -23,17 +23,17 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
-  [DefaultAppearance.TEXT]: "New Container",
-  [DefaultAppearance.TITLE]: "New Container",
+  [DefaultAppearance.TEXT]: "Container",
+  [DefaultAppearance.TITLE]: "Container",
   [DefaultAppearance.DESC]:
     "Container can be server-side web application, single-page application, desktop application, mobile app, etc.",
   [DefaultAppearance.TECH]: "Software System",
   [SHAPE]: "BROWSER",
 };
 
-export class NewContainer implements ShapePlugin {
+export class Container implements ShapePlugin {
   public identifier(): string {
-    return "NewContainer";
+    return "Container";
   }
 
   public defaultAppearance() {

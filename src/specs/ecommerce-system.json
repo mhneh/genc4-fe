@@ -73,7 +73,7 @@
               "TEXT_ALIGNMENT": "center",
               "TITLE": "Blog System"
             },
-            "renderer": "EmptyContainer",
+            "renderer": "Container",
             "transform": {
               "x": 501,
               "y": 474,
@@ -127,11 +127,11 @@
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
               "TECHNOLOGY": "NodeJS",
-              "TEXT": "NewContainer",
+              "TEXT": "Container",
               "TEXT_ALIGNMENT": "center",
               "TITLE": "Blog Server"
             },
-            "renderer": "NewContainer",
+            "renderer": "Container",
             "transform": {
               "x": 476,
               "y": 257,
@@ -687,7 +687,7 @@
               "TEXT_ALIGNMENT": "center",
               "TITLE": "Blog System"
             },
-            "renderer": "EmptyContainer",
+            "renderer": "Container",
             "transform": {
               "x": 501,
               "y": 474,
@@ -741,11 +741,11 @@
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
               "TECHNOLOGY": "NodeJS",
-              "TEXT": "NewContainer",
+              "TEXT": "Container",
               "TEXT_ALIGNMENT": "center",
               "TITLE": "Blog Server"
             },
-            "renderer": "NewContainer",
+            "renderer": "Container",
             "transform": {
               "x": 476,
               "y": 257,

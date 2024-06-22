@@ -22,44 +22,8 @@ export const LoadingMenu = React.memo(() => {
     // const tokenToWrite = useStore(s => s.loading.tokenToWrite);
     // const saveTimer = React.useRef<any>();
     const saveAction = React.useRef(forLoading.saveDiagram);
-    const [isOpen, setIsOpen] = React.useState(false);
 
     saveAction.current = forLoading.saveDiagram;
-
-    const doToggleInfoDialog = useEventCallback(() => {
-        setIsOpen(x => !x);
-    });
-
-    // React.useEffect(() => {
-    //     function clearTimer() {
-    //         if (saveTimer.current) {
-    //             clearInterval(saveTimer.current);
-    //             saveTimer.current = null;
-    //         }
-    //     }
-    //
-    //     if (tokenToWrite) {
-    //         if (!saveTimer.current) {
-    //             saveTimer.current = setInterval(() => {
-    //                 if (!saveAction.current.disabled) {
-    //                     saveAction.current.onAction();
-    //                 }
-    //             }, 30000);
-    //         }
-    //
-    //         const stopTimer = setTimeout(() => {
-    //             clearTimer();
-    //         }, 40000);
-    //
-    //         return () => {
-    //             clearTimeout(stopTimer);
-    //         };
-    //     } else {
-    //         clearTimer();
-    //
-    //         return undefined;
-    //     }
-    // }, [tokenToWrite, editor]);
 
     const saveMenuItems: MenuProps['items'] = [
         buildMenuItem(forLoading.saveDiagramToFile, 'save'),
@@ -67,31 +31,24 @@ export const LoadingMenu = React.memo(() => {
 
     return (
         <>
-            <CustomTitle token={tokenToRead} />
+            <CustomTitle token={tokenToRead}/>
 
-            <ActionMenuButton displayMode='IconLabel' action={forLoading.newDiagram} />
-            <ActionMenuButton displayMode='Icon' action={forLoading.openDiagramAction} />
+            <ActionMenuButton displayMode='IconLabel' action={forLoading.newDiagram}/>
+            <ActionMenuButton displayMode='Icon' action={forLoading.openDiagramAction}/>
 
-            <ActionDropdownButton className='menu-dropdown' displayMode='IconLabel' action={forLoading.saveDiagram} type='primary' menu={{ items: saveMenuItems }} />
+            <ActionDropdownButton className='menu-dropdown' displayMode='IconLabel' action={forLoading.saveDiagram}
+                                  type='dashed' menu={{items: saveMenuItems}} size={"small"}/>
 
-            <ActionMenuButton displayMode='IconLabel' action={forLoading.genCode} type='primary' />
-
-            <Button className='menu-item' onClick={doToggleInfoDialog}
-                icon={<QuestionCircleOutlined />} />
+            <ActionMenuButton
+                displayMode='IconLabel' action={forLoading.genCode} type="primary" size={"large"}/>
 
             <Button className='menu-item' href='https://github.com/mydraft-cc/ui' target='_blank'
-                icon={<GithubOutlined />} />
-
-            <MarkerButton />
-
-            <Modal title={texts.common.about} open={isOpen} onCancel={doToggleInfoDialog} onOk={doToggleInfoDialog}>
-                <div dangerouslySetInnerHTML={{ __html: text }} />
-            </Modal>
+                    icon={<GithubOutlined/>}/>
         </>
     );
 });
 
-const CustomTitle = React.memo(({ token }: { token?: string | null }) => {
+const CustomTitle = React.memo(({token}: { token?: string | null }) => {
     const system = useStore(store => store.editor.present.system);
 
     const prefix = (system === "blog") ? "Blog System - " : "";
@@ -100,6 +57,6 @@ const CustomTitle = React.memo(({ token }: { token?: string | null }) => {
         prefix + ` C4 - Diagram ${texts.common.unsaved}`;
 
     return (
-        <Title text={title} />
+        <Title text={title}/>
     );
 });

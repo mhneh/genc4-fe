@@ -1,0 +1,811 @@
+{
+  "id": "",
+  "title": "Product Module",
+  "models": [
+    "product: id string, title string, "
+  ],
+  "children": [
+    {
+      "id": "",
+      "items": [
+        {
+          "id": "6675b7bf2c9378e0c394e827",
+          "appearance": {
+            "FOREGROUND_COLOR": 8764400,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 0,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Product",
+            "TITLE": "Product",
+            "DESCRIPTION": "Provides information of Product, contains following information: title, description, content, price.",
+            "TECHNOLOGY": "Express",
+            "ACTION": "service",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "Post",
+          "transform": {
+            "x": 484,
+            "y": 147,
+            "w": 250,
+            "h": 160,
+            "r": 0
+          },
+          "type": "Components",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b7cbc4d88c6708fb2d61",
+          "appearance": {
+            "FOREGROUND_COLOR": 8764400,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 0,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Product Category",
+            "TITLE": "Product Category",
+            "DESCRIPTION": "Provides information of ProductCategory, contains following information: title, description, content.",
+            "TECHNOLOGY": "Express",
+            "ACTION": "service",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "Contact",
+          "transform": {
+            "x": 484,
+            "y": 579,
+            "w": 250,
+            "h": 160,
+            "r": 0
+          },
+          "type": "Components",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b7d52a0d5b9498b787e0",
+          "appearance": {
+            "FOREGROUND_COLOR": 8764400,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 0,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Product Tag",
+            "TITLE": "Product Tag",
+            "DESCRIPTION": "Provides information of ProductTag, contains following information: title, description.",
+            "TECHNOLOGY": "Express",
+            "ACTION": "service",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "User",
+          "transform": {
+            "x": 164,
+            "y": 442,
+            "w": 250,
+            "h": 160,
+            "r": 0
+          },
+          "type": "Components",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b7dd78efdd27b21c13f3",
+          "appearance": {
+            "FOREGROUND_COLOR": 8764400,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 0,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Product Review",
+            "TITLE": "Product Review",
+            "DESCRIPTION": "Provides information of ProductReview, contains following information: content, author.",
+            "TECHNOLOGY": "Express",
+            "ACTION": "service",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "User",
+          "transform": {
+            "x": 831,
+            "y": 442,
+            "w": 250,
+            "h": 160,
+            "r": 0
+          },
+          "type": "Components",
+          "descriptions": [],
+          "screens": []
+        }
+      ],
+      "rootIds": [
+        "6675b7bf2c9378e0c394e827",
+        "6675b7cbc4d88c6708fb2d61",
+        "6675b7d52a0d5b9498b787e0",
+        "6675b7dd78efdd27b21c13f3"
+      ],
+      "title": "Product Module",
+      "relationships": [
+        {
+          "id": "1718520775563",
+          "title": "Product -> Product Tag",
+          "description": "One product has many tags.",
+          "source": "6675b7bf2c9378e0c394e827",
+          "target": "6675b7d52a0d5b9498b787e0",
+          "diagramId": "1712974337304"
+        },
+        {
+          "id": "1718520775573",
+          "title": "Product -> Product Category",
+          "description": "One product has belong to one category.",
+          "source": "6675b7bf2c9378e0c394e827",
+          "target": "6675b7cbc4d88c6708fb2d61",
+          "diagramId": "1712974337304"
+        },
+        {
+          "id": "1718884411802",
+          "title": "Product -> Product Review",
+          "description": "One product has many reviews.",
+          "source": "6675b7bf2c9378e0c394e827",
+          "target": "6675b7dd78efdd27b21c13f3",
+          "diagramId": "1718884411233"
+        }
+      ],
+      "type": "Modules",
+      "master": "",
+      "parentId": "",
+      "mainSystem": false
+    },
+    {
+      "id": "6675b7ef47695520e556f184",
+      "items": [
+        {
+          "id": "665f269d5fc1a553f9e105e1",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Create Screen",
+            "TITLE": "Creation Screen",
+            "DESCRIPTION": "Display a form contains all field to create new Product. Submit form will post data to /product/create. If create successfully, please alert created success. If not, please display error message.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "create",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "CreateScreen",
+          "transform": {
+            "x": 241,
+            "y": 691,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "66624b89ff9c2d34f6496c9e",
+              "description": "Create new Product in database by data from request.",
+              "itemId": "665f269d5fc1a553f9e105e1"
+            }
+          ],
+          "screens": []
+        },
+        {
+          "id": "6675b80ae4678ba54499764f",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "View Screen",
+            "TITLE": "View Screen",
+            "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /product/edit/:id with id will be its ID. Delete button to get delete at /product/delete/:id with id will be its ID.",
+            "TECHNOLOGY": "Screen",
+            "ACTION": "detail",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "ViewScreen",
+          "transform": {
+            "x": 901,
+            "y": 245,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "66624b8dde8c854eb339dffd",
+              "description": "Find Product by id.",
+              "itemId": "6675b80ae4678ba54499764f"
+            }
+          ],
+          "screens": []
+        },
+        {
+          "id": "6675b816d638ee0e23ab2243",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Update Screen",
+            "TITLE": "Update Screen",
+            "DESCRIPTION": "Display form contains all the information of single Product record. Submit form will post data to /product/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
+            "TECHNOLOGY": "Update Screen",
+            "ACTION": "edit",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "UpdateScreen",
+          "transform": {
+            "x": 901,
+            "y": 736,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "66624b9117cc1754af2600a1",
+              "description": "Update the the information product by data from request.",
+              "itemId": "6675b816d638ee0e23ab2243"
+            }
+          ],
+          "screens": []
+        },
+        {
+          "id": "6675b81c181f4fd8efdb5c76",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Other Screen",
+            "TITLE": "List All Screen",
+            "DESCRIPTION": "Data will be displayed as a list, each of element will have three buttons to view, update and delete it. 'View' button will lead to get detail view of Product at /product/detail/:id with id will be its ID.'Update' button will lead to get edit form at /product/edit/:id with id will be its ID.'Delete' button will lead to get delete at /product/delete/:id with id will be its ID.Screen will have a search bar to search product by its name.",
+            "TECHNOLOGY": "Screen",
+            "ACTION": "list",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "OtherScreen",
+          "transform": {
+            "x": 248,
+            "y": 245,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "66624b96689d28d67b11bbe0",
+              "description": "Get all existing Product in database.",
+              "itemId": "6675b81c181f4fd8efdb5c76"
+            }
+          ],
+          "screens": []
+        }
+      ],
+      "master": "6675b7bf2c9378e0c394e827",
+      "rootIds": [
+        "665f269d5fc1a553f9e105e1",
+        "6675b80ae4678ba54499764f",
+        "6675b816d638ee0e23ab2243",
+        "6675b81c181f4fd8efdb5c76"
+      ],
+      "title": "Product",
+      "relationships": [
+        {
+          "id": "6675b82b3ce3fbf2dac28bfe",
+          "title": "List All Screen -> Creation Screen",
+          "description": "Can create new product.",
+          "source": "6675b81c181f4fd8efdb5c76",
+          "target": "665f269d5fc1a553f9e105e1",
+          "diagramId": "6675b7ef47695520e556f184"
+        },
+        {
+          "id": "6675b82d639ac7d6acaccb64",
+          "title": "List All Screen -> Update Screen",
+          "description": "Can update existing post.",
+          "source": "6675b81c181f4fd8efdb5c76",
+          "target": "6675b816d638ee0e23ab2243",
+          "diagramId": "6675b7ef47695520e556f184"
+        },
+        {
+          "id": "6675b8315bd2605f35509dcb",
+          "title": "List All Screen -> View Screen",
+          "description": "Can view detail of product.",
+          "source": "6675b81c181f4fd8efdb5c76",
+          "target": "6675b80ae4678ba54499764f",
+          "diagramId": "6675b7ef47695520e556f184"
+        }
+      ],
+      "type": "Screens",
+      "parentId": "6675b7bf2c9378e0c394e827",
+      "mainSystem": false
+    },
+    {
+      "id": "6675b88c5f4af304824df86f",
+      "items": [
+        {
+          "id": "6675b89338037f18c5f53e71",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Other Screen",
+            "TITLE": "List All Screen",
+            "DESCRIPTION": "Describe your idea with new screen",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "list",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "OtherScreen",
+          "transform": {
+            "x": 229,
+            "y": 220,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "1718979574145",
+              "description": "Find all existing ProductCategory in database.",
+              "itemId": "6675b89338037f18c5f53e71"
+            }
+          ],
+          "screens": []
+        },
+        {
+          "id": "6675b89cadf33273664ed948",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "View Screen",
+            "TITLE": "View Screen",
+            "DESCRIPTION": "This screen is used to view something in its container",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "detail",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "ViewScreen",
+          "transform": {
+            "x": 780,
+            "y": 220,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "1718979574151",
+              "description": "Find ProductCategory by id.",
+              "itemId": "6675b89cadf33273664ed948"
+            }
+          ],
+          "screens": []
+        },
+        {
+          "id": "6675b8a59719fb1a3e501dca",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Create Screen",
+            "TITLE": "Create Screen",
+            "DESCRIPTION": "This screen is used to add new single data to this component.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "create",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "CreateScreen",
+          "transform": {
+            "x": 229,
+            "y": 637,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "1718979574157",
+              "description": "Create new ProductCategory by sent request.",
+              "itemId": "6675b8a59719fb1a3e501dca"
+            }
+          ],
+          "screens": []
+        },
+        {
+          "id": "6675b8acaa9c5a1e51505bc4",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Update Screen",
+            "TITLE": "Update Screen",
+            "DESCRIPTION": "This screen is used to update something in its container",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "edit",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "UpdateScreen",
+          "transform": {
+            "x": 780,
+            "y": 721,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "1718979574163",
+              "description": "Find ProductCategory by id and update it by sent request.",
+              "itemId": "6675b8acaa9c5a1e51505bc4"
+            }
+          ],
+          "screens": []
+        }
+      ],
+      "master": "6675b7cbc4d88c6708fb2d61",
+      "rootIds": [
+        "6675b89338037f18c5f53e71",
+        "6675b89cadf33273664ed948",
+        "6675b8a59719fb1a3e501dca",
+        "6675b8acaa9c5a1e51505bc4"
+      ],
+      "title": "Product Category",
+      "relationships": [
+        {
+          "id": "1718638821050",
+          "title": "Other Screen -> View Screen",
+          "description": "View detail of product category.",
+          "source": "6675b89338037f18c5f53e71",
+          "target": "6675b89cadf33273664ed948",
+          "diagramId": "6675b88c5f4af304824df86f"
+        },
+        {
+          "id": "1718638821060",
+          "title": "Other Screen -> Create Screen",
+          "description": "Create new product category.",
+          "source": "6675b89338037f18c5f53e71",
+          "target": "6675b8a59719fb1a3e501dca",
+          "diagramId": "6675b88c5f4af304824df86f"
+        },
+        {
+          "id": "1718638821070",
+          "title": "Other Screen -> Update Screen",
+          "description": "Update existing product category.",
+          "source": "6675b89338037f18c5f53e71",
+          "target": "6675b8acaa9c5a1e51505bc4",
+          "diagramId": "6675b88c5f4af304824df86f"
+        }
+      ],
+      "type": "Screens",
+      "parentId": "6675b7cbc4d88c6708fb2d61",
+      "mainSystem": false
+    },
+    {
+      "id": "6675b8cb4ff66f4a68a7beb5",
+      "items": [
+        {
+          "id": "6675b8d08a0964a8e7cbae85",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Other Screen",
+            "TITLE": "List All Screen",
+            "DESCRIPTION": "Data will be displayed as a list, each of element will have three buttons to view, update and delete it. 'View' button will lead to get detail view of ProductTag at /product-tag/detail/:id with id will be its ID.'Update' button will lead to get edit form at /product-tag/edit/:id with id will be its ID.'Delete' button will lead to get delete at /product-tag/delete/:id with id will be its ID.Screen will have a search bar to search product by its name.",
+            "TECHNOLOGY": "Screen",
+            "ACTION": "custom",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "OtherScreen",
+          "transform": {
+            "x": 238,
+            "y": 244,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [
+            {
+              "id": "1718979574565",
+              "description": "Get all existing ProductTag in database.",
+              "itemId": "6675b8d08a0964a8e7cbae85"
+            }
+          ],
+          "screens": []
+        },
+        {
+          "id": "6675b8d73b78927449795165",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "View Screen",
+            "TITLE": "View Screen",
+            "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /product-tag/edit/:id with id will be its ID. Delete button to get delete at /product-tag/delete/:id with id will be its ID.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "detail",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "ViewScreen",
+          "transform": {
+            "x": 810,
+            "y": 244,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b8dd191166e31048c008",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Update Screen",
+            "TITLE": "Update Screen",
+            "DESCRIPTION": "Display form contains all the information of single ProductTag. Submit form will post data to /product-tag/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "edit",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "UpdateScreen",
+          "transform": {
+            "x": 810,
+            "y": 690,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b8eb77e536fdb2393d63",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Create Screen",
+            "TITLE": "Create Screen",
+            "DESCRIPTION": "Display a form contains all field to create new ProductTag. Submit form will post data to /product-tag/create. If create successfully, please alert created success. If not, please display error message.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "create",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "CreateScreen",
+          "transform": {
+            "x": 228,
+            "y": 696,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        }
+      ],
+      "master": "6675b7d52a0d5b9498b787e0",
+      "rootIds": [
+        "6675b8d08a0964a8e7cbae85",
+        "6675b8d73b78927449795165",
+        "6675b8dd191166e31048c008",
+        "6675b8eb77e536fdb2393d63"
+      ],
+      "title": "Product Tag",
+      "relationships": [
+        {
+          "id": "1718638820806",
+          "title": "List All Screen -> View Screen",
+          "description": "View the detail of product tag.",
+          "source": "6675b8d08a0964a8e7cbae85",
+          "target": "6675b8d73b78927449795165",
+          "diagramId": "6675b8cb4ff66f4a68a7beb5"
+        },
+        {
+          "id": "1718638820816",
+          "title": "List All Screen -> Create Screen",
+          "description": "Create new product tag.",
+          "source": "6675b8d08a0964a8e7cbae85",
+          "target": "6675b8eb77e536fdb2393d63",
+          "diagramId": "6675b8cb4ff66f4a68a7beb5"
+        },
+        {
+          "id": "1718638820826",
+          "title": "List All Screen -> Update Screen",
+          "description": "Update existing product tag.",
+          "source": "6675b8d08a0964a8e7cbae85",
+          "target": "6675b8dd191166e31048c008",
+          "diagramId": "6675b8cb4ff66f4a68a7beb5"
+        }
+      ],
+      "type": "Screens",
+      "parentId": "6675b7d52a0d5b9498b787e0",
+      "mainSystem": false
+    },
+    {
+      "id": "6675b9054a7bf8d95347564f",
+      "items": [
+        {
+          "id": "6675b90c9add97d994ea444f",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "View Screen",
+            "TITLE": "View Screen",
+            "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /product-review/edit/:Id with id will be its ID. Delete button to get delete at /product-review/delete/:id with id will be its ID.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "detail",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "ViewScreen",
+          "transform": {
+            "x": 534,
+            "y": 241,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b91a509690034dafb711",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Update Screen",
+            "TITLE": "Update Screen",
+            "DESCRIPTION": "Display form contains all the information of single ProductReview record. Submit form will post data to /product-review/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "edit",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "UpdateScreen",
+          "transform": {
+            "x": 903,
+            "y": 684,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        },
+        {
+          "id": "6675b925fa2ea5cf08c8e21e",
+          "appearance": {
+            "FOREGROUND_COLOR": 16777215,
+            "TEXT_DISABLED": true,
+            "FONT_SIZE": 16,
+            "BACKGROUND_COLOR": 3276,
+            "STROKE_COLOR": 13224393,
+            "STROKE_THICKNESS": 1,
+            "TEXT_ALIGNMENT": "center",
+            "TEXT": "Create Screen",
+            "TITLE": "Create Screen",
+            "DESCRIPTION": "Display a form contains all field to create new ProductReview. Submit form will post data to /product-review/create. If create successfully, please alert created success. If not, please display error message.",
+            "TECHNOLOGY": "Handlebars.js",
+            "ACTION": "detail",
+            "SHAPE": "Rectangle"
+          },
+          "renderer": "ViewScreen",
+          "transform": {
+            "x": 181,
+            "y": 684,
+            "w": 250,
+            "h": 250,
+            "r": 0
+          },
+          "type": "Screens",
+          "descriptions": [],
+          "screens": []
+        }
+      ],
+      "master": "6675b7dd78efdd27b21c13f3",
+      "rootIds": [
+        "6675b90c9add97d994ea444f",
+        "6675b91a509690034dafb711",
+        "6675b925fa2ea5cf08c8e21e"
+      ],
+      "title": "Product Review",
+      "relationships": [
+        {
+          "id": "1718884412301",
+          "title": "Create Screen -> View Screen",
+          "description": "Can create new product review.",
+          "source": "6675b90c9add97d994ea444f",
+          "target": "6675b925fa2ea5cf08c8e21e",
+          "diagramId": "6675b9054a7bf8d95347564f"
+        },
+        {
+          "id": "1718884412311",
+          "title": "View Screen -> Update Screen",
+          "description": "Can update existing product review",
+          "source": "6675b90c9add97d994ea444f",
+          "target": "6675b91a509690034dafb711",
+          "diagramId": "6675b9054a7bf8d95347564f"
+        }
+      ],
+      "type": "Screens",
+      "parentId": "6675b7dd78efdd27b21c13f3",
+      "mainSystem": false
+    }
+  ]
+}

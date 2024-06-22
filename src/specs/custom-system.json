@@ -75,7 +75,7 @@
               "TEXT_ALIGNMENT": "center",
               "TITLE": "Custom System"
             },
-            "renderer": "NewContainer",
+            "renderer": "Container",
             "transform": {
               "x": 501,
               "y": 474,
@@ -129,11 +129,11 @@
               "STROKE_COLOR": 13224393,
               "STROKE_THICKNESS": 1,
               "TECHNOLOGY": "NodeJS",
-              "TEXT": "NewContainer",
+              "TEXT": "Container",
               "TEXT_ALIGNMENT": "center",
               "TITLE": "Main custom Server"
             },
-            "renderer": "NewContainer",
+            "renderer": "Container",
             "transform": {
               "x": 476,
               "y": 257,
@@ -210,8 +210,8 @@
     ],
     "id": "2dd8ec3611751e15afdeb4c2",
     "size": {
-      "x": 1000,
-      "y": 1000
+      "x": 1500,
+      "y": 1500
     },
     "system": "custom"
   },
