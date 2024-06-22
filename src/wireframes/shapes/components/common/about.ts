@@ -25,7 +25,7 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
   [DefaultAppearance.TEXT]: "About",
   [DefaultAppearance.TITLE]: "About",
-  [DefaultAppearance.DESC]: "Provides information of contacts, contains following information: title, email, content.",
+  [DefaultAppearance.DESC]: "Provides information of About, contains following information: title, content.",
   [DefaultAppearance.TECH]: "Express",
   [DefaultAppearance.ACTION]: "service",
   [SHAPE]: SHAPE_RECTANGLE,

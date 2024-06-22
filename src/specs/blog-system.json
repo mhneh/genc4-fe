@@ -109,7 +109,7 @@
           {
             "id": "1712974337210",
             "title": "Blog System -> E-mail System",
-            "description": "Blog system use Email system to send notifications about new posts by email.",
+            "description": "Blog system use Email system to send notifications by email.",
             "source": "1712974337050",
             "target": "1712974336915",
             "diagramId": "1712974336896"
@@ -202,7 +202,7 @@
         "id": "1712974337304",
         "items": [
           {
-            "id": "1718738329386",
+            "id": "1719028587753",
             "appearance": {
               "FOREGROUND_COLOR": 8764400,
               "FONT_SIZE": 16,
@@ -212,15 +212,15 @@
               "TEXT_ALIGNMENT": "center",
               "TEXT": "Authentication",
               "TITLE": "Authentication",
-              "DESCRIPTION": "Provides authentication functionality such as login, register.",
+              "DESCRIPTION": "Provides functionality about login, register.",
               "TECHNOLOGY": "Express Middleware",
               "ACTION": "auth",
               "SHAPE": "Rectangle"
             },
             "renderer": "Authentication",
             "transform": {
-              "x": 488,
-              "y": 137,
+              "x": 532,
+              "y": 152,
               "w": 250,
               "h": 160,
               "r": 0
@@ -230,91 +230,7 @@
             "screens": []
           },
           {
-            "id": "1718738329396",
-            "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 0,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Post Module",
-              "TITLE": "Post Module",
-              "DESCRIPTION": "Provides information of posts, contains following information: title, description, content.",
-              "TECHNOLOGY": "Express",
-              "ACTION": "service",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "Post Module",
-            "transform": {
-              "x": 156,
-              "y": 434,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Modules",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718738329421",
-            "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 0,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "News Module",
-              "TITLE": "News Module",
-              "DESCRIPTION": "Provides information of news, contains following information: title, description, content.",
-              "TECHNOLOGY": "Express",
-              "ACTION": "service",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "News Module",
-            "transform": {
-              "x": 481,
-              "y": 434,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Modules",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718738329492",
-            "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 0,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Contact",
-              "TITLE": "Contact",
-              "DESCRIPTION": "Provides information of contacts, contains following information: title, email, content.",
-              "TECHNOLOGY": "Express",
-              "ACTION": "service",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "Contact",
-            "transform": {
-              "x": 830,
-              "y": 434,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718738329820",
+            "id": "1719028587763",
             "appearance": {
               "FOREGROUND_COLOR": 8764400,
               "FONT_SIZE": 16,
@@ -331,8 +247,120 @@
             },
             "renderer": "User",
             "transform": {
-              "x": 478,
-              "y": 701,
+              "x": 532,
+              "y": 432,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Components",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "1719028587803",
+            "appearance": {
+              "FOREGROUND_COLOR": 8764400,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 0,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Post Module",
+              "TITLE": "Post Module",
+              "DESCRIPTION": "Provides information of posts, contains following information: title, description, content.",
+              "TECHNOLOGY": "Express",
+              "ACTION": "service",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "Post Module",
+            "transform": {
+              "x": 154,
+              "y": 432,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Modules",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "1719028587909",
+            "appearance": {
+              "FOREGROUND_COLOR": 8764400,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 0,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "News Module",
+              "TITLE": "News Module",
+              "DESCRIPTION": "Provides information of news, contains following information: title, description, content.",
+              "TECHNOLOGY": "Express",
+              "ACTION": "service",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "News Module",
+            "transform": {
+              "x": 910,
+              "y": 432,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Modules",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "1719028587996",
+            "appearance": {
+              "FOREGROUND_COLOR": 8764400,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 0,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Contact",
+              "TITLE": "Contact",
+              "DESCRIPTION": "Provides information of contacts, contains following information: title, email, content.",
+              "TECHNOLOGY": "Express",
+              "ACTION": "service",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "Contact",
+            "transform": {
+              "x": 770,
+              "y": 730,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Components",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "1719028588035",
+            "appearance": {
+              "FOREGROUND_COLOR": 8764400,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 0,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "About",
+              "TITLE": "About",
+              "DESCRIPTION": "Provides information of About, contains following information: title, content.",
+              "TECHNOLOGY": "Express",
+              "ACTION": "service",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "About",
+            "transform": {
+              "x": 331,
+              "y": 730,
               "w": 250,
               "h": 160,
               "r": 0
@@ -343,44 +371,53 @@
           }
         ],
         "rootIds": [
-          "1718738329386",
-          "1718738329396",
-          "1718738329421",
-          "1718738329492",
-          "1718738329820"
+          "1719028587753",
+          "1719028587763",
+          "1719028587803",
+          "1719028587909",
+          "1719028587996",
+          "1719028588035"
         ],
         "title": "Blog Server",
         "relationships": [
           {
-            "id": "1718738330376",
-            "title": "Authentication -> Post Module",
+            "id": "1719028588093",
+            "title": "Authentication -> User",
             "description": "",
-            "source": "1718738329386",
-            "target": "1718738329396",
+            "source": "1719028587753",
+            "target": "1719028587763",
             "diagramId": "1712974337304"
           },
           {
-            "id": "1718738330386",
-            "title": "Authentication -> News Module",
-            "description": "",
-            "source": "1718738329386",
-            "target": "1718738329421",
-            "diagramId": "1712974337304"
-          },
-          {
-            "id": "1718738330396",
-            "title": "Authentication -> Contact",
-            "description": "",
-            "source": "1718738329386",
-            "target": "1718738329492",
-            "diagramId": "1712974337304"
-          },
-          {
-            "id": "1718738330406",
+            "id": "1719028588103",
             "title": "Post Module -> User",
             "description": "",
-            "source": "1718738329396",
-            "target": "1718738329820",
+            "source": "1719028587803",
+            "target": "1719028587763",
+            "diagramId": "1712974337304"
+          },
+          {
+            "id": "1719028588113",
+            "title": "User -> News Module",
+            "description": "",
+            "source": "1719028587763",
+            "target": "1719028587909",
+            "diagramId": "1712974337304"
+          },
+          {
+            "id": "1719028588123",
+            "title": "User -> About",
+            "description": "",
+            "source": "1719028587763",
+            "target": "1719028588035",
+            "diagramId": "1712974337304"
+          },
+          {
+            "id": "1719028588133",
+            "title": "User -> Contact",
+            "description": "",
+            "source": "1719028587763",
+            "target": "1719028587996",
             "diagramId": "1712974337304"
           }
         ],
@@ -389,617 +426,7 @@
         "mainSystem": false
       },
       {
-        "id": "1717165117626",
-        "items": [
-          {
-            "id": "1717165117640",
-            "appearance": {
-              "ACTION": "create",
-              "BACKGROUND_COLOR": 3276,
-              "DESCRIPTION": "Display a form contains all field to create new Post. Submit form will post data to /post/create. If create successfully, please alert created success. If not, please display error message.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 16777215,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "Handlebars.js",
-              "TEXT": "Create Screen",
-              "TEXT_ALIGNMENT": "center",
-              "TEXT_DISABLED": true,
-              "TITLE": "Creation Screen"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 248,
-              "y": 712,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "1717695140075",
-                "description": "Create new post in database by data from request.",
-                "itemId": "1717165117640"
-              }
-            ],
-            "mainSystem": false,
-            "screens": []
-          },
-          {
-            "id": "1717165117647",
-            "appearance": {
-              "ACTION": "detail",
-              "BACKGROUND_COLOR": 3276,
-              "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /post/edit/:id with id will be its ID. Delete button to get delete at /post/delete/:id with id will be its ID.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 16777215,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "Screen",
-              "TEXT": "View Screen",
-              "TEXT_ALIGNMENT": "center",
-              "TEXT_DISABLED": true,
-              "TITLE": "Detail Screen"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 767,
-              "y": 231,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "1717695140069",
-                "description": "Find post by id.",
-                "itemId": "1717165117647"
-              }
-            ],
-            "mainSystem": false,
-            "screens": []
-          },
-          {
-            "id": "1717165117654",
-            "appearance": {
-              "ACTION": "edit",
-              "BACKGROUND_COLOR": 3276,
-              "DESCRIPTION": "Display form contains all the information of single Post record. Submit form will post data to /post/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 16777215,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "Update Screen",
-              "TEXT": "Update Screen",
-              "TEXT_ALIGNMENT": "center",
-              "TEXT_DISABLED": true,
-              "TITLE": "Update Screen"
-            },
-            "renderer": "UpdateScreen",
-            "transform": {
-              "x": 767,
-              "y": 641,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "1717695140081",
-                "description": "Update the the information post by data from request.",
-                "itemId": "1717165117654"
-              }
-            ],
-            "mainSystem": false,
-            "screens": []
-          },
-          {
-            "id": "1717165117844",
-            "appearance": {
-              "ACTION": "list",
-              "BACKGROUND_COLOR": 3276,
-              "DESCRIPTION": "Data will be displayed as a list, each of element will have three buttons to view, update and delete it. 'View' button will lead to get detail view of Post at /post/detail/:id with id will be its ID.'Update' button will lead to get edit form at /post/edit/:id with id will be its ID.'Delete' button will lead to get delete at /post/delete/:id with id will be its ID.Screen will have a search bar to search post by its name.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 16777215,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "Screen",
-              "TEXT": "Other Screen",
-              "TEXT_ALIGNMENT": "center",
-              "TEXT_DISABLED": true,
-              "TITLE": "List Screen"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 248,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "1717695140063",
-                "description": "Get all existing posts in database.",
-                "itemId": "1717165117844"
-              }
-            ],
-            "mainSystem": false,
-            "screens": []
-          }
-        ],
-        "rootIds": [
-          "1717165117640",
-          "1717165117647",
-          "1717165117654",
-          "1717165117844"
-        ],
-        "title": "Post",
-        "relationships": [
-          {
-            "id": "1717165118640",
-            "title": "List All Screen -> Creation Screen",
-            "description": "List of posts contains buttons to create or update new post.",
-            "source": "1717165117844",
-            "target": "1717165117640",
-            "diagramId": "1717165117626"
-          },
-          {
-            "id": "1717165118650",
-            "title": "List All Screen -> Update Screen",
-            "description": "List of posts contains buttons to create or update post.",
-            "source": "1717165117844",
-            "target": "1717165117654",
-            "diagramId": "1717165117626"
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1715877980098",
-        "mainSystem": false
-      },
-      {
-        "id": "1717695139733",
-        "items": [
-          {
-            "id": "1717695139749",
-            "appearance": {
-              "ACTION": "login",
-              "BACKGROUND_COLOR": 3276,
-              "DESCRIPTION": "Contain a login form with username and password. Submit form will post data to '/authentication/login' endpoint.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 16777215,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "Screen",
-              "TEXT": "View Screen",
-              "TEXT_ALIGNMENT": "center",
-              "TEXT_DISABLED": true,
-              "TITLE": "Login Screen"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 509,
-              "y": 239,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "1717695139865",
-                "description": "Find account by username and password",
-                "itemId": "1717695139749"
-              },
-              {
-                "id": "1717695139866",
-                "description": "If find successfully, please generate accessToken for this username, and redirect to / ",
-                "itemId": "1717695139749"
-              },
-              {
-                "id": "1717695139867",
-                "description": "Otherwise, please alert login failed.",
-                "itemId": "1717695139749"
-              }
-            ],
-            "mainSystem": false,
-            "screens": []
-          },
-          {
-            "id": "1717695139756",
-            "appearance": {
-              "ACTION": "register",
-              "BACKGROUND_COLOR": 3276,
-              "DESCRIPTION": "Contain a register form with username, password, email, phone. Submit form will post data to '/authentication/register' endpoint.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 16777215,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "Screen",
-              "TEXT": "View Screen",
-              "TEXT_ALIGNMENT": "center",
-              "TEXT_DISABLED": true,
-              "TITLE": "Register Screen"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 509,
-              "y": 699,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "1717695139877",
-                "description": "Create new account with sent data in register request.",
-                "itemId": "1717695139756"
-              },
-              {
-                "id": "1717695139878",
-                "description": "If create successfully, please redirect to /authentication/login.",
-                "itemId": "1717695139756"
-              },
-              {
-                "id": "1717695139879",
-                "description": "Otherwise, please alert register failed.",
-                "itemId": "1717695139756"
-              }
-            ],
-            "mainSystem": false,
-            "screens": []
-          }
-        ],
-        "rootIds": [
-          "1717695139749",
-          "1717695139756"
-        ],
-        "title": "Authentication",
-        "relationships": [
-          {
-            "id": "1717778005738",
-            "title": "Register Screen -> Login Screen",
-            "description": "Register success will lead to Login page.",
-            "source": "1717695139756",
-            "target": "1717695139749",
-            "diagramId": "1717695139733"
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1717695139647",
-        "mainSystem": false
-      },
-      {
-        "id": "1717777315266",
-        "items": [
-          {
-            "id": "6662f6bcd1660c007486c67a",
-            "appearance": {
-              "ACTION": "create",
-              "BACKGROUND_COLOR": 3276,
-              "DESCRIPTION": "Display a form contains all field to create new User. Submit form will post data to /user/create. If create successfully, please redirect to '/user/'. If not, please display error message.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 16777215,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "Handlebars.js",
-              "TEXT": "New User Screen",
-              "TEXT_ALIGNMENT": "center",
-              "TEXT_DISABLED": true,
-              "TITLE": "New User Screen"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 241,
-              "y": 712,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6662f6c81c13ca82ea0c3428",
-                "description": "Create new user in database by data from request.",
-                "itemId": "6662f6bcd1660c007486c67a"
-              }
-            ],
-            "mainSystem": false,
-            "screens": []
-          },
-          {
-            "id": "6662f708d7afca65d71db6c4",
-            "appearance": {
-              "ACTION": "detail",
-              "BACKGROUND_COLOR": 3276,
-              "DESCRIPTION": "This screen will have 2 button: Edit, Delete. 'Edit' button is used get edit user form at /post/edit/:id with id will be its user id. 'Delete' button is used to get delete at /post/delete/:id with id will be its user id.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 16777215,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "Screen",
-              "TEXT": "View Screen",
-              "TEXT_ALIGNMENT": "center",
-              "TEXT_DISABLED": true,
-              "TITLE": "View Screen"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 749,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6662f70d94a75fd0e34cdd06",
-                "description": "Find user by id.",
-                "itemId": "6662f708d7afca65d71db6c4"
-              }
-            ],
-            "mainSystem": false,
-            "screens": []
-          },
-          {
-            "id": "6662f76dda8690300611f0d8",
-            "appearance": {
-              "ACTION": "edit",
-              "BACKGROUND_COLOR": 3276,
-              "DESCRIPTION": "Screens contains form displays all the information of single User record. Submit form will post data to /user/edit/:id. If updated successfully, please redirect to '/user/'. Otherwise, please display error message.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 16777215,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "Update Screen",
-              "TEXT": "Update Screen",
-              "TEXT_ALIGNMENT": "center",
-              "TEXT_DISABLED": true,
-              "TITLE": "Update Screen"
-            },
-            "renderer": "UpdateScreen",
-            "transform": {
-              "x": 767,
-              "y": 654,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6662f7d51093135dc1346193",
-                "description": "Find user by id.",
-                "itemId": "6662f76dda8690300611f0d8"
-              },
-              {
-                "id": "6662f7b29fc1e3450a0e24e6",
-                "description": "Update information of user by data from request.",
-                "itemId": "6662f76dda8690300611f0d8"
-              }
-            ],
-            "mainSystem": false,
-            "screens": []
-          },
-          {
-            "id": "6662f7ec2b7f9ce4386e046f",
-            "appearance": {
-              "ACTION": "list",
-              "BACKGROUND_COLOR": 3276,
-              "DESCRIPTION": "Screen will displayed all users as a list, each of element will have three buttons to view, update and delete user. 'View' button will get detail view of User at /user/detail/:id with id will be its user id. 'Update' button will get edit form at /user/edit/:id with id will be its user id. 'Delete' button get delete at /user/delete/:id with id will be its user id. Screen will have a search bar to search user by username.",
-              "FONT_SIZE": 16,
-              "FOREGROUND_COLOR": 16777215,
-              "SHAPE": "Rectangle",
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TECHNOLOGY": "Screen",
-              "TEXT": "Other Screen",
-              "TEXT_ALIGNMENT": "center",
-              "TEXT_DISABLED": true,
-              "TITLE": "List All Screen"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 248,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6662f7f2fa618648dbbfd088",
-                "description": "Find all existing users in database.",
-                "itemId": "6662f7ec2b7f9ce4386e046f"
-              }
-            ],
-            "mainSystem": false,
-            "screens": []
-          }
-        ],
-        "rootIds": [
-          "6662f6bcd1660c007486c67a",
-          "6662f708d7afca65d71db6c4",
-          "6662f76dda8690300611f0d8",
-          "6662f7ec2b7f9ce4386e046f"
-        ],
-        "title": "User",
-        "relationships": [
-          {
-            "id": "6662f89e00cd7ce328e22d3e",
-            "title": "List All Screen -> New User Screen",
-            "description": "List of users contains button to create new user.",
-            "source": "6662f7ec2b7f9ce4386e046f",
-            "target": "6662f6bcd1660c007486c67a",
-            "diagramId": ""
-          },
-          {
-            "id": "6662f8a2963fff5135312f09",
-            "title": "List All Screen -> Update Screen",
-            "description": "List of posts contains button to update existed user.",
-            "source": "6662f7ec2b7f9ce4386e046f",
-            "target": "6662f76dda8690300611f0d8",
-            "diagramId": ""
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1717777315261",
-        "mainSystem": false
-      },
-      {
-        "id": "1717822848402",
-        "items": [
-          {
-            "id": "6663de7e3680422c431cdfd4",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Create Screen",
-              "TITLE": "Creation Screen",
-              "DESCRIPTION": "Display a form contains all field to create new contact message. Submit form will post data to /contact/create. If create successfully, please alert created success. If not, please display error message.",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "create",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 217,
-              "y": 705,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6663deac5952bd630ed50843",
-                "description": "Create new contact record in database by data from request.",
-                "itemId": "6663de7e3680422c431cdfd4"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "6663deb12e3d0da9ff62d628",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "This view file will have 'Delete' button. 'Delete' button to get delete at /contact/delete/:id with id will be its ID.",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "detail",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 827,
-              "y": 645,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6663dedc619cb44e998aa98e",
-                "description": "Find contact by id.",
-                "itemId": "6663deb12e3d0da9ff62d628"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "6663def637d2d25b83cf325a",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List All Screen",
-              "DESCRIPTION": "Data will be displayed as a list, each of element will have two buttons to view, and delete it. 'View' button will lead to get detail view of Post at /contact/detail/:id with id will be its ID. 'Delete' button will lead to get delete at /post/contact/:id with id will be its ID. Screen will have a search bar to search contact by its title.",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "list",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 467,
-              "y": 225,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6663defa77387eeb2c23cb1c",
-                "description": "Get all existing contacts in database.",
-                "itemId": "6663def637d2d25b83cf325a"
-              }
-            ],
-            "screens": []
-          }
-        ],
-        "master": "1717822848397",
-        "rootIds": [
-          "6663de7e3680422c431cdfd4",
-          "6663deb12e3d0da9ff62d628",
-          "6663def637d2d25b83cf325a"
-        ],
-        "title": "Contact",
-        "relationships": [
-          {
-            "id": "665f28b74dce8beeaaf14820",
-            "title": "List All Screen -> Creation Screen",
-            "description": "List of contacts contains buttons to create new contact.",
-            "source": "6663def637d2d25b83cf325a",
-            "target": "6663de7e3680422c431cdfd4"
-          },
-          {
-            "id": "665f28b74dce8beeaaf14821",
-            "title": "List All Screen -> View Screen",
-            "description": "List of contacts contains buttons to view existing contact.",
-            "source": "6663def637d2d25b83cf325a",
-            "target": "6663deb12e3d0da9ff62d628"
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1717822848397",
-        "mainSystem": false
-      },
-      {
-        "id": "1718738329391",
+        "id": "1719028587758",
         "items": [
           {
             "id": "66624adb7180b67f5484c957",
@@ -1020,8 +447,8 @@
             },
             "renderer": "ViewScreen",
             "transform": {
-              "x": 225,
-              "y": 382,
+              "x": 538,
+              "y": 726,
               "w": 250,
               "h": 250,
               "r": 0
@@ -1065,8 +492,8 @@
             },
             "renderer": "ViewScreen",
             "transform": {
-              "x": 709,
-              "y": 377,
+              "x": 538,
+              "y": 240,
               "w": 250,
               "h": 250,
               "r": 0
@@ -1087,7 +514,7 @@
             "screens": []
           }
         ],
-        "master": "1718738329386",
+        "master": "1719028587753",
         "rootIds": [
           "66624adb7180b67f5484c957",
           "66624bcf313688beb7e9698d"
@@ -1097,1782 +524,17 @@
           {
             "id": "66624e7362d8af72b105ec7b",
             "title": "Register Screen -> Login Screen",
-            "description": "Register successfully will be redirected to Login page.",
+            "description": "Can login after register successfully.",
             "source": "66624bcf313688beb7e9698d",
             "target": "66624adb7180b67f5484c957"
           }
         ],
         "type": "Screens",
-        "parentId": "1718738329386",
+        "parentId": "1719028587753",
         "mainSystem": false
       },
       {
-        "id": "1718738329401",
-        "items": [
-          {
-            "id": "1718520774932",
-            "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 0,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Post Comment",
-              "TITLE": "Comment",
-              "DESCRIPTION": "Provides information of post comments, contains following information: title, content, author name.",
-              "TECHNOLOGY": "Express",
-              "ACTION": "service",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "Authentication",
-            "transform": {
-              "x": 161,
-              "y": 442,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718520774974",
-            "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 0,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Post",
-              "TITLE": "Post",
-              "DESCRIPTION": "Provides information of posts, contains following information: title, description, content.",
-              "TECHNOLOGY": "Express",
-              "ACTION": "service",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "Post",
-            "transform": {
-              "x": 484,
-              "y": 147,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718520775021",
-            "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 0,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Contact",
-              "TITLE": "Category",
-              "DESCRIPTION": "Provides information of post category, contains following information: title, description, content.",
-              "TECHNOLOGY": "Express",
-              "ACTION": "service",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "Contact",
-            "transform": {
-              "x": 873,
-              "y": 442,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718520775033",
-            "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 0,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "User",
-              "TITLE": "Tag",
-              "DESCRIPTION": "Provides information of post tags, contains following information: title, description.",
-              "TECHNOLOGY": "Express",
-              "ACTION": "service",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "User",
-            "transform": {
-              "x": 484,
-              "y": 625,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          }
-        ],
-        "master": "1718738329396",
-        "rootIds": [
-          "1718520774932",
-          "1718520774974",
-          "1718520775021",
-          "1718520775033"
-        ],
-        "title": "Post Module",
-        "relationships": [
-          {
-            "id": "1718520775553",
-            "title": "Post -> Post Comment",
-            "description": "One post contains many comments.",
-            "source": "1718520774974",
-            "target": "1718520774932",
-            "diagramId": "1712974337304"
-          },
-          {
-            "id": "1718520775563",
-            "title": "Post -> Post Tag",
-            "description": "One post has many tags.",
-            "source": "1718520774974",
-            "target": "1718520775033",
-            "diagramId": "1712974337304"
-          },
-          {
-            "id": "1718520775573",
-            "title": "Post -> Post Category",
-            "description": "One post has belong to one category.",
-            "source": "1718520774974",
-            "target": "1718520775021",
-            "diagramId": "1712974337304"
-          }
-        ],
-        "type": "Modules",
-        "parentId": "1718738329396",
-        "mainSystem": false
-      },
-      {
-        "id": "1718738329403",
-        "items": [
-          {
-            "id": "665f269d5fc1a553f9e105e1",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Create Screen",
-              "TITLE": "Creation Screen",
-              "DESCRIPTION": "Display a form contains all field to create new Post. Submit form will post data to /post/create. If create successfully, please alert created success. If not, please display error message.",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "create",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 241,
-              "y": 691,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "66624b89ff9c2d34f6496c9e",
-                "description": "Create new post in database by data from request.",
-                "itemId": "665f269d5fc1a553f9e105e1"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "665f26a72fd6218fa29d51d9",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /post/edit/:id with id will be its ID. Delete button to get delete at /post/delete/:id with id will be its ID.",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "detail",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 901,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "66624b8dde8c854eb339dffd",
-                "description": "Find post by id.",
-                "itemId": "665f26a72fd6218fa29d51d9"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "665f26af562b6e389d723241",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Update Screen",
-              "TITLE": "Update Screen",
-              "DESCRIPTION": "Display form contains all the information of single Post record. Submit form will post data to /post/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
-              "TECHNOLOGY": "Update Screen",
-              "ACTION": "edit",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "UpdateScreen",
-            "transform": {
-              "x": 901,
-              "y": 736,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "66624b9117cc1754af2600a1",
-                "description": "Update the the information post by data from request.",
-                "itemId": "665f26af562b6e389d723241"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "665f26b54372408c69692540",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List All Screen",
-              "DESCRIPTION": "Data will be displayed as a list, each of element will have three buttons to view, update and delete it. 'View' button will lead to get detail view of Post at /post/detail/:id with id will be its ID.'Update' button will lead to get edit form at /post/edit/:id with id will be its ID.'Delete' button will lead to get delete at /post/delete/:id with id will be its ID.Screen will have a search bar to search post by its name.",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "list",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 248,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "66624b96689d28d67b11bbe0",
-                "description": "Get all existing posts in database.",
-                "itemId": "665f26b54372408c69692540"
-              }
-            ],
-            "screens": []
-          }
-        ],
-        "master": "1718520774974",
-        "rootIds": [
-          "665f269d5fc1a553f9e105e1",
-          "665f26a72fd6218fa29d51d9",
-          "665f26af562b6e389d723241",
-          "665f26b54372408c69692540"
-        ],
-        "title": "Post",
-        "relationships": [
-          {
-            "id": "665f28b74dce8beeaaf14820",
-            "title": "List All Screen -> Creation Screen",
-            "description": "List of posts contains buttons to create or update new post.",
-            "source": "665f26b54372408c69692540",
-            "target": "665f269d5fc1a553f9e105e1"
-          },
-          {
-            "id": "665f28c15addb9fa47d86f7d",
-            "title": "List All Screen -> Update Screen",
-            "description": "List of posts contains buttons to create or update post.",
-            "source": "665f26b54372408c69692540",
-            "target": "665f26af562b6e389d723241"
-          },
-          {
-            "id": "1718638819595",
-            "title": "List All Screen -> View Screen",
-            "description": "Can view detail of post from list of all posts.",
-            "source": "665f26b54372408c69692540",
-            "target": "665f26a72fd6218fa29d51d9",
-            "diagramId": "1718638819006"
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1718520774974",
-        "mainSystem": false
-      },
-      {
-        "id": "1718738329405",
-        "items": [
-          {
-            "id": "665f26a72fd6218fa29d51d9",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "This view file will have button: Delete. Delete button to get delete at /comment/delete/:id with id will be its ID.",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "detail",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 460,
-              "y": 717,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "66624b8dde8c854eb339dffd",
-                "description": "Find post by id.",
-                "itemId": "665f26a72fd6218fa29d51d9"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "665f26b54372408c69692540",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List All Screen",
-              "DESCRIPTION": "Data will be displayed as a list, each of element will have two buttons to view, and delete comment. 'View' button will lead to get detail view of Comment at /comment/detail/:id with id will be its ID. 'Delete' button will lead to get delete at /comment/delete/:id with id will be its ID.",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "list",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 460,
-              "y": 238,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "66624b96689d28d67b11bbe0",
-                "description": "Get all existing posts in database.",
-                "itemId": "665f26b54372408c69692540"
-              }
-            ],
-            "screens": []
-          }
-        ],
-        "master": "1718520774932",
-        "rootIds": [
-          "665f26a72fd6218fa29d51d9",
-          "665f26b54372408c69692540"
-        ],
-        "title": "Post Comment",
-        "relationships": [
-          {
-            "id": "1718638820430",
-            "title": "List All Screen -> View Screen",
-            "description": "Can view detail of comment from list of all comments.",
-            "source": "665f26b54372408c69692540",
-            "target": "665f26a72fd6218fa29d51d9",
-            "diagramId": "1718638819008"
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1718520774932",
-        "mainSystem": false
-      },
-      {
-        "id": "1718738329407",
-        "items": [
-          {
-            "id": "6663de7e3680422c431cdfd4",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Create Screen",
-              "TITLE": "Creation Screen",
-              "DESCRIPTION": "Display a form contains all field to create new contact message. Submit form will post data to /contact/create. If create successfully, please alert created success. If not, please display error message.",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "create",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 241,
-              "y": 712,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6663deac5952bd630ed50843",
-                "description": "Create new contact record in database by data from request.",
-                "itemId": "6663de7e3680422c431cdfd4"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "6663deb12e3d0da9ff62d628",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "This view file will have 'Delete' button. 'Delete' button to get delete at /contact/delete/:id with id will be its ID.",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "detail",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 749,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6663dedc619cb44e998aa98e",
-                "description": "Find contact by id.",
-                "itemId": "6663deb12e3d0da9ff62d628"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "6663def637d2d25b83cf325a",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List All Screen",
-              "DESCRIPTION": "Data will be displayed as a list, each of element will have two buttons to view, and delete it. 'View' button will lead to get detail view of Post at /contact/detail/:id with id will be its ID. 'Delete' button will lead to get delete at /post/contact/:id with id will be its ID. Screen will have a search bar to search contact by its title.",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "list",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 248,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6663defa77387eeb2c23cb1c",
-                "description": "Get all existing contacts in database.",
-                "itemId": "6663def637d2d25b83cf325a"
-              }
-            ],
-            "screens": []
-          }
-        ],
-        "master": "1718638819226",
-        "rootIds": [
-          "6663de7e3680422c431cdfd4",
-          "6663deb12e3d0da9ff62d628",
-          "6663def637d2d25b83cf325a"
-        ],
-        "title": "Contact",
-        "relationships": [
-          {
-            "id": "665f28b74dce8beeaaf14820",
-            "title": "List All Screen -> Creation Screen",
-            "description": "List of contacts contains buttons to create new contact.",
-            "source": "6663def637d2d25b83cf325a",
-            "target": "6663de7e3680422c431cdfd4"
-          },
-          {
-            "id": "665f28b74dce8beeaaf14821",
-            "title": "List All Screen -> View Screen",
-            "description": "List of contacts contains buttons to view existing contact.",
-            "source": "6663def637d2d25b83cf325a",
-            "target": "6663deb12e3d0da9ff62d628"
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1718638819226",
-        "mainSystem": false
-      },
-      {
-        "id": "1718738329409",
-        "items": [
-          {
-            "id": "1718638820589",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List All Screen",
-              "DESCRIPTION": "Describe your idea with new screen",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "custom",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 238,
-              "y": 244,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718638820604",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "This screen is used to view something in its container",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "detail",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 810,
-              "y": 244,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718638820639",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Update Screen",
-              "TITLE": "Update Screen",
-              "DESCRIPTION": "This screen is used to update something in its container",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "edit",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "UpdateScreen",
-            "transform": {
-              "x": 810,
-              "y": 730,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718638820719",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Create Screen",
-              "TITLE": "Create Screen",
-              "DESCRIPTION": "This screen is used to add new single data to this component.",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "create",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 228,
-              "y": 660,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          }
-        ],
-        "master": "1718520775033",
-        "rootIds": [
-          "1718638820589",
-          "1718638820604",
-          "1718638820639",
-          "1718638820719"
-        ],
-        "title": "Post Tag",
-        "relationships": [
-          {
-            "id": "1718638820806",
-            "title": "List All Screen -> View Screen",
-            "description": "",
-            "source": "1718638820589",
-            "target": "1718638820604",
-            "diagramId": "1718638820573"
-          },
-          {
-            "id": "1718638820816",
-            "title": "List All Screen -> Create Screen",
-            "description": "",
-            "source": "1718638820589",
-            "target": "1718638820719",
-            "diagramId": "1718638820573"
-          },
-          {
-            "id": "1718638820826",
-            "title": "List All Screen -> Update Screen",
-            "description": "",
-            "source": "1718638820589",
-            "target": "1718638820639",
-            "diagramId": "1718638820573"
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1718520775033",
-        "mainSystem": false
-      },
-      {
-        "id": "1718738329411",
-        "items": [
-          {
-            "id": "1718638820861",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List All Screen",
-              "DESCRIPTION": "Describe your idea with new screen",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "custom",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 229,
-              "y": 220,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718638820868",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "This screen is used to view something in its container",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "detail",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 780,
-              "y": 220,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718638820875",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Create Screen",
-              "TITLE": "Create Screen",
-              "DESCRIPTION": "This screen is used to add new single data to this component.",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "create",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 229,
-              "y": 637,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718638821012",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Update Screen",
-              "TITLE": "Update Screen",
-              "DESCRIPTION": "This screen is used to update something in its container",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "edit",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "UpdateScreen",
-            "transform": {
-              "x": 780,
-              "y": 721,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          }
-        ],
-        "master": "1718520775021",
-        "rootIds": [
-          "1718638820861",
-          "1718638820868",
-          "1718638820875",
-          "1718638821012"
-        ],
-        "title": "Post Category",
-        "relationships": [
-          {
-            "id": "1718638821050",
-            "title": "Other Screen -> View Screen",
-            "description": "",
-            "source": "1718638820861",
-            "target": "1718638820868",
-            "diagramId": "1718638820845"
-          },
-          {
-            "id": "1718638821060",
-            "title": "Other Screen -> Create Screen",
-            "description": "",
-            "source": "1718638820861",
-            "target": "1718638820875",
-            "diagramId": "1718638820845"
-          },
-          {
-            "id": "1718638821070",
-            "title": "Other Screen -> Update Screen",
-            "description": "",
-            "source": "1718638820861",
-            "target": "1718638821012",
-            "diagramId": "1718638820845"
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1718520775021",
-        "mainSystem": false
-      },
-      {
-        "id": "1718738329426",
-        "items": [
-          {
-            "id": "1718520774974",
-            "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 0,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "News",
-              "TITLE": "News",
-              "DESCRIPTION": "Provides information of posts, contains following information: title, description, content.",
-              "TECHNOLOGY": "Express",
-              "ACTION": "service",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "Post",
-            "transform": {
-              "x": 484,
-              "y": 147,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718520775021",
-            "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 0,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Category",
-              "TITLE": "Category",
-              "DESCRIPTION": "Provides information of post category, contains following information: title, description, content.",
-              "TECHNOLOGY": "Express",
-              "ACTION": "service",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "Contact",
-            "transform": {
-              "x": 873,
-              "y": 442,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718520775033",
-            "appearance": {
-              "FOREGROUND_COLOR": 8764400,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 0,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Tag",
-              "TITLE": "Tag",
-              "DESCRIPTION": "Provides information of post tags, contains following information: title, description.",
-              "TECHNOLOGY": "Express",
-              "ACTION": "service",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "User",
-            "transform": {
-              "x": 484,
-              "y": 625,
-              "w": 250,
-              "h": 160,
-              "r": 0
-            },
-            "type": "Components",
-            "descriptions": [],
-            "screens": []
-          }
-        ],
-        "master": "1718738329421",
-        "rootIds": [
-          "1718520774974",
-          "1718520775021",
-          "1718520775033"
-        ],
-        "title": "News Module",
-        "relationships": [
-          {
-            "id": "1718520775563",
-            "title": "Post -> Post Tag",
-            "description": "One news has many tags.",
-            "source": "1718520774974",
-            "target": "1718520775033",
-            "diagramId": "1712974337304"
-          },
-          {
-            "id": "1718520775573",
-            "title": "Post -> Post Category",
-            "description": "One news has belong to one category.",
-            "source": "1718520774974",
-            "target": "1718520775021",
-            "diagramId": "1712974337304"
-          }
-        ],
-        "type": "Modules",
-        "parentId": "1718738329421",
-        "mainSystem": false
-      },
-      {
-        "id": "1718738329428",
-        "items": [
-          {
-            "id": "665f269d5fc1a553f9e105e1",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Create Screen",
-              "TITLE": "Creation Screen",
-              "DESCRIPTION": "Display a form contains all field to create new Post. Submit form will post data to /post/create. If create successfully, please alert created success. If not, please display error message.",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "create",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 241,
-              "y": 691,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "66624b89ff9c2d34f6496c9e",
-                "description": "Create new post in database by data from request.",
-                "itemId": "665f269d5fc1a553f9e105e1"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "665f26a72fd6218fa29d51d9",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /post/edit/:id with id will be its ID. Delete button to get delete at /post/delete/:id with id will be its ID.",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "detail",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 901,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "66624b8dde8c854eb339dffd",
-                "description": "Find post by id.",
-                "itemId": "665f26a72fd6218fa29d51d9"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "665f26af562b6e389d723241",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Update Screen",
-              "TITLE": "Update Screen",
-              "DESCRIPTION": "Display form contains all the information of single Post record. Submit form will post data to /post/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
-              "TECHNOLOGY": "Update Screen",
-              "ACTION": "edit",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "UpdateScreen",
-            "transform": {
-              "x": 901,
-              "y": 736,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "66624b9117cc1754af2600a1",
-                "description": "Update the the information post by data from request.",
-                "itemId": "665f26af562b6e389d723241"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "665f26b54372408c69692540",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List All Screen",
-              "DESCRIPTION": "Data will be displayed as a list, each of element will have three buttons to view, update and delete it. 'View' button will lead to get detail view of Post at /post/detail/:id with id will be its ID.'Update' button will lead to get edit form at /post/edit/:id with id will be its ID.'Delete' button will lead to get delete at /post/delete/:id with id will be its ID.Screen will have a search bar to search post by its name.",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "list",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 248,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "66624b96689d28d67b11bbe0",
-                "description": "Get all existing posts in database.",
-                "itemId": "665f26b54372408c69692540"
-              }
-            ],
-            "screens": []
-          }
-        ],
-        "master": "1718520774974",
-        "rootIds": [
-          "665f269d5fc1a553f9e105e1",
-          "665f26a72fd6218fa29d51d9",
-          "665f26af562b6e389d723241",
-          "665f26b54372408c69692540"
-        ],
-        "title": "Post",
-        "relationships": [
-          {
-            "id": "665f28b74dce8beeaaf14820",
-            "title": "List All Screen -> Creation Screen",
-            "description": "List of posts contains buttons to create or update new post.",
-            "source": "665f26b54372408c69692540",
-            "target": "665f269d5fc1a553f9e105e1"
-          },
-          {
-            "id": "665f28c15addb9fa47d86f7d",
-            "title": "List All Screen -> Update Screen",
-            "description": "List of posts contains buttons to create or update post.",
-            "source": "665f26b54372408c69692540",
-            "target": "665f26af562b6e389d723241"
-          },
-          {
-            "id": "1718638819595",
-            "title": "List All Screen -> View Screen",
-            "description": "Can view detail of post from list of all posts.",
-            "source": "665f26b54372408c69692540",
-            "target": "665f26a72fd6218fa29d51d9",
-            "diagramId": "1718638819006"
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1718520774974",
-        "mainSystem": false
-      },
-      {
-        "id": "1718738329430",
-        "items": [
-          {
-            "id": "6663de7e3680422c431cdfd4",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Create Screen",
-              "TITLE": "Creation Screen",
-              "DESCRIPTION": "Display a form contains all field to create new contact message. Submit form will post data to /contact/create. If create successfully, please alert created success. If not, please display error message.",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "create",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 241,
-              "y": 712,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6663deac5952bd630ed50843",
-                "description": "Create new contact record in database by data from request.",
-                "itemId": "6663de7e3680422c431cdfd4"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "6663deb12e3d0da9ff62d628",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "This view file will have 'Delete' button. 'Delete' button to get delete at /contact/delete/:id with id will be its ID.",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "detail",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 749,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6663dedc619cb44e998aa98e",
-                "description": "Find contact by id.",
-                "itemId": "6663deb12e3d0da9ff62d628"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "6663def637d2d25b83cf325a",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List All Screen",
-              "DESCRIPTION": "Data will be displayed as a list, each of element will have two buttons to view, and delete it. 'View' button will lead to get detail view of Post at /contact/detail/:id with id will be its ID. 'Delete' button will lead to get delete at /post/contact/:id with id will be its ID. Screen will have a search bar to search contact by its title.",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "list",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 248,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6663defa77387eeb2c23cb1c",
-                "description": "Get all existing contacts in database.",
-                "itemId": "6663def637d2d25b83cf325a"
-              }
-            ],
-            "screens": []
-          }
-        ],
-        "master": "1718638819226",
-        "rootIds": [
-          "6663de7e3680422c431cdfd4",
-          "6663deb12e3d0da9ff62d628",
-          "6663def637d2d25b83cf325a"
-        ],
-        "title": "Contact",
-        "relationships": [
-          {
-            "id": "665f28b74dce8beeaaf14820",
-            "title": "List All Screen -> Creation Screen",
-            "description": "List of contacts contains buttons to create new contact.",
-            "source": "6663def637d2d25b83cf325a",
-            "target": "6663de7e3680422c431cdfd4"
-          },
-          {
-            "id": "665f28b74dce8beeaaf14821",
-            "title": "List All Screen -> View Screen",
-            "description": "List of contacts contains buttons to view existing contact.",
-            "source": "6663def637d2d25b83cf325a",
-            "target": "6663deb12e3d0da9ff62d628"
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1718638819226",
-        "mainSystem": false
-      },
-      {
-        "id": "1718738329432",
-        "items": [
-          {
-            "id": "1718638820589",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List All Screen",
-              "DESCRIPTION": "Describe your idea with new screen",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "custom",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 238,
-              "y": 244,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718638820604",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "This screen is used to view something in its container",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "detail",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 810,
-              "y": 244,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718638820639",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Update Screen",
-              "TITLE": "Update Screen",
-              "DESCRIPTION": "This screen is used to update something in its container",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "edit",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "UpdateScreen",
-            "transform": {
-              "x": 810,
-              "y": 730,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718638820719",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Create Screen",
-              "TITLE": "Create Screen",
-              "DESCRIPTION": "This screen is used to add new single data to this component.",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "create",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 228,
-              "y": 660,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          }
-        ],
-        "master": "1718520775033",
-        "rootIds": [
-          "1718638820589",
-          "1718638820604",
-          "1718638820639",
-          "1718638820719"
-        ],
-        "title": "Post Tag",
-        "relationships": [
-          {
-            "id": "1718638820806",
-            "title": "List All Screen -> View Screen",
-            "description": "",
-            "source": "1718638820589",
-            "target": "1718638820604",
-            "diagramId": "1718638820573"
-          },
-          {
-            "id": "1718638820816",
-            "title": "List All Screen -> Create Screen",
-            "description": "",
-            "source": "1718638820589",
-            "target": "1718638820719",
-            "diagramId": "1718638820573"
-          },
-          {
-            "id": "1718638820826",
-            "title": "List All Screen -> Update Screen",
-            "description": "",
-            "source": "1718638820589",
-            "target": "1718638820639",
-            "diagramId": "1718638820573"
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1718520775033",
-        "mainSystem": false
-      },
-      {
-        "id": "1718738329434",
-        "items": [
-          {
-            "id": "1718638820861",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List All Screen",
-              "DESCRIPTION": "Describe your idea with new screen",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "custom",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 229,
-              "y": 220,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718638820868",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "This screen is used to view something in its container",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "detail",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 780,
-              "y": 220,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718638820875",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Create Screen",
-              "TITLE": "Create Screen",
-              "DESCRIPTION": "This screen is used to add new single data to this component.",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "create",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 229,
-              "y": 637,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          },
-          {
-            "id": "1718638821012",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Update Screen",
-              "TITLE": "Update Screen",
-              "DESCRIPTION": "This screen is used to update something in its container",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "edit",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "UpdateScreen",
-            "transform": {
-              "x": 780,
-              "y": 721,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [],
-            "screens": []
-          }
-        ],
-        "master": "1718520775021",
-        "rootIds": [
-          "1718638820861",
-          "1718638820868",
-          "1718638820875",
-          "1718638821012"
-        ],
-        "title": "Post Category",
-        "relationships": [
-          {
-            "id": "1718638821050",
-            "title": "Other Screen -> View Screen",
-            "description": "",
-            "source": "1718638820861",
-            "target": "1718638820868",
-            "diagramId": "1718638820845"
-          },
-          {
-            "id": "1718638821060",
-            "title": "Other Screen -> Create Screen",
-            "description": "",
-            "source": "1718638820861",
-            "target": "1718638820875",
-            "diagramId": "1718638820845"
-          },
-          {
-            "id": "1718638821070",
-            "title": "Other Screen -> Update Screen",
-            "description": "",
-            "source": "1718638820861",
-            "target": "1718638821012",
-            "diagramId": "1718638820845"
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1718520775021",
-        "mainSystem": false
-      },
-      {
-        "id": "1718738329497",
-        "items": [
-          {
-            "id": "6663de7e3680422c431cdfd4",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Create Screen",
-              "TITLE": "Creation Screen",
-              "DESCRIPTION": "Display a form contains all field to create new contact message. Submit form will post data to /contact/create. If create successfully, please alert created success. If not, please display error message.",
-              "TECHNOLOGY": "Handlebars.js",
-              "ACTION": "create",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "CreateScreen",
-            "transform": {
-              "x": 241,
-              "y": 712,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6663deac5952bd630ed50843",
-                "description": "Create new contact record in database by data from request.",
-                "itemId": "6663de7e3680422c431cdfd4"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "6663deb12e3d0da9ff62d628",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "View Screen",
-              "TITLE": "View Screen",
-              "DESCRIPTION": "This view file will have 'Delete' button. 'Delete' button to get delete at /contact/delete/:id with id will be its ID.",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "detail",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "ViewScreen",
-            "transform": {
-              "x": 749,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6663dedc619cb44e998aa98e",
-                "description": "Find contact by id.",
-                "itemId": "6663deb12e3d0da9ff62d628"
-              }
-            ],
-            "screens": []
-          },
-          {
-            "id": "6663def637d2d25b83cf325a",
-            "appearance": {
-              "FOREGROUND_COLOR": 16777215,
-              "TEXT_DISABLED": true,
-              "FONT_SIZE": 16,
-              "BACKGROUND_COLOR": 3276,
-              "STROKE_COLOR": 13224393,
-              "STROKE_THICKNESS": 1,
-              "TEXT_ALIGNMENT": "center",
-              "TEXT": "Other Screen",
-              "TITLE": "List All Screen",
-              "DESCRIPTION": "Data will be displayed as a list, each of element will have two buttons to view, and delete it. 'View' button will lead to get detail view of Post at /contact/detail/:id with id will be its ID. 'Delete' button will lead to get delete at /post/contact/:id with id will be its ID. Screen will have a search bar to search contact by its title.",
-              "TECHNOLOGY": "Screen",
-              "ACTION": "list",
-              "SHAPE": "Rectangle"
-            },
-            "renderer": "OtherScreen",
-            "transform": {
-              "x": 248,
-              "y": 245,
-              "w": 250,
-              "h": 250,
-              "r": 0
-            },
-            "type": "Screens",
-            "descriptions": [
-              {
-                "id": "6663defa77387eeb2c23cb1c",
-                "description": "Get all existing contacts in database.",
-                "itemId": "6663def637d2d25b83cf325a"
-              }
-            ],
-            "screens": []
-          }
-        ],
-        "master": "1718738329492",
-        "rootIds": [
-          "6663de7e3680422c431cdfd4",
-          "6663deb12e3d0da9ff62d628",
-          "6663def637d2d25b83cf325a"
-        ],
-        "title": "Contact",
-        "relationships": [
-          {
-            "id": "665f28b74dce8beeaaf14820",
-            "title": "List All Screen -> Creation Screen",
-            "description": "List of contacts contains buttons to create new contact.",
-            "source": "6663def637d2d25b83cf325a",
-            "target": "6663de7e3680422c431cdfd4"
-          },
-          {
-            "id": "665f28b74dce8beeaaf14821",
-            "title": "List All Screen -> View Screen",
-            "description": "List of contacts contains buttons to view existing contact.",
-            "source": "6663def637d2d25b83cf325a",
-            "target": "6663deb12e3d0da9ff62d628"
-          }
-        ],
-        "type": "Screens",
-        "parentId": "1718738329492",
-        "mainSystem": false
-      },
-      {
-        "id": "1718738329825",
+        "id": "1719028587768",
         "items": [
           {
             "id": "6662f6bcd1660c007486c67a",
@@ -3020,7 +682,7 @@
             "screens": []
           }
         ],
-        "master": "1718738329820",
+        "master": "1719028587763",
         "rootIds": [
           "6662f6bcd1660c007486c67a",
           "6662f708d7afca65d71db6c4",
@@ -3045,7 +707,1678 @@
           }
         ],
         "type": "Screens",
-        "parentId": "1718738329820",
+        "parentId": "1719028587763",
+        "mainSystem": false
+      },
+      {
+        "id": "1719028587808",
+        "items": [
+          {
+            "id": "6675a61b2a5b3731086e69e3",
+            "appearance": {
+              "FOREGROUND_COLOR": 8764400,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 0,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Post Comment",
+              "TITLE": "Post Comment",
+              "DESCRIPTION": "Provides information of PostComment, contains following information: title, content, author.",
+              "TECHNOLOGY": "Express",
+              "ACTION": "service",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "Authentication",
+            "transform": {
+              "x": 161,
+              "y": 442,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Components",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675a640b4b6acccc1d7431d",
+            "appearance": {
+              "FOREGROUND_COLOR": 8764400,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 0,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Post",
+              "TITLE": "Post",
+              "DESCRIPTION": "Provides information of Post, contains following information: title, description, content.",
+              "TECHNOLOGY": "Express",
+              "ACTION": "service",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "Post",
+            "transform": {
+              "x": 484,
+              "y": 147,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Components",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675a64d2380940cda1af58f",
+            "appearance": {
+              "FOREGROUND_COLOR": 8764400,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 0,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Post Category",
+              "TITLE": "Post Category",
+              "DESCRIPTION": "Provides information of PostCategory, contains following information: title, description, content.",
+              "TECHNOLOGY": "Express",
+              "ACTION": "service",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "Contact",
+            "transform": {
+              "x": 873,
+              "y": 442,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Components",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675a6578d669073ef807268",
+            "appearance": {
+              "FOREGROUND_COLOR": 8764400,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 0,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Post Tag",
+              "TITLE": "Post Tag",
+              "DESCRIPTION": "Provides information of PostTag, contains following information: title, description.",
+              "TECHNOLOGY": "Express",
+              "ACTION": "service",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "User",
+            "transform": {
+              "x": 484,
+              "y": 625,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Components",
+            "descriptions": [],
+            "screens": []
+          }
+        ],
+        "master": "1719028587803",
+        "rootIds": [
+          "6675a61b2a5b3731086e69e3",
+          "6675a640b4b6acccc1d7431d",
+          "6675a64d2380940cda1af58f",
+          "6675a6578d669073ef807268"
+        ],
+        "title": "Post Module",
+        "relationships": [
+          {
+            "id": "6675aa36bf2e10225eca03ce",
+            "title": "Post -> Post Comment",
+            "description": "One post contains many comments.",
+            "source": "6675a640b4b6acccc1d7431d",
+            "target": "6675a61b2a5b3731086e69e3",
+            "diagramId": "6675a611249f348beaa257ac"
+          },
+          {
+            "id": "6675aa3e89053622845f9c54",
+            "title": "Post -> Post Tag",
+            "description": "One post has many tags.",
+            "source": "6675a640b4b6acccc1d7431d",
+            "target": "6675a6578d669073ef807268",
+            "diagramId": "6675a611249f348beaa257ac"
+          },
+          {
+            "id": "6675aa42613aade2e02c96ca",
+            "title": "Post -> Post Category",
+            "description": "One post has belong to one category.",
+            "source": "6675a640b4b6acccc1d7431d",
+            "target": "6675a64d2380940cda1af58f",
+            "diagramId": "6675a611249f348beaa257ac"
+          }
+        ],
+        "type": "Modules",
+        "parentId": "1719028587803",
+        "mainSystem": false
+      },
+      {
+        "id": "1719028587810",
+        "items": [
+          {
+            "id": "665f269d5fc1a553f9e105e1",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Create Screen",
+              "TITLE": "Creation Screen",
+              "DESCRIPTION": "Display a form contains all field to create new Post. Submit form will post data to /post/create. If create successfully, please alert created success. If not, please display error message.",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "create",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "CreateScreen",
+            "transform": {
+              "x": 241,
+              "y": 691,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "66624b89ff9c2d34f6496c9e",
+                "description": "Create new post in database by data from request.",
+                "itemId": "665f269d5fc1a553f9e105e1"
+              }
+            ],
+            "screens": []
+          },
+          {
+            "id": "665f26a72fd6218fa29d51d9",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "View Screen",
+              "TITLE": "View Screen",
+              "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /post/edit/:id with id will be its ID. Delete button to get delete at /post/delete/:id with id will be its ID.",
+              "TECHNOLOGY": "Screen",
+              "ACTION": "detail",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "ViewScreen",
+            "transform": {
+              "x": 901,
+              "y": 245,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "66624b8dde8c854eb339dffd",
+                "description": "Find post by id.",
+                "itemId": "665f26a72fd6218fa29d51d9"
+              }
+            ],
+            "screens": []
+          },
+          {
+            "id": "665f26af562b6e389d723241",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Update Screen",
+              "TITLE": "Update Screen",
+              "DESCRIPTION": "Display form contains all the information of single Post record. Submit form will post data to /post/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
+              "TECHNOLOGY": "Update Screen",
+              "ACTION": "edit",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "UpdateScreen",
+            "transform": {
+              "x": 901,
+              "y": 736,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "66624b9117cc1754af2600a1",
+                "description": "Update the the information post by data from request.",
+                "itemId": "665f26af562b6e389d723241"
+              }
+            ],
+            "screens": []
+          },
+          {
+            "id": "665f26b54372408c69692540",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Other Screen",
+              "TITLE": "List All Screen",
+              "DESCRIPTION": "Data will be displayed as a list, each of element will have three buttons to view, update and delete it. 'View' button will lead to get detail view of Post at /post/detail/:id with id will be its ID.'Update' button will lead to get edit form at /post/edit/:id with id will be its ID.'Delete' button will lead to get delete at /post/delete/:id with id will be its ID.Screen will have a search bar to search post by its name.",
+              "TECHNOLOGY": "Screen",
+              "ACTION": "list",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "OtherScreen",
+            "transform": {
+              "x": 248,
+              "y": 245,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "66624b96689d28d67b11bbe0",
+                "description": "Get all existing posts in database.",
+                "itemId": "665f26b54372408c69692540"
+              }
+            ],
+            "screens": []
+          }
+        ],
+        "master": "6675a640b4b6acccc1d7431d",
+        "rootIds": [
+          "665f269d5fc1a553f9e105e1",
+          "665f26a72fd6218fa29d51d9",
+          "665f26af562b6e389d723241",
+          "665f26b54372408c69692540"
+        ],
+        "title": "Post",
+        "relationships": [
+          {
+            "id": "665f28b74dce8beeaaf14820",
+            "title": "List All Screen -> Creation Screen",
+            "description": "Can create new post.",
+            "source": "665f26b54372408c69692540",
+            "target": "665f269d5fc1a553f9e105e1",
+            "diagramId": "6675a77438e6964df3935a5a"
+          },
+          {
+            "id": "665f28c15addb9fa47d86f7d",
+            "title": "List All Screen -> Update Screen",
+            "description": "Can update existing post.",
+            "source": "665f26b54372408c69692540",
+            "target": "665f26af562b6e389d723241",
+            "diagramId": "6675a77438e6964df3935a5a"
+          },
+          {
+            "id": "1718638819595",
+            "title": "List All Screen -> View Screen",
+            "description": "Can view detail of post from list of all posts.",
+            "source": "665f26b54372408c69692540",
+            "target": "665f26a72fd6218fa29d51d9",
+            "diagramId": "6675a77438e6964df3935a5a"
+          }
+        ],
+        "type": "Screens",
+        "parentId": "6675a640b4b6acccc1d7431d",
+        "mainSystem": false
+      },
+      {
+        "id": "1719028587812",
+        "items": [
+          {
+            "id": "6675a9e231350b426bc5a862",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "View Screen",
+              "TITLE": "View Screen",
+              "DESCRIPTION": "This view file will have button: Delete. Delete button to get delete at /comment/delete/:id with id will be its ID.",
+              "TECHNOLOGY": "Screen",
+              "ACTION": "detail",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "ViewScreen",
+            "transform": {
+              "x": 460,
+              "y": 717,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "66624b8dde8c854eb339dffd",
+                "description": "Find post by id.",
+                "itemId": "6675a9e231350b426bc5a862"
+              }
+            ],
+            "screens": []
+          },
+          {
+            "id": "6675aa09e01de8432a1fa6d7",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Other Screen",
+              "TITLE": "List All Screen",
+              "DESCRIPTION": "Data will be displayed as a list, each of element will have two buttons to view, and delete comment. 'View' button will lead to get detail view of Comment at /comment/detail/:id with id will be its ID. 'Delete' button will lead to get delete at /comment/delete/:id with id will be its ID.",
+              "TECHNOLOGY": "Screen",
+              "ACTION": "list",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "OtherScreen",
+            "transform": {
+              "x": 460,
+              "y": 238,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "66624b96689d28d67b11bbe0",
+                "description": "Get all existing posts in database.",
+                "itemId": "6675aa09e01de8432a1fa6d7"
+              }
+            ],
+            "screens": []
+          }
+        ],
+        "master": "6675a61b2a5b3731086e69e3",
+        "rootIds": [
+          "6675a9e231350b426bc5a862",
+          "6675aa09e01de8432a1fa6d7"
+        ],
+        "title": "Post Comment",
+        "relationships": [
+          {
+            "id": "1718638820430",
+            "title": "List All Screen -> View Screen",
+            "description": "Can view detail of comment from list of all comments.",
+            "source": "6675aa09e01de8432a1fa6d7",
+            "target": "6675a9e231350b426bc5a862",
+            "diagramId": "6675a7948e3fa7962b7672d5"
+          }
+        ],
+        "type": "Screens",
+        "parentId": "6675a61b2a5b3731086e69e3",
+        "mainSystem": false
+      },
+      {
+        "id": "1719028587814",
+        "items": [
+          {
+            "id": "6675a875f86ed2a8fdc7f9fb",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Other Screen",
+              "TITLE": "List All Screen",
+              "DESCRIPTION": "Describe your idea with new screen",
+              "TECHNOLOGY": "Screen",
+              "ACTION": "custom",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "OtherScreen",
+            "transform": {
+              "x": 238,
+              "y": 244,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675a8800be22c7dec35fe31",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "View Screen",
+              "TITLE": "View Screen",
+              "DESCRIPTION": "This screen is used to view something in its container",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "detail",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "ViewScreen",
+            "transform": {
+              "x": 810,
+              "y": 244,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675a88abc993f7ef1c2eeaa",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Update Screen",
+              "TITLE": "Update Screen",
+              "DESCRIPTION": "This screen is used to update something in its container",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "edit",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "UpdateScreen",
+            "transform": {
+              "x": 810,
+              "y": 730,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675a891a637488d5b3f95bf",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Create Screen",
+              "TITLE": "Create Screen",
+              "DESCRIPTION": "This screen is used to add new single data to this component.",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "create",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "CreateScreen",
+            "transform": {
+              "x": 228,
+              "y": 660,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          }
+        ],
+        "master": "6675a6578d669073ef807268",
+        "rootIds": [
+          "6675a875f86ed2a8fdc7f9fb",
+          "6675a8800be22c7dec35fe31",
+          "6675a88abc993f7ef1c2eeaa",
+          "6675a891a637488d5b3f95bf"
+        ],
+        "title": "Post Tag",
+        "relationships": [
+          {
+            "id": "1718638820806",
+            "title": "List All Screen -> View Screen",
+            "description": "Can view detail of tag.",
+            "source": "6675a875f86ed2a8fdc7f9fb",
+            "target": "6675a8800be22c7dec35fe31",
+            "diagramId": "6675a8083bc80460952be4eb"
+          },
+          {
+            "id": "1718638820816",
+            "title": "List All Screen -> Create Screen",
+            "description": "Can create new tag.",
+            "source": "6675a875f86ed2a8fdc7f9fb",
+            "target": "6675a891a637488d5b3f95bf",
+            "diagramId": "6675a8083bc80460952be4eb"
+          },
+          {
+            "id": "1718638820826",
+            "title": "List All Screen -> Update Screen",
+            "description": "Can update existing tag.",
+            "source": "6675a875f86ed2a8fdc7f9fb",
+            "target": "6675a88abc993f7ef1c2eeaa",
+            "diagramId": "6675a8083bc80460952be4eb"
+          }
+        ],
+        "type": "Screens",
+        "parentId": "6675a6578d669073ef807268",
+        "mainSystem": false
+      },
+      {
+        "id": "1719028587816",
+        "items": [
+          {
+            "id": "6675a847ab9dbe58bc64fbbb",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Other Screen",
+              "TITLE": "List All Screen",
+              "DESCRIPTION": "Describe your idea with new screen",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "custom",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "OtherScreen",
+            "transform": {
+              "x": 229,
+              "y": 220,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675a85354e32a8e8a31ce5f",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "View Screen",
+              "TITLE": "View Screen",
+              "DESCRIPTION": "This screen is used to view something in its container",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "detail",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "ViewScreen",
+            "transform": {
+              "x": 780,
+              "y": 220,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675a859ad5dec3013c5f10b",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Create Screen",
+              "TITLE": "Create Screen",
+              "DESCRIPTION": "This screen is used to add new single data to this component.",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "create",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "CreateScreen",
+            "transform": {
+              "x": 229,
+              "y": 637,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675a8619ad30f3abe4ef184",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Update Screen",
+              "TITLE": "Update Screen",
+              "DESCRIPTION": "This screen is used to update something in its container",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "edit",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "UpdateScreen",
+            "transform": {
+              "x": 780,
+              "y": 721,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          }
+        ],
+        "master": "6675a64d2380940cda1af58f",
+        "rootIds": [
+          "6675a847ab9dbe58bc64fbbb",
+          "6675a85354e32a8e8a31ce5f",
+          "6675a859ad5dec3013c5f10b",
+          "6675a8619ad30f3abe4ef184"
+        ],
+        "title": "Post Category",
+        "relationships": [
+          {
+            "id": "1718638821050",
+            "title": "List All Screen -> View Screen",
+            "description": "Can view detail of category.",
+            "source": "6675a847ab9dbe58bc64fbbb",
+            "target": "6675a85354e32a8e8a31ce5f",
+            "diagramId": "6675a82d5a25b93e1bf17c3a"
+          },
+          {
+            "id": "1718638821060",
+            "title": "List All Screen -> Create Screen",
+            "description": "Can create new category",
+            "source": "6675a847ab9dbe58bc64fbbb",
+            "target": "6675a859ad5dec3013c5f10b",
+            "diagramId": "6675a82d5a25b93e1bf17c3a"
+          },
+          {
+            "id": "1718638821070",
+            "title": "List All Screen -> Update Screen",
+            "description": "Can update existing category",
+            "source": "6675a847ab9dbe58bc64fbbb",
+            "target": "6675a8619ad30f3abe4ef184",
+            "diagramId": "6675a82d5a25b93e1bf17c3a"
+          }
+        ],
+        "type": "Screens",
+        "parentId": "6675a64d2380940cda1af58f",
+        "mainSystem": false
+      },
+      {
+        "id": "1719028587914",
+        "items": [
+          {
+            "id": "6675b1d630db816175416dff",
+            "appearance": {
+              "FOREGROUND_COLOR": 8764400,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 0,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "News",
+              "TITLE": "News",
+              "DESCRIPTION": "Provides information of News, contains following information: title, description, content.",
+              "TECHNOLOGY": "Express",
+              "ACTION": "service",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "Post",
+            "transform": {
+              "x": 484,
+              "y": 147,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Components",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675b1df34dc39c1a7dfd183",
+            "appearance": {
+              "FOREGROUND_COLOR": 8764400,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 0,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "News Category",
+              "TITLE": "News Category",
+              "DESCRIPTION": "Provides information of NewsCategory, contains following information: title, description, content.",
+              "TECHNOLOGY": "Express",
+              "ACTION": "service",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "Contact",
+            "transform": {
+              "x": 822,
+              "y": 442,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Components",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675b1e9cd732f8bac68d8dc",
+            "appearance": {
+              "FOREGROUND_COLOR": 8764400,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 0,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "News Tag",
+              "TITLE": "News Tag",
+              "DESCRIPTION": "Provides information of NewsTag, contains following information: title, description.",
+              "TECHNOLOGY": "Express",
+              "ACTION": "service",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "User",
+            "transform": {
+              "x": 164,
+              "y": 442,
+              "w": 250,
+              "h": 160,
+              "r": 0
+            },
+            "type": "Components",
+            "descriptions": [],
+            "screens": []
+          }
+        ],
+        "master": "1719028587909",
+        "rootIds": [
+          "6675b1d630db816175416dff",
+          "6675b1df34dc39c1a7dfd183",
+          "6675b1e9cd732f8bac68d8dc"
+        ],
+        "title": "News Module",
+        "relationships": [
+          {
+            "id": "6675b292ea7335b6d19776f4",
+            "title": "News -> News Tag",
+            "description": "One news has many tags.",
+            "source": "6675b1d630db816175416dff",
+            "target": "6675b1e9cd732f8bac68d8dc",
+            "diagramId": "1712974337304"
+          },
+          {
+            "id": "6675b2950ba355bda2e6bbff",
+            "title": "News -> News Category",
+            "description": "One news has belong to one category.",
+            "source": "6675b1d630db816175416dff",
+            "target": "6675b1df34dc39c1a7dfd183",
+            "diagramId": "1712974337304"
+          }
+        ],
+        "type": "Modules",
+        "parentId": "1719028587909",
+        "mainSystem": false
+      },
+      {
+        "id": "1719028587916",
+        "items": [
+          {
+            "id": "6675b2bca18a69561d6a9302",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Create Screen",
+              "TITLE": "Creation Screen",
+              "DESCRIPTION": "Display a form contains all field to create new News. Submit form will post data to /news/create. If create successfully, please alert created success. If not, please display error message.",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "create",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "CreateScreen",
+            "transform": {
+              "x": 241,
+              "y": 691,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "66624b89ff9c2d34f6496c9e",
+                "description": "Create new News in database by data from request.",
+                "itemId": "6675b2bca18a69561d6a9302"
+              }
+            ],
+            "screens": []
+          },
+          {
+            "id": "6675b2d4deea3688c62b82d7",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "View Screen",
+              "TITLE": "View Screen",
+              "DESCRIPTION": "This view file will have 2 button: Edit, Delete. Edit button to get edit form at /news/edit/:id with id will be its ID. Delete button to get delete at /news/delete/:id with id will be its ID.",
+              "TECHNOLOGY": "Screen",
+              "ACTION": "detail",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "ViewScreen",
+            "transform": {
+              "x": 901,
+              "y": 245,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "66624b8dde8c854eb339dffd",
+                "description": "Find news by id.",
+                "itemId": "6675b2d4deea3688c62b82d7"
+              }
+            ],
+            "screens": []
+          },
+          {
+            "id": "6675b2e14954190471c3ed34",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Update Screen",
+              "TITLE": "Update Screen",
+              "DESCRIPTION": "Display form contains all the information of single News record. Submit form will post data to /news/edit/:id. If updated successfully, please alert updated success. Otherwise, please display error message.",
+              "TECHNOLOGY": "Update Screen",
+              "ACTION": "edit",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "UpdateScreen",
+            "transform": {
+              "x": 901,
+              "y": 736,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "66624b9117cc1754af2600a1",
+                "description": "Update the the information news by data from request.",
+                "itemId": "6675b2e14954190471c3ed34"
+              }
+            ],
+            "screens": []
+          },
+          {
+            "id": "6675b2e937aa431c479edaab",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Other Screen",
+              "TITLE": "List All Screen",
+              "DESCRIPTION": "Data will be displayed as a list, each of element will have three buttons to view, update and delete it. 'View' button will lead to get detail view of Post at /news/detail/:id with id will be its ID.'Update' button will lead to get edit form at /news/edit/:id with id will be its ID.'Delete' button will lead to get delete at /news/delete/:id with id will be its ID.Screen will have a search bar to search news by its name.",
+              "TECHNOLOGY": "Screen",
+              "ACTION": "list",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "OtherScreen",
+            "transform": {
+              "x": 248,
+              "y": 245,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "66624b96689d28d67b11bbe0",
+                "description": "Get all existing news in database.",
+                "itemId": "6675b2e937aa431c479edaab"
+              }
+            ],
+            "screens": []
+          }
+        ],
+        "master": "6675b1d630db816175416dff",
+        "rootIds": [
+          "6675b2bca18a69561d6a9302",
+          "6675b2d4deea3688c62b82d7",
+          "6675b2e14954190471c3ed34",
+          "6675b2e937aa431c479edaab"
+        ],
+        "title": "News",
+        "relationships": [
+          {
+            "id": "665f28b74dce8beeaaf14820",
+            "title": "List All Screen -> Creation Screen",
+            "description": "Can create new news.",
+            "source": "6675b2e937aa431c479edaab",
+            "target": "6675b2bca18a69561d6a9302",
+            "diagramId": "6675b2b3af97eae80ce3a497"
+          },
+          {
+            "id": "665f28c15addb9fa47d86f7d",
+            "title": "List All Screen -> Update Screen",
+            "description": "Can update existing news.",
+            "source": "6675b2e937aa431c479edaab",
+            "target": "6675b2e14954190471c3ed34",
+            "diagramId": "6675b2b3af97eae80ce3a497"
+          },
+          {
+            "id": "1718638819595",
+            "title": "List All Screen -> View Screen",
+            "description": "Can view detail of existing news.",
+            "source": "6675b2e937aa431c479edaab",
+            "target": "6675b2d4deea3688c62b82d7",
+            "diagramId": "6675b2b3af97eae80ce3a497"
+          }
+        ],
+        "type": "Screens",
+        "parentId": "6675b1d630db816175416dff",
+        "mainSystem": false
+      },
+      {
+        "id": "1719028587918",
+        "items": [
+          {
+            "id": "6675b33f438dc3a79c90bdd6",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Other Screen",
+              "TITLE": "List All Screen",
+              "DESCRIPTION": "Describe your idea with new screen",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "list",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "OtherScreen",
+            "transform": {
+              "x": 229,
+              "y": 220,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675b34c72ca0cc1295d87ed",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "View Screen",
+              "TITLE": "View Screen",
+              "DESCRIPTION": "This screen is used to view something in its container",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "detail",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "ViewScreen",
+            "transform": {
+              "x": 780,
+              "y": 220,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675b353ff1130dd0cf4f93a",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Create Screen",
+              "TITLE": "Create Screen",
+              "DESCRIPTION": "This screen is used to add new single data to this component.",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "create",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "CreateScreen",
+            "transform": {
+              "x": 229,
+              "y": 637,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675b35b0e079127a9b5e764",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Update Screen",
+              "TITLE": "Update Screen",
+              "DESCRIPTION": "This screen is used to update something in its container",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "edit",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "UpdateScreen",
+            "transform": {
+              "x": 780,
+              "y": 721,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          }
+        ],
+        "master": "6675b1df34dc39c1a7dfd183",
+        "rootIds": [
+          "6675b33f438dc3a79c90bdd6",
+          "6675b34c72ca0cc1295d87ed",
+          "6675b353ff1130dd0cf4f93a",
+          "6675b35b0e079127a9b5e764"
+        ],
+        "title": "News Category",
+        "relationships": [
+          {
+            "id": "1718638821050",
+            "title": "List All Screen -> View Screen",
+            "description": "Can view detail of news category.",
+            "source": "6675b33f438dc3a79c90bdd6",
+            "target": "6675b34c72ca0cc1295d87ed",
+            "diagramId": "6675b3384c0661b01081a73f"
+          },
+          {
+            "id": "1718638821060",
+            "title": "List All Screen -> Create Screen",
+            "description": "Can create new news category.",
+            "source": "6675b33f438dc3a79c90bdd6",
+            "target": "6675b353ff1130dd0cf4f93a",
+            "diagramId": "6675b3384c0661b01081a73f"
+          },
+          {
+            "id": "1718638821070",
+            "title": "List All Screen -> Update Screen",
+            "description": "Can update existing news category.",
+            "source": "6675b33f438dc3a79c90bdd6",
+            "target": "6675b35b0e079127a9b5e764",
+            "diagramId": "6675b3384c0661b01081a73f"
+          }
+        ],
+        "type": "Screens",
+        "parentId": "6675b1df34dc39c1a7dfd183",
+        "mainSystem": false
+      },
+      {
+        "id": "1719028587920",
+        "items": [
+          {
+            "id": "6675b3f98861a218fb489ce8",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Other Screen",
+              "TITLE": "List All Screen",
+              "DESCRIPTION": "Describe your idea with new screen",
+              "TECHNOLOGY": "Screen",
+              "ACTION": "custom",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "OtherScreen",
+            "transform": {
+              "x": 238,
+              "y": 244,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675b4025f37e2c51bd8705c",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "View Screen",
+              "TITLE": "View Screen",
+              "DESCRIPTION": "This screen is used to view something in its container",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "detail",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "ViewScreen",
+            "transform": {
+              "x": 810,
+              "y": 244,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675b409bdc6fc9919db1d03",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Update Screen",
+              "TITLE": "Update Screen",
+              "DESCRIPTION": "This screen is used to update something in its container",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "edit",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "UpdateScreen",
+            "transform": {
+              "x": 810,
+              "y": 730,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          },
+          {
+            "id": "6675b41242a5319ff2d17591",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Create Screen",
+              "TITLE": "Create Screen",
+              "DESCRIPTION": "This screen is used to add new single data to this component.",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "create",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "CreateScreen",
+            "transform": {
+              "x": 228,
+              "y": 660,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          }
+        ],
+        "master": "6675b1e9cd732f8bac68d8dc",
+        "rootIds": [
+          "6675b3f98861a218fb489ce8",
+          "6675b4025f37e2c51bd8705c",
+          "6675b409bdc6fc9919db1d03",
+          "6675b41242a5319ff2d17591"
+        ],
+        "title": "News Tag",
+        "relationships": [
+          {
+            "id": "1718638820806",
+            "title": "List All Screen -> View Screen",
+            "description": "Can view detail of news tag.",
+            "source": "6675b3f98861a218fb489ce8",
+            "target": "6675b4025f37e2c51bd8705c",
+            "diagramId": "6675b3a11289df60edc50854"
+          },
+          {
+            "id": "1718638820816",
+            "title": "List All Screen -> Create Screen",
+            "description": "Can create new news tag.",
+            "source": "6675b3f98861a218fb489ce8",
+            "target": "6675b41242a5319ff2d17591",
+            "diagramId": "6675b3a11289df60edc50854"
+          },
+          {
+            "id": "1718638820826",
+            "title": "List All Screen -> Update Screen",
+            "description": "Can update existing news tag.",
+            "source": "6675b3f98861a218fb489ce8",
+            "target": "6675b409bdc6fc9919db1d03",
+            "diagramId": "6675b3a11289df60edc50854"
+          }
+        ],
+        "type": "Screens",
+        "parentId": "6675b1e9cd732f8bac68d8dc",
+        "mainSystem": false
+      },
+      {
+        "id": "1719028588001",
+        "items": [
+          {
+            "id": "6663de7e3680422c431cdfd4",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Create Screen",
+              "TITLE": "Creation Screen",
+              "DESCRIPTION": "Display a form contains all field to create new contact message. Submit form will post data to /contact/create. If create successfully, please alert created success. If not, please display error message.",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "create",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "CreateScreen",
+            "transform": {
+              "x": 810,
+              "y": 699,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "6663deac5952bd630ed50843",
+                "description": "Create new contact record in database by data from request.",
+                "itemId": "6663de7e3680422c431cdfd4"
+              }
+            ],
+            "screens": []
+          },
+          {
+            "id": "6663deb12e3d0da9ff62d628",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "View Screen",
+              "TITLE": "View Screen",
+              "DESCRIPTION": "This view file will have 'Delete' button. 'Delete' button to get delete at /contact/delete/:id with id will be its ID.",
+              "TECHNOLOGY": "Screen",
+              "ACTION": "detail",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "ViewScreen",
+            "transform": {
+              "x": 810,
+              "y": 245,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "6663dedc619cb44e998aa98e",
+                "description": "Find contact by id.",
+                "itemId": "6663deb12e3d0da9ff62d628"
+              }
+            ],
+            "screens": []
+          },
+          {
+            "id": "6663def637d2d25b83cf325a",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Other Screen",
+              "TITLE": "List All Screen",
+              "DESCRIPTION": "Data will be displayed as a list, each of element will have two buttons to view, and delete it. 'View' button will lead to get detail view of Post at /contact/detail/:id with id will be its ID. 'Delete' button will lead to get delete at /post/contact/:id with id will be its ID. Screen will have a search bar to search contact by its title.",
+              "TECHNOLOGY": "Screen",
+              "ACTION": "list",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "OtherScreen",
+            "transform": {
+              "x": 173,
+              "y": 245,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "6663defa77387eeb2c23cb1c",
+                "description": "Get all existing contacts in database.",
+                "itemId": "6663def637d2d25b83cf325a"
+              }
+            ],
+            "screens": []
+          }
+        ],
+        "master": "1719028587996",
+        "rootIds": [
+          "6663de7e3680422c431cdfd4",
+          "6663deb12e3d0da9ff62d628",
+          "6663def637d2d25b83cf325a"
+        ],
+        "title": "Contact",
+        "relationships": [
+          {
+            "id": "665f28b74dce8beeaaf14820",
+            "title": "List All Screen -> Creation Screen",
+            "description": "Can create new contact message.",
+            "source": "6663def637d2d25b83cf325a",
+            "target": "6663de7e3680422c431cdfd4"
+          },
+          {
+            "id": "665f28b74dce8beeaaf14821",
+            "title": "List All Screen -> View Screen",
+            "description": "Can view detail of contact message.",
+            "source": "6663def637d2d25b83cf325a",
+            "target": "6663deb12e3d0da9ff62d628"
+          }
+        ],
+        "type": "Screens",
+        "parentId": "1719028587996",
+        "mainSystem": false
+      },
+      {
+        "id": "1719028588040",
+        "items": [
+          {
+            "id": "6675e03b21d6e0cd702b91d1",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Create Screen",
+              "TITLE": "Creation Screen",
+              "DESCRIPTION": "Display a form contains all field to create new about message. Submit form will post data to /about/create. If create successfully, please alert created success. If not, please display error message.",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "create",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "CreateScreen",
+            "transform": {
+              "x": 173,
+              "y": 749,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "6675e04ffd95f64374985ff7",
+                "description": "Create new about record in database by data from request.",
+                "itemId": "6675e03b21d6e0cd702b91d1"
+              }
+            ],
+            "screens": []
+          },
+          {
+            "id": "6675e04b968acb469a122599",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "View Screen",
+              "TITLE": "View Screen",
+              "DESCRIPTION": "This view file will have 'Delete' button. 'Delete' button to get delete at /about/delete/:id with id will be its ID.",
+              "TECHNOLOGY": "Screen",
+              "ACTION": "detail",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "ViewScreen",
+            "transform": {
+              "x": 810,
+              "y": 245,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "6663dedc619cb44e998aa98e",
+                "description": "Find about by id.",
+                "itemId": "6675e04b968acb469a122599"
+              }
+            ],
+            "screens": []
+          },
+          {
+            "id": "6675e05b8b353aeb9b66d1be",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Other Screen",
+              "TITLE": "List All Screen",
+              "DESCRIPTION": "Data will be displayed as a list, each of element will have two buttons to view, and delete it. 'View' button will lead to get detail view of Post at /about/detail/:id with id will be its ID. 'Delete' button will lead to get delete at /post/about/:id with id will be its ID. Screen will have a search bar to search about by its title.",
+              "TECHNOLOGY": "Screen",
+              "ACTION": "list",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "OtherScreen",
+            "transform": {
+              "x": 173,
+              "y": 245,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [
+              {
+                "id": "6675e061972a56e2a25bc3cb",
+                "description": "Get all existing abouts in database.",
+                "itemId": "6675e05b8b353aeb9b66d1be"
+              }
+            ],
+            "screens": []
+          },
+          {
+            "id": "1719001395199",
+            "appearance": {
+              "FOREGROUND_COLOR": 16777215,
+              "TEXT_DISABLED": true,
+              "FONT_SIZE": 16,
+              "BACKGROUND_COLOR": 3276,
+              "STROKE_COLOR": 13224393,
+              "STROKE_THICKNESS": 1,
+              "TEXT_ALIGNMENT": "center",
+              "TEXT": "Update Screen",
+              "TITLE": "Update Screen",
+              "DESCRIPTION": "This screen is used to update something in its container",
+              "TECHNOLOGY": "Handlebars.js",
+              "ACTION": "edit",
+              "SHAPE": "Rectangle"
+            },
+            "renderer": "UpdateScreen",
+            "transform": {
+              "x": 810,
+              "y": 723,
+              "w": 250,
+              "h": 250,
+              "r": 0
+            },
+            "type": "Screens",
+            "descriptions": [],
+            "screens": []
+          }
+        ],
+        "master": "1719028588035",
+        "rootIds": [
+          "6675e03b21d6e0cd702b91d1",
+          "6675e04b968acb469a122599",
+          "6675e05b8b353aeb9b66d1be",
+          "1719001395199"
+        ],
+        "title": "About",
+        "relationships": [
+          {
+            "id": "6675e06a222fbd006fb5d7b4",
+            "title": "List All Screen -> Creation Screen",
+            "description": "Can create new about information.",
+            "source": "6675e05b8b353aeb9b66d1be",
+            "target": "6675e03b21d6e0cd702b91d1"
+          },
+          {
+            "id": "6675e06d5802bf95ed329dea",
+            "title": "List All Screen -> View Screen",
+            "description": "Can view detail of about.",
+            "source": "6675e05b8b353aeb9b66d1be",
+            "target": "6675e04b968acb469a122599"
+          },
+          {
+            "id": "1719001395247",
+            "title": "List All Screen -> Update Screen",
+            "description": "Can update existing about information.",
+            "source": "6675e05b8b353aeb9b66d1be",
+            "target": "1719001395199",
+            "diagramId": "1719001395141"
+          }
+        ],
+        "type": "Screens",
+        "parentId": "1719028588035",
         "mainSystem": false
       }
     ],
@@ -3053,31 +2386,21 @@
       "1712974336896",
       "1712974337219",
       "1712974337304",
-      "1717165117626",
-      "1717165118799",
-      "1717165119023",
-      "1717165119487",
-      "1717165119641",
-      "1717695139535",
-      "1717695139733",
-      "1717777315266",
-      "1717822848402",
-      "1718738329391",
-      "1718738329401",
-      "1718738329403",
-      "1718738329405",
-      "1718738329407",
-      "1718738329409",
-      "1718738329411",
-      "1718738329426",
-      "1718738329428",
-      "1718738329430",
-      "1718738329432",
-      "1718738329434",
-      "1718738329497",
-      "1718738329825"
+      "1719028587758",
+      "1719028587768",
+      "1719028587808",
+      "1719028587810",
+      "1719028587812",
+      "1719028587814",
+      "1719028587816",
+      "1719028587914",
+      "1719028587916",
+      "1719028587918",
+      "1719028587920",
+      "1719028588001",
+      "1719028588040"
     ],
-    "id": "4464e53e1bc01d0842dd2cbf",
+    "id": "2e236a89c051d6382a9da97c",
     "size": {
       "x": 1500,
       "y": 1500
