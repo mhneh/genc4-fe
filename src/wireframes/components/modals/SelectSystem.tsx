@@ -11,11 +11,11 @@ export const SelectSystem = memo(() => {
     const dispatch = useAppDispatch();
     const [isOpen, setOpen] = useState(true);
 
-    useEffect(async () => {
-        const file: File = new File([JSON.stringify(customSystemJson)], "");
-        await dispatch(loadDiagramFromFile({file}));
-        await dispatch(selectSystem("custom"));
-    }, []);
+    // useEffect(async () => {
+    //     const file: File = new File([JSON.stringify(customSystemJson)], "");
+    //     await dispatch(loadDiagramFromFile({file}));
+    //     await dispatch(selectSystem("custom"));
+    // }, []);
 
     return (
         <Modal title={"Please select system"}
