@@ -13,6 +13,11 @@ export const filterShapes =
         return { payload:  { filter } };
     });
 
+export const filterComponents =
+    createAction('shapes/components', (filter: string) => {
+        return { payload:  { filter } };
+    });
+
 export const filterIcons =
     createAction('icons/shapes', (filter: string) => {
         return { payload:  { filter } };
@@ -33,5 +38,8 @@ export function assets(initialState: AssetsState) {
         })
         .addCase(selectIcons, (state, action) => {
             state.iconSet = action.payload.iconSet;
+        })
+        .addCase(filterComponents, (state, action) => {
+            state.componentsFilter = action.payload.filter;
         }));
 }

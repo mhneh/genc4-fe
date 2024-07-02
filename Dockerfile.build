@@ -14,5 +14,5 @@ COPY . .
 RUN npm run test:ci
 
 # Build Frontend
-RUN npm run build
+RUN npm run build-simple
 
