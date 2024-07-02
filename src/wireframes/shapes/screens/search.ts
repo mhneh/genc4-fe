@@ -24,11 +24,11 @@ const DEFAULT_APPEARANCE = {
   [DefaultAppearance.STROKE_COLOR]: CommonTheme.CONTROL_BORDER_COLOR,
   [DefaultAppearance.STROKE_THICKNESS]: CommonTheme.CONTROL_BORDER_THICKNESS,
   [DefaultAppearance.TEXT_ALIGNMENT]: "center",
-  [DefaultAppearance.TEXT]: "Other Screen",
-  [DefaultAppearance.TITLE]: "Other Screen",
+  [DefaultAppearance.TEXT]: "Search Screen",
+  [DefaultAppearance.TITLE]: "Search Screen",
   [DefaultAppearance.DESC]: "Describe your idea with new screen",
   [DefaultAppearance.TECH]: "Screen",
-  [DefaultAppearance.ACTION]: "custom",
+  [DefaultAppearance.ACTION]: "search",
   [SHAPE]: "Rectangle",
 };
 
@@ -36,10 +36,10 @@ const OFFSET = { left: 4, top: 70, right: 4, bottom: 15 };
 
 const REFRESH_CODE = String.fromCharCode(0xf021);
 
-export class OtherScreen implements ShapePlugin {
+export class SearchScreen implements ShapePlugin {
 
   public identifier(): string {
-    return "OtherScreen";
+    return "Search Screen";
   }
 
   public defaultAppearance() {
